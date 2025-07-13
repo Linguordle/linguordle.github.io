@@ -6,19 +6,36 @@ g = Glottolog('glottolog')
 
 LANGUAGE_DATA = {}
 
+EXCLUDED_CATEGORIES = [
+    'Artificial Language',
+    'Pidgin',
+    'Sign Language',
+    'Unattested',
+    'Mixed Language',
+    'Speech Register',
+    'Unclassifiable',
+    'Bookkeeping'
+]
+
 for lang in g.languoids():
     if lang.level.name != 'language':
         continue
-    if lang.family and lang.macroareas and not lang.isolate:
-        # Build ancestry tree manually
-        tree = []
-        current = lang
-        while current:
-            if current.level.name in ('family', 'language'):
-                tree.insert(0, current.name)
-            current = current.parent
+    if not lang.family:
+        continue  # Skip isolates
+    if not lang.macroareas:
+        continue
+    if lang.category.name in EXCLUDED_CATEGORIES:
+        continue
 
-        LANGUAGE_DATA[lang.name] = tree
+    # Build ancestry tree manually
+    tree = []
+    current = lang
+    while current:
+        if current.level.name in ('family', 'language'):
+            tree.insert(0, current.name)
+        current = current.parent
+
+    LANGUAGE_DATA[lang.name] = tree
 
 os.makedirs('web', exist_ok=True)
 with open('web/data.js', 'w', encoding='utf-8') as f:
