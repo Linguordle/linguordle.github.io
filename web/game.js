@@ -3,6 +3,36 @@
 // --- CONFIG ---
 const MAX_GUESSES = 15;
 
+// Initialize Fuse.js
+const fuse = new Fuse(languageList, {
+    threshold: 0.4, // Adjust fuzziness (lower = stricter)
+    includeScore: true,
+    keys: []
+});
+
+const input = document.getElementById('guess-input');
+const suggestionsList = document.getElementById('suggestions');
+
+// Update suggestions as the user types
+input.addEventListener('input', () => {
+    const results = fuse.search(input.value).slice(0, 5);
+    suggestionsList.innerHTML = '';
+    results.forEach(result => {
+        const li = document.createElement('li');
+        li.textContent = result.item;
+        li.addEventListener('click', () => {
+            input.value = result.item;
+            suggestionsList.innerHTML = '';
+        });
+        suggestionsList.appendChild(li);
+    });
+});
+
+// Hide suggestions on submit
+document.getElementById('submit-button').addEventListener('click', () => {
+    suggestionsList.innerHTML = '';
+});
+
 // pick daily language based on date (simple seed)
 function getTargetLang() {
   const langs = Object.keys(LANGUAGE_DATA);
