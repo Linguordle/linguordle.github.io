@@ -9,7 +9,7 @@ LANGUAGE_DATA = {}
 for lang in g.languoids():
     if lang.level.name != 'language':
         continue
-    if lang.family and lang.macroarea and not lang.isolate:
+    if lang.family and lang.macroareas and not lang.isolate:
         # Build ancestry tree manually
         tree = []
         current = lang
