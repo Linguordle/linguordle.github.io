@@ -22,5 +22,6 @@ jobs:
           git commit -m "Deploy to gh-pages"
           git branch -M gh-pages
           git remote add origin https://github.com/${{ github.repository }}.git
-          git push -f origin gh-pages
+          git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages
+
 
