@@ -9,8 +9,15 @@ LANGUAGE_DATA = {}
 for lang in g.languoids():
     if lang.level.name != 'language':
         continue
-    if lang.family and lang.macroareas and not lang.isolate:
-        tree = [anc.name for anc in lang.tree if anc.level.name in ('family', 'language')]
+    if lang.family and lang.macroarea and not lang.isolate:
+        # Build ancestry tree manually
+        tree = []
+        current = lang
+        while current:
+            if current.level.name in ('family', 'language'):
+                tree.insert(0, current.name)
+            current = current.parent
+
         LANGUAGE_DATA[lang.name] = tree
 
 os.makedirs('web', exist_ok=True)
