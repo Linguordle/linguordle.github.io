@@ -34,7 +34,7 @@ for lang in g.languoids():
 
     # Correctly exclude extinct / dormant
     if lang.endangerment:
-        status = lang.endangerment.status
+        status = str(lang.endangerment.status).lower()
         if status in EXCLUDED_ENDANGERMENT_STATUSES:
             continue
 
