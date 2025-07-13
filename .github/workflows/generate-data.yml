@@ -1,0 +1,37 @@
+name: Generate Glottolog Data
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install pyglottolog
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyglottolog
+
+      - name: Clone Glottolog
+        run: git clone https://github.com/glottolog/glottolog.git
+
+      - name: Generate data.js
+        run: python generate_data.py
+
+      - name: Commit data.js
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add web/data.js
+          git commit -m "Update data.js from Glottolog" || echo "No changes to commit"
+          git push
