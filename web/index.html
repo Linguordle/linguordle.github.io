@@ -8,11 +8,10 @@
 <body>
   <h1>Guess Today's Language</h1>
   <p>You have <strong>15 guesses</strong> to identify the target language!</p>
-  <input id="guess-input" list="lang-list" placeholder="Type a language..." autofocus>
-  <datalist id="lang-list">
-    <!-- populated by JS -->
-  </datalist>
-  <button id="guess-btn">Guess</button>
+  <input type="text" id="guess-input" placeholder="Type a language name..." autocomplete="off">
+  <ul id="suggestions"></ul>
+  <button id="submit-button">Guess</button>
+
   
   <ul id="guess-list"></ul>
   <p id="status"></p>
