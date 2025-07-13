@@ -13,3 +13,24 @@ ul { margin-top: 1rem; }
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+#suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    position: absolute;
+    background-color: white;
+    width: 300px;
+}
+
+#suggestions li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #eee;
+}
