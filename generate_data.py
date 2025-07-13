@@ -24,7 +24,7 @@ for lang in g.languoids():
         continue  # Skip isolates
     if not lang.macroareas:
         continue
-    if lang.category.name in EXCLUDED_CATEGORIES:
+    if lang.category in EXCLUDED_CATEGORIES:
         continue
 
     # Build ancestry tree manually
