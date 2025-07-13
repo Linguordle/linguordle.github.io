@@ -32,8 +32,10 @@ for lang in g.languoids():
     if lang.category in EXCLUDED_CATEGORIES:
         continue
 
-    if lang.endangerment and lang.endangerment.status in EXCLUDED_ENDANGERMENT_STATUSES:
-        continue
+    if lang.endangerment is not None:
+        status = getattr(lang.endangerment, 'status', None)
+        if status in EXCLUDED_ENDANGERMENT_STATUSES:
+            continue
 
     # Build ancestry tree manually
     tree = []
