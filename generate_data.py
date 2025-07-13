@@ -1,4 +1,3 @@
-# generate_data.py
 from pyglottolog import Glottolog
 import json
 import os
@@ -7,11 +6,13 @@ g = Glottolog('glottolog')
 
 LANGUAGE_DATA = {}
 
-for lang in g.languoids(level='language'):
+for lang in g.languoids():
+    if lang.level.name != 'language':
+        continue
     if lang.family and lang.macroarea and not lang.isolate:
         if lang.aes_status and lang.aes_status.status == 'extinct':
             continue
-        tree = [anc.name for anc in lang.tree if anc.level in ('family', 'language')]
+        tree = [anc.name for anc in lang.tree if anc.level.name in ('family', 'language')]
         LANGUAGE_DATA[lang.name] = tree
 
 os.makedirs('web', exist_ok=True)
