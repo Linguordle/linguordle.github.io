@@ -17,6 +17,11 @@ EXCLUDED_CATEGORIES = [
     'Bookkeeping'
 ]
 
+EXCLUDED_ENDANGERMENT_STATUSES = {
+    'extinct',
+    'dormant'
+}
+
 for lang in g.languoids():
     if lang.level.name != 'language':
         continue
@@ -25,6 +30,9 @@ for lang in g.languoids():
     if not lang.macroareas:
         continue
     if lang.category in EXCLUDED_CATEGORIES:
+        continue
+
+    if lang.endangerment and lang.endangerment.status in EXCLUDED_ENDANGERMENT_STATUSES:
         continue
 
     # Build ancestry tree manually
