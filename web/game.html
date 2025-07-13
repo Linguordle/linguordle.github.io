@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Language Proximity Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.js"></script>
+    <script src="data.js" defer></script>
+    <script src="game.js" defer></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        #suggestions {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            position: absolute;
+            background-color: white;
+            width: 300px;
+        }
+        #suggestions li {
+            padding: 5px;
+            cursor: pointer;
+        }
+        #suggestions li:hover {
+            background-color: #eee;
+        }
+        #guess-form {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Guess the Language!</h1>
+
+    <form id="guess-form">
+        <input type="text" id="guess-input" placeholder="Type a language..." autocomplete="off">
+        <ul id="suggestions"></ul>
+        <button type="submit" id="submit-button">Guess</button>
+    </form>
+
+    <div id="output"></div>
+
+</body>
+</html>
