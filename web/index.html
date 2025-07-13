@@ -1,32 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Linguordle</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.js"></script>
+    <meta charset="UTF-8">
+    <title>Language Proximity Guessing Game</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Guess Today's Language</h1>
-  <p>You have <strong>15 guesses</strong> to identify the target language!</p>
-  <input type="text" id="guess-input" placeholder="Type a language name..." autocomplete="off">
-  <ul id="suggestions"></ul>
-  <button id="submit-button">Guess</button>
-
-  
-  <ul id="guess-list"></ul>
-  <p id="status"></p>
-  
-  <script src="data.js"></script>
-  <script src="game.js"></script>
-  <script>
-    // populate datalist
-    const dl = document.getElementById("lang-list");
-    Object.keys(LANGUAGE_DATA).forEach(lang => {
-      const opt = document.createElement("option");
-      opt.value = lang;
-      dl.appendChild(opt);
-    });
-  </script>
+    <h1>Welcome to the Language Proximity Guessing Game!</h1>
+    <p>
+        Guess the language, and the game will tell you the closest shared classification between your guess and the answer. 
+        The fewer guesses you use, the better!
+    </p>
+    <p>Languages include only living, non-isolate, non-artificial languages from Glottolog.</p>
+    <p><a href="game.html">Start the Game</a></p>
 </body>
 </html>
