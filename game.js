@@ -1,7 +1,7 @@
 // game.js
 
 // --- CONFIG ---
-const MAX_GUESSES = 6;
+const MAX_GUESSES = 15;
 
 // pick daily language based on date (simple seed)
 function getTargetLang() {
