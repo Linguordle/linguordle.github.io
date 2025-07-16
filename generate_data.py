@@ -6,7 +6,7 @@ g = Glottolog('glottolog')
 
 LANGUAGE_DATA = {}
 
-EXCLUDED_CATEGORIES = [
+EXCLUDED_CATEGORIES = {
     'Artificial Language',
     'Pidgin',
     'Sign Language',
@@ -15,7 +15,7 @@ EXCLUDED_CATEGORIES = [
     'Speech Register',
     'Unclassifiable',
     'Bookkeeping'
-]
+}
 
 EXCLUDED_ENDANGERMENT_STATUSES = {
     'extinct',
@@ -25,20 +25,23 @@ EXCLUDED_ENDANGERMENT_STATUSES = {
 for lang in g.languoids():
     if lang.level.name != 'language':
         continue
-    if not lang.family:
-        continue  # Skip isolates
-    if not lang.macroareas:
-        continue
     if lang.category in EXCLUDED_CATEGORIES:
         continue
+    if not lang.family:
+        continue
+    if not lang.macroarea:
+        continue
 
-    # Correctly exclude extinct / dormant
-    if lang.endangerment:
-        status = str(lang.endangerment.status).lower()
-        if status in EXCLUDED_ENDANGERMENT_STATUSES:
-            continue
+    # Read md.ini endangerment status manually
+    status = None
+    if 'endangerment' in lang.cfg.sections():
+        status = lang.cfg.get('endangerment', 'status', fallback=None)
+        if status:
+            status = status.lower()
+            if status in EXCLUDED_ENDANGERMENT_STATUSES:
+                continue
 
-    # Build ancestry tree manually
+    # Build ancestry
     tree = []
     current = lang
     while current:
