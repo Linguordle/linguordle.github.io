@@ -1,36 +1,71 @@
+/* General body styles */
 body {
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 600px;
   margin: 2rem auto;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
+
+/* Style inputs and buttons uniformly */
 input, button {
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  outline: none;
 }
-ul { margin-top: 1rem; }
+
+/* Improve button appearance */
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* UL spacing */
+ul {
+  margin-top: 1rem;
+}
+
+/* Status message styling */
 #status {
   margin-top: 1rem;
   font-size: 1.2rem;
   font-weight: bold;
+  color: #2c3e50;
 }
 
+/* Suggestions dropdown */
 #suggestions {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-height: 150px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    position: absolute;
-    background-color: white;
-    width: 300px;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  position: absolute;
+  background-color: #fff;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 #suggestions li {
-    padding: 5px;
-    cursor: pointer;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
 }
 
 #suggestions li:hover {
-    background-color: #eee;
+  background-color: #f0f0f0;
 }
