@@ -7,14 +7,6 @@ const LANGUAGE_DATA = {
     "Amto-Musan",
     "Siawi"
   ],
-  "Madngele": [
-    "Eastern Daly",
-    "Madngele"
-  ],
-  "Kamu": [
-    "Eastern Daly",
-    "Kamu"
-  ],
   "Chambri": [
     "Lower Sepik",
     "Chambri"
@@ -50,10 +42,6 @@ const LANGUAGE_DATA = {
   "Nukak Makú": [
     "Kakua-Nukak",
     "Nukak Makú"
-  ],
-  "Tyaraity": [
-    "Northern Daly",
-    "Tyaraity"
   ],
   "Mullukmulluk": [
     "Northern Daly",
@@ -218,10 +206,6 @@ const LANGUAGE_DATA = {
     "Nakkara-Ndjebbana",
     "Nakara"
   ],
-  "Kwadi": [
-    "Khoe-Kwadi",
-    "Kwadi"
-  ],
   "Ts'ixa": [
     "Khoe-Kwadi",
     "Khoe",
@@ -306,13 +290,6 @@ const LANGUAGE_DATA = {
     "Khoekhoe",
     "North Khoekhoe",
     "Hai//om-Akhoe"
-  ],
-  "Korana": [
-    "Khoe-Kwadi",
-    "Khoe",
-    "Khoekhoe",
-    "South Khoekhoe",
-    "Korana"
   ],
   "Xiri": [
     "Khoe-Kwadi",
@@ -468,14 +445,6 @@ const LANGUAGE_DATA = {
     "Central-Eastern West Himalayish",
     "Rongpo"
   ],
-  "Rangkas": [
-    "Sino-Tibetan",
-    "Bodic",
-    "West Himalayish",
-    "Eastern West Himalayish",
-    "Pithauragarh",
-    "Rangkas"
-  ],
   "Chaudangsi": [
     "Sino-Tibetan",
     "Bodic",
@@ -505,17 +474,6 @@ const LANGUAGE_DATA = {
     "Darma-Byangsi",
     "Zhangzhungic",
     "Darma"
-  ],
-  "Zhangzhung": [
-    "Sino-Tibetan",
-    "Bodic",
-    "West Himalayish",
-    "Eastern West Himalayish",
-    "Pithauragarh",
-    "Darma-Byangsi-Chaudangsi",
-    "Darma-Byangsi",
-    "Zhangzhungic",
-    "Zhangzhung"
   ],
   "Pattani": [
     "Sino-Tibetan",
@@ -644,13 +602,6 @@ const LANGUAGE_DATA = {
     "Bodish",
     "Dakpa-Dzala",
     "Dzalakha"
-  ],
-  "Classical Tibetan": [
-    "Sino-Tibetan",
-    "Bodic",
-    "Bodish",
-    "Early Old Tibetan",
-    "Classical Tibetan"
   ],
   "Tibetan": [
     "Sino-Tibetan",
@@ -1186,13 +1137,6 @@ const LANGUAGE_DATA = {
     "Thangmi-Baram",
     "Thangmi"
   ],
-  "Dura": [
-    "Sino-Tibetan",
-    "Himalayish",
-    "Mahakiranti",
-    "Kham-Magar-Chepang",
-    "Dura"
-  ],
   "Bujhyal": [
     "Sino-Tibetan",
     "Himalayish",
@@ -1354,16 +1298,6 @@ const LANGUAGE_DATA = {
     "Southern Kiranti",
     "Bantawic",
     "Bantawa"
-  ],
-  "Waling": [
-    "Sino-Tibetan",
-    "Himalayish",
-    "Mahakiranti",
-    "Kiranti",
-    "Eastern Kiranti",
-    "Southern Kiranti",
-    "Bantawic",
-    "Waling"
   ],
   "Chhulung": [
     "Sino-Tibetan",
@@ -1663,16 +1597,6 @@ const LANGUAGE_DATA = {
     "Horpa",
     "Stau-Dgebshes"
   ],
-  "Tangut": [
-    "Sino-Tibetan",
-    "Burmo-Qiangic",
-    "Na-Qiangic",
-    "Qiangic",
-    "Gyalrongic",
-    "West Gyalrongic",
-    "Horpa",
-    "Tangut"
-  ],
   "Stodsde": [
     "Sino-Tibetan",
     "Burmo-Qiangic",
@@ -1798,13 +1722,6 @@ const LANGUAGE_DATA = {
     "Burmo-Qiangic",
     "Lolo-Burmese",
     "Ugong"
-  ],
-  "Pai-lang": [
-    "Sino-Tibetan",
-    "Burmo-Qiangic",
-    "Lolo-Burmese",
-    "Unclassified Lolo-Burmese",
-    "Pai-lang"
   ],
   "Pholo": [
     "Sino-Tibetan",
@@ -3022,14 +2939,6 @@ const LANGUAGE_DATA = {
     "Sila-Wanya-Cosao",
     "Sila"
   ],
-  "Hpon": [
-    "Sino-Tibetan",
-    "Burmo-Qiangic",
-    "Lolo-Burmese",
-    "Burmish",
-    "Northern Burmish",
-    "Hpon"
-  ],
   "Pela": [
     "Sino-Tibetan",
     "Burmo-Qiangic",
@@ -3141,16 +3050,6 @@ const LANGUAGE_DATA = {
     "Nuclear Mranmaic",
     "Tavoyan"
   ],
-  "Old Burmese": [
-    "Sino-Tibetan",
-    "Burmo-Qiangic",
-    "Lolo-Burmese",
-    "Burmish",
-    "Southern Burmish",
-    "Mranmaic",
-    "Nuclear Mranmaic",
-    "Old Burmese"
-  ],
   "Burmese": [
     "Sino-Tibetan",
     "Burmo-Qiangic",
@@ -3254,51 +3153,6 @@ const LANGUAGE_DATA = {
     "Luish",
     "Chakpa-Kadu-Ganan",
     "Kado"
-  ],
-  "Phayeng": [
-    "Sino-Tibetan",
-    "Brahmaputran",
-    "Jingpho-Luish",
-    "Luish",
-    "Chakpa-Kadu-Ganan",
-    "Chakpa",
-    "Phayeng"
-  ],
-  "Andro": [
-    "Sino-Tibetan",
-    "Brahmaputran",
-    "Jingpho-Luish",
-    "Luish",
-    "Chakpa-Kadu-Ganan",
-    "Chakpa",
-    "Andro-Sengmai",
-    "Andro"
-  ],
-  "Sengmai": [
-    "Sino-Tibetan",
-    "Brahmaputran",
-    "Jingpho-Luish",
-    "Luish",
-    "Chakpa-Kadu-Ganan",
-    "Chakpa",
-    "Andro-Sengmai",
-    "Sengmai"
-  ],
-  "Taman (Myanmar)": [
-    "Sino-Tibetan",
-    "Brahmaputran",
-    "Jingpho-Luish",
-    "Luish",
-    "Unclassified Luish",
-    "Taman (Myanmar)"
-  ],
-  "Burma Pyu": [
-    "Sino-Tibetan",
-    "Brahmaputran",
-    "Jingpho-Luish",
-    "Luish",
-    "Unclassified Luish",
-    "Burma Pyu"
   ],
   "Northern Jinghpaw": [
     "Sino-Tibetan",
@@ -3423,12 +3277,6 @@ const LANGUAGE_DATA = {
     "Dimasa-Kokborok",
     "Tipperic",
     "Tippera"
-  ],
-  "Chairel": [
-    "Sino-Tibetan",
-    "Brahmaputran",
-    "Unclassified Brahmaputran",
-    "Chairel"
   ],
   "Tikhakic": [
     "Sino-Tibetan",
@@ -4499,13 +4347,6 @@ const LANGUAGE_DATA = {
     "Sgaw",
     "S'gaw Karen"
   ],
-  "Wewaw": [
-    "Sino-Tibetan",
-    "Karenic",
-    "Southern Karen",
-    "Sgaw",
-    "Wewaw"
-  ],
   "Pa'o Karen": [
     "Sino-Tibetan",
     "Karenic",
@@ -4566,17 +4407,6 @@ const LANGUAGE_DATA = {
     "Sinitic",
     "Waxianghua"
   ],
-  "Old Chinese": [
-    "Sino-Tibetan",
-    "Sinitic",
-    "Old Chinese"
-  ],
-  "Classical Chinese": [
-    "Sino-Tibetan",
-    "Sinitic",
-    "Classical-Middle-Modern Sinitic",
-    "Classical Chinese"
-  ],
   "Gan Chinese": [
     "Sino-Tibetan",
     "Sinitic",
@@ -4590,13 +4420,6 @@ const LANGUAGE_DATA = {
     "Classical-Middle-Modern Sinitic",
     "Middle-Modern Sinitic",
     "Hakka Chinese"
-  ],
-  "Middle Chinese": [
-    "Sino-Tibetan",
-    "Sinitic",
-    "Classical-Middle-Modern Sinitic",
-    "Middle-Modern Sinitic",
-    "Middle Chinese"
   ],
   "Xiang Chinese": [
     "Sino-Tibetan",
@@ -4869,11 +4692,6 @@ const LANGUAGE_DATA = {
     "Kman-Meyor",
     "Zakhring"
   ],
-  "Nam": [
-    "Sino-Tibetan",
-    "Unclassified Sino-Tibetan",
-    "Nam"
-  ],
   "Koro": [
     "Sino-Tibetan",
     "Macro-Tani",
@@ -5006,20 +4824,6 @@ const LANGUAGE_DATA = {
     "Ta-Li",
     "Caijia"
   ],
-  "Longjia": [
-    "Sino-Tibetan",
-    "Macro-Bai",
-    "Ta-Li",
-    "Longjia-Luren",
-    "Longjia"
-  ],
-  "Luren": [
-    "Sino-Tibetan",
-    "Macro-Bai",
-    "Ta-Li",
-    "Longjia-Luren",
-    "Luren"
-  ],
   "Nez Perce": [
     "Sahaptian",
     "Nez Perce"
@@ -5071,14 +4875,6 @@ const LANGUAGE_DATA = {
     "Kxa",
     "Ju-Kung",
     "North-Central Ju"
-  ],
-  "Hanis": [
-    "Coosan",
-    "Hanis"
-  ],
-  "Miluk": [
-    "Coosan",
-    "Miluk"
   ],
   "Western Highland Purepecha": [
     "Tarascan",
@@ -5166,11 +4962,6 @@ const LANGUAGE_DATA = {
     "Lumun-Torona",
     "Lumun"
   ],
-  "Torona": [
-    "Narrow Talodi",
-    "Lumun-Torona",
-    "Torona"
-  ],
   "Tasomi-Tata": [
     "Narrow Talodi",
     "Buram-Saraf",
@@ -5222,14 +5013,6 @@ const LANGUAGE_DATA = {
   "Haruai": [
     "Piawi",
     "Haruai"
-  ],
-  "North Midlands Tasmanian": [
-    "North-Eastern Tasmanian",
-    "North Midlands Tasmanian"
-  ],
-  "Ben-Lomond-Cape-Portland": [
-    "North-Eastern Tasmanian",
-    "Ben-Lomond-Cape-Portland"
   ],
   "Lepki": [
     "Lepki-Murkim-Kembra",
@@ -5326,18 +5109,9 @@ const LANGUAGE_DATA = {
     "Ticuna-Yuri",
     "Ticuna"
   ],
-  "Juri": [
-    "Ticuna-Yuri",
-    "Juri"
-  ],
   "Apalaí": [
     "Cariban",
     "Apalaí"
-  ],
-  "Pimenteira": [
-    "Cariban",
-    "Kuikuroan",
-    "Pimenteira"
   ],
   "Kuikúro-Kalapálo": [
     "Cariban",
@@ -5350,11 +5124,6 @@ const LANGUAGE_DATA = {
     "Kuikuroan",
     "Nuclear Kuikuroan",
     "Matipuhy"
-  ],
-  "Opón-Carare": [
-    "Cariban",
-    "Opon-Yukpan",
-    "Opón-Carare"
   ],
   "Japrería": [
     "Cariban",
@@ -5373,40 +5142,17 @@ const LANGUAGE_DATA = {
     "Guianan",
     "Galibi Carib"
   ],
-  "Palmela": [
-    "Cariban",
-    "Guianan",
-    "Palmela"
-  ],
   "Ye'kwana": [
     "Cariban",
     "Guianan",
     "Maquiritari-Wayumara",
     "Ye'kwana"
   ],
-  "Wayumara": [
-    "Cariban",
-    "Guianan",
-    "Maquiritari-Wayumara",
-    "Wayumara"
-  ],
   "Wayana": [
     "Cariban",
     "Guianan",
     "Wayanaic",
     "Wayana"
-  ],
-  "Tiverighotto": [
-    "Cariban",
-    "Guianan",
-    "Wayanaic",
-    "Tiverighotto"
-  ],
-  "Yaio": [
-    "Cariban",
-    "Guianan",
-    "Unclassified Guianan",
-    "Yaio"
   ],
   "Carijona": [
     "Cariban",
@@ -5420,20 +5166,6 @@ const LANGUAGE_DATA = {
     "Taranoan",
     "Tiriyoan",
     "Trió"
-  ],
-  "Pauxi": [
-    "Cariban",
-    "Guianan",
-    "Taranoan",
-    "Tiriyoan",
-    "Pauxi"
-  ],
-  "Akurio": [
-    "Cariban",
-    "Guianan",
-    "Taranoan",
-    "Tiriyoan",
-    "Akurio"
   ],
   "Panare": [
     "Cariban",
@@ -5471,33 +5203,6 @@ const LANGUAGE_DATA = {
     "Kapong",
     "Akawaio-Ingariko"
   ],
-  "Tamanaku": [
-    "Cariban",
-    "Venezuelan Cariban",
-    "Mapoyo-Tamanaku",
-    "Tamanaku"
-  ],
-  "Sapara": [
-    "Cariban",
-    "Venezuelan Cariban",
-    "Mapoyo-Tamanaku",
-    "Paravilhana-Pauxiana",
-    "Sapara"
-  ],
-  "Pauxiana": [
-    "Cariban",
-    "Venezuelan Cariban",
-    "Mapoyo-Tamanaku",
-    "Paravilhana-Pauxiana",
-    "Pauxiana"
-  ],
-  "Paravilhana": [
-    "Cariban",
-    "Venezuelan Cariban",
-    "Mapoyo-Tamanaku",
-    "Paravilhana-Pauxiana",
-    "Paravilhana"
-  ],
   "Yabarana": [
     "Cariban",
     "Venezuelan Cariban",
@@ -5505,33 +5210,12 @@ const LANGUAGE_DATA = {
     "Mapoyo-Yawarana",
     "Yabarana"
   ],
-  "Pémono": [
-    "Cariban",
-    "Venezuelan Cariban",
-    "Mapoyo-Tamanaku",
-    "Mapoyo-Yawarana",
-    "Pémono"
-  ],
   "Mapoyo": [
     "Cariban",
     "Venezuelan Cariban",
     "Mapoyo-Tamanaku",
     "Mapoyo-Yawarana",
     "Mapoyo"
-  ],
-  "Chaima": [
-    "Cariban",
-    "Venezuelan Cariban",
-    "Mapoyo-Tamanaku",
-    "Cumana",
-    "Chaima"
-  ],
-  "Cumanagoto": [
-    "Cariban",
-    "Venezuelan Cariban",
-    "Mapoyo-Tamanaku",
-    "Cumana",
-    "Cumanagoto"
   ],
   "Bakairí": [
     "Cariban",
@@ -5549,20 +5233,6 @@ const LANGUAGE_DATA = {
     "Pekodian",
     "Xinguan",
     "Pará Arára"
-  ],
-  "Yarumá": [
-    "Cariban",
-    "Pekodian",
-    "Xinguan",
-    "Paranayubic",
-    "Yarumá"
-  ],
-  "Apiaka-Tocantins": [
-    "Cariban",
-    "Pekodian",
-    "Xinguan",
-    "Paranayubic",
-    "Apiaka-Tocantins"
   ],
   "Kaxuiâna": [
     "Cariban",
@@ -5586,38 +5256,16 @@ const LANGUAGE_DATA = {
     "Yawaperi",
     "Waimiri-Atroari"
   ],
-  "Bonari": [
-    "Cariban",
-    "Yawaperi",
-    "Bonari"
-  ],
-  "Aushiri": [
-    "Zaparoan",
-    "Zaparo-Abishira",
-    "Aushiri"
-  ],
   "Záparo": [
     "Zaparoan",
     "Zaparo-Abishira",
     "Záparo"
-  ],
-  "Andoa": [
-    "Zaparoan",
-    "Iquito-Arabela",
-    "Arabela-Andoa",
-    "Andoa"
   ],
   "Arabela": [
     "Zaparoan",
     "Iquito-Arabela",
     "Arabela-Andoa",
     "Arabela"
-  ],
-  "Cahuarano": [
-    "Zaparoan",
-    "Iquito-Arabela",
-    "Cahuarano-Iquito",
-    "Cahuarano"
   ],
   "Iquito": [
     "Zaparoan",
@@ -5650,12 +5298,6 @@ const LANGUAGE_DATA = {
     "Western Dajuic",
     "Dar Daju Daju"
   ],
-  "Baygo": [
-    "Dajuic",
-    "Western Dajuic",
-    "Nyala Dajuic",
-    "Baygo"
-  ],
   "Dar Fur Daju": [
     "Dajuic",
     "Western Dajuic",
@@ -5672,22 +5314,11 @@ const LANGUAGE_DATA = {
     "East Lakes Plain",
     "Abawiri"
   ],
-  "Awera": [
-    "Lakes Plain",
-    "Far West Lakes Plain",
-    "Awera"
-  ],
   "Rasawa": [
     "Lakes Plain",
     "Far West Lakes Plain",
     "Rasawa-Saponi",
     "Rasawa"
-  ],
-  "Saponi": [
-    "Lakes Plain",
-    "Far West Lakes Plain",
-    "Rasawa-Saponi",
-    "Saponi"
   ],
   "Duvle": [
     "Lakes Plain",
@@ -5788,25 +5419,9 @@ const LANGUAGE_DATA = {
     "Central Tariku",
     "Edopi"
   ],
-  "Patwin": [
-    "Wintuan",
-    "Patwin"
-  ],
-  "Wintu": [
-    "Wintuan",
-    "Wintu"
-  ],
   "Wardaman": [
     "Yangmanic",
     "Wardaman"
-  ],
-  "Yangman": [
-    "Yangmanic",
-    "Yangman"
-  ],
-  "Dagoman": [
-    "Yangmanic",
-    "Dagoman"
   ],
   "Nadëb": [
     "Naduhup",
@@ -5868,11 +5483,6 @@ const LANGUAGE_DATA = {
     "South West Bird's Head",
     "Kalabra"
   ],
-  "Nonuya": [
-    "Huitotoan",
-    "Nonuya-Ocaina",
-    "Nonuya"
-  ],
   "Ocaina": [
     "Huitotoan",
     "Nonuya-Ocaina",
@@ -5894,16 +5504,6 @@ const LANGUAGE_DATA = {
     "Nuclear Witotoan",
     "Minica-Murui",
     "Murui Huitoto"
-  ],
-  "Andoquero": [
-    "Huitotoan",
-    "Unclassified Huitotoan",
-    "Andoquero"
-  ],
-  "Coeruna": [
-    "Huitotoan",
-    "Unclassified Huitotoan",
-    "Coeruna"
   ],
   "Sempan": [
     "Nuclear Trans New Guinea",
@@ -6715,15 +6315,6 @@ const LANGUAGE_DATA = {
     "Eastern Huon",
     "Trans Vitiaz",
     "Kovai"
-  ],
-  "Sene": [
-    "Nuclear Trans New Guinea",
-    "Finisterre-Huon",
-    "Huon",
-    "Eastern Huon",
-    "Trans Vitiaz",
-    "Huon Tip",
-    "Sene"
   ],
   "Mape": [
     "Nuclear Trans New Guinea",
@@ -8168,13 +7759,6 @@ const LANGUAGE_DATA = {
     "Greater Yaganon",
     "Wasembo"
   ],
-  "Bai-Maclay": [
-    "Nuclear Trans New Guinea",
-    "Madang",
-    "Rai Coast",
-    "Greater Yaganon",
-    "Bai-Maclay"
-  ],
   "Dumun": [
     "Nuclear Trans New Guinea",
     "Madang",
@@ -8574,16 +8158,6 @@ const LANGUAGE_DATA = {
     "Doso-Turumsa",
     "Turumsa"
   ],
-  "Mandan": [
-    "Siouan",
-    "Mandan"
-  ],
-  "Iowa-Oto": [
-    "Siouan",
-    "Mississippi Valley",
-    "Winnebago-Chiwere",
-    "Iowa-Oto"
-  ],
   "Ho-Chunk": [
     "Siouan",
     "Mississippi Valley",
@@ -8624,53 +8198,6 @@ const LANGUAGE_DATA = {
     "Dhegiha",
     "Omaha-Ponca"
   ],
-  "Quapaw": [
-    "Siouan",
-    "Mississippi Valley",
-    "Dhegiha",
-    "Quapaw"
-  ],
-  "Kansa": [
-    "Siouan",
-    "Mississippi Valley",
-    "Dhegiha",
-    "Osage-Kansa",
-    "Kansa"
-  ],
-  "Osage": [
-    "Siouan",
-    "Mississippi Valley",
-    "Dhegiha",
-    "Osage-Kansa",
-    "Osage"
-  ],
-  "Tutelo": [
-    "Siouan",
-    "Ohio Valley Siouan",
-    "Tutelo"
-  ],
-  "Ofo": [
-    "Siouan",
-    "Ohio Valley Siouan",
-    "Southeastern Siouan",
-    "Ofo"
-  ],
-  "Biloxi": [
-    "Siouan",
-    "Ohio Valley Siouan",
-    "Southeastern Siouan",
-    "Biloxi"
-  ],
-  "Catawba": [
-    "Siouan",
-    "Catawban",
-    "Catawba"
-  ],
-  "Woccon": [
-    "Siouan",
-    "Catawban",
-    "Woccon"
-  ],
   "Hidatsa": [
     "Siouan",
     "Missouri River Siouan",
@@ -8709,17 +8236,6 @@ const LANGUAGE_DATA = {
   "Midob": [
     "Nubian",
     "Midob"
-  ],
-  "Birked": [
-    "Nubian",
-    "Central Nubian",
-    "Birked"
-  ],
-  "Haraza": [
-    "Nubian",
-    "Central Nubian",
-    "Unclassified Central Nubian",
-    "Haraza"
   ],
   "Dair": [
     "Nubian",
@@ -8775,12 +8291,6 @@ const LANGUAGE_DATA = {
     "Nile Nubian",
     "Kenuzi-Dongola"
   ],
-  "Old Nubian": [
-    "Nubian",
-    "Nile Nubian",
-    "Nobiin Nubian",
-    "Old Nubian"
-  ],
   "Nobiin": [
     "Nubian",
     "Nile Nubian",
@@ -8815,48 +8325,9 @@ const LANGUAGE_DATA = {
     "Makah-Nitinat",
     "Ditidaht"
   ],
-  "Makah": [
-    "Wakashan",
-    "Southern Wakashan",
-    "Makah-Nitinat",
-    "Makah"
-  ],
-  "Wappo": [
-    "Yuki-Wappo",
-    "Wappo"
-  ],
-  "Northern Yukian": [
-    "Yuki-Wappo",
-    "Northern Yukian"
-  ],
   "Cherokee": [
     "Iroquoian",
     "Cherokee"
-  ],
-  "Nottoway": [
-    "Iroquoian",
-    "Northern Iroquoian",
-    "Tuscarora-Nottoway",
-    "Nottoway"
-  ],
-  "Tuscarora": [
-    "Iroquoian",
-    "Northern Iroquoian",
-    "Tuscarora-Nottoway",
-    "Tuscarora"
-  ],
-  "Huron-Wyandot": [
-    "Iroquoian",
-    "Northern Iroquoian",
-    "Lake Iroquoian",
-    "Huron-Wyandot"
-  ],
-  "Laurentian": [
-    "Iroquoian",
-    "Northern Iroquoian",
-    "Lake Iroquoian",
-    "Greater Iroquois",
-    "Laurentian"
   ],
   "Seneca": [
     "Iroquoian",
@@ -8865,14 +8336,6 @@ const LANGUAGE_DATA = {
     "Greater Iroquois",
     "Iroquois",
     "Seneca"
-  ],
-  "Susquehannock": [
-    "Iroquoian",
-    "Northern Iroquoian",
-    "Lake Iroquoian",
-    "Greater Iroquois",
-    "Iroquois",
-    "Susquehannock"
   ],
   "Onondaga": [
     "Iroquoian",
@@ -8908,24 +8371,10 @@ const LANGUAGE_DATA = {
     "Mohawk-Oneida",
     "Mohawk"
   ],
-  "Kitan": [
-    "Mongolic-Khitan",
-    "Kitan"
-  ],
-  "Mogholi": [
-    "Mongolic-Khitan",
-    "Mongolic",
-    "Mogholi"
-  ],
   "Dagur": [
     "Mongolic-Khitan",
     "Mongolic",
     "Dagur"
-  ],
-  "Middle Mongol": [
-    "Mongolic-Khitan",
-    "Mongolic",
-    "Middle Mongol"
   ],
   "Khamnigan Mongol": [
     "Mongolic-Khitan",
@@ -9073,14 +8522,6 @@ const LANGUAGE_DATA = {
     "Koita-Koiari",
     "Grass Koiari"
   ],
-  "Yurok": [
-    "Algic",
-    "Yurok"
-  ],
-  "Wiyot": [
-    "Algic",
-    "Wiyot"
-  ],
   "Siksika": [
     "Algic",
     "Algonquian-Blackfoot",
@@ -9098,13 +8539,6 @@ const LANGUAGE_DATA = {
     "Algonquian",
     "Cheyenne"
   ],
-  "Nawathinehena": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Arapahoic",
-    "Nawathinehena"
-  ],
   "Arapaho": [
     "Algic",
     "Algonquian-Blackfoot",
@@ -9112,21 +8546,6 @@ const LANGUAGE_DATA = {
     "Arapahoic",
     "Arapaho-Gros Ventre-Besawunena",
     "Arapaho"
-  ],
-  "Gros Ventre": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Arapahoic",
-    "Arapaho-Gros Ventre-Besawunena",
-    "Gros Ventre"
-  ],
-  "Miami": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Great Lakes Algonquian",
-    "Miami"
   ],
   "Shawnee": [
     "Algic",
@@ -9243,74 +8662,6 @@ const LANGUAGE_DATA = {
     "Fox",
     "Kickapoo"
   ],
-  "Carolina Algonquian": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Carolina Algonquian"
-  ],
-  "Powhatan": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Powhatan"
-  ],
-  "Piscataway": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Nanticoke-Conoy",
-    "Piscataway"
-  ],
-  "Nanticoke": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Nanticoke-Conoy",
-    "Nanticoke"
-  ],
-  "Wampanoag": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Maritimes-Southern New England Algonquian",
-    "Southern New England Algonquian",
-    "Wampanoag"
-  ],
-  "Nipmuck": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Maritimes-Southern New England Algonquian",
-    "Southern New England Algonquian",
-    "Nipmuck"
-  ],
-  "Mohegan-Montauk-Narragansett": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Maritimes-Southern New England Algonquian",
-    "Southern New England Algonquian",
-    "Western Southern New England Algonquian",
-    "Mohegan-Montauk-Narragansett"
-  ],
-  "Wampano": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Maritimes-Southern New England Algonquian",
-    "Southern New England Algonquian",
-    "Western Southern New England Algonquian",
-    "Wampano"
-  ],
   "Mi'kmaq": [
     "Algic",
     "Algonquian-Blackfoot",
@@ -9341,34 +8692,6 @@ const LANGUAGE_DATA = {
     "Abenaki",
     "Western Abenaki"
   ],
-  "Eastern Abenaki": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Maritimes-Southern New England Algonquian",
-    "Northern Eastern Algonquian",
-    "Abenaki",
-    "Eastern Abenaki"
-  ],
-  "Loup B": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Delawaran",
-    "Mahican-Woronoco-Pojassick",
-    "Loup B"
-  ],
-  "Mahican": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Delawaran",
-    "Mahican-Woronoco-Pojassick",
-    "Mahican"
-  ],
   "Munsee": [
     "Algic",
     "Algonquian-Blackfoot",
@@ -9377,15 +8700,6 @@ const LANGUAGE_DATA = {
     "Delawaran",
     "Common Delaware",
     "Munsee"
-  ],
-  "Unami": [
-    "Algic",
-    "Algonquian-Blackfoot",
-    "Algonquian",
-    "Eastern Algonquian",
-    "Delawaran",
-    "Common Delaware",
-    "Unami"
   ],
   "Naskapi": [
     "Algic",
@@ -9465,10 +8779,6 @@ const LANGUAGE_DATA = {
     "Cree",
     "Plains Creeic",
     "Plains Cree"
-  ],
-  "Mimi-Nachtigal": [
-    "Maban",
-    "Mimi-Nachtigal"
   ],
   "Marfa": [
     "Maban",
@@ -9624,11 +8934,6 @@ const LANGUAGE_DATA = {
     "Japanesic",
     "Kagoshima"
   ],
-  "Old Japanese": [
-    "Japonic",
-    "Japanesic",
-    "Old Japanese"
-  ],
   "Tsugaru": [
     "Japonic",
     "Japanesic",
@@ -9646,64 +8951,17 @@ const LANGUAGE_DATA = {
     "Japan-Taiwan Japanese",
     "Japanese"
   ],
-  "Nimanbur": [
-    "Nyulnyulan",
-    "Western Nyulnyulan",
-    "Nimanbur"
-  ],
   "Bardi": [
     "Nyulnyulan",
     "Western Nyulnyulan",
     "Bardic",
     "Bardi"
   ],
-  "Djawi": [
-    "Nyulnyulan",
-    "Western Nyulnyulan",
-    "Bardic",
-    "Djawi"
-  ],
-  "Dyaberdyaber": [
-    "Nyulnyulan",
-    "Western Nyulnyulan",
-    "Nyulnyulic",
-    "Dyaberdyaber"
-  ],
-  "Nyulnyul": [
-    "Nyulnyulan",
-    "Western Nyulnyulan",
-    "Nyulnyulic",
-    "Nyulnyul"
-  ],
-  "Warrwa": [
-    "Nyulnyulan",
-    "Eastern Nyulnyulan",
-    "Nyikinic",
-    "Warrwa"
-  ],
   "Nyigina": [
     "Nyulnyulan",
     "Eastern Nyulnyulan",
     "Nyikinic",
     "Nyigina"
-  ],
-  "Ngumbarl": [
-    "Nyulnyulan",
-    "Eastern Nyulnyulan",
-    "Unclassified Eastern Nyulnyulan",
-    "Ngumbarl"
-  ],
-  "Yawuru": [
-    "Nyulnyulan",
-    "Eastern Nyulnyulan",
-    "Yawuric",
-    "Yawuru"
-  ],
-  "Dyugun": [
-    "Nyulnyulan",
-    "Eastern Nyulnyulan",
-    "Yawuric",
-    "Dyugun"
   ],
   "Southern-Coastal Tsimshian": [
     "Tsimshian",
@@ -9819,14 +9077,6 @@ const LANGUAGE_DATA = {
     "Kalispel-Spokane",
     "Kalispel-Pend d'Oreille"
   ],
-  "Spokane": [
-    "Salishan",
-    "Interior Salish",
-    "Southern Interior Salish",
-    "Okanaganic",
-    "Kalispel-Spokane",
-    "Spokane"
-  ],
   "Lillooet": [
     "Salishan",
     "Interior Salish",
@@ -9847,17 +9097,6 @@ const LANGUAGE_DATA = {
     "Thompsonic",
     "Shuswap"
   ],
-  "Tillamook": [
-    "Salishan",
-    "Coast Salish",
-    "Tillamook"
-  ],
-  "Twana": [
-    "Salishan",
-    "Coast Salish",
-    "Central Salish",
-    "Twana"
-  ],
   "Sechelt": [
     "Salishan",
     "Coast Salish",
@@ -9865,54 +9104,12 @@ const LANGUAGE_DATA = {
     "North Georgia Central Salish",
     "Sechelt"
   ],
-  "Pentlatch": [
-    "Salishan",
-    "Coast Salish",
-    "Central Salish",
-    "North Georgia Central Salish",
-    "Pentlatch"
-  ],
   "Comox": [
     "Salishan",
     "Coast Salish",
     "Central Salish",
     "North Georgia Central Salish",
     "Comox"
-  ],
-  "Southern Puget Sound Salish": [
-    "Salishan",
-    "Coast Salish",
-    "Central Salish",
-    "Lushootseed-Puget",
-    "Southern Puget Sound Salish"
-  ],
-  "Northern Lushootseed": [
-    "Salishan",
-    "Coast Salish",
-    "Central Salish",
-    "Lushootseed-Puget",
-    "Northern Lushootseed"
-  ],
-  "Clallam": [
-    "Salishan",
-    "Coast Salish",
-    "Central Salish",
-    "Straits Salish",
-    "Clallam"
-  ],
-  "Northern Straits Salish": [
-    "Salishan",
-    "Coast Salish",
-    "Central Salish",
-    "Straits Salish",
-    "Northern Straits Salish"
-  ],
-  "Nooksack": [
-    "Salishan",
-    "Coast Salish",
-    "Central Salish",
-    "South Georgia Central Salish",
-    "Nooksack"
   ],
   "Halkomelem": [
     "Salishan",
@@ -9927,34 +9124,6 @@ const LANGUAGE_DATA = {
     "Central Salish",
     "South Georgia Central Salish",
     "Squamish"
-  ],
-  "Upper Chehalis": [
-    "Salishan",
-    "Coast Salish",
-    "Tsamosan",
-    "Inland Tsamosan",
-    "Upper Chehalis"
-  ],
-  "Cowlitz": [
-    "Salishan",
-    "Coast Salish",
-    "Tsamosan",
-    "Inland Tsamosan",
-    "Cowlitz"
-  ],
-  "Quinault": [
-    "Salishan",
-    "Coast Salish",
-    "Tsamosan",
-    "Coastal Tsamosan",
-    "Quinault"
-  ],
-  "Lower Chehalis": [
-    "Salishan",
-    "Coast Salish",
-    "Tsamosan",
-    "Coastal Tsamosan",
-    "Lower Chehalis"
   ],
   "Younuo Bunu": [
     "Hmong-Mien",
@@ -10349,12 +9518,6 @@ const LANGUAGE_DATA = {
     "Zaominic",
     "Dzao Min"
   ],
-  "Yangchun Pai Yao": [
-    "Hmong-Mien",
-    "Mienic",
-    "Zaominic",
-    "Yangchun Pai Yao"
-  ],
   "Pubiao-Qabiao": [
     "Tai-Kadai",
     "Kadaic",
@@ -10392,14 +9555,6 @@ const LANGUAGE_DATA = {
     "Northern Buyang",
     "Langnian Buyang"
   ],
-  "Gau": [
-    "Tai-Kadai",
-    "Kadaic",
-    "Southwestern Kra",
-    "Western Kra",
-    "Gauic",
-    "Gau"
-  ],
   "Central Gelao-Qau": [
     "Tai-Kadai",
     "Kadaic",
@@ -10428,16 +9583,6 @@ const LANGUAGE_DATA = {
     "Gelaoic",
     "Southwestern Gelao",
     "Hagei Gelao"
-  ],
-  "Gelao Mulao": [
-    "Tai-Kadai",
-    "Kadaic",
-    "Southwestern Kra",
-    "Western Kra",
-    "Gauic",
-    "Gelaoic",
-    "Northern Gelao",
-    "Gelao Mulao"
   ],
   "Red Gelao": [
     "Tai-Kadai",
@@ -10468,14 +9613,6 @@ const LANGUAGE_DATA = {
     "Western Kra",
     "Lachic",
     "Lachi"
-  ],
-  "White Lachi": [
-    "Tai-Kadai",
-    "Kadaic",
-    "Southwestern Kra",
-    "Western Kra",
-    "Lachic",
-    "White Lachi"
   ],
   "Baha Buyang": [
     "Tai-Kadai",
@@ -11166,20 +10303,6 @@ const LANGUAGE_DATA = {
     "Yuanic",
     "Khün"
   ],
-  "Ahom": [
-    "Tai-Kadai",
-    "Kam-Tai",
-    "Daic-Beic",
-    "Daic",
-    "Central-Southwestern Tai",
-    "Wenma-Southwestern Tai",
-    "Sapa-Southwestern Tai",
-    "Southwestern Tai",
-    "Southwestern Tai P",
-    "Shanic",
-    "Sukaphic",
-    "Ahom"
-  ],
   "Tai Laing": [
     "Tai-Kadai",
     "Kam-Tai",
@@ -11414,18 +10537,6 @@ const LANGUAGE_DATA = {
     "Sumuic",
     "Mayangna"
   ],
-  "Cacaopera": [
-    "Misumalpan",
-    "Sumalpan",
-    "Matagalpan",
-    "Cacaopera"
-  ],
-  "Matagalpa": [
-    "Misumalpan",
-    "Sumalpan",
-    "Matagalpan",
-    "Matagalpa"
-  ],
   "Tefaro": [
     "Geelvink Bay",
     "Tefaro"
@@ -11477,10 +10588,6 @@ const LANGUAGE_DATA = {
     "Palaihnihan",
     "Achumawi"
   ],
-  "Atsugewi": [
-    "Palaihnihan",
-    "Atsugewi"
-  ],
   "Fiwaga": [
     "East Kutubu",
     "Fiwaga"
@@ -11501,28 +10608,9 @@ const LANGUAGE_DATA = {
     "Pama-Nyungan",
     "Dyirbal"
   ],
-  "Warrgamay": [
-    "Pama-Nyungan",
-    "Warrgamay"
-  ],
   "Kala Lagaw Ya": [
     "Pama-Nyungan",
     "Kala Lagaw Ya"
-  ],
-  "Roth's Gugu Warra": [
-    "Pama-Nyungan",
-    "Unclassified Pama-Nyungan",
-    "Roth's Gugu Warra"
-  ],
-  "Nyunga": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Nyunga"
-  ],
-  "Yinggarda": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Yinggarda"
   ],
   "Nhanda": [
     "Pama-Nyungan",
@@ -11537,74 +10625,6 @@ const LANGUAGE_DATA = {
     "Kartu",
     "Wajarri"
   ],
-  "Badimaya": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Kartu-Nhanda",
-    "Kartu",
-    "Badimaya"
-  ],
-  "Malgana": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Kartu-Nhanda",
-    "Kartu",
-    "Malgana"
-  ],
-  "Wariyangga": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Mantharta",
-    "Wariyangga-Dhargari",
-    "Wariyangga"
-  ],
-  "Dhargari": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Mantharta",
-    "Wariyangga-Dhargari",
-    "Dhargari"
-  ],
-  "Djiwarli": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Mantharta",
-    "Djiwarli-Thiin",
-    "Djiwarli"
-  ],
-  "Thiin": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Mantharta",
-    "Djiwarli-Thiin",
-    "Thiin"
-  ],
-  "Bayungu": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Kanyara",
-    "Bayungu"
-  ],
-  "Pinigura": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Kanyara",
-    "Pinigura"
-  ],
-  "Burduna": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Kanyara",
-    "Thalanyji-Burduna",
-    "Burduna"
-  ],
   "Dhalandji": [
     "Pama-Nyungan",
     "South-West Pama-Nyungan",
@@ -11612,13 +10632,6 @@ const LANGUAGE_DATA = {
     "Kanyara",
     "Thalanyji-Burduna",
     "Dhalandji"
-  ],
-  "Nhuwala": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Ngayarda",
-    "Nhuwala"
   ],
   "Nyamal": [
     "Pama-Nyungan",
@@ -11628,22 +10641,6 @@ const LANGUAGE_DATA = {
     "Northern Ngayarda",
     "Nyamal"
   ],
-  "Ngarla": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Ngayarda",
-    "Northern Ngayarda",
-    "Ngarla"
-  ],
-  "Martuthunira": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Ngayarda",
-    "Central Ngayarda",
-    "Martuthunira"
-  ],
   "Nyiyaparli-Palyku": [
     "Pama-Nyungan",
     "South-West Pama-Nyungan",
@@ -11651,14 +10648,6 @@ const LANGUAGE_DATA = {
     "Ngayarda",
     "Central Ngayarda",
     "Nyiyaparli-Palyku"
-  ],
-  "Tjurruru": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Ngayarda",
-    "Central Ngayarda",
-    "Tjurruru"
   ],
   "Panytyima": [
     "Pama-Nyungan",
@@ -11677,15 +10666,6 @@ const LANGUAGE_DATA = {
     "Central Ngayarda",
     "Panytyima-Yinhawangka",
     "Yinhawangka"
-  ],
-  "Kariyarra": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Pilbara",
-    "Ngayarda",
-    "Central Ngayarda",
-    "Ngarluma-Kariyarra",
-    "Kariyarra"
   ],
   "Ngarluma": [
     "Pama-Nyungan",
@@ -11714,46 +10694,6 @@ const LANGUAGE_DATA = {
     "Yindjibarndi-Kurrama",
     "Yindjibarndi"
   ],
-  "Kalarko-Mirniny": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Mirning",
-    "Kalarko-Mirniny"
-  ],
-  "Ngadjunmaya": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Mirning",
-    "Ngadjunmaya"
-  ],
-  "Kalaamaya": [
-    "Pama-Nyungan",
-    "South-West Pama-Nyungan",
-    "Mirning",
-    "Kalaamaya"
-  ],
-  "Mithaka": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Central Karnic",
-    "Mithaka-Karuwali",
-    "Mithaka"
-  ],
-  "Karruwali": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Central Karnic",
-    "Mithaka-Karuwali",
-    "Karruwali"
-  ],
-  "Pirlatapa": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Central Karnic",
-    "Western Central Karnic",
-    "Pirlatapa-Dieric",
-    "Pirlatapa"
-  ],
   "Dieri": [
     "Pama-Nyungan",
     "Karnic",
@@ -11763,129 +10703,12 @@ const LANGUAGE_DATA = {
     "Dieric",
     "Dieri"
   ],
-  "Ngamini-Yarluyandi-Karangura": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Central Karnic",
-    "Western Central Karnic",
-    "Pirlatapa-Dieric",
-    "Dieric",
-    "Ngamini-Yarluyandi-Karangura"
-  ],
-  "Yawarawarga": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Central Karnic",
-    "Western Central Karnic",
-    "Yandruwandhic",
-    "Yawarawarga"
-  ],
-  "Yandruwandha": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Central Karnic",
-    "Western Central Karnic",
-    "Yandruwandhic",
-    "Yandruwandha"
-  ],
-  "Kuungkari of Barcoo River": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Pirriya-Kungkari",
-    "Kuungkari of Barcoo River"
-  ],
-  "Pirriya": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Pirriya-Kungkari",
-    "Pirriya"
-  ],
-  "Arabana": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Palku",
-    "Arabana-Wangganguru",
-    "Arabana"
-  ],
   "Wangganguru": [
     "Pama-Nyungan",
     "Karnic",
     "Palku",
     "Arabana-Wangganguru",
     "Wangganguru"
-  ],
-  "Pitta Pitta": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Palku",
-    "Pitta-Pitta",
-    "Pitta Pitta"
-  ],
-  "Wanggamala": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Palku",
-    "Pitta-Pitta",
-    "Wanggamala"
-  ],
-  "Badjirri": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Badjiri-Eastern Karnic",
-    "Badjirri"
-  ],
-  "Wilson River (Grey Range)": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Badjiri-Eastern Karnic",
-    "Eastern Karnic",
-    "Wilson River (Grey Range)"
-  ],
-  "Bulloo River": [
-    "Pama-Nyungan",
-    "Karnic",
-    "Badjiri-Eastern Karnic",
-    "Eastern Karnic",
-    "Bulloo River"
-  ],
-  "Ganai": [
-    "Pama-Nyungan",
-    "Ganaic",
-    "Ganai"
-  ],
-  "Birrdhawal": [
-    "Pama-Nyungan",
-    "Ganaic",
-    "Birrdhawal"
-  ],
-  "Wulguru": [
-    "Pama-Nyungan",
-    "Nyawaygic",
-    "Wulguru"
-  ],
-  "Yuru": [
-    "Pama-Nyungan",
-    "Nyawaygic",
-    "Yuru"
-  ],
-  "Nyawaygi": [
-    "Pama-Nyungan",
-    "Nyawaygic",
-    "Nyawaygi"
-  ],
-  "Pimpama": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Greater Bandjalangic",
-    "Pimpama"
-  ],
-  "Guwar": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Greater Bandjalangic",
-    "Guwar"
   ],
   "Middle Clarence Bandjalang": [
     "Pama-Nyungan",
@@ -11896,245 +10719,6 @@ const LANGUAGE_DATA = {
     "Inland Bandjalang",
     "Middle Clarence Bandjalang"
   ],
-  "Condamine-Upper Clarence Bandjalang": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Greater Bandjalangic",
-    "Bandjalangic",
-    "Inland Bandjalang",
-    "Condamine-Upper Clarence Bandjalang"
-  ],
-  "Lower Richmond": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Greater Bandjalangic",
-    "Bandjalangic",
-    "Coastal Bandjalang",
-    "Lower Richmond"
-  ],
-  "Tweed-Albert": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Greater Bandjalangic",
-    "Bandjalangic",
-    "Coastal Bandjalang",
-    "Tweed-Albert"
-  ],
-  "Muruwari": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Muruwaric",
-    "Muruwari"
-  ],
-  "Barranbinya": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Muruwaric",
-    "Barranbinya"
-  ],
-  "Awabakal": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Yuin-Kuri",
-    "Kuri",
-    "Hunter-Hastings",
-    "Awabakal"
-  ],
-  "Worimi": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Yuin-Kuri",
-    "Kuri",
-    "Hunter-Hastings",
-    "Worimi"
-  ],
-  "Hawkesbury": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Yuin-Kuri",
-    "Kuri",
-    "Sydney-Hawkesbury",
-    "Hawkesbury"
-  ],
-  "Sydney": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Yuin-Kuri",
-    "Kuri",
-    "Sydney-Hawkesbury",
-    "Sydney"
-  ],
-  "Northern Inland Yuin": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Yuin-Kuri",
-    "Yuin",
-    "Northern Inland Yuin"
-  ],
-  "Southern Coastal Yuin": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Yuin-Kuri",
-    "Yuin",
-    "Southern Coastal Yuin"
-  ],
-  "Southern Inland Yuin": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Yuin-Kuri",
-    "Yuin",
-    "Southern Inland Yuin"
-  ],
-  "Dhurga": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Yuin-Kuri",
-    "Yuin",
-    "Northern Costal Yuin",
-    "Dhurga"
-  ],
-  "Thurawal": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "New South Wales Pama-Nyungan",
-    "Yuin-Kuri",
-    "Yuin",
-    "Northern Costal Yuin",
-    "Thurawal"
-  ],
-  "Bunganditj": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Kulin-Bunganditj",
-    "Warrnambool-Bunganditj",
-    "Bunganditj"
-  ],
-  "Warrnambool": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Kulin-Bunganditj",
-    "Warrnambool-Bunganditj",
-    "Warrnambool"
-  ],
-  "Colac": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Kulin-Bunganditj",
-    "Kulin",
-    "Colac"
-  ],
-  "Western Victoria": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Kulin-Bunganditj",
-    "Kulin",
-    "Nuclear Kulin",
-    "Western Victoria"
-  ],
-  "Woiwurrung-Thagungwurrung": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Kulin-Bunganditj",
-    "Kulin",
-    "Nuclear Kulin",
-    "Woiwurrung-Thagungwurrung"
-  ],
-  "Wathawurrung": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Kulin-Bunganditj",
-    "Kulin",
-    "Nuclear Kulin",
-    "Wathawurrung"
-  ],
-  "Upper Riverland": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Lower Murray",
-    "Upper Riverland"
-  ],
-  "Lower Riverland": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Lower Murray",
-    "Lower Riverland"
-  ],
-  "Narrinyeri": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Lower Murray",
-    "Yaraldi-Keramin-Yitha",
-    "Narrinyeri"
-  ],
-  "Lower Darling-Lower Lachlan": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Lower Murray",
-    "Yaraldi-Keramin-Yitha",
-    "Lower Darling-Lower Lachlan"
-  ],
-  "Northern Sunraysia": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Lower Murray",
-    "Yaraldi-Keramin-Yitha",
-    "Northern Sunraysia"
-  ],
-  "Yorta Yorta": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Eastern Victoria",
-    "Yorta Yorta"
-  ],
-  "Dhudhuroa": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Eastern Victoria",
-    "Dhudhuroa-Pallanganmiddang",
-    "Dhudhuroa"
-  ],
-  "Pallanganmiddang": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Victorian Pama-Nyungan",
-    "Eastern Victoria",
-    "Dhudhuroa-Pallanganmiddang",
-    "Pallanganmiddang"
-  ],
-  "Wuliwuli": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "North Coast Pama-Nyungan",
-    "Waka-Kabic",
-    "Western Waka-Kabic",
-    "Wuliwuli"
-  ],
   "Wakawaka": [
     "Pama-Nyungan",
     "Southeastern Pama-Nyungan",
@@ -12142,29 +10726,6 @@ const LANGUAGE_DATA = {
     "Waka-Kabic",
     "Western Waka-Kabic",
     "Wakawaka"
-  ],
-  "Gureng Gureng": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "North Coast Pama-Nyungan",
-    "Waka-Kabic",
-    "Eastern Waka-Kabic",
-    "Gureng Gureng"
-  ],
-  "Kabikabi": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "North Coast Pama-Nyungan",
-    "Waka-Kabic",
-    "Eastern Waka-Kabic",
-    "Kabikabi"
-  ],
-  "Yaygir": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "North Coast Pama-Nyungan",
-    "Gumbaynggiric",
-    "Yaygir"
   ],
   "Kumbainggar": [
     "Pama-Nyungan",
@@ -12178,12 +10739,6 @@ const LANGUAGE_DATA = {
     "Southeastern Pama-Nyungan",
     "Wiradhuric",
     "Yuwaalaraay-Gamilaraay"
-  ],
-  "Ngiyambaa": [
-    "Pama-Nyungan",
-    "Southeastern Pama-Nyungan",
-    "Wiradhuric",
-    "Ngiyambaa"
   ],
   "Wiradhuri": [
     "Pama-Nyungan",
@@ -12214,73 +10769,21 @@ const LANGUAGE_DATA = {
     "Yalandyic",
     "Kuku-Yalanji"
   ],
-  "Muluridyi": [
-    "Pama-Nyungan",
-    "Yimidhirr-Yalanji-Yidinic",
-    "Yalandyic",
-    "Muluridyi"
-  ],
-  "Djangun": [
-    "Pama-Nyungan",
-    "Yimidhirr-Yalanji-Yidinic",
-    "Yalandyic",
-    "Djangun"
-  ],
   "Paakantyi": [
     "Pama-Nyungan",
     "Yarli-Baagandji",
     "Paakantyi"
-  ],
-  "Yarli": [
-    "Pama-Nyungan",
-    "Yarli-Baagandji",
-    "Yarli"
   ],
   "Yanyuwa": [
     "Pama-Nyungan",
     "Ngarna",
     "Yanyuwa"
   ],
-  "Warluwara": [
-    "Pama-Nyungan",
-    "Ngarna",
-    "Southern Ngarna",
-    "Thawa",
-    "Warluwara"
-  ],
-  "Bularnu": [
-    "Pama-Nyungan",
-    "Ngarna",
-    "Southern Ngarna",
-    "Thawa",
-    "Bularnu"
-  ],
-  "Wagaya": [
-    "Pama-Nyungan",
-    "Ngarna",
-    "Southern Ngarna",
-    "Ngarru",
-    "Wagaya"
-  ],
-  "Yindjilandji": [
-    "Pama-Nyungan",
-    "Ngarna",
-    "Southern Ngarna",
-    "Ngarru",
-    "Yindjilandji"
-  ],
   "Kaytetye": [
     "Pama-Nyungan",
     "Arandic-Thura-Yura",
     "Arandic",
     "Kaytetye"
-  ],
-  "Lower Southern Aranda": [
-    "Pama-Nyungan",
-    "Arandic-Thura-Yura",
-    "Arandic",
-    "South Arandic",
-    "Lower Southern Aranda"
   ],
   "Alyawarr": [
     "Pama-Nyungan",
@@ -12315,21 +10818,6 @@ const LANGUAGE_DATA = {
     "Central-Eastern Arrernte",
     "Eastern Arrernte"
   ],
-  "Andegerebinha": [
-    "Pama-Nyungan",
-    "Arandic-Thura-Yura",
-    "Arandic",
-    "South Arandic",
-    "Upper Arrernte",
-    "Central-Eastern Arrernte",
-    "Andegerebinha"
-  ],
-  "Wirangu": [
-    "Pama-Nyungan",
-    "Arandic-Thura-Yura",
-    "Thura-Yura",
-    "Wirangu"
-  ],
   "Adnyamathanha": [
     "Pama-Nyungan",
     "Arandic-Thura-Yura",
@@ -12338,30 +10826,6 @@ const LANGUAGE_DATA = {
     "Northern Thura-Yura",
     "Adnyamathanha"
   ],
-  "Banggarla": [
-    "Pama-Nyungan",
-    "Arandic-Thura-Yura",
-    "Thura-Yura",
-    "Core Thura Yura",
-    "Northern Thura-Yura",
-    "Banggarla"
-  ],
-  "Guyani": [
-    "Pama-Nyungan",
-    "Arandic-Thura-Yura",
-    "Thura-Yura",
-    "Core Thura Yura",
-    "Northern Thura-Yura",
-    "Guyani"
-  ],
-  "Kaurna": [
-    "Pama-Nyungan",
-    "Arandic-Thura-Yura",
-    "Thura-Yura",
-    "Core Thura Yura",
-    "Southern Thura-Yura",
-    "Kaurna"
-  ],
   "Narungga": [
     "Pama-Nyungan",
     "Arandic-Thura-Yura",
@@ -12369,65 +10833,6 @@ const LANGUAGE_DATA = {
     "Core Thura Yura",
     "Southern Thura-Yura",
     "Narungga"
-  ],
-  "Ngadjuri": [
-    "Pama-Nyungan",
-    "Arandic-Thura-Yura",
-    "Thura-Yura",
-    "Core Thura Yura",
-    "Unclassified Core Thura-Yura",
-    "Ngadjuri"
-  ],
-  "Nauo": [
-    "Pama-Nyungan",
-    "Arandic-Thura-Yura",
-    "Thura-Yura",
-    "Core Thura Yura",
-    "Unclassified Core Thura-Yura",
-    "Nauo"
-  ],
-  "Nugunu (Australia)": [
-    "Pama-Nyungan",
-    "Arandic-Thura-Yura",
-    "Thura-Yura",
-    "Core Thura Yura",
-    "Unclassified Core Thura-Yura",
-    "Nugunu (Australia)"
-  ],
-  "Yagara-Jandai": [
-    "Pama-Nyungan",
-    "East Queensland Border Pama Nyungan",
-    "Yagara-Jandai"
-  ],
-  "Guyambal": [
-    "Pama-Nyungan",
-    "East Queensland Border Pama Nyungan",
-    "Yugambalic",
-    "Guyambal"
-  ],
-  "Bigambal": [
-    "Pama-Nyungan",
-    "East Queensland Border Pama Nyungan",
-    "Yugambalic",
-    "Yugambal-Bigambal",
-    "Bigambal"
-  ],
-  "Yugambal": [
-    "Pama-Nyungan",
-    "East Queensland Border Pama Nyungan",
-    "Yugambalic",
-    "Yugambal-Bigambal",
-    "Yugambal"
-  ],
-  "Mbara-Yanga": [
-    "Pama-Nyungan",
-    "Paman",
-    "Mbara-Yanga"
-  ],
-  "Gugadj": [
-    "Pama-Nyungan",
-    "Paman",
-    "Gugadj"
   ],
   "Yir-Yoront": [
     "Pama-Nyungan",
@@ -12444,21 +10849,6 @@ const LANGUAGE_DATA = {
     "Dhawa-Kaber",
     "Gugubera"
   ],
-  "Koko Dhawa": [
-    "Pama-Nyungan",
-    "Paman",
-    "Southwest Pama",
-    "Coastal Southwest Paman",
-    "Dhawa-Kaber",
-    "Koko Dhawa"
-  ],
-  "Kuuk-Yak": [
-    "Pama-Nyungan",
-    "Paman",
-    "Southwest Pama",
-    "Upper Southwest Paman",
-    "Kuuk-Yak"
-  ],
   "Thayore": [
     "Pama-Nyungan",
     "Paman",
@@ -12466,55 +10856,11 @@ const LANGUAGE_DATA = {
     "Upper Southwest Paman",
     "Thayore"
   ],
-  "Mayaguduna": [
-    "Pama-Nyungan",
-    "Paman",
-    "Mayabic",
-    "Mayaguduna"
-  ],
-  "Maykulan": [
-    "Pama-Nyungan",
-    "Paman",
-    "Mayabic",
-    "Nuclear Mayabic",
-    "Maykulan"
-  ],
-  "Ngawun": [
-    "Pama-Nyungan",
-    "Paman",
-    "Mayabic",
-    "Nuclear Mayabic",
-    "Ngawun"
-  ],
   "Wikngenchera": [
     "Pama-Nyungan",
     "Paman",
     "Compromise Middle Pama",
     "Wikngenchera"
-  ],
-  "Umbindhamu": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Northeastern Pama",
-    "Umbindhamuic",
-    "Umbindhamu"
-  ],
-  "Yintyinka-Ayabadhu": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Northeastern Pama",
-    "Umbindhamuic",
-    "Yintyinka-Ayabadhu"
-  ],
-  "Kanju": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Northeastern Pama",
-    "Umpilaic",
-    "Kanju"
   ],
   "Umpila": [
     "Pama-Nyungan",
@@ -12531,72 +10877,6 @@ const LANGUAGE_DATA = {
     "Northeastern Pama",
     "Umpilaic",
     "Kuuku-Ya'u"
-  ],
-  "Barrow Point": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Wik",
-    "Flinders-Barrow",
-    "Barrow Point"
-  ],
-  "Flinders Island": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Wik",
-    "Flinders-Barrow",
-    "Flinders Island"
-  ],
-  "Kuku-Uwanh": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Wik",
-    "Kuku-Wik-Ep",
-    "Kuku-Wik",
-    "Paman Kuku",
-    "Kuku-Uwanh"
-  ],
-  "Kuku-Muminh": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Wik",
-    "Kuku-Wik-Ep",
-    "Kuku-Wik",
-    "Paman Kuku",
-    "Kuku-Muminh"
-  ],
-  "Kuku-Ugbanh": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Wik",
-    "Kuku-Wik-Ep",
-    "Kuku-Wik",
-    "Paman Kuku",
-    "Kuku-Ugbanh"
-  ],
-  "Kuku-Mu'inh": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Wik",
-    "Kuku-Wik-Ep",
-    "Kuku-Wik",
-    "Paman Kuku",
-    "Kuku-Mu'inh"
-  ],
-  "Pakanha": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Wik",
-    "Kuku-Wik-Ep",
-    "Kuku-Wik",
-    "Mungkanic",
-    "Pakanha"
   ],
   "Wik-Iiyanh": [
     "Pama-Nyungan",
@@ -12629,15 +10909,6 @@ const LANGUAGE_DATA = {
     "Ep-Meanha-Keyenganh",
     "Wik-Me'anha"
   ],
-  "Wik-Epa": [
-    "Pama-Nyungan",
-    "Paman",
-    "Compromise Middle Pama",
-    "Wik",
-    "Kuku-Wik-Ep",
-    "Ep-Meanha-Keyenganh",
-    "Wik-Epa"
-  ],
   "Wikalkan": [
     "Pama-Nyungan",
     "Paman",
@@ -12654,19 +10925,6 @@ const LANGUAGE_DATA = {
     "Ngatharra-Ngathana-Iinychanya",
     "Wik-Ngathana"
   ],
-  "Rimanggudhinma": [
-    "Pama-Nyungan",
-    "Paman",
-    "Lamalamic",
-    "Rimanggudhinma"
-  ],
-  "Umbuygamu": [
-    "Pama-Nyungan",
-    "Paman",
-    "Lamalamic",
-    "Coastal Lamalamic",
-    "Umbuygamu"
-  ],
   "Lamalama": [
     "Pama-Nyungan",
     "Paman",
@@ -12674,187 +10932,12 @@ const LANGUAGE_DATA = {
     "Coastal Lamalamic",
     "Lamalama"
   ],
-  "Tagalaka": [
-    "Pama-Nyungan",
-    "Paman",
-    "Alaya-Athima",
-    "Central Alaya-Athima",
-    "Tagalaka"
-  ],
-  "Ikaranggal": [
-    "Pama-Nyungan",
-    "Paman",
-    "Alaya-Athima",
-    "Central Alaya-Athima",
-    "Ikaranggal"
-  ],
-  "Thaypan": [
-    "Pama-Nyungan",
-    "Paman",
-    "Alaya-Athima",
-    "Thaypanic",
-    "Thaypan"
-  ],
-  "Aghu Tharnggalu": [
-    "Pama-Nyungan",
-    "Paman",
-    "Alaya-Athima",
-    "Thaypanic",
-    "Aghu Tharnggalu"
-  ],
-  "Athima": [
-    "Pama-Nyungan",
-    "Paman",
-    "Alaya-Athima",
-    "Southwestern Alaya-Athima",
-    "Athima"
-  ],
   "Kunjen": [
     "Pama-Nyungan",
     "Paman",
     "Alaya-Athima",
     "Southwestern Alaya-Athima",
     "Kunjen"
-  ],
-  "Kawarrang-Ogh Undjan": [
-    "Pama-Nyungan",
-    "Paman",
-    "Alaya-Athima",
-    "Southwestern Alaya-Athima",
-    "Kawarrang-Ogh Undjan"
-  ],
-  "Walangama": [
-    "Pama-Nyungan",
-    "Paman",
-    "Norman Pama",
-    "Walangama"
-  ],
-  "Kok-Nar": [
-    "Pama-Nyungan",
-    "Paman",
-    "Norman Pama",
-    "Kok-Nar"
-  ],
-  "Kuthant": [
-    "Pama-Nyungan",
-    "Paman",
-    "Norman Pama",
-    "Kuthant-Gurdjar",
-    "Kuthant"
-  ],
-  "Areba": [
-    "Pama-Nyungan",
-    "Paman",
-    "Norman Pama",
-    "Kuthant-Gurdjar",
-    "Rib-Gurdjar",
-    "Areba"
-  ],
-  "Gurdjar": [
-    "Pama-Nyungan",
-    "Paman",
-    "Norman Pama",
-    "Kuthant-Gurdjar",
-    "Rib-Gurdjar",
-    "Gurdjar"
-  ],
-  "Yinwum": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Yinwum"
-  ],
-  "Mbiywom": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Mbiywom"
-  ],
-  "Mpalityanh-Luthigh": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Mpalityanh-Luthigh"
-  ],
-  "Ngkoth": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Ngkoth"
-  ],
-  "Arritinngithigh": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Arritinngithigh"
-  ],
-  "Gudang": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Gudang-Northeast Paman",
-    "Gudang"
-  ],
-  "Wuthathi": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Gudang-Northeast Paman",
-    "Northeast Paman",
-    "Wuthathi"
-  ],
-  "Atampaya": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Gudang-Northeast Paman",
-    "Northeast Paman",
-    "Uradhic",
-    "Atampaya"
-  ],
-  "Angkamuthi": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Gudang-Northeast Paman",
-    "Northeast Paman",
-    "Uradhic",
-    "Yadhaykenu-Angkamuthi",
-    "Angkamuthi"
-  ],
-  "Yadhaykenu": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Gudang-Northeast Paman",
-    "Northeast Paman",
-    "Uradhic",
-    "Yadhaykenu-Angkamuthi",
-    "Yadhaykenu"
-  ],
-  "Tyanngayt-Mamngayt-Ntrwangayt-Ntrangit": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Albatross Bay",
-    "Tyanngayt-Mamngayt-Ntrwangayt-Ntrangit"
-  ],
-  "Yuputhimri": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Albatross Bay",
-    "Anguthimri-Yangathimri-Yuputhimri",
-    "Yuputhimri"
-  ],
-  "Anguthimri": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Albatross Bay",
-    "Anguthimri-Yangathimri-Yuputhimri",
-    "Anguthimri-Yangathimri",
-    "Anguthimri"
   ],
   "Yangathimri": [
     "Pama-Nyungan",
@@ -12864,32 +10947,6 @@ const LANGUAGE_DATA = {
     "Anguthimri-Yangathimri-Yuputhimri",
     "Anguthimri-Yangathimri",
     "Yangathimri"
-  ],
-  "Linngithigh": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Linngithigh-Alngith",
-    "Linngithigh"
-  ],
-  "Alngith": [
-    "Pama-Nyungan",
-    "Paman",
-    "Northern Pama",
-    "Linngithigh-Alngith",
-    "Alngith"
-  ],
-  "Mbabaram": [
-    "Pama-Nyungan",
-    "Paman",
-    "Finasleigh Pama",
-    "Mbabaram"
-  ],
-  "Wamin": [
-    "Pama-Nyungan",
-    "Paman",
-    "Finasleigh Pama",
-    "Wamin"
   ],
   "Nhangu": [
     "Pama-Nyungan",
@@ -13149,218 +11206,9 @@ const LANGUAGE_DATA = {
     "Warnman-Wangka",
     "Wanman"
   ],
-  "Yalarnnga": [
-    "Pama-Nyungan",
-    "Kalkatungic",
-    "Yalarnnga"
-  ],
-  "Kalkatungu": [
-    "Pama-Nyungan",
-    "Kalkatungic",
-    "Kalkatungu"
-  ],
-  "Yirandhali": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Yirandhali"
-  ],
-  "Gudjal": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Northern Maric",
-    "Gudjal"
-  ],
-  "Warrongo": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Northern Maric",
-    "Warungu-Gugu Badhun",
-    "Warrongo"
-  ],
-  "Gugu Badhun": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Northern Maric",
-    "Warungu-Gugu Badhun",
-    "Gugu Badhun"
-  ],
-  "Gangulu": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Eastern Maric",
-    "Gangulu"
-  ],
-  "Biri": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Eastern Maric",
-    "Biri"
-  ],
-  "Giya": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Eastern Maric",
-    "Giya"
-  ],
-  "Guwamu": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Southern Maric",
-    "Guwamu"
-  ],
-  "Kunggari": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Southern Maric",
-    "Kunggari"
-  ],
-  "Gungabula": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Southern Maric",
-    "Gungabula"
-  ],
-  "Wadjigu": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Southern Maric",
-    "Wadjigu"
-  ],
-  "Mandandanyi": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Southern Maric",
-    "Mandandanyi"
-  ],
-  "Yandjibara": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Southern Maric",
-    "Bidyaric",
-    "Yandjibara"
-  ],
-  "Bidyara": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Southern Maric",
-    "Bidyaric",
-    "Bidyara"
-  ],
-  "Margany": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Southern Maric",
-    "Margany-Gunya",
-    "Margany"
-  ],
-  "Gunya": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Maric",
-    "Southern Maric",
-    "Margany-Gunya",
-    "Gunya"
-  ],
-  "Guwa": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Guwa-Yanda",
-    "Guwa"
-  ],
-  "Yanda": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Guwa-Maric",
-    "Guwa-Yanda",
-    "Yanda"
-  ],
-  "Bindal-Cunningham": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Unclassified Greater Maric",
-    "Bindalic",
-    "Bindal-Cunningham"
-  ],
-  "Bindal-Mount Elliot": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Unclassified Greater Maric",
-    "Bindalic",
-    "Bindal-Mount Elliot"
-  ],
-  "Bindal-Gorton": [
-    "Pama-Nyungan",
-    "Greater Maric",
-    "Unclassified Greater Maric",
-    "Bindalic",
-    "Bindal-Gorton"
-  ],
-  "Bayali": [
-    "Pama-Nyungan",
-    "Rockhampton-Gladstone",
-    "Bayali"
-  ],
-  "Dharumbal": [
-    "Pama-Nyungan",
-    "Rockhampton-Gladstone",
-    "Dharumbal"
-  ],
-  "Nganyaywana": [
-    "Pama-Nyungan",
-    "Macleay-New England",
-    "Nganyaywana"
-  ],
-  "Dyangadi": [
-    "Pama-Nyungan",
-    "Macleay-New England",
-    "Dyangadi"
-  ],
   "Caddo": [
     "Caddoan",
     "Caddo"
-  ],
-  "Wichita": [
-    "Caddoan",
-    "Northern Caddoan",
-    "Wichita"
-  ],
-  "Kitsai": [
-    "Caddoan",
-    "Northern Caddoan",
-    "Pawnee-Kitsai",
-    "Kitsai"
   ],
   "Pawnee": [
     "Caddoan",
@@ -13396,16 +11244,6 @@ const LANGUAGE_DATA = {
     "Kiowa-Tanoan",
     "Tewa",
     "Rio Grande Tewa"
-  ],
-  "Arizona Tewa": [
-    "Kiowa-Tanoan",
-    "Tewa",
-    "Arizona Tewa"
-  ],
-  "Piro": [
-    "Kiowa-Tanoan",
-    "Tiwa-Piro",
-    "Piro"
   ],
   "Southern Tiwa": [
     "Kiowa-Tanoan",
@@ -13451,12 +11289,6 @@ const LANGUAGE_DATA = {
     "Volta-Congo",
     "Unclassified Volta-Congo",
     "Mbre"
-  ],
-  "Mpra": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Unclassified Volta-Congo",
-    "Mpra"
   ],
   "South Fali": [
     "Atlantic-Congo",
@@ -13594,17 +11426,6 @@ const LANGUAGE_DATA = {
     "Hill South Guang",
     "Gua-Cherepon",
     "Gua"
-  ],
-  "Nterato": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Kwa Volta-Congo",
-    "Nyo",
-    "Potou-Tano",
-    "Tano",
-    "Guang",
-    "North Guang",
-    "Nterato"
   ],
   "Dompo": [
     "Atlantic-Congo",
@@ -13952,13 +11773,6 @@ const LANGUAGE_DATA = {
     "Kwa Volta-Congo",
     "Na-Togo",
     "Ikpana"
-  ],
-  "Boro": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Kwa Volta-Congo",
-    "Na-Togo",
-    "Boro"
   ],
   "Adele": [
     "Atlantic-Congo",
@@ -14611,24 +12425,6 @@ const LANGUAGE_DATA = {
     "Hasha-Sambe",
     "Hasha"
   ],
-  "Sambe": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Benue-Congo Plateau",
-    "Alumic",
-    "Hasha-Sambe",
-    "Sambe"
-  ],
-  "Akpondu": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Benue-Congo Plateau",
-    "Alumic",
-    "Alumu-Akpondu",
-    "Akpondu"
-  ],
   "Arum": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -14965,22 +12761,6 @@ const LANGUAGE_DATA = {
     "Unclassified Bantoid",
     "Fam"
   ],
-  "Afudu": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Afudu"
-  ],
-  "Bishuo": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Bishuo"
-  ],
   "Buru-Angwe": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -14988,14 +12768,6 @@ const LANGUAGE_DATA = {
     "Bantoid",
     "Southern Bantoid",
     "Buru-Angwe"
-  ],
-  "Busuu": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Busuu"
   ],
   "Ugare": [
     "Atlantic-Congo",
@@ -15339,15 +13111,6 @@ const LANGUAGE_DATA = {
     "Nuclear Bendic",
     "Bukpic",
     "Alege"
-  ],
-  "Bikya": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Beboid",
-    "Bikya"
   ],
   "Nsari": [
     "Atlantic-Congo",
@@ -15955,20 +13718,6 @@ const LANGUAGE_DATA = {
     "Mankonic",
     "Bambili-Bambui"
   ],
-  "Kpati": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Wide Grassfields",
-    "Narrow Grassfields",
-    "Mbam-Nkam",
-    "Southern Mbam-Nkam",
-    "Ngembaic",
-    "Unclassified Ngembaic",
-    "Kpati"
-  ],
   "Limbum": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -16514,15 +14263,6 @@ const LANGUAGE_DATA = {
     "Jarawan",
     "Mbonga"
   ],
-  "Nagumi": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Jarawan",
-    "Nagumi"
-  ],
   "Kulung (Nigeria)": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -16633,17 +14373,6 @@ const LANGUAGE_DATA = {
     "Nigerian Jarawan",
     "Jaku-Gubi",
     "Shiki"
-  ],
-  "Dulbu": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Jarawan",
-    "Nigerian Jarawan",
-    "Jaku-Gubi",
-    "Dulbu"
   ],
   "Bube": [
     "Atlantic-Congo",
@@ -17631,25 +15360,6 @@ const LANGUAGE_DATA = {
     "Ngendan",
     "Ngbinda-Mayeka"
   ],
-  "Homa": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Narrow Bantu",
-    "Central-Western Bantu",
-    "North Zaire River",
-    "Rivers Bantu",
-    "Ngiri",
-    "Ngiri Terrien",
-    "Ngombe-Ababuan",
-    "Ababuan",
-    "Old Bomokandian",
-    "Ngbele-Ngenda",
-    "Ngendan",
-    "Homa"
-  ],
   "Boguru": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -17708,25 +15418,6 @@ const LANGUAGE_DATA = {
     "Ngbele-Ngenda",
     "Extreme North Vestigial Suffixes Bantu",
     "Kari"
-  ],
-  "Ngbee": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Narrow Bantu",
-    "Central-Western Bantu",
-    "North Zaire River",
-    "Rivers Bantu",
-    "Ngiri",
-    "Ngiri Terrien",
-    "Ngombe-Ababuan",
-    "Ababuan",
-    "Old Bomokandian",
-    "Ngbele-Ngenda",
-    "Extreme North Vestigial Suffixes Bantu",
-    "Ngbee"
   ],
   "Nyanga-li": [
     "Atlantic-Congo",
@@ -17972,19 +15663,6 @@ const LANGUAGE_DATA = {
     "Mboshi (C.20)",
     "Koyo-Mboshi",
     "Koyo"
-  ],
-  "Bafoto": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Narrow Bantu",
-    "Central-Western Bantu",
-    "North Zaire River",
-    "Inner Basin Bantu",
-    "Unclassified Inner Basin Bantu",
-    "Bafoto"
   ],
   "Sengele": [
     "Atlantic-Congo",
@@ -22816,21 +20494,6 @@ const LANGUAGE_DATA = {
     "East Kyoga",
     "Gwere"
   ],
-  "Singa": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Southern Bantoid",
-    "Narrow Bantu",
-    "East Bantu",
-    "Northeast Savanna Bantu",
-    "Great Lakes Bantu",
-    "West Nyanza",
-    "North Nyanza",
-    "Unclassified North Nyanza",
-    "Singa"
-  ],
   "Zinza": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -25258,18 +22921,6 @@ const LANGUAGE_DATA = {
     "Konja",
     "Kwanja"
   ],
-  "Bung": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Northern Bantoid",
-    "Mambiloid",
-    "Nizaa-Mambila-Vute",
-    "Konja-Mambila-Vute",
-    "Konja",
-    "Bung"
-  ],
   "Mbongno": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -25372,36 +23023,6 @@ const LANGUAGE_DATA = {
     "Mambila",
     "Njerup",
     "Njerep"
-  ],
-  "Yeni": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Northern Bantoid",
-    "Mambiloid",
-    "Nizaa-Mambila-Vute",
-    "Konja-Mambila-Vute",
-    "Mambila-Vute",
-    "Mambila-Mbongno",
-    "Mambila",
-    "Njerup",
-    "Yeni"
-  ],
-  "Luo (Cameroon)": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Bantoid",
-    "Northern Bantoid",
-    "Mambiloid",
-    "Nizaa-Mambila-Vute",
-    "Konja-Mambila-Vute",
-    "Mambila-Vute",
-    "Mambila-Mbongno",
-    "Mambila",
-    "Njerup",
-    "Luo (Cameroon)"
   ],
   "Tep": [
     "Atlantic-Congo",
@@ -25515,13 +23136,6 @@ const LANGUAGE_DATA = {
     "Benue-Congo",
     "Unclassified Benue-Congo",
     "Tita"
-  ],
-  "Baissa Fali": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Unclassified Benue-Congo",
-    "Baissa Fali"
   ],
   "Ebira": [
     "Atlantic-Congo",
@@ -25726,30 +23340,6 @@ const LANGUAGE_DATA = {
     "Kontagora-Gumna-Koromba",
     "Basa-Gurmana"
   ],
-  "Basa-Gumna": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Kainji",
-    "Central Kainji",
-    "Basa-Eastern Kainji",
-    "Basa",
-    "Kontagora-Gumna-Koromba",
-    "Gumna-Kontagora",
-    "Basa-Gumna"
-  ],
-  "Bassa-Kontagora": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Kainji",
-    "Central Kainji",
-    "Basa-Eastern Kainji",
-    "Basa",
-    "Kontagora-Gumna-Koromba",
-    "Gumna-Kontagora",
-    "Bassa-Kontagora"
-  ],
   "Amo": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -25870,18 +23460,6 @@ const LANGUAGE_DATA = {
     "Jos",
     "Northern Jos",
     "Sheni-Ziriya"
-  ],
-  "Lere": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Kainji",
-    "Central Kainji",
-    "Basa-Eastern Kainji",
-    "Eastern Kainji",
-    "Jos",
-    "Northern Jos",
-    "Lere"
   ],
   "Tunzu": [
     "Atlantic-Congo",
@@ -26007,19 +23585,6 @@ const LANGUAGE_DATA = {
     "Ningic",
     "Kudu-Camo"
   ],
-  "Gamo-Ningi": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Kainji",
-    "Central Kainji",
-    "Basa-Eastern Kainji",
-    "Eastern Kainji",
-    "Jos",
-    "Northern Jos",
-    "Ningic",
-    "Gamo-Ningi"
-  ],
   "Gyem": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -26032,19 +23597,6 @@ const LANGUAGE_DATA = {
     "Northern Jos",
     "Lameic",
     "Gyem"
-  ],
-  "Shau": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Kainji",
-    "Central Kainji",
-    "Basa-Eastern Kainji",
-    "Eastern Kainji",
-    "Jos",
-    "Northern Jos",
-    "Lameic",
-    "Shau"
   ],
   "Atsam": [
     "Atlantic-Congo",
@@ -26131,16 +23683,6 @@ const LANGUAGE_DATA = {
     "Kambaric",
     "West Kambaric",
     "Western-Kambari-Cishingini"
-  ],
-  "Damakawa": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Kainji",
-    "Central Kainji",
-    "Northwestern Kainji",
-    "Clela-Damakawa",
-    "Damakawa"
   ],
   "C'lela": [
     "Atlantic-Congo",
@@ -26910,15 +24452,6 @@ const LANGUAGE_DATA = {
     "Lenyima-Leyigha",
     "Lenyima"
   ],
-  "Kiong": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Delta Cross",
-    "Upper Cross",
-    "Kiong-Korop",
-    "Kiong"
-  ],
   "Korop": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -27432,20 +24965,6 @@ const LANGUAGE_DATA = {
     "Nuclear Yoruba",
     "Ulukwumi"
   ],
-  "Lucumi": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Defoid",
-    "Yoruboid",
-    "Edekiri",
-    "Ede",
-    "Eastern Ede",
-    "Southeastern Ede",
-    "Nuclear Yoruba",
-    "Lucumi-Yoruba",
-    "Lucumi"
-  ],
   "Yoruba": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -27598,17 +25117,6 @@ const LANGUAGE_DATA = {
     "Jukun",
     "Kororofa",
     "Wapan"
-  ],
-  "Jan-Awei": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "Benue-Congo",
-    "Jukunoid",
-    "Central Jukunoid",
-    "Jukun-Mbembe-Wurbo",
-    "Jukun",
-    "Kororofa",
-    "Jan-Awei"
   ],
   "Hõne": [
     "Atlantic-Congo",
@@ -28286,19 +25794,6 @@ const LANGUAGE_DATA = {
     "Tagbu-Sere",
     "Sere"
   ],
-  "Tagbu": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "North Volta-Congo",
-    "Cameroun-Ubangian",
-    "Ubangi",
-    "Ubangi Ka",
-    "Sereic",
-    "Sere-Indri",
-    "Ndogoic",
-    "Tagbu-Sere",
-    "Tagbu"
-  ],
   "Indri": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -28310,18 +25805,6 @@ const LANGUAGE_DATA = {
     "Sere-Indri",
     "Indri-Togoyo",
     "Indri"
-  ],
-  "Togoyo": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "North Volta-Congo",
-    "Cameroun-Ubangian",
-    "Ubangi",
-    "Ubangi Ka",
-    "Sereic",
-    "Sere-Indri",
-    "Indri-Togoyo",
-    "Togoyo"
   ],
   "Mangayat": [
     "Atlantic-Congo",
@@ -28770,26 +26253,6 @@ const LANGUAGE_DATA = {
     "Barambo-Pambia",
     "Barambu"
   ],
-  "Pambia": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "North Volta-Congo",
-    "Cameroun-Ubangian",
-    "Ubangi",
-    "Zandic",
-    "Barambo-Pambia",
-    "Pambia"
-  ],
-  "Ngala-Santandrea": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "North Volta-Congo",
-    "Cameroun-Ubangian",
-    "Ubangi",
-    "Zandic",
-    "Barambo-Pambia",
-    "Ngala-Santandrea"
-  ],
   "Mbum": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -28797,15 +26260,6 @@ const LANGUAGE_DATA = {
     "Cameroun-Ubangian",
     "Mbumic",
     "Mbum"
-  ],
-  "To": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "North Volta-Congo",
-    "Cameroun-Ubangian",
-    "Mbumic",
-    "Unclassified Mbum",
-    "To"
   ],
   "Ndai": [
     "Atlantic-Congo",
@@ -29149,15 +26603,6 @@ const LANGUAGE_DATA = {
     "Bali-Kpasam",
     "Kpasam"
   ],
-  "Duli-Gewe": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "North Volta-Congo",
-    "Cameroun-Ubangian",
-    "Central Adamawa",
-    "Unclassified Central Adamawa",
-    "Duli-Gewe"
-  ],
   "Peere": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -29260,16 +26705,6 @@ const LANGUAGE_DATA = {
     "Diic",
     "Duupa"
   ],
-  "Nimbari": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "North Volta-Congo",
-    "Cameroun-Ubangian",
-    "Central Adamawa",
-    "Samba-Duru",
-    "Unclassified Samba-Duru",
-    "Nimbari"
-  ],
   "Doyayo": [
     "Atlantic-Congo",
     "Volta-Congo",
@@ -29351,14 +26786,6 @@ const LANGUAGE_DATA = {
     "Vere-Gimme",
     "Koma Alantika",
     "Gimnime"
-  ],
-  "Oblo": [
-    "Atlantic-Congo",
-    "Volta-Congo",
-    "North Volta-Congo",
-    "Cameroun-Ubangian",
-    "Unclassified Cameroun-Ubangian",
-    "Oblo"
   ],
   "Viemo": [
     "Atlantic-Congo",
@@ -30718,14 +28145,6 @@ const LANGUAGE_DATA = {
     "Bassari-Bedik-Bapen",
     "Bassari-Tanda"
   ],
-  "Bapen": [
-    "Atlantic-Congo",
-    "North-Central Atlantic",
-    "Tenda",
-    "Bassari-Bedik-Bapen",
-    "Bedik-Bapen",
-    "Bapen"
-  ],
   "Bedik": [
     "Atlantic-Congo",
     "North-Central Atlantic",
@@ -31092,11 +28511,6 @@ const LANGUAGE_DATA = {
     "Guaicuruan",
     "Kadiwéu"
   ],
-  "Abipon": [
-    "Guaicuruan",
-    "Guaicuru del Sur",
-    "Abipon"
-  ],
   "Mocoví": [
     "Guaicuruan",
     "Guaicuru del Sur",
@@ -31140,25 +28554,6 @@ const LANGUAGE_DATA = {
   "Agob-Ende-Kawam": [
     "Pahoturi",
     "Agob-Ende-Kawam"
-  ],
-  "Masacara": [
-    "Kamakanan",
-    "Masacara"
-  ],
-  "Cotoxo": [
-    "Kamakanan",
-    "Nuclear Kamakanan",
-    "Cotoxo"
-  ],
-  "Menien": [
-    "Kamakanan",
-    "Nuclear Kamakanan",
-    "Menien"
-  ],
-  "Kamakan": [
-    "Kamakanan",
-    "Nuclear Kamakanan",
-    "Kamakan"
   ],
   "Northeast Kiwai": [
     "Kiwaian",
@@ -31221,58 +28616,10 @@ const LANGUAGE_DATA = {
     "Somahai",
     "Momuna"
   ],
-  "Urartian": [
-    "Hurro-Urartian",
-    "Urartian"
-  ],
-  "Hurrian": [
-    "Hurro-Urartian",
-    "Hurrian"
-  ],
   "Hopi": [
     "Uto-Aztecan",
     "Northern Uto-Aztecan",
     "Hopi"
-  ],
-  "Tübatulabal": [
-    "Uto-Aztecan",
-    "Northern Uto-Aztecan",
-    "Tübatulabal"
-  ],
-  "Omomil": [
-    "Uto-Aztecan",
-    "Northern Uto-Aztecan",
-    "Unclassified Northern Uto-Aztecan",
-    "Omomil"
-  ],
-  "Tongva": [
-    "Uto-Aztecan",
-    "Northern Uto-Aztecan",
-    "Takic",
-    "Serran",
-    "Tongva"
-  ],
-  "Serrano": [
-    "Uto-Aztecan",
-    "Northern Uto-Aztecan",
-    "Takic",
-    "Serran",
-    "Serrano"
-  ],
-  "Luiseno-Juaneño": [
-    "Uto-Aztecan",
-    "Northern Uto-Aztecan",
-    "Takic",
-    "Cupan",
-    "Luiseno-Juaneño"
-  ],
-  "Island Takic": [
-    "Uto-Aztecan",
-    "Northern Uto-Aztecan",
-    "Takic",
-    "Cupan",
-    "Unclassified Cupan",
-    "Island Takic"
   ],
   "Cahuilla": [
     "Uto-Aztecan",
@@ -31281,14 +28628,6 @@ const LANGUAGE_DATA = {
     "Cupan",
     "Cahuilla-Cupeno",
     "Cahuilla"
-  ],
-  "Cupeño": [
-    "Uto-Aztecan",
-    "Northern Uto-Aztecan",
-    "Takic",
-    "Cupan",
-    "Cahuilla-Cupeno",
-    "Cupeño"
   ],
   "Mono (USA)": [
     "Uto-Aztecan",
@@ -31339,11 +28678,6 @@ const LANGUAGE_DATA = {
     "Central Numic",
     "Shoshoni"
   ],
-  "Tubar": [
-    "Uto-Aztecan",
-    "Southern Uto-Aztecan",
-    "Tubar"
-  ],
   "Huarijio": [
     "Uto-Aztecan",
     "Southern Uto-Aztecan",
@@ -31379,14 +28713,6 @@ const LANGUAGE_DATA = {
     "Unclassified Tarahumaran",
     "Southwestern Tarahumara"
   ],
-  "Northern Tarahumara": [
-    "Uto-Aztecan",
-    "Southern Uto-Aztecan",
-    "Tarahumara-Guarijio",
-    "Tarahumaran",
-    "Unclassified Tarahumaran",
-    "Northern Tarahumara"
-  ],
   "Yaqui": [
     "Uto-Aztecan",
     "Southern Uto-Aztecan",
@@ -31405,14 +28731,6 @@ const LANGUAGE_DATA = {
     "Tepiman",
     "Tepehuan",
     "Northern Tepehuan"
-  ],
-  "Tepecano": [
-    "Uto-Aztecan",
-    "Southern Uto-Aztecan",
-    "Tepiman",
-    "Tepehuan",
-    "Southern Tepehuan",
-    "Tepecano"
   ],
   "Southwestern Tepehuan": [
     "Uto-Aztecan",
@@ -31443,37 +28761,6 @@ const LANGUAGE_DATA = {
     "Tepiman",
     "Piman",
     "Pima Bajo"
-  ],
-  "Eudeve": [
-    "Uto-Aztecan",
-    "Southern Uto-Aztecan",
-    "Opata-Eudeve",
-    "Eudeve"
-  ],
-  "Teguima": [
-    "Uto-Aztecan",
-    "Southern Uto-Aztecan",
-    "Opata-Eudeve",
-    "Teguima"
-  ],
-  "Jova": [
-    "Uto-Aztecan",
-    "Southern Uto-Aztecan",
-    "Unclassified Southern Uto-Aztecan",
-    "Jova"
-  ],
-  "Coca": [
-    "Uto-Aztecan",
-    "Southern Uto-Aztecan",
-    "Unclassified Southern Uto-Aztecan",
-    "Coca"
-  ],
-  "Pochutec": [
-    "Uto-Aztecan",
-    "Southern Uto-Aztecan",
-    "Corachol-Aztecan",
-    "Aztec",
-    "Pochutec"
   ],
   "Morelos Nahuatl": [
     "Uto-Aztecan",
@@ -31510,15 +28797,6 @@ const LANGUAGE_DATA = {
     "Western Nahuatl",
     "Central Nahuatl",
     "Tetelcingo Nahuatl"
-  ],
-  "Classical Nahuatl": [
-    "Uto-Aztecan",
-    "Southern Uto-Aztecan",
-    "Corachol-Aztecan",
-    "Aztec",
-    "Western Nahuatl",
-    "Central Nahuatl",
-    "Classical Nahuatl"
   ],
   "Zacatlán-Ahuacatlán-Tepetzintla Nahuatl": [
     "Uto-Aztecan",
@@ -31829,16 +29107,6 @@ const LANGUAGE_DATA = {
     "Panama-Baudo-Atrato",
     "Emberá-Baudó"
   ],
-  "Caramanta": [
-    "Chocoan",
-    "Unclassified Chocoan",
-    "Caramanta"
-  ],
-  "Anserma": [
-    "Chocoan",
-    "Unclassified Chocoan",
-    "Anserma"
-  ],
   "Khalaj Turkic": [
     "Turkic",
     "Common Turkic",
@@ -31848,11 +29116,6 @@ const LANGUAGE_DATA = {
     "Turkic",
     "Common Turkic",
     "West Yugur"
-  ],
-  "Old Turkic": [
-    "Turkic",
-    "Common Turkic",
-    "Old Turkic"
   ],
   "Lower Chulym Turkic": [
     "Turkic",
@@ -31900,13 +29163,6 @@ const LANGUAGE_DATA = {
     "Sayan",
     "Tuvinian"
   ],
-  "Chagatai": [
-    "Turkic",
-    "Common Turkic",
-    "Kipchak-Turkestan",
-    "Turkestan",
-    "Chagatai"
-  ],
   "Northern Uzbek": [
     "Turkic",
     "Common Turkic",
@@ -31924,15 +29180,6 @@ const LANGUAGE_DATA = {
     "Modern Turkestan",
     "Uzbek",
     "Southern Uzbek"
-  ],
-  "Uighur": [
-    "Turkic",
-    "Common Turkic",
-    "Kipchak-Turkestan",
-    "Turkestan",
-    "Modern Turkestan",
-    "Uyghuric",
-    "Uighur"
   ],
   "Ainu (China)": [
     "Turkic",
@@ -32041,14 +29288,6 @@ const LANGUAGE_DATA = {
     "West Kipchak",
     "Kaukasus Kipchak",
     "Karachay-Balkar"
-  ],
-  "Pecheneg": [
-    "Turkic",
-    "Common Turkic",
-    "Kipchak-Turkestan",
-    "Kipchak",
-    "Unclassified Kipchak",
-    "Pecheneg"
   ],
   "Southern Altai": [
     "Turkic",
@@ -32175,11 +29414,6 @@ const LANGUAGE_DATA = {
     "Nuclear Oghuz",
     "Central Oghuz",
     "South Azerbaijani"
-  ],
-  "Bolgarian": [
-    "Turkic",
-    "Bolgar",
-    "Bolgarian"
   ],
   "Chuvash": [
     "Turkic",
@@ -32513,15 +29747,6 @@ const LANGUAGE_DATA = {
     "Chiquitano",
     "Migueleño Chiquitano"
   ],
-  "Palewyami Yokuts": [
-    "Yokutsan",
-    "Palewyami Yokuts"
-  ],
-  "Buena Vista Yokuts": [
-    "Yokutsan",
-    "General Yokuts",
-    "Buena Vista Yokuts"
-  ],
   "Tule-Kaweah Yokuts": [
     "Yokutsan",
     "General Yokuts",
@@ -32538,10 +29763,6 @@ const LANGUAGE_DATA = {
     "Uru-Chipaya",
     "Chipaya"
   ],
-  "Uru": [
-    "Uru-Chipaya",
-    "Uru"
-  ],
   "Ndom": [
     "Kolopom",
     "Ndom"
@@ -32556,20 +29777,10 @@ const LANGUAGE_DATA = {
     "Kimaama-Riantana",
     "Kimaama"
   ],
-  "Kepkiriwát": [
-    "Tupian",
-    "Kepkiriwát"
-  ],
   "Suruí": [
     "Tupian",
     "Monde",
     "Suruí"
-  ],
-  "Salamãi": [
-    "Tupian",
-    "Monde",
-    "Gavianic",
-    "Salamãi"
   ],
   "Cinta Larga": [
     "Tupian",
@@ -32602,18 +29813,6 @@ const LANGUAGE_DATA = {
     "Purubora-Ramarama",
     "Ramarama",
     "Karo (Brazil)"
-  ],
-  "Urumi": [
-    "Tupian",
-    "Purubora-Ramarama",
-    "Ramarama",
-    "Urumi"
-  ],
-  "Arikem": [
-    "Tupian",
-    "Arikem-Tupari",
-    "Arikemic",
-    "Arikem"
   ],
   "Karitiâna": [
     "Tupian",
@@ -32689,16 +29888,6 @@ const LANGUAGE_DATA = {
     "Tupi-Guarani Subgroup IV",
     "Tapirapé"
   ],
-  "Turiwára": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Tupi-Guarani Subgroup IV",
-    "Tupi-Guarani Subgroup IV.B",
-    "Turiwára"
-  ],
   "Tenetehara": [
     "Tupian",
     "Eastern Tupian",
@@ -32772,18 +29961,6 @@ const LANGUAGE_DATA = {
     "Sirionoid",
     "Sirionó"
   ],
-  "Jorá": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Southern Tupi-Guarani",
-    "Tupi-Guarani Subgroup II",
-    "Warazu-Sirionoid",
-    "Sirionoid",
-    "Jorá"
-  ],
   "Yuqui": [
     "Tupian",
     "Eastern Tupian",
@@ -32795,16 +29972,6 @@ const LANGUAGE_DATA = {
     "Warazu-Sirionoid",
     "Sirionoid",
     "Yuqui"
-  ],
-  "Xetá": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Southern Tupi-Guarani",
-    "Tupi-Guarani Subgroup I",
-    "Xetá"
   ],
   "Aché": [
     "Tupian",
@@ -32912,16 +30079,6 @@ const LANGUAGE_DATA = {
     "Chiriguanic",
     "Tapieté"
   ],
-  "Tupinambá": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Southern Tupi-Guarani",
-    "Tupi-Guarani Subgroup III",
-    "Tupinambá"
-  ],
   "Nhengatu": [
     "Tupian",
     "Eastern Tupian",
@@ -32931,17 +30088,6 @@ const LANGUAGE_DATA = {
     "Southern Tupi-Guarani",
     "Tupi-Guarani Subgroup III",
     "Nhengatu"
-  ],
-  "Omagua": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Southern Tupi-Guarani",
-    "Tupi-Guarani Subgroup III",
-    "Omagua-Kokama",
-    "Omagua"
   ],
   "Cocama-Cocamilla": [
     "Tupian",
@@ -32973,28 +30119,6 @@ const LANGUAGE_DATA = {
     "Tupi-Guarani Subgroup VIII",
     "Guaja-Kaapor-Ava",
     "Avá-Canoeiro"
-  ],
-  "Tacunyape": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Tupi-Guarani Subgroup VIII",
-    "Guaja-Kaapor-Ava",
-    "Unclassified Guaja-Kaapor-Ava",
-    "Tacunyape"
-  ],
-  "Aurê y Aurá": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Tupi-Guarani Subgroup VIII",
-    "Guaja-Kaapor-Ava",
-    "Guaja-Aure-Aura",
-    "Aurê y Aurá"
   ],
   "Guajá": [
     "Tupian",
@@ -33058,26 +30182,6 @@ const LANGUAGE_DATA = {
     "Arawetic",
     "Araweté"
   ],
-  "Anambé": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Tupi-Guarani Subgroup V",
-    "Arawetic",
-    "Anambé"
-  ],
-  "Amanayé": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Tupi-Guarani Subgroup V",
-    "Arawetic",
-    "Amanayé"
-  ],
   "Kayabí": [
     "Tupian",
     "Eastern Tupian",
@@ -33086,16 +30190,6 @@ const LANGUAGE_DATA = {
     "Tupi-Guarani",
     "Tupi-Guarani Subgroup VI",
     "Kayabí"
-  ],
-  "Apiaká": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Tupi-Guarani Subgroup VI",
-    "Kawahiva",
-    "Apiaká"
   ],
   "Júma": [
     "Tupian",
@@ -33158,58 +30252,17 @@ const LANGUAGE_DATA = {
     "Amondava-Uru-Eu-Wau-Wau",
     "Uru-Eu-Wau-Wau"
   ],
-  "Wiraféd": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Tupi-Guarani Subgroup VI",
-    "Kawahiva",
-    "Unclassified Kawahiva",
-    "Wiraféd"
-  ],
-  "Paranawát": [
-    "Tupian",
-    "Eastern Tupian",
-    "Maweti-Guarani",
-    "Aweti-Guarani",
-    "Tupi-Guarani",
-    "Tupi-Guarani Subgroup VI",
-    "Kawahiva",
-    "Unclassified Kawahiva",
-    "Paranawát"
-  ],
-  "Kuruáya": [
-    "Tupian",
-    "Eastern Tupian",
-    "Mundurukuic",
-    "Kuruáya"
-  ],
   "Mundurukú": [
     "Tupian",
     "Eastern Tupian",
     "Mundurukuic",
     "Mundurukú"
   ],
-  "Xipaya": [
-    "Tupian",
-    "Eastern Tupian",
-    "Jurunic",
-    "Xipaya"
-  ],
   "Yudja": [
     "Tupian",
     "Eastern Tupian",
     "Jurunic",
     "Yudja"
-  ],
-  "Manitsauá": [
-    "Tupian",
-    "Eastern Tupian",
-    "Jurunic",
-    "Unclassified Jurunic",
-    "Manitsauá"
   ],
   "Maklew": [
     "Bulaka River",
@@ -33320,11 +30373,6 @@ const LANGUAGE_DATA = {
     "Jarrakan",
     "Kitja"
   ],
-  "Gajirrabeng": [
-    "Jarrakan",
-    "Miriwunic",
-    "Gajirrabeng"
-  ],
   "Miriwung": [
     "Jarrakan",
     "Miriwunic",
@@ -33334,96 +30382,15 @@ const LANGUAGE_DATA = {
     "Jicaquean",
     "Tol"
   ],
-  "Western Jicaque": [
-    "Jicaquean",
-    "Western Jicaque"
-  ],
   "Tlingit": [
     "Athabaskan-Eyak-Tlingit",
     "Tlingit"
-  ],
-  "Eyak": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Eyak"
   ],
   "Sarsi": [
     "Athabaskan-Eyak-Tlingit",
     "Athabaskan-Eyak",
     "Athabaskan",
     "Sarsi"
-  ],
-  "Tsetsaut": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Tsetsaut"
-  ],
-  "Kwalhioqua-Clatskanie": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Pacific Coast Athabaskan",
-    "Kwalhioqua-Clatskanie"
-  ],
-  "Upper Umpqua": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Pacific Coast Athabaskan",
-    "Oregon Athabaskan",
-    "Upper Umpqua"
-  ],
-  "Tolowa-Chetco": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Pacific Coast Athabaskan",
-    "Oregon Athabaskan",
-    "Tolowa-Chetco"
-  ],
-  "Galice": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Pacific Coast Athabaskan",
-    "Oregon Athabaskan",
-    "Rogue River",
-    "Galice"
-  ],
-  "Coquille": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Pacific Coast Athabaskan",
-    "Oregon Athabaskan",
-    "Rogue River",
-    "Coquille"
-  ],
-  "Tututni": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Pacific Coast Athabaskan",
-    "Oregon Athabaskan",
-    "Rogue River",
-    "Tututni"
-  ],
-  "Kato": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Pacific Coast Athabaskan",
-    "California Athabaskan",
-    "Kato"
-  ],
-  "Mattole-Bear River": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Pacific Coast Athabaskan",
-    "California Athabaskan",
-    "Mattole-Bear River"
   ],
   "Hupa-Chilula": [
     "Athabaskan-Eyak-Tlingit",
@@ -33433,29 +30400,12 @@ const LANGUAGE_DATA = {
     "California Athabaskan",
     "Hupa-Chilula"
   ],
-  "Eel River Athabaskan": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Pacific Coast Athabaskan",
-    "California Athabaskan",
-    "Eel River Athabaskan"
-  ],
   "Chipewyan": [
     "Athabaskan-Eyak-Tlingit",
     "Athabaskan-Eyak",
     "Athabaskan",
     "Northwestern Canada Athabaskan",
     "Chipewyan"
-  ],
-  "Tagish": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Northwestern Canada Athabaskan",
-    "Cordillera Athabaskan",
-    "Nahanni",
-    "Tagish"
   ],
   "Tahltan": [
     "Athabaskan-Eyak-Tlingit",
@@ -33597,14 +30547,6 @@ const LANGUAGE_DATA = {
     "Koyukonic",
     "Koyukon"
   ],
-  "Holikachuk": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Central Alaska-Yukon Athabaskan",
-    "Koyukonic",
-    "Holikachuk"
-  ],
   "Degexit'an": [
     "Athabaskan-Eyak-Tlingit",
     "Athabaskan-Eyak",
@@ -33628,22 +30570,6 @@ const LANGUAGE_DATA = {
     "Central Alaska-Yukon Athabaskan",
     "Gwichin-Han",
     "Gwich'in"
-  ],
-  "Kiowa Apache": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Apachean",
-    "Kiowa Apache"
-  ],
-  "Lipan Apache": [
-    "Athabaskan-Eyak-Tlingit",
-    "Athabaskan-Eyak",
-    "Athabaskan",
-    "Apachean",
-    "Southwestern Apachean",
-    "Eastern Southwestern Apachean",
-    "Lipan Apache"
   ],
   "Jicarilla Apache": [
     "Athabaskan-Eyak-Tlingit",
@@ -33743,10 +30669,6 @@ const LANGUAGE_DATA = {
     "Ari-Waruna",
     "Ari"
   ],
-  "Laua": [
-    "Mailuan",
-    "Laua"
-  ],
   "Mailu": [
     "Mailuan",
     "Mailu"
@@ -33773,19 +30695,6 @@ const LANGUAGE_DATA = {
     "Mailuan",
     "Bauwakic",
     "Bauwaki"
-  ],
-  "Ooku": [
-    "Mailuan",
-    "Bauwakic",
-    "Ooku"
-  ],
-  "South-Eastern-Tasmanian-Hinterland": [
-    "South-Eastern Tasmanian",
-    "South-Eastern-Tasmanian-Hinterland"
-  ],
-  "Bruny Island": [
-    "South-Eastern Tasmanian",
-    "Bruny Island"
   ],
   "Guayabero": [
     "Guahiboan",
@@ -33974,14 +30883,6 @@ const LANGUAGE_DATA = {
     "Nwa-Ben",
     "Wan-Mwan",
     "Mwan"
-  ],
-  "Gbin": [
-    "Mande",
-    "Eastern Mande",
-    "Southeastern Mande",
-    "Nwa-Ben",
-    "Unclassified Nwa-Ben",
-    "Gbin"
   ],
   "Gban": [
     "Mande",
@@ -34567,16 +31468,6 @@ const LANGUAGE_DATA = {
     "Jeri",
     "Jalkunan"
   ],
-  "Tonjon": [
-    "Mande",
-    "Western Mande",
-    "Manding-Kpelle",
-    "Central Mande",
-    "Manding-Jogo",
-    "Jogo-Jeri",
-    "Jogo",
-    "Tonjon"
-  ],
   "Ligbi": [
     "Mande",
     "Western Mande",
@@ -34586,14 +31477,6 @@ const LANGUAGE_DATA = {
     "Jogo-Jeri",
     "Jogo",
     "Ligbi"
-  ],
-  "Soltec": [
-    "Otomanguean",
-    "Eastern Otomanguean",
-    "Popoloca-Zapotecan",
-    "Zapotecan",
-    "Zapotec",
-    "Soltec"
   ],
   "Totomachapan Zapotec": [
     "Otomanguean",
@@ -35252,14 +32135,6 @@ const LANGUAGE_DATA = {
     "Coatlan-Loxicha Zapotec",
     "San Baltazar Loxicha Zapotec"
   ],
-  "Teojomulco Chatino": [
-    "Otomanguean",
-    "Eastern Otomanguean",
-    "Popoloca-Zapotecan",
-    "Zapotecan",
-    "Chatino",
-    "Teojomulco Chatino"
-  ],
   "Zenzontepec Chatino": [
     "Otomanguean",
     "Eastern Otomanguean",
@@ -35502,18 +32377,6 @@ const LANGUAGE_DATA = {
     "Mazatecan",
     "Northwest Alta Mazatec",
     "San Jerónimo Tecóatl Mazatec"
-  ],
-  "Chiapanec": [
-    "Otomanguean",
-    "Eastern Otomanguean",
-    "Manguean",
-    "Chiapanec"
-  ],
-  "Mangue": [
-    "Otomanguean",
-    "Eastern Otomanguean",
-    "Manguean",
-    "Mangue"
   ],
   "San Pedro Amuzgos Amuzgo": [
     "Otomanguean",
@@ -36164,12 +33027,6 @@ const LANGUAGE_DATA = {
     "Trique",
     "Copala Triqui"
   ],
-  "Subtiaba": [
-    "Otomanguean",
-    "Western Otomanguean",
-    "Subtiaba-Tlapanec",
-    "Subtiaba"
-  ],
   "Azoyú Me'phaa": [
     "Otomanguean",
     "Western Otomanguean",
@@ -36347,14 +33204,6 @@ const LANGUAGE_DATA = {
     "Otopamean",
     "Pamean",
     "Northern Pame"
-  ],
-  "Southern Pame": [
-    "Otomanguean",
-    "Western Otomanguean",
-    "Otopame-Chinantecan",
-    "Otopamean",
-    "Pamean",
-    "Southern Pame"
   ],
   "Ozumacín Chinantec": [
     "Otomanguean",
@@ -36580,11 +33429,6 @@ const LANGUAGE_DATA = {
     "Mixe",
     "Oluta Popoluca"
   ],
-  "Tapachultec": [
-    "Mixe-Zoque",
-    "Mixe",
-    "Tapachultec"
-  ],
   "Sayula Popoluca": [
     "Mixe-Zoque",
     "Mixe",
@@ -36736,20 +33580,6 @@ const LANGUAGE_DATA = {
     "Kreshic",
     "Dongo Kresh"
   ],
-  "Mangerr": [
-    "Giimbiyu",
-    "Mangerr"
-  ],
-  "Urningangg": [
-    "Giimbiyu",
-    "Urninganggic",
-    "Urningangg"
-  ],
-  "Erre": [
-    "Giimbiyu",
-    "Urninganggic",
-    "Erre"
-  ],
   "Ik": [
     "Kuliak",
     "Ik"
@@ -36875,16 +33705,6 @@ const LANGUAGE_DATA = {
     "Nuclear Kannaoid",
     "Kannada"
   ],
-  "Old Kannada": [
-    "Dravidian",
-    "South Dravidian",
-    "South Dravidian I",
-    "Tamil-Kannada",
-    "Badaga-Kannada",
-    "Kannadoid",
-    "Nuclear Kannaoid",
-    "Old Kannada"
-  ],
   "Kota (India)": [
     "Dravidian",
     "South Dravidian",
@@ -36912,17 +33732,6 @@ const LANGUAGE_DATA = {
     "Tamil-Irula",
     "Tamil-Kodagu",
     "Kodava"
-  ],
-  "Urali of Idukki": [
-    "Dravidian",
-    "South Dravidian",
-    "South Dravidian I",
-    "Tamil-Kannada",
-    "Tamil-Kota",
-    "Tamil-Toda",
-    "Tamil-Irula",
-    "Tamil-Kodagu",
-    "Urali of Idukki"
   ],
   "Malavedan": [
     "Dravidian",
@@ -36976,19 +33785,6 @@ const LANGUAGE_DATA = {
     "Malayalamoid",
     "Wayanad Chetti"
   ],
-  "Ullatan": [
-    "Dravidian",
-    "South Dravidian",
-    "South Dravidian I",
-    "Tamil-Kannada",
-    "Tamil-Kota",
-    "Tamil-Toda",
-    "Tamil-Irula",
-    "Tamil-Kodagu",
-    "Tamil-Malayalam",
-    "Malayalamoid",
-    "Ullatan"
-  ],
   "Kanikkaran": [
     "Dravidian",
     "South Dravidian",
@@ -37040,19 +33836,6 @@ const LANGUAGE_DATA = {
     "Tamil-Malayalam",
     "Malayalamoid",
     "Kadar"
-  ],
-  "Malaryan": [
-    "Dravidian",
-    "South Dravidian",
-    "South Dravidian I",
-    "Tamil-Kannada",
-    "Tamil-Kota",
-    "Tamil-Toda",
-    "Tamil-Irula",
-    "Tamil-Kodagu",
-    "Tamil-Malayalam",
-    "Malayalamoid",
-    "Malaryan"
   ],
   "Malankuravan": [
     "Dravidian",
@@ -37201,19 +33984,6 @@ const LANGUAGE_DATA = {
     "Tamil-Malayalam",
     "Tamiloid",
     "Mala Malasar"
-  ],
-  "Old Tamil": [
-    "Dravidian",
-    "South Dravidian",
-    "South Dravidian I",
-    "Tamil-Kannada",
-    "Tamil-Kota",
-    "Tamil-Toda",
-    "Tamil-Irula",
-    "Tamil-Kodagu",
-    "Tamil-Malayalam",
-    "Tamiloid",
-    "Old Tamil"
   ],
   "Pattapu": [
     "Dravidian",
@@ -37532,13 +34302,6 @@ const LANGUAGE_DATA = {
     "Teluguic",
     "Waddar"
   ],
-  "Old Telugu": [
-    "Dravidian",
-    "South Dravidian",
-    "South Dravidian II",
-    "Teluguic",
-    "Old Telugu"
-  ],
   "Telugu": [
     "Dravidian",
     "South Dravidian",
@@ -37614,14 +34377,6 @@ const LANGUAGE_DATA = {
     "Central Dravidian",
     "Kolami-Naiki",
     "Southeastern Kolami"
-  ],
-  "Chimakum": [
-    "Chimakuan",
-    "Chimakum"
-  ],
-  "Quileute": [
-    "Chimakuan",
-    "Quileute"
   ],
   "Pisaflores Tepehua": [
     "Totonacan",
@@ -37727,23 +34482,6 @@ const LANGUAGE_DATA = {
     "Ame-Manda",
     "Ami"
   ],
-  "Manda (Australia)": [
-    "Western Daly",
-    "Maranunggu-Ame-Manda",
-    "Ame-Manda",
-    "Manda (Australia)"
-  ],
-  "Marimanindji": [
-    "Western Daly",
-    "Bringen",
-    "Marimanindji"
-  ],
-  "Marti Ke": [
-    "Western Daly",
-    "Bringen",
-    "Maringarr-Matige",
-    "Marti Ke"
-  ],
   "Maringarr": [
     "Western Daly",
     "Bringen",
@@ -37762,12 +34500,6 @@ const LANGUAGE_DATA = {
     "Marithielic",
     "Marriammu"
   ],
-  "Maridan": [
-    "Western Daly",
-    "Bringen",
-    "Marithielic",
-    "Maridan"
-  ],
   "Marithiel": [
     "Western Daly",
     "Bringen",
@@ -37779,18 +34511,6 @@ const LANGUAGE_DATA = {
     "Bringen",
     "Marithielic",
     "Maridjabin"
-  ],
-  "Yoncalla": [
-    "Kalapuyan",
-    "Yoncalla"
-  ],
-  "Tualatin-Yamhill": [
-    "Kalapuyan",
-    "Tualatin-Yamhill"
-  ],
-  "Central Kalapuya": [
-    "Kalapuyan",
-    "Central Kalapuya"
   ],
   "Yaben (Konda)": [
     "Konda-Yahadian",
@@ -37846,18 +34566,6 @@ const LANGUAGE_DATA = {
     "Saharan",
     "Eastern Saharan",
     "Beria"
-  ],
-  "Berti": [
-    "Saharan",
-    "Eastern Saharan",
-    "Berti"
-  ],
-  "Tarjumo": [
-    "Saharan",
-    "Western Saharan",
-    "Kanuri-Kanembu",
-    "Kanembuic",
-    "Tarjumo"
   ],
   "Kanembu": [
     "Saharan",
@@ -38035,11 +34743,6 @@ const LANGUAGE_DATA = {
     "Iwaidjan Proper",
     "Mawng"
   ],
-  "Garig-Ilgar": [
-    "Iwaidjan Proper",
-    "Central Iwaidjic",
-    "Garig-Ilgar"
-  ],
   "Iwaidja": [
     "Iwaidjan Proper",
     "Central Iwaidjic",
@@ -38053,43 +34756,15 @@ const LANGUAGE_DATA = {
     "Gunwinyguan",
     "Ngalkbun"
   ],
-  "Kunbarlang": [
-    "Gunwinyguan",
-    "Kunbarlang"
-  ],
   "Jawoyn": [
     "Gunwinyguan",
     "Western Gunwinyguan",
     "Jawoyn"
   ],
-  "Warray": [
-    "Gunwinyguan",
-    "Western Gunwinyguan",
-    "Warrayic",
-    "Warray"
-  ],
-  "Uwinymil": [
-    "Gunwinyguan",
-    "Western Gunwinyguan",
-    "Warrayic",
-    "Uwinymil"
-  ],
-  "Wulwulam": [
-    "Gunwinyguan",
-    "Western Gunwinyguan",
-    "Warrayic",
-    "Unclassified Warrayic",
-    "Wulwulam"
-  ],
   "Rembarrnga": [
     "Gunwinyguan",
     "Jala",
     "Rembarrnga"
-  ],
-  "Ngalakgan": [
-    "Gunwinyguan",
-    "Jala",
-    "Ngalakgan"
   ],
   "Ngandi": [
     "Gunwinyguan",
@@ -38107,10 +34782,6 @@ const LANGUAGE_DATA = {
     "Eastern Gunwinyguan",
     "Wubuy-Anindilyakwa",
     "Anindilyakwa"
-  ],
-  "Ubykh": [
-    "Abkhaz-Adyge",
-    "Ubykh"
   ],
   "Abaza": [
     "Abkhaz-Adyge",
@@ -38131,15 +34802,6 @@ const LANGUAGE_DATA = {
     "Abkhaz-Adyge",
     "Circassian",
     "Kabardian"
-  ],
-  "Sakhalin Ainu": [
-    "Ainu",
-    "Sakhalin Ainu"
-  ],
-  "Kuril Ainu": [
-    "Ainu",
-    "Hokkaido-Kuril Ainu",
-    "Kuril Ainu"
   ],
   "Hokkaido Ainu": [
     "Ainu",
@@ -38331,14 +34993,6 @@ const LANGUAGE_DATA = {
     "Teso-Turkana",
     "Turkanic",
     "Nyangatom"
-  ],
-  "Ngasa": [
-    "Nilotic",
-    "Eastern Nilotic",
-    "Teso-Lotuxo-Maa",
-    "Lotuxo-Maa",
-    "Ongamo-Maa",
-    "Ngasa"
   ],
   "Samburu": [
     "Nilotic",
@@ -38575,27 +35229,10 @@ const LANGUAGE_DATA = {
     "Adhola-Luo",
     "Adhola"
   ],
-  "Pumpokol": [
-    "Yeniseian",
-    "Pumpokol"
-  ],
-  "Arin": [
-    "Yeniseian",
-    "Arin"
-  ],
-  "Kott-Assan": [
-    "Yeniseian",
-    "Kott-Assan"
-  ],
   "Ket": [
     "Yeniseian",
     "Northern Yeniseian",
     "Ket"
-  ],
-  "Yugh": [
-    "Yeniseian",
-    "Northern Yeniseian",
-    "Yugh"
   ],
   "Marind": [
     "Anim",
@@ -38637,12 +35274,6 @@ const LANGUAGE_DATA = {
     "Anim",
     "Inland Gulf of Papua",
     "Ipiko"
-  ],
-  "Mahigi": [
-    "Anim",
-    "Inland Gulf of Papua",
-    "West Inland Gulf of Papua",
-    "Mahigi"
   ],
   "Minanibai-Foia Foia": [
     "Anim",
@@ -38714,64 +35345,6 @@ const LANGUAGE_DATA = {
   "Kosadle": [
     "Kaure-Kosare",
     "Kosadle"
-  ],
-  "Venetic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Venetic"
-  ],
-  "Lusitanian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Unclassified Italic",
-    "Lusitanian"
-  ],
-  "Old Sabellic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Sabellic",
-    "Old Sabellic"
-  ],
-  "Oscan": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Sabellic",
-    "Oscan"
-  ],
-  "Umbrian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Sabellic",
-    "Umbrian"
-  ],
-  "Faliscan": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Faliscan"
-  ],
-  "Old Latin": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Old Latin"
-  ],
-  "Latin": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Latin"
   ],
   "Aromanian": [
     "Indo-European",
@@ -38874,19 +35447,6 @@ const LANGUAGE_DATA = {
     "Dalmatian Romance",
     "Istriot"
   ],
-  "Dalmatian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Romance",
-    "Italo-Western Romance",
-    "Italo-Dalmatian",
-    "Dalmatian Romance",
-    "Dalmatian"
-  ],
   "Catalan": [
     "Indo-European",
     "Classical Indo-European",
@@ -38930,21 +35490,6 @@ const LANGUAGE_DATA = {
     "Southwestern Shifted Romance",
     "Occitanic",
     "Gardiol"
-  ],
-  "Old Provençal": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Romance",
-    "Italo-Western Romance",
-    "Western Romance",
-    "Shifted Western Romance",
-    "Southwestern Shifted Romance",
-    "Occitanic",
-    "Old Provençal"
   ],
   "Minderico": [
     "Indo-European",
@@ -38993,24 +35538,6 @@ const LANGUAGE_DATA = {
     "West Ibero-Romance",
     "Galician Romance",
     "Galician"
-  ],
-  "Timor Pidgin": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Romance",
-    "Italo-Western Romance",
-    "Western Romance",
-    "Shifted Western Romance",
-    "Southwestern Shifted Romance",
-    "West Ibero-Romance",
-    "Galician Romance",
-    "Macro-Portuguese",
-    "Luso-Asian Creole",
-    "Timor Pidgin"
   ],
   "Malacca-Batavia Portuguese Creole": [
     "Indo-European",
@@ -39319,22 +35846,6 @@ const LANGUAGE_DATA = {
     "Castilic",
     "Spanish"
   ],
-  "Old Spanish": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Romance",
-    "Italo-Western Romance",
-    "Western Romance",
-    "Shifted Western Romance",
-    "Southwestern Shifted Romance",
-    "West Ibero-Romance",
-    "Castilic",
-    "Old Spanish"
-  ],
   "Extremaduran": [
     "Indo-European",
     "Classical Indo-European",
@@ -39419,24 +35930,6 @@ const LANGUAGE_DATA = {
     "South Castilic",
     "Ternate-Zamboanga-Cavite",
     "Chavacano"
-  ],
-  "Ternateño": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Romance",
-    "Italo-Western Romance",
-    "Western Romance",
-    "Shifted Western Romance",
-    "Southwestern Shifted Romance",
-    "West Ibero-Romance",
-    "Castilic",
-    "South Castilic",
-    "Ternate-Zamboanga-Cavite",
-    "Ternateño"
   ],
   "Sassarese Sardinian": [
     "Indo-European",
@@ -39623,22 +36116,6 @@ const LANGUAGE_DATA = {
     "Oil",
     "Walloon"
   ],
-  "Old French (842-ca. 1400)": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Romance",
-    "Italo-Western Romance",
-    "Western Romance",
-    "Shifted Western Romance",
-    "Northwestern Shifted Romance",
-    "Gallo-Rhaetian",
-    "Oil",
-    "Old French (842-ca. 1400)"
-  ],
   "Faeto and Celle San Vito Francoprovencal": [
     "Indo-European",
     "Classical Indo-European",
@@ -39762,25 +36239,6 @@ const LANGUAGE_DATA = {
     "Isle-de-France Creole",
     "Morisyen"
   ],
-  "Seselwa Creole French": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Romance",
-    "Italo-Western Romance",
-    "Western Romance",
-    "Shifted Western Romance",
-    "Northwestern Shifted Romance",
-    "Gallo-Rhaetian",
-    "Oil",
-    "Central Oil",
-    "Macro-French",
-    "Isle-de-France Creole",
-    "Seselwa Creole French"
-  ],
   "French": [
     "Indo-European",
     "Classical Indo-European",
@@ -39818,25 +36276,6 @@ const LANGUAGE_DATA = {
     "Macro-French",
     "Global French",
     "Nouchi"
-  ],
-  "Gulf Coast French": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Romance",
-    "Italo-Western Romance",
-    "Western Romance",
-    "Shifted Western Romance",
-    "Northwestern Shifted Romance",
-    "Gallo-Rhaetian",
-    "Oil",
-    "Central Oil",
-    "Macro-French",
-    "Circum-Caribbean French",
-    "Gulf Coast French"
   ],
   "Louisiana Creole French": [
     "Indo-European",
@@ -39956,19 +36395,6 @@ const LANGUAGE_DATA = {
     "Lesser Antillean French Creole",
     "Guadeloupe-Martinique Creole French"
   ],
-  "Mozarabic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Italic",
-    "Latino-Faliscan",
-    "Latinic",
-    "Imperial Latin",
-    "Romance",
-    "Italo-Western Romance",
-    "Western Romance",
-    "Unshifted Western Romance",
-    "Mozarabic"
-  ],
   "Aragonese": [
     "Indo-European",
     "Classical Indo-European",
@@ -40045,12 +36471,6 @@ const LANGUAGE_DATA = {
     "Sardinian",
     "Campidanese Sardinian"
   ],
-  "Classical-Middle Armenian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Armenic",
-    "Classical-Middle Armenian"
-  ],
   "Eastern Armenian": [
     "Indo-European",
     "Classical Indo-European",
@@ -40093,25 +36513,6 @@ const LANGUAGE_DATA = {
     "Albanian-Tosk",
     "Southern Tosk",
     "Arvanitika Albanian"
-  ],
-  "Tokharian A": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Tokharian",
-    "Tokharian A"
-  ],
-  "Tokharian B": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Tokharian",
-    "Tokharian B"
-  ],
-  "Older Runic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "Older Runic"
   ],
   "Archaic Gutnish": [
     "Indo-European",
@@ -40185,15 +36586,6 @@ const LANGUAGE_DATA = {
     "East Swedic",
     "Estonian Swedish"
   ],
-  "Old Norse": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "North Germanic",
-    "West Scandinavian",
-    "Old Norse"
-  ],
   "Norwegian": [
     "Indo-European",
     "Classical Indo-European",
@@ -40250,25 +36642,6 @@ const LANGUAGE_DATA = {
     "South Scandinavian",
     "Jutish"
   ],
-  "Old Dutch-Old Frankish": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "Macro-Dutch",
-    "Old Dutch-Old Frankish"
-  ],
-  "Middle Dutch": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "Macro-Dutch",
-    "Middle-Modern Dutch",
-    "Middle Dutch"
-  ],
   "Western Flemish": [
     "Indo-European",
     "Classical Indo-European",
@@ -40294,45 +36667,6 @@ const LANGUAGE_DATA = {
     "Zeeuwic",
     "Zeeuws"
   ],
-  "Virgin Islands Dutch Creole": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "Macro-Dutch",
-    "Middle-Modern Dutch",
-    "Modern Dutch",
-    "Southwestern Dutch",
-    "Zeeuwic",
-    "Virgin Islands Dutch Creole"
-  ],
-  "Skepi Creole Dutch": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "Macro-Dutch",
-    "Middle-Modern Dutch",
-    "Modern Dutch",
-    "Southwestern Dutch",
-    "Zeeuwic",
-    "Skepi Creole Dutch"
-  ],
-  "Berbice Creole Dutch": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "Macro-Dutch",
-    "Middle-Modern Dutch",
-    "Modern Dutch",
-    "Southwestern Dutch",
-    "Zeeuwic",
-    "Berbice Creole Dutch"
-  ],
   "Petjo": [
     "Indo-European",
     "Classical Indo-European",
@@ -40344,18 +36678,6 @@ const LANGUAGE_DATA = {
     "Modern Dutch",
     "Global Dutch",
     "Petjo"
-  ],
-  "Javindo": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "Macro-Dutch",
-    "Middle-Modern Dutch",
-    "Modern Dutch",
-    "Global Dutch",
-    "Javindo"
   ],
   "Dutch": [
     "Indo-European",
@@ -40394,27 +36716,6 @@ const LANGUAGE_DATA = {
     "Global Dutch",
     "Afrikaansic",
     "Oorlams"
-  ],
-  "Old High German (ca. 750-1050)": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "High German",
-    "Upper German",
-    "Old High German (ca. 750-1050)"
-  ],
-  "Middle High German": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "High German",
-    "Upper German",
-    "Middle-Modern High German",
-    "Middle High German"
   ],
   "Colonia Tovar German": [
     "Indo-European",
@@ -40513,20 +36814,6 @@ const LANGUAGE_DATA = {
     "Upper Franconian",
     "Greater East Franconian",
     "Ostfränkisch"
-  ],
-  "Western Yiddish": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "High German",
-    "Upper German",
-    "Middle-Modern High German",
-    "Modern High German",
-    "Upper Franconian",
-    "Greater East Franconian",
-    "Western Yiddish"
   ],
   "Bavarian": [
     "Indo-European",
@@ -40706,27 +36993,6 @@ const LANGUAGE_DATA = {
     "Schlesisch-Wilmesau",
     "Lower Silesian"
   ],
-  "Old Saxon": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "North Sea Germanic",
-    "Altsächsisch",
-    "Old Saxon"
-  ],
-  "Middle Low German": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "North Sea Germanic",
-    "Altsächsisch",
-    "Middle-Modern Low German",
-    "Middle Low German"
-  ],
   "Eastphalian": [
     "Indo-European",
     "Classical Indo-European",
@@ -40829,17 +37095,6 @@ const LANGUAGE_DATA = {
     "Frisian",
     "Northern Frisian"
   ],
-  "Old Frisian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "North Sea Germanic",
-    "Anglo-Frisian",
-    "Frisian",
-    "Old Frisian"
-  ],
   "Hindeloopen-Molkwerum Frisian": [
     "Indo-European",
     "Classical Indo-European",
@@ -40890,17 +37145,6 @@ const LANGUAGE_DATA = {
     "Westlauwers-Terschelling Frisian",
     "Terschelling Frisian"
   ],
-  "Old English (ca. 450-1100)": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "North Sea Germanic",
-    "Anglo-Frisian",
-    "Anglic",
-    "Old English (ca. 450-1100)"
-  ],
   "Scots": [
     "Indo-European",
     "Classical Indo-European",
@@ -40912,32 +37156,6 @@ const LANGUAGE_DATA = {
     "Anglic",
     "Later Anglic",
     "Scots"
-  ],
-  "Irish Anglo-Norman": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "North Sea Germanic",
-    "Anglo-Frisian",
-    "Anglic",
-    "Later Anglic",
-    "Middle-Modern English",
-    "Irish Anglo-Norman"
-  ],
-  "Middle English": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "Northwest Germanic",
-    "West Germanic",
-    "North Sea Germanic",
-    "Anglo-Frisian",
-    "Anglic",
-    "Later Anglic",
-    "Middle-Modern English",
-    "Middle English"
   ],
   "Pitcairn-Norfolk": [
     "Indo-European",
@@ -41534,36 +37752,6 @@ const LANGUAGE_DATA = {
     "Early Melanesian Pidgin",
     "Torres Strait-Lockhart River Creole"
   ],
-  "Gothic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "East Germanic",
-    "Gothic"
-  ],
-  "Crimean Gothic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Germanic",
-    "East Germanic",
-    "Crimean Gothic"
-  ],
-  "Celtiberian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Celtiberian"
-  ],
-  "Early Irish": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Core Celtic",
-    "Insular Celtic",
-    "Goidelic",
-    "Early Irish"
-  ],
   "Irish": [
     "Indo-European",
     "Classical Indo-European",
@@ -41574,18 +37762,6 @@ const LANGUAGE_DATA = {
     "Goidelic",
     "Modern Goidelic",
     "Irish"
-  ],
-  "Manx": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Core Celtic",
-    "Insular Celtic",
-    "Goidelic",
-    "Modern Goidelic",
-    "Eastern Goidelic",
-    "Manx"
   ],
   "Scottish Gaelic": [
     "Indo-European",
@@ -41609,40 +37785,6 @@ const LANGUAGE_DATA = {
     "Brythonic",
     "Old-Modern Welsh",
     "Welsh"
-  ],
-  "Old-Middle Welsh": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Core Celtic",
-    "Insular Celtic",
-    "Brythonic",
-    "Old-Modern Welsh",
-    "Old-Middle Welsh"
-  ],
-  "Old South-West British": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Core Celtic",
-    "Insular Celtic",
-    "Brythonic",
-    "Southwestern Brythonic",
-    "Old South-West British"
-  ],
-  "Cornish": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Core Celtic",
-    "Insular Celtic",
-    "Brythonic",
-    "Southwestern Brythonic",
-    "Middle-Modern Southwestern Brythonic",
-    "Cornish"
   ],
   "Vannetais": [
     "Indo-European",
@@ -41670,64 +37812,12 @@ const LANGUAGE_DATA = {
     "Bretonic",
     "Breton"
   ],
-  "Transalpine Gaulish": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Core Celtic",
-    "Continental Transalpine Celtic",
-    "Transalpine Gaulish"
-  ],
-  "Galatian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Core Celtic",
-    "Continental Transalpine Celtic",
-    "Unclassified Continental Transalpine Celtic",
-    "Galatian"
-  ],
-  "Noric": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Core Celtic",
-    "Continental Transalpine Celtic",
-    "Unclassified Continental Transalpine Celtic",
-    "Noric"
-  ],
-  "Lepontic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Cisalpine Celtic",
-    "Lepontic"
-  ],
-  "Cisalpine Gaulish": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Celtic",
-    "Nuclear Celtic",
-    "Cisalpine Celtic",
-    "Cisalpine Gaulish"
-  ],
   "Chitral Kalasha": [
     "Indo-European",
     "Classical Indo-European",
     "Indo-Iranian",
     "Indo-Aryan",
     "Chitral Kalasha"
-  ],
-  "Sanskrit": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Sanskrit"
   ],
   "Khowar": [
     "Indo-European",
@@ -41742,16 +37832,6 @@ const LANGUAGE_DATA = {
     "Indo-Iranian",
     "Indo-Aryan",
     "Dameli"
-  ],
-  "Maharastri Prakrit": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Continental Indo-Aryan",
-    "Indo-Aryan Southern zone",
-    "Maharastri Prakrit"
   ],
   "Katkari": [
     "Indo-European",
@@ -41775,19 +37855,6 @@ const LANGUAGE_DATA = {
     "Marathic",
     "Marathi-Konkani",
     "Goan Konkani"
-  ],
-  "Old Marathi": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Continental Indo-Aryan",
-    "Indo-Aryan Southern zone",
-    "Marathic",
-    "Marathi-Konkani",
-    "Old-Modern Marathi",
-    "Old Marathi"
   ],
   "Dungar Varli": [
     "Indo-European",
@@ -41874,16 +37941,6 @@ const LANGUAGE_DATA = {
     "Modern Marathi",
     "Western Marathi",
     "Konkan Marathi"
-  ],
-  "Paisaci Prakrit": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Continental Indo-Aryan",
-    "Indo-Aryan Northwestern zone",
-    "Paisaci Prakrit"
   ],
   "Khetrani": [
     "Indo-European",
@@ -42038,20 +38095,6 @@ const LANGUAGE_DATA = {
     "Greater Panjabic",
     "Eastern Panjabic",
     "Sansi"
-  ],
-  "Inku": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Continental Indo-Aryan",
-    "Indo-Aryan Northwestern zone",
-    "Sindhi-Lahnda",
-    "Greater Panjabic",
-    "Hindko-Siraiki",
-    "Siraikic",
-    "Inku"
   ],
   "Saraiki": [
     "Indo-European",
@@ -42748,17 +38791,6 @@ const LANGUAGE_DATA = {
     "Pauri-Nahali",
     "Nahali-Baglani"
   ],
-  "Sauraseni Prakrit": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Continental Indo-Aryan",
-    "Midlands Indo-Aryan",
-    "Shaurasenic",
-    "Sauraseni Prakrit"
-  ],
   "Powari": [
     "Indo-European",
     "Classical Indo-European",
@@ -42897,21 +38929,6 @@ const LANGUAGE_DATA = {
     "Indo-Aryan Central zone",
     "Romani",
     "Baltic Romani"
-  ],
-  "Welsh Romani": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Continental Indo-Aryan",
-    "Midlands Indo-Aryan",
-    "Shaurasenic",
-    "Indo-Aryan Central zone",
-    "Romani",
-    "Anglo-Northwestern Romani",
-    "British Romani",
-    "Welsh Romani"
   ],
   "Archaic Angloromani": [
     "Indo-European",
@@ -43113,18 +39130,6 @@ const LANGUAGE_DATA = {
     "Western Hindi",
     "Hindustani",
     "Hindi"
-  ],
-  "Pali": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Continental Indo-Aryan",
-    "Midlands Indo-Aryan",
-    "Shaurasenic",
-    "Bihari",
-    "Pali"
   ],
   "Rana Tharu": [
     "Indo-European",
@@ -43471,17 +39476,6 @@ const LANGUAGE_DATA = {
     "Midlands Indo-Aryan",
     "Khandesic",
     "Khandesi"
-  ],
-  "Late Middle Indo-Aryan": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Continental Indo-Aryan",
-    "Midlands Indo-Aryan",
-    "Apabhramsic",
-    "Late Middle Indo-Aryan"
   ],
   "Merwari": [
     "Indo-European",
@@ -43948,15 +39942,6 @@ const LANGUAGE_DATA = {
     "Central Pahari",
     "Garhwali"
   ],
-  "Gandhari": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Eastern Dardic",
-    "Gandhari"
-  ],
   "Khah": [
     "Indo-European",
     "Classical Indo-European",
@@ -44288,17 +40273,6 @@ const LANGUAGE_DATA = {
     "Kohistanic Shina",
     "Ushojo"
   ],
-  "Wotapuri-Katarqalai": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Eastern Dardic",
-    "Nuclear Eastern Dardic",
-    "Kohistani",
-    "Wotapuri-Katarqalai"
-  ],
   "Gawri": [
     "Indo-European",
     "Classical Indo-European",
@@ -44322,18 +40296,6 @@ const LANGUAGE_DATA = {
     "Kohistani",
     "Dir-Swat Kohistani",
     "Torwali"
-  ],
-  "Tirahi": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Eastern Dardic",
-    "Nuclear Eastern Dardic",
-    "Kohistani",
-    "Unclassified Kohistani",
-    "Tirahi"
   ],
   "Indus Kohistani": [
     "Indo-European",
@@ -44419,16 +40381,6 @@ const LANGUAGE_DATA = {
     "Dhivehi-Sinhala",
     "Sinhalaic",
     "Sinhala"
-  ],
-  "Veddah": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Indo-Aryan",
-    "Middle-Modern Indo-Aryan",
-    "Dhivehi-Sinhala",
-    "Sinhalaic",
-    "Veddah"
   ],
   "Southeast Pashayi": [
     "Indo-European",
@@ -44529,13 +40481,6 @@ const LANGUAGE_DATA = {
     "Nuristani Kalasha-Tregami",
     "Tregami"
   ],
-  "Avestan": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Avestan"
-  ],
   "Sanglechi": [
     "Indo-European",
     "Classical Indo-European",
@@ -44560,24 +40505,6 @@ const LANGUAGE_DATA = {
     "Saka-Wakhi",
     "Wakhi"
   ],
-  "Khotanese": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Saka-Wakhi",
-    "Saka",
-    "Khotanese"
-  ],
-  "Tumshuqese": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Saka-Wakhi",
-    "Saka",
-    "Tumshuqese"
-  ],
   "Yazgulyam": [
     "Indo-European",
     "Classical Indo-European",
@@ -44586,16 +40513,6 @@ const LANGUAGE_DATA = {
     "Central Eastern Iranian",
     "Shughni-Yazgulami",
     "Yazgulyam"
-  ],
-  "Old Wanji": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Central Eastern Iranian",
-    "Shughni-Yazgulami",
-    "Shughnic",
-    "Old Wanji"
   ],
   "Sarikoli": [
     "Indo-European",
@@ -44635,15 +40552,6 @@ const LANGUAGE_DATA = {
     "Yidgha-Munji",
     "Munji"
   ],
-  "Bactrian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Central Iranian PBS",
-    "Central Iranian PB",
-    "Bactrian"
-  ],
   "Semnani-Biyabuneki": [
     "Indo-European",
     "Classical Indo-European",
@@ -44653,16 +40561,6 @@ const LANGUAGE_DATA = {
     "Central Iranian PB",
     "Northwestern Iranian",
     "Semnani-Biyabuneki"
-  ],
-  "Parthian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Central Iranian PBS",
-    "Central Iranian PB",
-    "Northwestern Iranian",
-    "Parthian"
   ],
   "Eastern Balochi": [
     "Indo-European",
@@ -44712,17 +40610,6 @@ const LANGUAGE_DATA = {
     "Southern-Western Balochi",
     "Southern Balochi-Koroshi",
     "Southern Balochi"
-  ],
-  "Gurgani": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Central Iranian PBS",
-    "Central Iranian PB",
-    "Northwestern Iranian",
-    "Caspian",
-    "Gurgani"
   ],
   "Rudbari": [
     "Indo-European",
@@ -44961,17 +40848,6 @@ const LANGUAGE_DATA = {
     "Northwestern Iranian",
     "Komisenian",
     "Sangisari"
-  ],
-  "Adhari": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Central Iranian PBS",
-    "Central Iranian PB",
-    "Northwestern Iranian",
-    "Adharic",
-    "Adhari"
   ],
   "Alamuti": [
     "Indo-European",
@@ -45265,27 +41141,6 @@ const LANGUAGE_DATA = {
     "Shabak-Bajalani",
     "Bajelani"
   ],
-  "Khwarezmian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Central Iranian PBS",
-    "Sogdic-Ossetic",
-    "Sogdic",
-    "Khwarezmian"
-  ],
-  "Sogdian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Central Iranian PBS",
-    "Sogdic-Ossetic",
-    "Sogdic",
-    "Sogdian-Yagnobi",
-    "Sogdian"
-  ],
   "Yagnobi": [
     "Indo-European",
     "Classical Indo-European",
@@ -45296,16 +41151,6 @@ const LANGUAGE_DATA = {
     "Sogdic",
     "Sogdian-Yagnobi",
     "Yagnobi"
-  ],
-  "Old Ossetic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Central Iranian PBS",
-    "Sogdic-Ossetic",
-    "Ossetic",
-    "Old Ossetic"
   ],
   "Iron Ossetian": [
     "Indo-European",
@@ -45379,23 +41224,6 @@ const LANGUAGE_DATA = {
     "Pashto",
     "Nuclear Pashto",
     "Southern Pashto"
-  ],
-  "Old Persian (ca. 600-400 B.C.)": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Southwestern Iranian",
-    "Old Persian (ca. 600-400 B.C.)"
-  ],
-  "Pahlavi": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Southwestern Iranian",
-    "Middle-Modern Persian",
-    "Pahlavi"
   ],
   "Larestani": [
     "Indo-European",
@@ -45498,18 +41326,6 @@ const LANGUAGE_DATA = {
     "Farsic",
     "Western Farsi"
   ],
-  "Judeo-Persian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Southwestern Iranian",
-    "Middle-Modern Persian",
-    "Modern Southwestern Iranian",
-    "Farsic-Caucasian Tat",
-    "Farsic",
-    "Judeo-Persian"
-  ],
   "Aimaq": [
     "Indo-European",
     "Classical Indo-European",
@@ -45548,19 +41364,6 @@ const LANGUAGE_DATA = {
     "Farsic",
     "Eastern Farsic",
     "Dari"
-  ],
-  "Pahlavani": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Indo-Iranian",
-    "Iranian",
-    "Southwestern Iranian",
-    "Middle-Modern Persian",
-    "Modern Southwestern Iranian",
-    "Farsic-Caucasian Tat",
-    "Farsic",
-    "Eastern Farsic",
-    "Pahlavani"
   ],
   "Hazaragi": [
     "Indo-European",
@@ -45627,39 +41430,6 @@ const LANGUAGE_DATA = {
     "Caucasian Tat",
     "Judeo-Tat"
   ],
-  "Phrygian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Graeco-Phrygian",
-    "Phrygian"
-  ],
-  "Achaean Greek": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Graeco-Phrygian",
-    "Greek",
-    "South Greek",
-    "Achaean Greek"
-  ],
-  "Ionic-Attic Ancient Greek": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Graeco-Phrygian",
-    "Greek",
-    "South Greek",
-    "Central Greek",
-    "Ionic-Attic Ancient Greek"
-  ],
-  "Medieval Greek": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Graeco-Phrygian",
-    "Greek",
-    "South Greek",
-    "Central Greek",
-    "Koineic Greek",
-    "Medieval Greek"
-  ],
   "Cypriot Greek": [
     "Indo-European",
     "Classical Indo-European",
@@ -45706,18 +41476,6 @@ const LANGUAGE_DATA = {
     "Pontic-Cappadocian Greek",
     "Cappadocian Greek"
   ],
-  "Yevanic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Graeco-Phrygian",
-    "Greek",
-    "South Greek",
-    "Central Greek",
-    "Koineic Greek",
-    "Modern Koineic Greek",
-    "Nuclear Modern Greek",
-    "Yevanic"
-  ],
   "Romano-Greek": [
     "Indo-European",
     "Classical Indo-European",
@@ -45750,20 +41508,6 @@ const LANGUAGE_DATA = {
     "North Greek",
     "Tsakonian"
   ],
-  "Ancient North Greek": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Graeco-Phrygian",
-    "Greek",
-    "North Greek",
-    "Ancient North Greek"
-  ],
-  "Old Prussian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Balto-Slavic",
-    "Old Prussian"
-  ],
   "Russian": [
     "Indo-European",
     "Classical Indo-European",
@@ -45771,14 +41515,6 @@ const LANGUAGE_DATA = {
     "Slavic",
     "East Slavic",
     "Russian"
-  ],
-  "Old Russian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Balto-Slavic",
-    "Slavic",
-    "East Slavic",
-    "Old Russian"
   ],
   "Belarusian": [
     "Indo-European",
@@ -45833,15 +41569,6 @@ const LANGUAGE_DATA = {
     "Lechitic",
     "Kashubian"
   ],
-  "Polabian": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Balto-Slavic",
-    "Slavic",
-    "West Slavic",
-    "Lechitic",
-    "Polabian"
-  ],
   "Silesian": [
     "Indo-European",
     "Classical Indo-European",
@@ -45879,15 +41606,6 @@ const LANGUAGE_DATA = {
     "West Slavic",
     "Czech-Slovak",
     "Czech"
-  ],
-  "Church Slavic": [
-    "Indo-European",
-    "Classical Indo-European",
-    "Balto-Slavic",
-    "Slavic",
-    "South Slavic",
-    "Eastern South Slavic",
-    "Church Slavic"
   ],
   "Bulgarian": [
     "Indo-European",
@@ -45959,118 +41677,6 @@ const LANGUAGE_DATA = {
     "Eastern Baltic",
     "Lithuanian"
   ],
-  "Messapic": [
-    "Indo-European",
-    "Unclassified Indo-European",
-    "Messapic"
-  ],
-  "Thracian": [
-    "Indo-European",
-    "Unclassified Indo-European",
-    "Thracian"
-  ],
-  "Dacian": [
-    "Indo-European",
-    "Unclassified Indo-European",
-    "Dacian"
-  ],
-  "Hittite": [
-    "Indo-European",
-    "Anatolian",
-    "Hittite"
-  ],
-  "Lydian": [
-    "Indo-European",
-    "Anatolian",
-    "Luvo-Lydian",
-    "Lydian"
-  ],
-  "Palaic": [
-    "Indo-European",
-    "Anatolian",
-    "Luvo-Lydian",
-    "Luvo-Palaic",
-    "Palaic"
-  ],
-  "Carian": [
-    "Indo-European",
-    "Anatolian",
-    "Luvo-Lydian",
-    "Luvo-Palaic",
-    "Luvic",
-    "Lyco-Carian",
-    "Milyan-Carian",
-    "Carian"
-  ],
-  "Milyan": [
-    "Indo-European",
-    "Anatolian",
-    "Luvo-Lydian",
-    "Luvo-Palaic",
-    "Luvic",
-    "Lyco-Carian",
-    "Milyan-Carian",
-    "Milyan"
-  ],
-  "Lycian A": [
-    "Indo-European",
-    "Anatolian",
-    "Luvo-Lydian",
-    "Luvo-Palaic",
-    "Luvic",
-    "Lyco-Carian",
-    "Lyco-Sidetic",
-    "Lycian A"
-  ],
-  "Sidetic": [
-    "Indo-European",
-    "Anatolian",
-    "Luvo-Lydian",
-    "Luvo-Palaic",
-    "Luvic",
-    "Lyco-Carian",
-    "Lyco-Sidetic",
-    "Sidetic"
-  ],
-  "Pisidian": [
-    "Indo-European",
-    "Anatolian",
-    "Luvo-Lydian",
-    "Luvo-Palaic",
-    "Luvic",
-    "Unclassified Luvic",
-    "Pisidian"
-  ],
-  "Cuneiform Luwian": [
-    "Indo-European",
-    "Anatolian",
-    "Luvo-Lydian",
-    "Luvo-Palaic",
-    "Luvic",
-    "Luvian",
-    "Cuneiform Luwian"
-  ],
-  "Hieroglyphic Luwian": [
-    "Indo-European",
-    "Anatolian",
-    "Luvo-Lydian",
-    "Luvo-Palaic",
-    "Luvic",
-    "Luvian",
-    "Hieroglyphic Luwian"
-  ],
-  "Güenoa": [
-    "Charruan",
-    "Güenoa"
-  ],
-  "Chaná": [
-    "Charruan",
-    "Chaná"
-  ],
-  "Charrúa": [
-    "Charruan",
-    "Charrúa"
-  ],
   "Pech": [
     "Chibchan",
     "Pech"
@@ -46098,16 +41704,6 @@ const LANGUAGE_DATA = {
     "Arhuacic",
     "Eastern-Southern Arhuacic",
     "Arhuaco"
-  ],
-  "Kankuamo": [
-    "Chibchan",
-    "Core Chibchan",
-    "Magdalenic",
-    "Northern Magdalenic",
-    "Arhuacic",
-    "Eastern-Southern Arhuacic",
-    "Eastern Arhuacic",
-    "Kankuamo"
   ],
   "Malayo": [
     "Chibchan",
@@ -46158,28 +41754,6 @@ const LANGUAGE_DATA = {
     "Tunebo",
     "Western Tunebo"
   ],
-  "Chibcha": [
-    "Chibchan",
-    "Core Chibchan",
-    "Magdalenic",
-    "Southern Magdalenic",
-    "Chibcha-Duit",
-    "Chibcha"
-  ],
-  "Duit": [
-    "Chibchan",
-    "Core Chibchan",
-    "Magdalenic",
-    "Southern Magdalenic",
-    "Chibcha-Duit",
-    "Duit"
-  ],
-  "Huetar": [
-    "Chibchan",
-    "Core Chibchan",
-    "Votic Chibchan",
-    "Huetar"
-  ],
   "Maléku Jaíka": [
     "Chibchan",
     "Core Chibchan",
@@ -46191,12 +41765,6 @@ const LANGUAGE_DATA = {
     "Core Chibchan",
     "Votic Chibchan",
     "Rama"
-  ],
-  "Antioquian": [
-    "Chibchan",
-    "Core Chibchan",
-    "Unclassified Chibchan",
-    "Antioquian"
   ],
   "San Blas Kuna": [
     "Chibchan",
@@ -46230,27 +41798,6 @@ const LANGUAGE_DATA = {
     "Guaymiic",
     "Buglere"
   ],
-  "Changuena": [
-    "Chibchan",
-    "Core Chibchan",
-    "Isthmic Chibchan",
-    "Doracic",
-    "Changuena"
-  ],
-  "Dorasque": [
-    "Chibchan",
-    "Core Chibchan",
-    "Isthmic Chibchan",
-    "Doracic",
-    "Dorasque"
-  ],
-  "Boruca": [
-    "Chibchan",
-    "Core Chibchan",
-    "Isthmic Chibchan",
-    "Western Isthmic Chibchan",
-    "Boruca"
-  ],
   "Teribe": [
     "Chibchan",
     "Core Chibchan",
@@ -46274,65 +41821,12 @@ const LANGUAGE_DATA = {
     "Viceitic",
     "Cabécar"
   ],
-  "Akakede": [
-    "Great Andamanese",
-    "North Andamanese-Akakede",
-    "Akakede"
-  ],
-  "Akabo": [
-    "Great Andamanese",
-    "North Andamanese-Akakede",
-    "Northern Great Andamanese",
-    "Bo-Cari",
-    "Akabo"
-  ],
-  "Akacari": [
-    "Great Andamanese",
-    "North Andamanese-Akakede",
-    "Northern Great Andamanese",
-    "Bo-Cari",
-    "Akacari"
-  ],
   "Akajeru": [
     "Great Andamanese",
     "North Andamanese-Akakede",
     "Northern Great Andamanese",
     "Jeru-Kora",
     "Akajeru"
-  ],
-  "Akakora": [
-    "Great Andamanese",
-    "North Andamanese-Akakede",
-    "Northern Great Andamanese",
-    "Jeru-Kora",
-    "Akakora"
-  ],
-  "Okojuwoi": [
-    "Great Andamanese",
-    "Middle Great Andamanese",
-    "Okojuwoi"
-  ],
-  "Akakol": [
-    "Great Andamanese",
-    "Middle Great Andamanese",
-    "Okol-Opucikwar",
-    "Akakol"
-  ],
-  "Apucikwar": [
-    "Great Andamanese",
-    "Middle Great Andamanese",
-    "Okol-Opucikwar",
-    "Apucikwar"
-  ],
-  "Akabea": [
-    "Great Andamanese",
-    "South Great Andamanese",
-    "Akabea"
-  ],
-  "Akarbale": [
-    "Great Andamanese",
-    "South Great Andamanese",
-    "Akarbale"
   ],
   "Creek": [
     "Muskogean",
@@ -46351,11 +41845,6 @@ const LANGUAGE_DATA = {
     "Muskogean",
     "Alabaman-Koasati",
     "Koasati"
-  ],
-  "Apalachee": [
-    "Muskogean",
-    "Alabaman-Koasati",
-    "Apalachee"
   ],
   "Choctaw": [
     "Muskogean",
@@ -46559,10 +42048,6 @@ const LANGUAGE_DATA = {
     "Southeast Dagan",
     "Kanasi"
   ],
-  "Mulaha": [
-    "Kwalean",
-    "Mulaha"
-  ],
   "Humene": [
     "Kwalean",
     "Humene-Kwale",
@@ -46710,41 +42195,14 @@ const LANGUAGE_DATA = {
     "Nangan Dogon",
     "Ben Tey Dogon"
   ],
-  "Umotína": [
-    "Bororoan",
-    "Umotína"
-  ],
   "Bororo": [
     "Bororoan",
     "Bororo-Otuke",
     "Bororo"
   ],
-  "Otuke": [
-    "Bororoan",
-    "Bororo-Otuke",
-    "Otuke"
-  ],
-  "Taparita": [
-    "Otomaco-Taparita",
-    "Taparita"
-  ],
-  "Otomaco": [
-    "Otomaco-Taparita",
-    "Otomaco"
-  ],
   "Yagua": [
     "Peba-Yagua",
     "Yagua"
-  ],
-  "Yameo": [
-    "Peba-Yagua",
-    "Peba-Yameo",
-    "Yameo"
-  ],
-  "Peba": [
-    "Peba-Yagua",
-    "Peba-Yameo",
-    "Peba"
   ],
   "Kiliwa": [
     "Cochimi-Yuman",
@@ -46815,16 +42273,6 @@ const LANGUAGE_DATA = {
     "General Yuman",
     "River Yuman",
     "Quechan"
-  ],
-  "Cochimi": [
-    "Cochimi-Yuman",
-    "Cochimic",
-    "Cochimi"
-  ],
-  "Robinia": [
-    "Cochimi-Yuman",
-    "Cochimic",
-    "Robinia"
   ],
   "Dime": [
     "South Omotic",
@@ -46972,14 +42420,6 @@ const LANGUAGE_DATA = {
     "Morokodo-Beli",
     "Beli (South Sudan)"
   ],
-  "Mittu": [
-    "Central Sudanic",
-    "Sara-Bongo-Bagirmi",
-    "Baka-Beli",
-    "Morokodo-Beli",
-    "Gberi-Morokodo-Mittu",
-    "Mittu"
-  ],
   "Mo'da": [
     "Central Sudanic",
     "Sara-Bongo-Bagirmi",
@@ -47100,17 +42540,6 @@ const LANGUAGE_DATA = {
     "Bayo-Morom",
     "Gula (Chad)"
   ],
-  "Berakou": [
-    "Central Sudanic",
-    "Sara-Bongo-Bagirmi",
-    "SBB Occidental",
-    "Nuclear SBB Occidental",
-    "Saraic",
-    "Bagirmic",
-    "Morom-Jaya-Naba",
-    "Naba-Berakou",
-    "Berakou"
-  ],
   "Naba": [
     "Central Sudanic",
     "Sara-Bongo-Bagirmi",
@@ -47219,16 +42648,6 @@ const LANGUAGE_DATA = {
     "Sara Central Logone",
     "Gore",
     "Kaba"
-  ],
-  "Horo": [
-    "Central Sudanic",
-    "Sara-Bongo-Bagirmi",
-    "SBB Occidental",
-    "Nuclear SBB Occidental",
-    "Saraic",
-    "Sara Central",
-    "Sara Central Chari",
-    "Horo"
   ],
   "Sar": [
     "Central Sudanic",
@@ -47569,14 +42988,6 @@ const LANGUAGE_DATA = {
     "Kanjobal-Jacaltec",
     "Akateko"
   ],
-  "Epigraphic Mayan": [
-    "Mayan",
-    "Core Mayan",
-    "Western Mayan",
-    "Cholan-Tzeltalan",
-    "Cholan",
-    "Epigraphic Mayan"
-  ],
   "Chol": [
     "Mayan",
     "Core Mayan",
@@ -47594,15 +43005,6 @@ const LANGUAGE_DATA = {
     "Cholan",
     "Chol-Chontal",
     "Tabasco Chontal"
-  ],
-  "Cholti": [
-    "Mayan",
-    "Core Mayan",
-    "Western Mayan",
-    "Cholan-Tzeltalan",
-    "Cholan",
-    "Chorti-Cholti",
-    "Cholti"
   ],
   "Ch'orti'": [
     "Mayan",
@@ -47629,11 +43031,6 @@ const LANGUAGE_DATA = {
     "Tzeltalan",
     "Tzotzil"
   ],
-  "Chicomuceltec": [
-    "Mayan",
-    "Huastecan Mayan",
-    "Chicomuceltec"
-  ],
   "Huastec": [
     "Mayan",
     "Huastecan Mayan",
@@ -47646,30 +43043,6 @@ const LANGUAGE_DATA = {
   "Amur Nivkh": [
     "Nivkh",
     "Amur Nivkh"
-  ],
-  "Xinca-Guazacapan": [
-    "Xincan",
-    "Xinca-Guazacapan"
-  ],
-  "Xinca-Sinacantan": [
-    "Xincan",
-    "Yupiltepequic",
-    "Xinca-Sinacantan"
-  ],
-  "Xinca-Yupiltepeque": [
-    "Xincan",
-    "Yupiltepequic",
-    "Xinca-Yupiltepeque"
-  ],
-  "Xinka-Jumaytepeque": [
-    "Xincan",
-    "Xinca Shared Grammatical Traits",
-    "Xinka-Jumaytepeque"
-  ],
-  "Xinca-Chiquimulilla": [
-    "Xincan",
-    "Xinca Shared Grammatical Traits",
-    "Xinca-Chiquimulilla"
   ],
   "Bunak": [
     "Timor-Alor-Pantar",
@@ -47746,15 +43119,6 @@ const LANGUAGE_DATA = {
     "Pantar",
     "Teiwa-Sar",
     "Teiwa"
-  ],
-  "Sar (Indonesia)": [
-    "Timor-Alor-Pantar",
-    "Alor-Pantar",
-    "Nuclear Alor-Pantar",
-    "West Alor-Straits-Pantar",
-    "Pantar",
-    "Teiwa-Sar",
-    "Sar (Indonesia)"
   ],
   "Hamap": [
     "Timor-Alor-Pantar",
@@ -47840,10 +43204,6 @@ const LANGUAGE_DATA = {
     "Fataluku-Oirata",
     "Fataluku"
   ],
-  "Butam": [
-    "Taulil-Butam",
-    "Butam"
-  ],
   "Taulil": [
     "Taulil-Butam",
     "Taulil"
@@ -47924,10 +43284,6 @@ const LANGUAGE_DATA = {
     "Didinga-Murle",
     "Didinga-Longarim",
     "Didinga"
-  ],
-  "Classical Quechua": [
-    "Quechuan",
-    "Classical Quechua"
   ],
   "Pacaraos Quechua": [
     "Quechuan",
@@ -48636,14 +43992,6 @@ const LANGUAGE_DATA = {
     "Central-Northern One",
     "Inebu One"
   ],
-  "Lenca-Salvador": [
-    "Lencan",
-    "Lenca-Salvador"
-  ],
-  "Lenca-Honduras": [
-    "Lencan",
-    "Lenca-Honduras"
-  ],
   "Beami": [
     "Bosavi",
     "Etoro-Bedamini",
@@ -48685,11 +44033,6 @@ const LANGUAGE_DATA = {
     "Zamucoan",
     "Chamacoco"
   ],
-  "Zamuco": [
-    "Zamucoan",
-    "Zamuco-Ayoreo",
-    "Zamuco"
-  ],
   "Ayoreo": [
     "Zamucoan",
     "Zamuco-Ayoreo",
@@ -48706,12 +44049,6 @@ const LANGUAGE_DATA = {
   "Svan": [
     "Kartvelian",
     "Svan"
-  ],
-  "Old Georgian": [
-    "Kartvelian",
-    "Georgian-Zan",
-    "Georgic",
-    "Old Georgian"
   ],
   "Georgian": [
     "Kartvelian",
@@ -48739,45 +44076,11 @@ const LANGUAGE_DATA = {
     "Hatam-Mansim",
     "Hatam"
   ],
-  "/Xam": [
-    "Tuu",
-    "!Ui",
-    "/Xam"
-  ],
-  "Danster !Ui": [
-    "Tuu",
-    "!Ui",
-    "Ghaap-Kalahari",
-    "Danster !Ui"
-  ],
   "N||ng": [
     "Tuu",
     "!Ui",
     "Ghaap-Kalahari",
     "N||ng"
-  ],
-  "Vaal-Orange": [
-    "Tuu",
-    "!Ui",
-    "Eastern !Ui",
-    "Vaal-Orange"
-  ],
-  "!Gã!ne": [
-    "Tuu",
-    "!Ui",
-    "Eastern !Ui",
-    "!Gã!ne"
-  ],
-  "//Xegwi": [
-    "Tuu",
-    "!Ui",
-    "Eastern !Ui",
-    "//Xegwi"
-  ],
-  "Lower-Nosop": [
-    "Tuu",
-    "Hua",
-    "Lower-Nosop"
   ],
   "East Taa": [
     "Tuu",
@@ -48802,13 +44105,6 @@ const LANGUAGE_DATA = {
     "R-Koryakic",
     "Chukchi"
   ],
-  "Kerek": [
-    "Chukotko-Kamchatkan",
-    "Chukotian",
-    "R-Koryakic",
-    "J-Koryakic",
-    "Kerek"
-  ],
   "Koryak": [
     "Chukotko-Kamchatkan",
     "Chukotian",
@@ -48820,24 +44116,6 @@ const LANGUAGE_DATA = {
     "Chukotko-Kamchatkan",
     "Kamchatkan",
     "West Itelmen"
-  ],
-  "Northeast Itelmen": [
-    "Chukotko-Kamchatkan",
-    "Kamchatkan",
-    "Northeast Itelmen"
-  ],
-  "South Itelmen": [
-    "Chukotko-Kamchatkan",
-    "Kamchatkan",
-    "South Itelmen"
-  ],
-  "Coroado-Puri": [
-    "Puri-Coroado",
-    "Coroado-Puri"
-  ],
-  "Puri": [
-    "Puri-Coroado",
-    "Puri"
   ],
   "Neyo": [
     "Kru",
@@ -49227,14 +44505,6 @@ const LANGUAGE_DATA = {
     "Central Nasioi",
     "Ounge"
   ],
-  "Cholón": [
-    "Hibito-Cholon",
-    "Cholón"
-  ],
-  "Hibito": [
-    "Hibito-Cholon",
-    "Hibito"
-  ],
   "Meriam": [
     "Eastern Trans-Fly",
     "Meriam"
@@ -49251,19 +44521,6 @@ const LANGUAGE_DATA = {
     "Eastern Trans-Fly",
     "Wipi"
   ],
-  "Southeastern Pomo": [
-    "Pomoan",
-    "Southeastern Pomo"
-  ],
-  "Northeastern Russian River Pomo": [
-    "Pomoan",
-    "Northeastern Russian River Pomo"
-  ],
-  "Eastern Pomo": [
-    "Pomoan",
-    "Russian River and Eastern",
-    "Eastern Pomo"
-  ],
   "Kashaya": [
     "Pomoan",
     "Russian River and Eastern",
@@ -49271,35 +44528,9 @@ const LANGUAGE_DATA = {
     "Southern Pomoan-Kashaya",
     "Kashaya"
   ],
-  "Southern Pomo": [
-    "Pomoan",
-    "Russian River and Eastern",
-    "Russian River",
-    "Southern Pomoan-Kashaya",
-    "Southern Pomo"
-  ],
-  "Northern Pomo": [
-    "Pomoan",
-    "Russian River and Eastern",
-    "Russian River",
-    "Northern-Central Pomoan",
-    "Northern Pomo"
-  ],
-  "Central Pomo": [
-    "Pomoan",
-    "Russian River and Eastern",
-    "Russian River",
-    "Northern-Central Pomoan",
-    "Central Pomo"
-  ],
   "Highland Oaxaca Chontal": [
     "Tequistlatecan",
     "Highland Oaxaca Chontal"
-  ],
-  "Tequistlateco Chontal": [
-    "Tequistlatecan",
-    "Eastern Tequistlatecan",
-    "Tequistlateco Chontal"
   ],
   "Lowland Oaxaca Chontal": [
     "Tequistlatecan",
@@ -49362,34 +44593,6 @@ const LANGUAGE_DATA = {
     "Tupe",
     "Jaqaru"
   ],
-  "Chapakura": [
-    "Chapacuran",
-    "Tapakuric",
-    "Chapakura"
-  ],
-  "Napeca": [
-    "Chapacuran",
-    "Tapakuric",
-    "Kitemoka-Napeca",
-    "Napeca"
-  ],
-  "Kitemoka": [
-    "Chapacuran",
-    "Tapakuric",
-    "Kitemoka-Napeca",
-    "Kitemoka"
-  ],
-  "Rocorona": [
-    "Chapacuran",
-    "Unclassified Chapakura",
-    "Rocorona"
-  ],
-  "Torá": [
-    "Chapacuran",
-    "Moreic-Waric",
-    "Moreic",
-    "Torá"
-  ],
   "Itene": [
     "Chapacuran",
     "Moreic-Waric",
@@ -49403,13 +44606,6 @@ const LANGUAGE_DATA = {
     "Moreic",
     "Kujubim-More",
     "Kuyubi"
-  ],
-  "Wanyam": [
-    "Chapacuran",
-    "Moreic-Waric",
-    "Waric",
-    "Wanham-Wari-Oro Win",
-    "Wanyam"
   ],
   "Oro Win": [
     "Chapacuran",
@@ -49427,30 +44623,10 @@ const LANGUAGE_DATA = {
     "Wari-Oro Win",
     "Wari'"
   ],
-  "Yaru": [
-    "Chapacuran",
-    "Moreic-Waric",
-    "Waric",
-    "Urupa-Yaru",
-    "Yaru"
-  ],
-  "Urupa": [
-    "Chapacuran",
-    "Moreic-Waric",
-    "Waric",
-    "Urupa-Yaru",
-    "Urupa"
-  ],
   "Cavineña": [
     "Pano-Tacanan",
     "Tacanan",
     "Cavineña"
-  ],
-  "Mabenaro": [
-    "Pano-Tacanan",
-    "Tacanan",
-    "Unclassified Tacanan",
-    "Mabenaro"
   ],
   "Ese Ejja": [
     "Pano-Tacanan",
@@ -49472,14 +44648,6 @@ const LANGUAGE_DATA = {
     "Takanik",
     "Reyesano"
   ],
-  "Toromono": [
-    "Pano-Tacanan",
-    "Tacanan",
-    "Takanik-Chamik",
-    "Takanik",
-    "Araona-Toromono",
-    "Toromono"
-  ],
   "Araona": [
     "Pano-Tacanan",
     "Tacanan",
@@ -49500,51 +44668,6 @@ const LANGUAGE_DATA = {
     "Mainline Pano",
     "Kaxararí"
   ],
-  "Remo of the Blanco river": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Remo of the Blanco river"
-  ],
-  "Cashinawa of the Tarauacá river": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Cashinawa of the Tarauacá river"
-  ],
-  "Tuxináwa": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Tuxináwa"
-  ],
-  "Nukuini": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Poyanawa Subgroup",
-    "Nukuini"
-  ],
-  "Poyanáwa": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Poyanawa Subgroup",
-    "Poyanáwa"
-  ],
-  "Remo of the Jaquirana river": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Poyanawa Subgroup",
-    "Remo of the Jaquirana river"
-  ],
   "Isconahua": [
     "Pano-Tacanan",
     "Panoan",
@@ -49552,14 +44675,6 @@ const LANGUAGE_DATA = {
     "Pano Nawa",
     "Poyanawa Subgroup",
     "Isconahua"
-  ],
-  "Nawa": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Poyanawa Subgroup",
-    "Nawa"
   ],
   "Panoan Katukína": [
     "Pano-Tacanan",
@@ -49576,14 +44691,6 @@ const LANGUAGE_DATA = {
     "Pano Nawa",
     "Marubo Subgroup",
     "Marúbo"
-  ],
-  "Remo of the Moa river": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Headwaters Pano",
-    "Remo of the Moa river"
   ],
   "Amahuaca": [
     "Pano-Tacanan",
@@ -49646,38 +44753,6 @@ const LANGUAGE_DATA = {
     "Yaminawa Complex",
     "Shanenawa"
   ],
-  "Atsahuaca": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Madre de Dios Pano",
-    "Atsahuaca"
-  ],
-  "Arazaire": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Madre de Dios Pano",
-    "Arazaire"
-  ],
-  "Panobo": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Chama subgroup",
-    "Panobo"
-  ],
-  "Sensi": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Chama subgroup",
-    "Sensi"
-  ],
   "Shipibo-Conibo": [
     "Pano-Tacanan",
     "Panoan",
@@ -49696,14 +44771,6 @@ const LANGUAGE_DATA = {
     "Shipibo-Konibo-Kapanawa",
     "Capanahua"
   ],
-  "Karipuna": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Bolivian Nawa",
-    "Karipuna"
-  ],
   "Pacahuara": [
     "Pano-Tacanan",
     "Panoan",
@@ -49720,21 +44787,6 @@ const LANGUAGE_DATA = {
     "Bolivian Nawa",
     "Chácobo"
   ],
-  "Chiriva": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mainline Pano",
-    "Pano Nawa",
-    "Bolivian Nawa",
-    "Unclassified Bolivian Nawa",
-    "Chiriva"
-  ],
-  "Mayoruna-Tabatinga": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mayoruna Branch",
-    "Mayoruna-Tabatinga"
-  ],
   "Matís": [
     "Pano-Tacanan",
     "Panoan",
@@ -49742,22 +44794,6 @@ const LANGUAGE_DATA = {
     "Mayo Group",
     "Matis subgroup",
     "Matís"
-  ],
-  "Mayoruna-Amazon": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mayoruna Branch",
-    "Mayo Group",
-    "Matis subgroup",
-    "Mayoruna-Amazon"
-  ],
-  "Mayoruna-Jandiatuba": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mayoruna Branch",
-    "Mayo Group",
-    "Matis subgroup",
-    "Mayoruna-Jandiatuba"
   ],
   "Kulina Pano": [
     "Pano-Tacanan",
@@ -49782,14 +44818,6 @@ const LANGUAGE_DATA = {
     "Mayo Group",
     "Matses subgroup",
     "Korubo"
-  ],
-  "Demushbo": [
-    "Pano-Tacanan",
-    "Panoan",
-    "Mayoruna Branch",
-    "Mayo Group",
-    "Matses subgroup",
-    "Demushbo"
   ],
   "Saweru": [
     "Yawa-Saweru",
@@ -49821,12 +44849,6 @@ const LANGUAGE_DATA = {
     "Afro-Asiatic",
     "Berber",
     "Ghadames"
-  ],
-  "Guanche": [
-    "Afro-Asiatic",
-    "Berber",
-    "Unclassified Berber",
-    "Guanche"
   ],
   "Kabyle": [
     "Afro-Asiatic",
@@ -49939,14 +44961,6 @@ const LANGUAGE_DATA = {
     "Ouargli-Oued Righ",
     "Ouargli"
   ],
-  "Sened": [
-    "Afro-Asiatic",
-    "Berber",
-    "Greater Zenatic",
-    "Zenatic",
-    "Zuara-Sened",
-    "Sened"
-  ],
   "Tunisian-Zuwara Berber": [
     "Afro-Asiatic",
     "Berber",
@@ -49961,13 +44975,6 @@ const LANGUAGE_DATA = {
     "Greater Zenatic",
     "Libyan-Egyptian Oases Berber",
     "Siwi"
-  ],
-  "Sawknah-Fogaha": [
-    "Afro-Asiatic",
-    "Berber",
-    "Greater Zenatic",
-    "Libyan-Egyptian Oases Berber",
-    "Sawknah-Fogaha"
   ],
   "Tahaggart Tamahaq": [
     "Afro-Asiatic",
@@ -50000,19 +45007,6 @@ const LANGUAGE_DATA = {
     "Afro-Asiatic",
     "Cushitic",
     "Beja"
-  ],
-  "Aasax": [
-    "Afro-Asiatic",
-    "Cushitic",
-    "South Cushitic",
-    "Aasax"
-  ],
-  "Kw'adza": [
-    "Afro-Asiatic",
-    "Cushitic",
-    "South Cushitic",
-    "Greater West Rift South Cushitic",
-    "Kw'adza"
   ],
   "Burunge": [
     "Afro-Asiatic",
@@ -50382,17 +45376,6 @@ const LANGUAGE_DATA = {
     "Karre-Boni",
     "Aweer"
   ],
-  "El Molo": [
-    "Afro-Asiatic",
-    "Cushitic",
-    "East Cushitic",
-    "Lowland East Cushitic",
-    "Southern Lowland East Cushitic",
-    "Mainstream Lowland East Cushitic",
-    "Omo-Tana",
-    "Western Omo-Tana",
-    "El Molo"
-  ],
   "Daasanach": [
     "Afro-Asiatic",
     "Cushitic",
@@ -50451,23 +45434,6 @@ const LANGUAGE_DATA = {
     "Northeastern Agaw",
     "Xamtanga"
   ],
-  "Coptic": [
-    "Afro-Asiatic",
-    "Egyptian",
-    "Coptic"
-  ],
-  "Egyptian (Ancient)": [
-    "Afro-Asiatic",
-    "Egyptian",
-    "Egyptian (Ancient)"
-  ],
-  "Geez": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Ethiosemitic",
-    "Geez"
-  ],
   "Tigrinya": [
     "Afro-Asiatic",
     "Semitic",
@@ -50495,17 +45461,6 @@ const LANGUAGE_DATA = {
     "TT-Group",
     "Sebat Bet Gurage"
   ],
-  "Mesmes": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Ethiosemitic",
-    "South Ethiopic",
-    "Outer South Ethiopic",
-    "TT-Group",
-    "Peripheral Western Gurage",
-    "Mesmes"
-  ],
   "Inoric": [
     "Afro-Asiatic",
     "Semitic",
@@ -50526,16 +45481,6 @@ const LANGUAGE_DATA = {
     "Outer South Ethiopic",
     "N-Group",
     "Kistane"
-  ],
-  "Gafat": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Ethiosemitic",
-    "South Ethiopic",
-    "Outer South Ethiopic",
-    "N-Group",
-    "Gafat"
   ],
   "Argobba": [
     "Afro-Asiatic",
@@ -50608,14 +45553,6 @@ const LANGUAGE_DATA = {
     "Ethiosemitic",
     "Tigre-Dahalik",
     "Dahalik"
-  ],
-  "Ancient North Arabian": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Arabian",
-    "Ancient North Arabian"
   ],
   "Standard Arabic": [
     "Afro-Asiatic",
@@ -50942,17 +45879,6 @@ const LANGUAGE_DATA = {
     "Moroccan-Andalusian Arabic",
     "Moroccan Arabic"
   ],
-  "Andalusian Arabic": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Arabian",
-    "Arabic",
-    "North African Arabic",
-    "Moroccan-Andalusian Arabic",
-    "Andalusian Arabic"
-  ],
   "Gilit Mesopotamian Arabic": [
     "Afro-Asiatic",
     "Semitic",
@@ -51030,100 +45956,6 @@ const LANGUAGE_DATA = {
     "Hebrewic",
     "Modern Hebrew"
   ],
-  "Ancient Hebrew": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Canaanite",
-    "Hebrewic",
-    "Ancient Hebrew"
-  ],
-  "Samaritan": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Canaanite",
-    "Hebrewic",
-    "Samaritan"
-  ],
-  "Ugaritic": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Canaanite",
-    "Ugarito-Phoenician",
-    "Ugaritic"
-  ],
-  "Phoenician": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Canaanite",
-    "Ugarito-Phoenician",
-    "Phoenician-Punic",
-    "Phoenician"
-  ],
-  "Punic": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Canaanite",
-    "Ugarito-Phoenician",
-    "Phoenician-Punic",
-    "Punic"
-  ],
-  "Old Aramaic-Sam'alian": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Aramaic",
-    "Old Aramaic-Sam'alian"
-  ],
-  "Imperial Aramaic (700-300 BCE)": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Aramaic",
-    "Imperial-Middle-Modern Aramaic",
-    "Imperial Aramaic (700-300 BCE)"
-  ],
-  "Middle Aramaic": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Aramaic",
-    "Imperial-Middle-Modern Aramaic",
-    "Middle-Modern Aramaic",
-    "Middle Aramaic"
-  ],
-  "Classical Syriac": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Aramaic",
-    "Imperial-Middle-Modern Aramaic",
-    "Middle-Modern Aramaic",
-    "Eastern Aramaic",
-    "Classical Syriac"
-  ],
   "Chaldean Neo-Aramaic": [
     "Afro-Asiatic",
     "Semitic",
@@ -51151,20 +45983,6 @@ const LANGUAGE_DATA = {
     "Central Eastern Aramaic",
     "North-Eastern Neo-Aramaic",
     "Assyrian Neo-Aramaic"
-  ],
-  "Jewish Babylonian Aramaic (ca. 200-1200 CE)": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Aramaic",
-    "Imperial-Middle-Modern Aramaic",
-    "Middle-Modern Aramaic",
-    "Eastern Aramaic",
-    "Central Eastern Aramaic",
-    "North-Eastern Neo-Aramaic",
-    "Jewish Babylonian Aramaic (ca. 200-1200 CE)"
   ],
   "Hulaulá": [
     "Afro-Asiatic",
@@ -51258,20 +46076,6 @@ const LANGUAGE_DATA = {
     "Northwestern Jewish Neo-Aramaic",
     "Barzani Jewish Neo-Aramaic"
   ],
-  "Mlahsô": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Aramaic",
-    "Imperial-Middle-Modern Aramaic",
-    "Middle-Modern Aramaic",
-    "Eastern Aramaic",
-    "Central Eastern Aramaic",
-    "Turoyo-Mlahso",
-    "Mlahsô"
-  ],
   "Turoyo": [
     "Afro-Asiatic",
     "Semitic",
@@ -51314,19 +46118,6 @@ const LANGUAGE_DATA = {
     "Bohtan",
     "Hertevin"
   ],
-  "Classical Mandaic": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Aramaic",
-    "Imperial-Middle-Modern Aramaic",
-    "Middle-Modern Aramaic",
-    "Eastern Aramaic",
-    "Macro-Mandaic",
-    "Classical Mandaic"
-  ],
   "Neo-Mandaic": [
     "Afro-Asiatic",
     "Semitic",
@@ -51351,50 +46142,6 @@ const LANGUAGE_DATA = {
     "Middle-Modern Aramaic",
     "Western Aramaic",
     "Western Neo-Aramaic"
-  ],
-  "Late Palestinian Aramaic": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Northwest Semitic",
-    "Aramaic",
-    "Imperial-Middle-Modern Aramaic",
-    "Middle-Modern Aramaic",
-    "Western Aramaic",
-    "Late Palestinian Aramaic"
-  ],
-  "Minaean": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Sayhadic",
-    "Minaean"
-  ],
-  "Hadrami": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Sayhadic",
-    "Hadrami"
-  ],
-  "Sabaic": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Sayhadic",
-    "Sabaic"
-  ],
-  "Qatabanian": [
-    "Afro-Asiatic",
-    "Semitic",
-    "West Semitic",
-    "Central Semitic",
-    "Sayhadic",
-    "Qatabanian"
   ],
   "Jabal Razih": [
     "Afro-Asiatic",
@@ -51465,24 +46212,6 @@ const LANGUAGE_DATA = {
     "Eastern MSA",
     "Soqotri"
   ],
-  "Amorite": [
-    "Afro-Asiatic",
-    "Semitic",
-    "Unclassified Semitic",
-    "Amorite"
-  ],
-  "Akkadian": [
-    "Afro-Asiatic",
-    "Semitic",
-    "East Semitic",
-    "Akkadian"
-  ],
-  "Eblaite": [
-    "Afro-Asiatic",
-    "Semitic",
-    "East Semitic",
-    "Eblaite"
-  ],
   "Karekare": [
     "Afro-Asiatic",
     "Chadic",
@@ -51492,19 +46221,6 @@ const LANGUAGE_DATA = {
     "West Chadic A.2",
     "Boleic",
     "Karekare"
-  ],
-  "Kubi": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic A",
-    "West Chadic A.2-3",
-    "West Chadic A.2",
-    "Boleic",
-    "Nuclear Boleic",
-    "Gera-Geruma-Kubi-Deno",
-    "Kubi-Deno",
-    "Kubi"
   ],
   "Deno": [
     "Afro-Asiatic",
@@ -51585,21 +46301,6 @@ const LANGUAGE_DATA = {
     "Ngamo-Bele",
     "Bolanci-Bele",
     "Bole"
-  ],
-  "Beele": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic A",
-    "West Chadic A.2-3",
-    "West Chadic A.2",
-    "Boleic",
-    "Nuclear Boleic",
-    "Galambu-Bele",
-    "Kirfi-Bele",
-    "Ngamo-Bele",
-    "Bolanci-Bele",
-    "Beele"
   ],
   "Giiwo": [
     "Afro-Asiatic",
@@ -52078,16 +46779,6 @@ const LANGUAGE_DATA = {
     "Western West Chadic B.2",
     "Pa'a"
   ],
-  "Ajawa": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic B",
-    "West Chadic B.2",
-    "Nuclear West Chadic B.2",
-    "Western West Chadic B.2",
-    "Ajawa"
-  ],
   "Duwai": [
     "Afro-Asiatic",
     "Chadic",
@@ -52115,28 +46806,6 @@ const LANGUAGE_DATA = {
     "Shira-Southwestern Bade",
     "Bade"
   ],
-  "Auyokawa": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic B",
-    "West Chadic B.1",
-    "Ngizim-Southwestern Bade",
-    "Shira-Southwestern Bade",
-    "Shira",
-    "Auyokawa"
-  ],
-  "Teshenawa": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic B",
-    "West Chadic B.1",
-    "Ngizim-Southwestern Bade",
-    "Shira-Southwestern Bade",
-    "Shira",
-    "Teshenawa"
-  ],
   "Dass": [
     "Afro-Asiatic",
     "Chadic",
@@ -52146,29 +46815,6 @@ const LANGUAGE_DATA = {
     "South Bauchi West",
     "Southwest South Bauchi",
     "Dass"
-  ],
-  "Dokshi": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic B",
-    "West Chadic B.3",
-    "South Bauchi West",
-    "Southwest South Bauchi",
-    "Zeemic",
-    "Dokshi"
-  ],
-  "Zeem": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic B",
-    "West Chadic B.3",
-    "South Bauchi West",
-    "Southwest South Bauchi",
-    "Zeemic",
-    "Nuclear Zeemic",
-    "Zeem"
   ],
   "Chaari": [
     "Afro-Asiatic",
@@ -52182,18 +46828,6 @@ const LANGUAGE_DATA = {
     "Nuclear Zeemic",
     "Chaari"
   ],
-  "Tulai": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic B",
-    "West Chadic B.3",
-    "South Bauchi West",
-    "Southwest South Bauchi",
-    "Zeemic",
-    "Nuclear Zeemic",
-    "Tulai"
-  ],
   "Saya": [
     "Afro-Asiatic",
     "Chadic",
@@ -52205,17 +46839,6 @@ const LANGUAGE_DATA = {
     "Zakse-Saya",
     "Saya"
   ],
-  "Zari": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic B",
-    "West Chadic B.3",
-    "South Bauchi West",
-    "Southwest South Bauchi",
-    "Zakse-Saya",
-    "Zari"
-  ],
   "Dyarim": [
     "Afro-Asiatic",
     "Chadic",
@@ -52226,17 +46849,6 @@ const LANGUAGE_DATA = {
     "Southwest South Bauchi",
     "Zakse-Saya",
     "Dyarim"
-  ],
-  "Luri": [
-    "Afro-Asiatic",
-    "Chadic",
-    "West Chadic",
-    "West Chadic B",
-    "West Chadic B.3",
-    "South Bauchi West",
-    "Northwest South Bauchi",
-    "Polci-Luri",
-    "Luri"
   ],
   "Pesse": [
     "Afro-Asiatic",
@@ -52397,14 +47009,6 @@ const LANGUAGE_DATA = {
     "Kir-Mangas",
     "Kir-Balar"
   ],
-  "Zumaya": [
-    "Afro-Asiatic",
-    "Chadic",
-    "Masa",
-    "North Masa",
-    "Unclassified North Masa",
-    "Zumaya"
-  ],
   "Marba": [
     "Afro-Asiatic",
     "Chadic",
@@ -52528,16 +47132,6 @@ const LANGUAGE_DATA = {
     "Gudeic",
     "Nzanyic",
     "Nzanyi"
-  ],
-  "Holma": [
-    "Afro-Asiatic",
-    "Chadic",
-    "Biu-Mandara",
-    "South Biu-Mandara",
-    "Bataic",
-    "Gudeic",
-    "Nzanyic",
-    "Holma"
   ],
   "Zizilivakan": [
     "Afro-Asiatic",
@@ -52752,14 +47346,6 @@ const LANGUAGE_DATA = {
     "North Biu-Mandara",
     "Gidar"
   ],
-  "Baldemu": [
-    "Afro-Asiatic",
-    "Chadic",
-    "Biu-Mandara",
-    "North Biu-Mandara",
-    "Maroua",
-    "Baldemu"
-  ],
   "South Giziga": [
     "Afro-Asiatic",
     "Chadic",
@@ -52777,14 +47363,6 @@ const LANGUAGE_DATA = {
     "Maroua",
     "Giziga",
     "North Giziga"
-  ],
-  "Muskum": [
-    "Afro-Asiatic",
-    "Chadic",
-    "Biu-Mandara",
-    "North Biu-Mandara",
-    "Musguic",
-    "Muskum"
   ],
   "Mbara (Chad)": [
     "Afro-Asiatic",
@@ -53173,16 +47751,6 @@ const LANGUAGE_DATA = {
     "Kotoko Septentrional 2",
     "Mpade"
   ],
-  "Ngala of Lake Chad": [
-    "Afro-Asiatic",
-    "Chadic",
-    "Biu-Mandara",
-    "North Biu-Mandara",
-    "Kotoko-Buduma",
-    "Kotoko Septentrional",
-    "Kotoko Septentrional 2",
-    "Ngala of Lake Chad"
-  ],
   "Psikye": [
     "Afro-Asiatic",
     "Chadic",
@@ -53250,15 +47818,6 @@ const LANGUAGE_DATA = {
     "East Chadic B",
     "Barainic",
     "Jalking"
-  ],
-  "Mabire": [
-    "Afro-Asiatic",
-    "Chadic",
-    "East Chadic",
-    "East Chadic B",
-    "East Chadic B.1",
-    "Dangla-Mabire-Birgit",
-    "Mabire"
   ],
   "Dangaleat": [
     "Afro-Asiatic",
@@ -53563,85 +48122,10 @@ const LANGUAGE_DATA = {
     "Ndam-Tumak",
     "Ndam"
   ],
-  "Alacalufe-Austral": [
-    "Kawesqar",
-    "Alacalufe-Austral"
-  ],
-  "Alacalufe-Central": [
-    "Kawesqar",
-    "North Central Alacufan",
-    "Alacalufe-Central"
-  ],
   "Qawasqar": [
     "Kawesqar",
     "North Central Alacufan",
     "Qawasqar"
-  ],
-  "Wulna": [
-    "Limilngan-Wulna",
-    "Wulna"
-  ],
-  "Limilngan": [
-    "Limilngan-Wulna",
-    "Limilngan"
-  ],
-  "Obispeño": [
-    "Chumashan",
-    "Obispeño"
-  ],
-  "Cruzeño": [
-    "Chumashan",
-    "Southern Chumashan",
-    "Cruzeño"
-  ],
-  "Ineseño": [
-    "Chumashan",
-    "Southern Chumashan",
-    "Central Chumashan",
-    "Ineseño"
-  ],
-  "Ventureño": [
-    "Chumashan",
-    "Southern Chumashan",
-    "Central Chumashan",
-    "Ventureño"
-  ],
-  "Purisimeño": [
-    "Chumashan",
-    "Southern Chumashan",
-    "Central Chumashan",
-    "Purisimeño"
-  ],
-  "Barbareño": [
-    "Chumashan",
-    "Southern Chumashan",
-    "Central Chumashan",
-    "Barbareño"
-  ],
-  "Mepuri": [
-    "Arawakan",
-    "Japura-Colombia",
-    "Mepuri"
-  ],
-  "Kaishana": [
-    "Arawakan",
-    "Japura-Colombia",
-    "Ica",
-    "Kaishana"
-  ],
-  "Passe": [
-    "Arawakan",
-    "Japura-Colombia",
-    "Ica",
-    "Japura-Ica",
-    "Passe"
-  ],
-  "Jumana": [
-    "Arawakan",
-    "Japura-Colombia",
-    "Ica",
-    "Japura-Ica",
-    "Jumana"
   ],
   "Resígaro": [
     "Arawakan",
@@ -53656,13 +48140,6 @@ const LANGUAGE_DATA = {
     "Nuclear Japura-Colombia",
     "Caqueta",
     "Yucuna"
-  ],
-  "Uainuma-Mariate": [
-    "Arawakan",
-    "Japura-Colombia",
-    "Nuclear Japura-Colombia",
-    "Caqueta",
-    "Uainuma-Mariate"
   ],
   "Cabiyarí": [
     "Arawakan",
@@ -53713,14 +48190,6 @@ const LANGUAGE_DATA = {
     "Baniwa-Curripaco",
     "Baniwa do Icana"
   ],
-  "Mandahuaca": [
-    "Arawakan",
-    "Japura-Colombia",
-    "Nuclear Japura-Colombia",
-    "Northeast Japura-Colombia",
-    "Cassiquiare",
-    "Mandahuaca"
-  ],
   "Warekena do San Miguel": [
     "Arawakan",
     "Japura-Colombia",
@@ -53764,34 +48233,6 @@ const LANGUAGE_DATA = {
     "Mojeño",
     "Ignaciano"
   ],
-  "Apolista": [
-    "Arawakan",
-    "Southern Maipuran",
-    "Bolivian Arawakan",
-    "Unclassified Bolivian Arawakan",
-    "Apolista"
-  ],
-  "Magiana": [
-    "Arawakan",
-    "Southern Maipuran",
-    "Bolivian Arawakan",
-    "Unclassified Bolivian Arawakan",
-    "Magiana"
-  ],
-  "Chamicuro": [
-    "Arawakan",
-    "Southern Maipuran",
-    "Purus-Chamicuro",
-    "Chamicuro-Morike",
-    "Chamicuro"
-  ],
-  "Morike": [
-    "Arawakan",
-    "Southern Maipuran",
-    "Purus-Chamicuro",
-    "Chamicuro-Morike",
-    "Morike"
-  ],
   "Iñapari": [
     "Arawakan",
     "Southern Maipuran",
@@ -53805,14 +48246,6 @@ const LANGUAGE_DATA = {
     "Purus-Chamicuro",
     "Purus",
     "Apurinã"
-  ],
-  "Carari": [
-    "Arawakan",
-    "Southern Maipuran",
-    "Purus-Chamicuro",
-    "Purus",
-    "Unclassified Purus",
-    "Carari"
   ],
   "Machinere": [
     "Arawakan",
@@ -53956,74 +48389,11 @@ const LANGUAGE_DATA = {
     "Ashe-Asha Norte",
     "Pichis Ashéninka"
   ],
-  "Anauyá": [
-    "Arawakan",
-    "Medio Rio Negro",
-    "Marauia-Castana",
-    "Anauyá"
-  ],
-  "Yabaâna-Mainatari": [
-    "Arawakan",
-    "Medio Rio Negro",
-    "Marauia-Castana",
-    "Yabaâna-Mainatari"
-  ],
-  "Guinau": [
-    "Arawakan",
-    "Medio Rio Negro",
-    "Bareic",
-    "Guinau"
-  ],
-  "Baré": [
-    "Arawakan",
-    "Medio Rio Negro",
-    "Bareic",
-    "Baré"
-  ],
-  "Aruan": [
-    "Arawakan",
-    "Negro-Roraima",
-    "Aruan"
-  ],
-  "Xiriâna": [
-    "Arawakan",
-    "Negro-Roraima",
-    "Bahuanaic",
-    "Xiriâna"
-  ],
-  "Manao": [
-    "Arawakan",
-    "Negro-Roraima",
-    "Bahuanaic",
-    "Cariai-Manao",
-    "Manao"
-  ],
-  "Cariay": [
-    "Arawakan",
-    "Negro-Roraima",
-    "Bahuanaic",
-    "Cariai-Manao",
-    "Cariay"
-  ],
   "Mapidian-Mawayana": [
     "Arawakan",
     "Negro-Roraima",
     "Pidjanan",
     "Mapidian-Mawayana"
-  ],
-  "Parauana": [
-    "Arawakan",
-    "Negro-Roraima",
-    "Pidjanan",
-    "Wapishanan",
-    "Parauana"
-  ],
-  "Aroaqui": [
-    "Arawakan",
-    "Negro-Roraima",
-    "Pidjanan",
-    "Wapishanan",
-    "Aroaqui"
   ],
   "Wapishana": [
     "Arawakan",
@@ -54041,14 +48411,6 @@ const LANGUAGE_DATA = {
     "Wapishana-Atorai",
     "Atorada"
   ],
-  "Shebayo": [
-    "Arawakan",
-    "Negro-Roraima",
-    "Pidjanan",
-    "Wapishanan",
-    "Unclassified Wapishanan",
-    "Shebayo"
-  ],
   "Palikúr": [
     "Arawakan",
     "Central-Eastern Maipuran",
@@ -54060,14 +48422,6 @@ const LANGUAGE_DATA = {
     "Central Maipuran",
     "Xinguan Arawak",
     "Yawalapití"
-  ],
-  "Kustenau": [
-    "Arawakan",
-    "Central-Eastern Maipuran",
-    "Central Maipuran",
-    "Xinguan Arawak",
-    "Waura-Mehinaku-Kustenau",
-    "Kustenau"
   ],
   "Mehináku": [
     "Arawakan",
@@ -54086,13 +48440,6 @@ const LANGUAGE_DATA = {
     "Waura-Mehinaku-Kustenau",
     "Waura-Mehinaku",
     "Waurá"
-  ],
-  "Saraveca": [
-    "Arawakan",
-    "Central-Eastern Maipuran",
-    "Central Maipuran",
-    "Xaray",
-    "Saraveca"
   ],
   "Enawené-Nawé": [
     "Arawakan",
@@ -54122,44 +48469,12 @@ const LANGUAGE_DATA = {
     "Guajiro-Paraujano",
     "Wayuu"
   ],
-  "Uirina": [
-    "Arawakan",
-    "Caribbean Arawakan",
-    "Unclassified Caribbean Arawakan",
-    "Uirina"
-  ],
-  "Araicu": [
-    "Arawakan",
-    "Caribbean Arawakan",
-    "Unclassified Caribbean Arawakan",
-    "Araicu"
-  ],
-  "Maragua": [
-    "Arawakan",
-    "Caribbean Arawakan",
-    "Antillean Arawakan",
-    "Maragua"
-  ],
-  "Taino": [
-    "Arawakan",
-    "Caribbean Arawakan",
-    "Antillean Arawakan",
-    "Taino"
-  ],
   "Lokono": [
     "Arawakan",
     "Caribbean Arawakan",
     "Antillean Arawakan",
     "Ineric",
     "Lokono"
-  ],
-  "Island Carib": [
-    "Arawakan",
-    "Caribbean Arawakan",
-    "Antillean Arawakan",
-    "Ineric",
-    "Island Carib-Garifuna",
-    "Island Carib"
   ],
   "Garifuna": [
     "Arawakan",
@@ -54169,47 +48484,11 @@ const LANGUAGE_DATA = {
     "Island Carib-Garifuna",
     "Garifuna"
   ],
-  "Caquetio": [
-    "Arawakan",
-    "Caribbean Arawakan",
-    "Antillean Arawakan",
-    "Unclassified Antillean Arawakan",
-    "Caquetio"
-  ],
-  "Maipure-Avane": [
-    "Arawakan",
-    "Alto Orinoco",
-    "Maipure-Avane"
-  ],
   "Baniva de Maroa": [
     "Arawakan",
     "Alto Orinoco",
     "Parenic",
     "Baniva de Maroa"
-  ],
-  "Yavitero-Pareni": [
-    "Arawakan",
-    "Alto Orinoco",
-    "Parenic",
-    "Yavitero-Pareni"
-  ],
-  "Kathlamet": [
-    "Chinookan",
-    "Kathlamet"
-  ],
-  "Upper Chinook": [
-    "Chinookan",
-    "Upper Chinook"
-  ],
-  "Creolized Grand Ronde Chinook Jargon": [
-    "Chinookan",
-    "Lower Chinookan",
-    "Creolized Grand Ronde Chinook Jargon"
-  ],
-  "Clatsop-Shoalwater Chinook": [
-    "Chinookan",
-    "Lower Chinookan",
-    "Clatsop-Shoalwater Chinook"
   ],
   "Rapoisi": [
     "North Bougainville",
@@ -54416,15 +48695,6 @@ const LANGUAGE_DATA = {
     "Western Samur",
     "Tsakhur"
   ],
-  "Aghwan": [
-    "Nakh-Daghestanian",
-    "Daghestanian",
-    "Lezgic",
-    "Samur",
-    "Eastern Samur",
-    "Udi-Aghwan",
-    "Aghwan"
-  ],
   "Udi": [
     "Nakh-Daghestanian",
     "Daghestanian",
@@ -54566,26 +48836,6 @@ const LANGUAGE_DATA = {
     "Piratapuyic",
     "Wa'ikhana"
   ],
-  "Miriti": [
-    "Tucanoan",
-    "Eastern Tucanoan",
-    "Eastern Eastern Tucanoan",
-    "Eastern Eastern Tucanoan II",
-    "Kotiria-Piratapuyo",
-    "Piratapuyic",
-    "Arapaso-Miriti",
-    "Miriti"
-  ],
-  "Arapaso": [
-    "Tucanoan",
-    "Eastern Tucanoan",
-    "Eastern Eastern Tucanoan",
-    "Eastern Eastern Tucanoan II",
-    "Kotiria-Piratapuyo",
-    "Piratapuyic",
-    "Arapaso-Miriti",
-    "Arapaso"
-  ],
   "Carapana": [
     "Tucanoan",
     "Eastern Tucanoan",
@@ -54603,15 +48853,6 @@ const LANGUAGE_DATA = {
     "Pisamira-Yuruti",
     "Pisamira-Carapana",
     "Pisamira"
-  ],
-  "Yurutí": [
-    "Tucanoan",
-    "Eastern Tucanoan",
-    "Eastern Eastern Tucanoan",
-    "Eastern Eastern Tucanoan II",
-    "Pisamira-Yuruti",
-    "Tuyuca-Yuruti",
-    "Yurutí"
   ],
   "Tuyuca": [
     "Tucanoan",
@@ -54645,18 +48886,6 @@ const LANGUAGE_DATA = {
     "Bara-Tatuyo",
     "Waimaha"
   ],
-  "Kueretu": [
-    "Tucanoan",
-    "Eastern Tucanoan",
-    "South Eastern Tucanoan",
-    "Kueretu"
-  ],
-  "Yahuna": [
-    "Tucanoan",
-    "Eastern Tucanoan",
-    "South Eastern Tucanoan",
-    "Yahuna"
-  ],
   "Tanimuca-Retuarã": [
     "Tucanoan",
     "Eastern Tucanoan",
@@ -54684,14 +48913,6 @@ const LANGUAGE_DATA = {
     "Cubeo-Desano",
     "Cubeo"
   ],
-  "Yupua": [
-    "Tucanoan",
-    "Eastern Tucanoan",
-    "Western Eastern Tucanoan",
-    "Cubeo-Desano",
-    "Yupua-Siriano-Desano",
-    "Yupua"
-  ],
   "Siriano": [
     "Tucanoan",
     "Eastern Tucanoan",
@@ -54716,12 +48937,6 @@ const LANGUAGE_DATA = {
     "Koreguaje-Tama",
     "Koreguaje"
   ],
-  "Tama (Colombia)": [
-    "Tucanoan",
-    "Western Tucanoan",
-    "Koreguaje-Tama",
-    "Tama (Colombia)"
-  ],
   "Maijiki": [
     "Tucanoan",
     "Western Tucanoan",
@@ -54734,14 +48949,6 @@ const LANGUAGE_DATA = {
     "Napo Tucanoan",
     "Siona-Secoya",
     "Secoya"
-  ],
-  "Macaguaje": [
-    "Tucanoan",
-    "Western Tucanoan",
-    "Napo Tucanoan",
-    "Siona-Secoya",
-    "Sionan",
-    "Macaguaje"
   ],
   "Siona-Tetete": [
     "Tucanoan",
@@ -54812,16 +49019,6 @@ const LANGUAGE_DATA = {
     "Aleutic",
     "Aleut"
   ],
-  "Mednyj Aleut": [
-    "Eskimo-Aleut",
-    "Aleutic",
-    "Mednyj Aleut"
-  ],
-  "Old Sirenik": [
-    "Eskimo-Aleut",
-    "Eskimo",
-    "Old Sirenik"
-  ],
   "Naukan Yupik": [
     "Eskimo-Aleut",
     "Eskimo",
@@ -54890,10 +49087,6 @@ const LANGUAGE_DATA = {
     "Garrwan",
     "Garrwa"
   ],
-  "Wanyi": [
-    "Garrwan",
-    "Wanyi"
-  ],
   "Aguaruna": [
     "Chicham",
     "Aguaruna"
@@ -54915,46 +49108,15 @@ const LANGUAGE_DATA = {
     "Huambisa-Shuar",
     "Huambisa"
   ],
-  "Teushen": [
-    "Chonan",
-    "Continental Chonan",
-    "Teushen"
-  ],
-  "Tehuelche": [
-    "Chonan",
-    "Continental Chonan",
-    "Tehuelche"
-  ],
-  "Selk'nam": [
-    "Chonan",
-    "Insular Chonan",
-    "Selk'nam"
-  ],
-  "Haush": [
-    "Chonan",
-    "Insular Chonan",
-    "Haush"
-  ],
   "Lardil": [
     "Tangkic",
     "Lardil"
-  ],
-  "Ganggalida": [
-    "Tangkic",
-    "Southern Tangkic",
-    "Ganggalida"
   ],
   "Kayardild": [
     "Tangkic",
     "Southern Tangkic",
     "Kayardild-Yangkaal",
     "Kayardild"
-  ],
-  "Yangkaal": [
-    "Tangkic",
-    "Southern Tangkic",
-    "Kayardild-Yangkaal",
-    "Yangkaal"
   ],
   "Amanab": [
     "Border",
@@ -55125,16 +49287,6 @@ const LANGUAGE_DATA = {
     "Yirram",
     "Jaminjung-Ngaliwurru"
   ],
-  "Nungali": [
-    "Mirndi",
-    "Yirram",
-    "Nungali"
-  ],
-  "Ngarnka": [
-    "Mirndi",
-    "Ngurlun",
-    "Ngarnka"
-  ],
   "Wambayan": [
     "Mirndi",
     "Ngurlun",
@@ -55167,47 +49319,6 @@ const LANGUAGE_DATA = {
     "Turama-Omatian",
     "Barikewa"
   ],
-  "Konomihu": [
-    "Shastan",
-    "Konomihu"
-  ],
-  "Okwanuchu": [
-    "Shastan",
-    "Nuclear Shastan",
-    "Okwanuchu"
-  ],
-  "Shasta": [
-    "Shastan",
-    "Nuclear Shastan",
-    "Shasta"
-  ],
-  "New River Shasta": [
-    "Shastan",
-    "Unclassified Shastan",
-    "New River Shasta"
-  ],
-  "Port Sorell": [
-    "Western Tasmanian",
-    "Port Sorell"
-  ],
-  "Northwestern Tasmanian": [
-    "Western Tasmanian",
-    "Western Coastal Tasmanian",
-    "Northwestern Tasmanian"
-  ],
-  "Southwestern Tasmanian": [
-    "Western Tasmanian",
-    "Western Coastal Tasmanian",
-    "Southwestern Tasmanian"
-  ],
-  "Millcayac": [
-    "Huarpean",
-    "Millcayac"
-  ],
-  "Allentiac": [
-    "Huarpean",
-    "Allentiac"
-  ],
   "Bunun": [
     "Austronesian",
     "Bunun"
@@ -55223,23 +49334,6 @@ const LANGUAGE_DATA = {
   "Puyuma": [
     "Austronesian",
     "Puyuma"
-  ],
-  "Thao": [
-    "Austronesian",
-    "Western Plains Austronesian",
-    "Thao"
-  ],
-  "Papora-Hoanya": [
-    "Austronesian",
-    "Western Plains Austronesian",
-    "Central Western Plains",
-    "Papora-Hoanya"
-  ],
-  "Babuza": [
-    "Austronesian",
-    "Western Plains Austronesian",
-    "Central Western Plains",
-    "Babuza"
   ],
   "Palauan": [
     "Austronesian",
@@ -55378,14 +49472,6 @@ const LANGUAGE_DATA = {
     "Greater Barito linkage",
     "Barito-Mahakam",
     "Tunjung"
-  ],
-  "Ampanang": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Basap-Greater Barito",
-    "Greater Barito linkage",
-    "Barito-Mahakam",
-    "Ampanang"
   ],
   "Bakumpai": [
     "Austronesian",
@@ -56109,13 +50195,6 @@ const LANGUAGE_DATA = {
     "Gaddangic",
     "Cagayan-Baliwon Gaddang",
     "Ga'dang"
-  ],
-  "Dicamay Agta": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Northern Luzon",
-    "Unclassified Northern Luzon",
-    "Dicamay Agta"
   ],
   "Dupaninan Agta": [
     "Austronesian",
@@ -56882,16 +50961,6 @@ const LANGUAGE_DATA = {
     "Lower Baram",
     "Central Lower Baram B",
     "Narom"
-  ],
-  "Lelak": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "North Borneo Malayo-Polynesian",
-    "North Sarawakan",
-    "Berawan-Lower Baram",
-    "Lower Baram",
-    "Central Lower Baram B",
-    "Lelak"
   ],
   "Bolongan": [
     "Austronesian",
@@ -58462,13 +52531,6 @@ const LANGUAGE_DATA = {
     "North Mangyan",
     "Iraya"
   ],
-  "Tandia": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "South Halmahera-West New Guinea",
-    "Tandia"
-  ],
   "Waropen": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -58490,15 +52552,6 @@ const LANGUAGE_DATA = {
     "South Halmahera-West New Guinea",
     "Lower Mamberamo",
     "Warembori"
-  ],
-  "Pauwi": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "South Halmahera-West New Guinea",
-    "Lower Mamberamo",
-    "Yoke-Pauwi",
-    "Pauwi"
   ],
   "Yoke": [
     "Austronesian",
@@ -59150,24 +53203,6 @@ const LANGUAGE_DATA = {
     "Maoric",
     "Maori"
   ],
-  "Moriori": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Central Pacific linkage",
-    "Tokalau Fijian",
-    "Polynesian",
-    "Nuclear Polynesian",
-    "Northern Outlier Polynesian-East Polynesian",
-    "Solomons Northern Outlier Polynesian-East Polynesian",
-    "Central Northern Outlier Polynesian-East Polynesian",
-    "East Polynesian",
-    "East Polynesian Proximal",
-    "Southern East Polynesian Proximal",
-    "Maoric",
-    "Moriori"
-  ],
   "South Marquesan": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -59425,18 +53460,6 @@ const LANGUAGE_DATA = {
     "Nuclear Polynesian",
     "East Uvean-Niuafo'ou",
     "East Uvean"
-  ],
-  "Niuatoputapu": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Central Pacific linkage",
-    "Tokalau Fijian",
-    "Polynesian",
-    "Nuclear Polynesian",
-    "East Uvean-Niuafo'ou",
-    "Niuatoputapu"
   ],
   "Niuean": [
     "Austronesian",
@@ -59870,26 +53893,6 @@ const LANGUAGE_DATA = {
     "Western Admiralty Islands",
     "Seimat"
   ],
-  "Kaniet": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Admiralty Islands",
-    "Western Admiralty Islands",
-    "Anchorite",
-    "Kaniet"
-  ],
-  "Kaniet-Dempwolff": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Admiralty Islands",
-    "Western Admiralty Islands",
-    "Anchorite",
-    "Kaniet-Dempwolff"
-  ],
   "Kosraean": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -59962,19 +53965,6 @@ const LANGUAGE_DATA = {
     "Chuukic-Ponapeic",
     "Ponapeic",
     "Pingelapese"
-  ],
-  "Mapia": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Micronesian",
-    "Central Micronesian",
-    "Western Micronesian",
-    "Chuukic-Ponapeic",
-    "Trukic",
-    "Nuclear Trukic",
-    "Mapia"
   ],
   "Woleaian": [
     "Austronesian",
@@ -60816,19 +54806,6 @@ const LANGUAGE_DATA = {
     "Busu",
     "Aribwaung"
   ],
-  "Aribwatsa": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Western Oceanic linkage",
-    "North New Guinea linkage",
-    "Huon Gulf",
-    "Markham",
-    "Lower Markham",
-    "Busu",
-    "Aribwatsa"
-  ],
   "Duwet": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -61283,20 +55260,6 @@ const LANGUAGE_DATA = {
     "Arawe-Pasismanua",
     "Pasismanua",
     "Aighon"
-  ],
-  "Kaulong": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Western Oceanic linkage",
-    "North New Guinea linkage",
-    "Ngero-Vitiaz linkage",
-    "Vitiaz linkage",
-    "Southwest New Britain linkage",
-    "Arawe-Pasismanua",
-    "Pasismanua",
-    "Kaulong"
   ],
   "Karore": [
     "Austronesian",
@@ -61772,19 +55735,6 @@ const LANGUAGE_DATA = {
     "St George linkage",
     "Konomala"
   ],
-  "Laghu": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Western Oceanic linkage",
-    "Meso Melanesian linkage",
-    "New Ireland-Northwest Solomonic linkage",
-    "St George linkage",
-    "Northwest Solomonic",
-    "West Santa Isabel",
-    "Laghu"
-  ],
   "Zabana": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -62025,19 +55975,6 @@ const LANGUAGE_DATA = {
     "Zazao-Blanga",
     "Blablanga"
   ],
-  "Uruava": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Western Oceanic linkage",
-    "Meso Melanesian linkage",
-    "New Ireland-Northwest Solomonic linkage",
-    "St George linkage",
-    "Northwest Solomonic",
-    "Mono-Uruavan",
-    "Uruava"
-  ],
   "Torau": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -62089,19 +56026,6 @@ const LANGUAGE_DATA = {
     "Northwest Solomonic",
     "Banoni-Piva",
     "Lawunuia"
-  ],
-  "Kazukuru": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Western Oceanic linkage",
-    "Meso Melanesian linkage",
-    "New Ireland-Northwest Solomonic linkage",
-    "St George linkage",
-    "Northwest Solomonic",
-    "New Georgia",
-    "Kazukuru"
   ],
   "Duke": [
     "Austronesian",
@@ -62376,19 +56300,6 @@ const LANGUAGE_DATA = {
     "Minigir-Tolai",
     "Minigir"
   ],
-  "Guramalum": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Western Oceanic linkage",
-    "Meso Melanesian linkage",
-    "New Ireland-Northwest Solomonic linkage",
-    "St George linkage",
-    "Patpatar-Minigir-Tolai",
-    "Minigir-Tolai",
-    "Guramalum"
-  ],
   "Kuanua": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -62464,18 +56375,6 @@ const LANGUAGE_DATA = {
     "Hula-Keapara",
     "Hula"
   ],
-  "Ouma": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Western Oceanic linkage",
-    "Papuan Tip linkage",
-    "Peripheral Papuan Tip linkage",
-    "Central Papuan Oceanic",
-    "Oumic",
-    "Ouma"
-  ],
   "Magori": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -62488,32 +56387,6 @@ const LANGUAGE_DATA = {
     "Oumic",
     "Magoric",
     "Magori"
-  ],
-  "Bina (Papua New Guinea)": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Western Oceanic linkage",
-    "Papuan Tip linkage",
-    "Peripheral Papuan Tip linkage",
-    "Central Papuan Oceanic",
-    "Oumic",
-    "Magoric",
-    "Bina (Papua New Guinea)"
-  ],
-  "Yoba": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Western Oceanic linkage",
-    "Papuan Tip linkage",
-    "Peripheral Papuan Tip linkage",
-    "Central Papuan Oceanic",
-    "Oumic",
-    "Magoric",
-    "Yoba"
   ],
   "Abadi": [
     "Austronesian",
@@ -63687,16 +57560,6 @@ const LANGUAGE_DATA = {
     "Whitesands-North Tanna linkage",
     "Whitesands"
   ],
-  "Ifo": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Southern Melanesian",
-    "Southern Vanuatu",
-    "Erromanga",
-    "Ifo"
-  ],
   "Ura (Vanuatu)": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -63764,18 +57627,6 @@ const LANGUAGE_DATA = {
     "Southern New Caledonian",
     "Mid-Southern New Caledonian",
     "Xaragure"
-  ],
-  "Zire": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Southern Melanesian",
-    "New Caledonian",
-    "Mainland New Caledonian",
-    "Southern New Caledonian",
-    "Mid-Southern New Caledonian",
-    "Zire"
   ],
   "Xârâcùù": [
     "Austronesian",
@@ -63986,20 +57837,6 @@ const LANGUAGE_DATA = {
     "Voh-Kone-Cem-Pac",
     "Voh-Kone",
     "Vamale"
-  ],
-  "Waamwang": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "Southern Melanesian",
-    "New Caledonian",
-    "Mainland New Caledonian",
-    "Northern New Caledonian",
-    "Mid-Northern New Caledonian",
-    "Voh-Kone-Cem-Pac",
-    "Voh-Kone",
-    "Waamwang"
   ],
   "Haveke": [
     "Austronesian",
@@ -64305,17 +58142,6 @@ const LANGUAGE_DATA = {
     "Central Vanuatu",
     "South Pentecost",
     "Sa"
-  ],
-  "Sowa": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "North and Central Vanuatu",
-    "Central Vanuatu",
-    "South Pentecost",
-    "Seke-Sowa",
-    "Sowa"
   ],
   "Seke (Vanuatu)": [
     "Austronesian",
@@ -65300,18 +59126,6 @@ const LANGUAGE_DATA = {
     "Shark Bayic",
     "Ngen"
   ],
-  "Nethalp": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "North and Central Vanuatu",
-    "Northern Vanuatu",
-    "Espiritu Santo",
-    "Nuclear Santo",
-    "Shark Bayic",
-    "Nethalp"
-  ],
   "Tamambo": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -65335,18 +59149,6 @@ const LANGUAGE_DATA = {
     "Nuclear Santo",
     "South Santo",
     "Wanohe"
-  ],
-  "Aore": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Eastern Malayo-Polynesian",
-    "Oceanic",
-    "North and Central Vanuatu",
-    "Northern Vanuatu",
-    "Espiritu Santo",
-    "Nuclear Santo",
-    "South Santo",
-    "Aore"
   ],
   "Mores": [
     "Austronesian",
@@ -65450,14 +59252,6 @@ const LANGUAGE_DATA = {
     "Sula-Buru",
     "Buruic",
     "Buru (Indonesia)"
-  ],
-  "Hukumina": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "West Central Maluku",
-    "Sula-Buru",
-    "Buruic",
-    "Hukumina"
   ],
   "Ibatan": [
     "Austronesian",
@@ -65644,28 +59438,12 @@ const LANGUAGE_DATA = {
     "Cham",
     "Western Cham"
   ],
-  "Old Cham": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Malayo-Chamic",
-    "Aceh-Chamic",
-    "Chamic",
-    "Cham",
-    "Old Cham"
-  ],
   "Haji": [
     "Austronesian",
     "Malayo-Polynesian",
     "Malayo-Chamic",
     "Malayic",
     "Haji"
-  ],
-  "Old Malay": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Malayo-Chamic",
-    "Malayic",
-    "Old Malay"
   ],
   "Malayic Dayak": [
     "Austronesian",
@@ -66255,14 +60033,6 @@ const LANGUAGE_DATA = {
     "Setic",
     "Salas"
   ],
-  "Hoti of East Seram": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Greater Seram Laut",
-    "East Seram",
-    "Setic",
-    "Hoti of East Seram"
-  ],
   "Banda (Indonesia)": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -66336,12 +60106,6 @@ const LANGUAGE_DATA = {
     "Malayo-Polynesian",
     "Moken-Moklen",
     "Moklen"
-  ],
-  "Kawi": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Javanesic",
-    "Kawi"
   ],
   "Osing": [
     "Austronesian",
@@ -66450,14 +60214,6 @@ const LANGUAGE_DATA = {
     "Gorontalo-Mongondow",
     "Mongondowic",
     "Mongondow"
-  ],
-  "Ponosakan": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Greater Central Philippine",
-    "Gorontalo-Mongondow",
-    "Mongondowic",
-    "Ponosakan"
   ],
   "Lapuyan Subanun": [
     "Austronesian",
@@ -66915,17 +60671,6 @@ const LANGUAGE_DATA = {
     "West Bisayan",
     "Kuyan",
     "Cuyonon"
-  ],
-  "Ratagnon": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Greater Central Philippine",
-    "Central Philippine",
-    "Bisayan",
-    "West Bisayan",
-    "Kuyan",
-    "Datagnon-Santa Teresa-Semirara",
-    "Ratagnon"
   ],
   "Caluyanun": [
     "Austronesian",
@@ -68025,32 +61770,6 @@ const LANGUAGE_DATA = {
     "North Babaric",
     "Dawera-Daweloor"
   ],
-  "Te'un": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Timor-Babar",
-    "Southwest Maluku",
-    "Teun-Nila-Serua",
-    "Te'un"
-  ],
-  "Serua": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Timor-Babar",
-    "Southwest Maluku",
-    "Teun-Nila-Serua",
-    "Nila-Serua",
-    "Serua"
-  ],
-  "Nila": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Timor-Babar",
-    "Southwest Maluku",
-    "Teun-Nila-Serua",
-    "Nila-Serua",
-    "Nila"
-  ],
   "Selaru": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -68177,12 +61896,6 @@ const LANGUAGE_DATA = {
     "Abellen-Botolan",
     "Abenlen Ayta"
   ],
-  "Kayeli": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Nunusaku",
-    "Kayeli"
-  ],
   "Wemale": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -68197,24 +61910,6 @@ const LANGUAGE_DATA = {
     "Three Rivers",
     "Amalumute",
     "Yalahatan-Haruru-Awaiya"
-  ],
-  "Hulung": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Nunusaku",
-    "Three Rivers",
-    "Amalumute",
-    "Northwest Seram",
-    "Hulung"
-  ],
-  "Loun": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Nunusaku",
-    "Three Rivers",
-    "Amalumute",
-    "Northwest Seram",
-    "Loun"
   ],
   "Lisabata-Nuniali": [
     "Austronesian",
@@ -68243,16 +61938,6 @@ const LANGUAGE_DATA = {
     "Northwest Seram",
     "Ulat Inai",
     "Alune"
-  ],
-  "Naka'ela": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Nunusaku",
-    "Three Rivers",
-    "Amalumute",
-    "Northwest Seram",
-    "Ulat Inai",
-    "Naka'ela"
   ],
   "Sepa (Indonesia)": [
     "Austronesian",
@@ -68291,17 +61976,6 @@ const LANGUAGE_DATA = {
     "Seram Straits",
     "Kaibobo"
   ],
-  "Kamarian": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Nunusaku",
-    "Piru Bay",
-    "East Piru Bay",
-    "Solehua",
-    "Seram Straits",
-    "Uliase",
-    "Kamarian"
-  ],
   "Haruku": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -68313,20 +61987,6 @@ const LANGUAGE_DATA = {
     "Uliase",
     "Hatuhaha",
     "Haruku"
-  ],
-  "Nusa Laut": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Nunusaku",
-    "Piru Bay",
-    "East Piru Bay",
-    "Solehua",
-    "Seram Straits",
-    "Uliase",
-    "Hatuhaha",
-    "Saparuan",
-    "Elpaputi",
-    "Nusa Laut"
   ],
   "Amahai": [
     "Austronesian",
@@ -68446,16 +62106,6 @@ const LANGUAGE_DATA = {
     "East Hoamoal",
     "Larike-Wakasihu"
   ],
-  "Luhu-Piru": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Nunusaku",
-    "Piru Bay",
-    "West Piru Bay",
-    "Hoamoal",
-    "West Hoamoal",
-    "Luhu-Piru"
-  ],
   "Manipa": [
     "Austronesian",
     "Malayo-Polynesian",
@@ -68473,14 +62123,6 @@ const LANGUAGE_DATA = {
     "Patakai-Manusela",
     "Patakai",
     "South Nuaulu"
-  ],
-  "North Nuaulu": [
-    "Austronesian",
-    "Malayo-Polynesian",
-    "Nunusaku",
-    "Patakai-Manusela",
-    "Patakai",
-    "North Nuaulu"
   ],
   "Huaulu": [
     "Austronesian",
@@ -68635,11 +62277,6 @@ const LANGUAGE_DATA = {
     "Kanakanavu-Saaroa",
     "Kanakanavu"
   ],
-  "Sirayaic": [
-    "Austronesian",
-    "East Formosan",
-    "Sirayaic"
-  ],
   "Amis": [
     "Austronesian",
     "East Formosan",
@@ -68658,18 +62295,6 @@ const LANGUAGE_DATA = {
     "Northern East Formosan",
     "Kavalan"
   ],
-  "Ketangalan": [
-    "Austronesian",
-    "East Formosan",
-    "Northern East Formosan",
-    "Ketangalan"
-  ],
-  "Basay": [
-    "Austronesian",
-    "East Formosan",
-    "Northern East Formosan",
-    "Basay"
-  ],
   "Pazeh-Kahabu": [
     "Austronesian",
     "Northwest Formosan",
@@ -68679,11 +62304,6 @@ const LANGUAGE_DATA = {
     "Austronesian",
     "Northwest Formosan",
     "Saisiyat"
-  ],
-  "Kulon": [
-    "Austronesian",
-    "Northwest Formosan",
-    "Kulon"
   ],
   "Smärky Kanum": [
     "Yam",
@@ -68760,13 +62380,6 @@ const LANGUAGE_DATA = {
     "Nama-Dre",
     "Nama (Papua New Guinea)"
   ],
-  "Dre": [
-    "Yam",
-    "Morehead-Maro",
-    "Nambu",
-    "Nama-Dre",
-    "Dre"
-  ],
   "Mblafe-Ránmo": [
     "Yam",
     "Morehead-Maro",
@@ -68813,10 +62426,6 @@ const LANGUAGE_DATA = {
     "Arawan",
     "Suruahá"
   ],
-  "Arawá (Amazonas State)": [
-    "Arawan",
-    "Arawá (Amazonas State)"
-  ],
   "Madi": [
     "Arawan",
     "Madi-Madiha",
@@ -68834,18 +62443,9 @@ const LANGUAGE_DATA = {
     "Madiha",
     "Culina"
   ],
-  "Malyj Anjuj Omok": [
-    "Yukaghir",
-    "Malyj Anjuj Omok"
-  ],
   "Northern Yukaghir": [
     "Yukaghir",
     "Northern Yukaghir"
-  ],
-  "Chuvantsy": [
-    "Yukaghir",
-    "Kolymic",
-    "Chuvantsy"
   ],
   "Southern Yukaghir": [
     "Yukaghir",
@@ -68860,18 +62460,6 @@ const LANGUAGE_DATA = {
     "Baibai-Fas",
     "Momu-Fas"
   ],
-  "Plains Miwok": [
-    "Miwok-Costanoan",
-    "Miwokan",
-    "Eastern Miwokan",
-    "Plains Miwok"
-  ],
-  "Bay Miwok": [
-    "Miwok-Costanoan",
-    "Miwokan",
-    "Eastern Miwokan",
-    "Bay Miwok"
-  ],
   "Central Sierra Miwok": [
     "Miwok-Costanoan",
     "Miwokan",
@@ -68885,58 +62473,6 @@ const LANGUAGE_DATA = {
     "Eastern Miwokan",
     "Sierra Miwokan",
     "Southern Sierra Miwok"
-  ],
-  "Northern Sierra Miwok": [
-    "Miwok-Costanoan",
-    "Miwokan",
-    "Eastern Miwokan",
-    "Sierra Miwokan",
-    "Northern Sierra Miwok"
-  ],
-  "Lake Miwok": [
-    "Miwok-Costanoan",
-    "Miwokan",
-    "Western Miwokan",
-    "Lake Miwok"
-  ],
-  "Coast Miwok": [
-    "Miwok-Costanoan",
-    "Miwokan",
-    "Western Miwokan",
-    "Coast Miwok"
-  ],
-  "Awaswas": [
-    "Miwok-Costanoan",
-    "Costanoan",
-    "Awaswas"
-  ],
-  "San Francisco Bay Ohlone": [
-    "Miwok-Costanoan",
-    "Costanoan",
-    "San Francisco Bay Ohlone"
-  ],
-  "Karkin": [
-    "Miwok-Costanoan",
-    "Costanoan",
-    "Karkin"
-  ],
-  "Rumsen": [
-    "Miwok-Costanoan",
-    "Costanoan",
-    "Southern Costanoan",
-    "Rumsen"
-  ],
-  "Chalon": [
-    "Miwok-Costanoan",
-    "Costanoan",
-    "Southern Costanoan",
-    "Chalon"
-  ],
-  "Mutsun": [
-    "Miwok-Costanoan",
-    "Costanoan",
-    "Southern Costanoan",
-    "Mutsun"
   ],
   "Khmu": [
     "Austroasiatic",
@@ -69102,16 +62638,6 @@ const LANGUAGE_DATA = {
     "Waic",
     "Bulangic",
     "Blang"
-  ],
-  "Eastern Lawa": [
-    "Austroasiatic",
-    "Khasi-Palaung",
-    "Palaungic",
-    "East Palaungic",
-    "Waic",
-    "Wa-Lawa",
-    "Lawa",
-    "Eastern Lawa"
   ],
   "Western Lawa": [
     "Austroasiatic",
@@ -69327,11 +62853,6 @@ const LANGUAGE_DATA = {
     "Austroasiatic",
     "Monic",
     "Nyahkur"
-  ],
-  "Old Mon": [
-    "Austroasiatic",
-    "Monic",
-    "Old Mon"
   ],
   "Mon": [
     "Austroasiatic",
@@ -69923,16 +63444,6 @@ const LANGUAGE_DATA = {
     "Lanohic",
     "Lanoh"
   ],
-  "Sabüm": [
-    "Austroasiatic",
-    "Aslian",
-    "Central-Northern Aslian",
-    "Senoic",
-    "Lanoh-Semnam-Temiar",
-    "Lanoh-Semnam",
-    "Lanohic",
-    "Sabüm"
-  ],
   "Chewong": [
     "Austroasiatic",
     "Aslian",
@@ -70100,11 +63611,6 @@ const LANGUAGE_DATA = {
     "Cuoi",
     "Hung"
   ],
-  "Old Khmer": [
-    "Austroasiatic",
-    "Khmeric",
-    "Old Khmer"
-  ],
   "Central Khmer": [
     "Austroasiatic",
     "Khmeric",
@@ -70243,10 +63749,6 @@ const LANGUAGE_DATA = {
     "Nyimang",
     "Ama (Sudan)"
   ],
-  "Katawixi": [
-    "Katukinan",
-    "Katawixi"
-  ],
   "Katukína-Kanamarí": [
     "Katukinan",
     "Katukína-Kanamarí"
@@ -70294,13 +63796,6 @@ const LANGUAGE_DATA = {
     "Negidalic",
     "Kur-Urmi"
   ],
-  "Arman": [
-    "Tungusic",
-    "Northeastern Tungusic",
-    "Northern Tungusic",
-    "Ewenic",
-    "Arman"
-  ],
   "Even": [
     "Tungusic",
     "Northeastern Tungusic",
@@ -70327,11 +63822,6 @@ const LANGUAGE_DATA = {
     "Central-Eastern Tungusic",
     "Oroch-Udihe",
     "Udihe"
-  ],
-  "Jurchen": [
-    "Tungusic",
-    "Manchu-Jurchen",
-    "Jurchen"
   ],
   "Manchu": [
     "Tungusic",
@@ -70396,16 +63886,6 @@ const LANGUAGE_DATA = {
     "Samarokena-Airoran",
     "Airoran"
   ],
-  "Canari": [
-    "Barbacoan",
-    "Unclassified Barbacoan",
-    "Canari"
-  ],
-  "Totoro": [
-    "Barbacoan",
-    "Coconucan",
-    "Totoro"
-  ],
   "Guambiano": [
     "Barbacoan",
     "Coconucan",
@@ -70441,11 +63921,6 @@ const LANGUAGE_DATA = {
     "Mangarrayi-Maran",
     "Maran",
     "Marra"
-  ],
-  "Wandarang": [
-    "Mangarrayi-Maran",
-    "Maran",
-    "Wandarang"
   ],
   "Tondi Songway Kiini": [
     "Songhay",
@@ -70515,21 +63990,10 @@ const LANGUAGE_DATA = {
     "Nuclear-Macro-Je",
     "Rikbaktsa"
   ],
-  "Jeicó": [
-    "Nuclear-Macro-Je",
-    "Unclassified Nuclear Macro-Je",
-    "Jeicó"
-  ],
   "Borum": [
     "Nuclear-Macro-Je",
     "Maxakali-Borum",
     "Borum"
-  ],
-  "Malali": [
-    "Nuclear-Macro-Je",
-    "Maxakali-Borum",
-    "Maxakalian",
-    "Malali"
   ],
   "Maxakalí": [
     "Nuclear-Macro-Je",
@@ -70537,37 +64001,6 @@ const LANGUAGE_DATA = {
     "Maxakalian",
     "Nuclear Maxakalian",
     "Maxakalí"
-  ],
-  "Pataxó Hã-Ha-Hãe": [
-    "Nuclear-Macro-Je",
-    "Maxakali-Borum",
-    "Maxakalian",
-    "Nuclear Maxakalian",
-    "Pataxó Hã-Ha-Hãe"
-  ],
-  "Capoxo": [
-    "Nuclear-Macro-Je",
-    "Maxakali-Borum",
-    "Maxakalian",
-    "Nuclear Maxakalian",
-    "Unclassified Nuclear Maxakalian",
-    "Capoxo"
-  ],
-  "Koropó": [
-    "Nuclear-Macro-Je",
-    "Maxakali-Borum",
-    "Maxakalian",
-    "Nuclear Maxakalian",
-    "Unclassified Nuclear Maxakalian",
-    "Koropó"
-  ],
-  "Macuni": [
-    "Nuclear-Macro-Je",
-    "Maxakali-Borum",
-    "Maxakalian",
-    "Nuclear Maxakalian",
-    "Unclassified Nuclear Maxakalian",
-    "Macuni"
   ],
   "Panará": [
     "Nuclear-Macro-Je",
@@ -70600,15 +64033,6 @@ const LANGUAGE_DATA = {
     "Northern Je",
     "Suyá"
   ],
-  "Northeastern Timbira": [
-    "Nuclear-Macro-Je",
-    "Je",
-    "Cerrado",
-    "Goyaz",
-    "Northern Je",
-    "Eastern Timbira",
-    "Northeastern Timbira"
-  ],
   "Central-Southern Timbira": [
     "Nuclear-Macro-Je",
     "Je",
@@ -70629,13 +64053,6 @@ const LANGUAGE_DATA = {
     "Southeastern Timbira",
     "Pará Gavião"
   ],
-  "Xakriabá": [
-    "Nuclear-Macro-Je",
-    "Je",
-    "Cerrado",
-    "Central Je",
-    "Xakriabá"
-  ],
   "Xerénte": [
     "Nuclear-Macro-Je",
     "Je",
@@ -70650,27 +64067,12 @@ const LANGUAGE_DATA = {
     "Central Je",
     "Xavánte"
   ],
-  "Acroá": [
-    "Nuclear-Macro-Je",
-    "Je",
-    "Cerrado",
-    "Central Je",
-    "Acroá"
-  ],
   "Xokleng": [
     "Nuclear-Macro-Je",
     "Je",
     "Southern Je",
     "Kaingang-Xokleng",
     "Xokleng"
-  ],
-  "São Paulo Kaingáng": [
-    "Nuclear-Macro-Je",
-    "Je",
-    "Southern Je",
-    "Kaingang-Xokleng",
-    "Kaingangic",
-    "São Paulo Kaingáng"
   ],
   "Kaingang": [
     "Nuclear-Macro-Je",
@@ -70680,45 +64082,10 @@ const LANGUAGE_DATA = {
     "Kaingangic",
     "Kaingang"
   ],
-  "Ingain": [
-    "Nuclear-Macro-Je",
-    "Je",
-    "Southern Je",
-    "Ingain-Kimda",
-    "Ingain"
-  ],
-  "Kimda": [
-    "Nuclear-Macro-Je",
-    "Je",
-    "Southern Je",
-    "Ingain-Kimda",
-    "Kimda"
-  ],
   "Djeoromitxí": [
     "Nuclear-Macro-Je",
     "Jabuti",
     "Djeoromitxí"
-  ],
-  "Arikapú": [
-    "Nuclear-Macro-Je",
-    "Jabuti",
-    "Arikapú"
-  ],
-  "Nisenan": [
-    "Maiduan",
-    "Nisenan"
-  ],
-  "Valley Maidu": [
-    "Maiduan",
-    "Valley Maidu"
-  ],
-  "Northwest Maidu": [
-    "Maiduan",
-    "Northwest Maidu"
-  ],
-  "Northeast Maidu": [
-    "Maiduan",
-    "Northeast Maidu"
   ],
   "Demta": [
     "Sentanic",
@@ -70741,22 +64108,9 @@ const LANGUAGE_DATA = {
     "Sentani-Nafri",
     "Sentani"
   ],
-  "Margu": [
-    "Marrku-Wurrugu",
-    "Margu"
-  ],
-  "Wurrugu": [
-    "Marrku-Wurrugu",
-    "Wurrugu"
-  ],
   "Qaqet": [
     "Baining",
     "Qaqet"
-  ],
-  "Makolkol": [
-    "Baining",
-    "Unclassified Baining",
-    "Makolkol"
   ],
   "Ura (Papua New Guinea)": [
     "Baining",
@@ -70928,63 +64282,15 @@ const LANGUAGE_DATA = {
     "Worrorran",
     "Ngarinyin"
   ],
-  "Umiida-Unggarangu": [
-    "Worrorran",
-    "Western Worrorran",
-    "Umiida-Unggarangu"
-  ],
-  "Worrorra": [
-    "Worrorran",
-    "Western Worrorran",
-    "Worrorra"
-  ],
-  "Unggumi": [
-    "Worrorran",
-    "Western Worrorran",
-    "Unggumi"
-  ],
-  "Winjarumi": [
-    "Worrorran",
-    "Western Worrorran",
-    "Winjarumi"
-  ],
-  "Wilawila": [
-    "Worrorran",
-    "Northern Worrorran",
-    "Wilawila"
-  ],
   "Wunambal": [
     "Worrorran",
     "Northern Worrorran",
     "Wunambal"
   ],
-  "Kwini": [
-    "Worrorran",
-    "Northern Worrorran",
-    "Forrest River",
-    "Kwini"
-  ],
-  "Gambera": [
-    "Worrorran",
-    "Northern Worrorran",
-    "Forrest River",
-    "Gambera"
-  ],
-  "Miwa": [
-    "Worrorran",
-    "Northern Worrorran",
-    "Forrest River",
-    "Miwa"
-  ],
   "Hungarian": [
     "Uralic",
     "Hungaric",
     "Hungarian"
-  ],
-  "Old Hungarian": [
-    "Uralic",
-    "Hungaric",
-    "Old Hungarian"
   ],
   "Moksha": [
     "Uralic",
@@ -71000,11 +64306,6 @@ const LANGUAGE_DATA = {
     "Uralic",
     "Samoyedic",
     "Nganasan"
-  ],
-  "Mator-Taigi-Karagas": [
-    "Uralic",
-    "Samoyedic",
-    "Mator-Taigi-Karagas"
   ],
   "Tundra Enets": [
     "Uralic",
@@ -71033,12 +64334,6 @@ const LANGUAGE_DATA = {
     "Enets-Nenets",
     "Nenets",
     "Tundra Nenets"
-  ],
-  "Kamas-Koibal": [
-    "Uralic",
-    "Samoyedic",
-    "Kamas-Selkup",
-    "Kamas-Koibal"
   ],
   "Selkup": [
     "Uralic",
@@ -71069,11 +64364,6 @@ const LANGUAGE_DATA = {
     "Komi",
     "Komi-Zyrian"
   ],
-  "Southern Mansi": [
-    "Uralic",
-    "Mansic",
-    "Southern Mansi"
-  ],
   "Central Mansi": [
     "Uralic",
     "Mansic",
@@ -71090,12 +64380,6 @@ const LANGUAGE_DATA = {
     "Uralic",
     "Finnic",
     "South Estonian"
-  ],
-  "Liv": [
-    "Uralic",
-    "Finnic",
-    "Coastal Finnic",
-    "Liv"
   ],
   "Ingrian": [
     "Uralic",
@@ -71239,20 +64523,6 @@ const LANGUAGE_DATA = {
     "Peninsular Eastern Saami",
     "Kildin Saami"
   ],
-  "Kemi Saami": [
-    "Uralic",
-    "Saami",
-    "Eastern Saami",
-    "Mainland Eastern Saami",
-    "Kemi Saami"
-  ],
-  "Akkala Saami": [
-    "Uralic",
-    "Saami",
-    "Eastern Saami",
-    "Mainland Eastern Saami",
-    "Akkala Saami"
-  ],
   "Skolt Saami": [
     "Uralic",
     "Saami",
@@ -71276,11 +64546,6 @@ const LANGUAGE_DATA = {
     "Uralic",
     "Mari",
     "Western Mari"
-  ],
-  "Southern Khanty": [
-    "Uralic",
-    "Khantyic",
-    "Southern Khanty"
   ],
   "Obdorsk Khanty": [
     "Uralic",
