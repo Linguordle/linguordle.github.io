@@ -1,11 +1,11 @@
 /* General body styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Georgia, serif;
   max-width: 600px;
   margin: 2rem auto;
   padding: 1rem;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: #fcf3cf;
+  color: #2c2c2c;
   line-height: 1.6;
 }
 
@@ -13,15 +13,16 @@ body {
 input, button {
   font-size: 1rem;
   padding: 0.6rem 0.8rem;
-  border: 1px solid #ccc;
+  border: 1px solid #999;
   border-radius: 4px;
   margin-right: 0.5rem;
   outline: none;
+  font-family: inherit;
 }
 
 /* Improve button appearance */
 button {
-  background-color: #007BFF;
+  background-color: #d4ac0d;
   color: white;
   border: none;
   cursor: pointer;
@@ -29,7 +30,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #b7950b;
 }
 
 /* UL spacing */
@@ -38,34 +39,4 @@ ul {
 }
 
 /* Status message styling */
-#status {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-/* Suggestions dropdown */
-#suggestions {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0 0 0;
-  max-height: 150px;
-  overflow-y: auto;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  position: absolute;
-  background-color: #fff;
-  width: 300px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-
-#suggestions li {
-  padding: 0.6rem 0.8rem;
-  cursor: pointer;
-}
-
-#suggestions li:hover {
-  background-color: #f0f0f0;
-}
+#stat
