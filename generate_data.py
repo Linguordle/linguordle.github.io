@@ -29,7 +29,7 @@ for lang in g.languoids():
         continue
     if not lang.family:
         continue
-    if not lang.macroarea:
+    if not lang.macroareas:
         continue
 
     # Read md.ini endangerment status manually
