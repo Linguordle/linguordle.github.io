@@ -22,7 +22,7 @@ input, button {
 
 /* Improve button appearance */
 button {
-  background-color: #d4ac0d;
+  background-color: #ffcc66;
   color: white;
   border: none;
   cursor: pointer;
@@ -30,7 +30,7 @@ button {
 }
 
 button:hover {
-  background-color: #b7950b;
+  background-color: #cca352;
 }
 
 /* UL spacing */
