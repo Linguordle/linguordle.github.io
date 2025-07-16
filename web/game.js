@@ -4,6 +4,11 @@ const fuse = new Fuse(languageList, {
     includeScore: true,
     keys: []
 });
+const targetLanguage = languageList[Math.floor(Math.random() * languageList.length)];
+const targetFamily = LANGUAGE_DATA[targetLanguage][0];
+
+// Display the family as a hint
+document.getElementById('familyHint').textContent = `Family: ${targetFamily}`;
 
 const input = document.getElementById('guess-input');
 const suggestionsList = document.getElementById('suggestions');
