@@ -122,7 +122,7 @@ function showAutocompleteSuggestions() {
         )
         .slice(0, 10);
 
-    matches.forEach(match => {
+    matches.forEach((match, index) => {
         const item = document.createElement('div');
         item.textContent = match;
         item.classList.add('autocomplete-item');
