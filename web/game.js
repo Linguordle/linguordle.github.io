@@ -1,67 +1,86 @@
-const fuse = new Fuse(languageList, {
-    threshold: 0.4,
-    includeScore: true,
-    keys: []
-});
+const languageList = Object.keys(LANGUAGE_DATA);
+const MAX_GUESSES = 6;
+let guessesLeft = MAX_GUESSES;
+let targetLanguage = '';
+let targetFamily = '';
 
-function startNewGame() {
-    const targetLanguage = getDailyLanguage();
-    const targetFamily = LANGUAGE_DATA[targetLanguage][0];
-    
-    document.getElementById('familyHint').textContent = `Family: ${targetFamily}`;
-    output.textContent = '';
-    guessesLeft = MAX_GUESSES;
-    updateGuessesDisplay();
-    
-    window.currentTargetLanguage = targetLanguage; // store for later guesses
-}
+const input = document.getElementById('guessInput');
+const button = document.getElementById('guessButton');
+const output = document.getElementById('output');
+const guessesLeftDisplay = document.getElementById('guessesLeft');
+const familyHint = document.getElementById('familyHint');
+
+startNewGame();
+button.addEventListener('click', handleGuess);
+input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        handleGuess();
+    }
+});
 
 function getDailyLanguage() {
     const today = new Date();
     const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-    const languageList = Object.keys(LANGUAGE_DATA);
     const index = seed % languageList.length;
     return languageList[index];
 }
 
-const input = document.getElementById('guess-input');
-const suggestionsList = document.getElementById('suggestions');
-const output = document.getElementById('output');
+function startNewGame() {
+    targetLanguage = getDailyLanguage();
+    targetFamily = LANGUAGE_DATA[targetLanguage][0];
 
-document.getElementById('guess-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    handleGuess();
-    suggestionsList.innerHTML = '';
-});
-
-input.addEventListener('input', () => {
-    const results = fuse.search(input.value).slice(0, 5);
-    suggestionsList.innerHTML = '';
-    results.forEach(result => {
-        const li = document.createElement('li');
-        li.textContent = result.item;
-        li.addEventListener('click', () => {
-            input.value = result.item;
-            suggestionsList.innerHTML = '';
-            input.focus();
-        });
-        suggestionsList.appendChild(li);
-    });
-});
+    familyHint.textContent = `Family: ${targetFamily}`;
+    output.textContent = '';
+    guessesLeft = MAX_GUESSES;
+    updateGuessesDisplay();
+}
 
 function handleGuess() {
     const guess = input.value.trim();
-    if (guess === window.currentTargetLanguage) {
-        output.textContent = `Correct! The answer was ${window.currentTargetLanguage}.`;
-    } else {
-        return;
-    }
+    if (!guess) return;
+
     if (!LANGUAGE_DATA[guess]) {
-        output.textContent = `"${guess}" is not a recognized language in this game.`;
+        output.textContent = `"${guess}" is not a valid language in this game.`;
         return;
     }
 
-    // Example feedback for testing:
-    output.textContent = `You guessed: ${guess}. Classification: ${LANGUAGE_DATA[guess].join(" → ")}`;
+    guessesLeft--;
+    updateGuessesDisplay();
+
+    if (guess === targetLanguage) {
+        output.textContent = `🎉 Correct! The answer was "${targetLanguage}".`;
+        disableInput();
+        return;
+    }
+
+    if (guessesLeft <= 0) {
+        output.textContent = `❌ Out of guesses! The answer was "${targetLanguage}".`;
+        disableInput();
+        return;
+    }
+
+    const commonAncestor = findCommonAncestor(guess, targetLanguage);
+    output.textContent = `Common ancestor: ${commonAncestor}`;
     input.value = '';
+}
+
+function findCommonAncestor(guess, target) {
+    const guessTree = LANGUAGE_DATA[guess];
+    const targetTree = LANGUAGE_DATA[target];
+
+    let i = 0;
+    while (i < guessTree.length && i < targetTree.length && guessTree[i] === targetTree[i]) {
+        i++;
+    }
+    if (i === 0) return '(none)';
+    return guessTree.slice(0, i).join(' → ');
+}
+
+function updateGuessesDisplay() {
+    guessesLeftDisplay.textContent = `Guesses Left: ${guessesLeft}`;
+}
+
+function disableInput() {
+    input.disabled = true;
+    button.disabled = true;
 }
