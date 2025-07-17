@@ -19,6 +19,20 @@ startNewGame();
 button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
+
+function getSimilarityScore(a, b) {
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+    if (a === b) return 1;
+    if (b.length === 0 || a.length === 0) return 0;
+
+    let matches = 0;
+    let len = Math.min(a.length, b.length);
+    for (let i = 0; i < len; i++) {
+        if (a[i] === b[i]) matches++;
+    }
+    return matches / b.length;
+}
     
 function getDailyLanguage() {
     const today = new Date();
@@ -106,29 +120,33 @@ function appendOutputLine(text) {
     output.appendChild(line);
 }
 
+function clearAutocompleteSuggestions() {
+    autocompleteList.innerHTML = '';
+    highlightIndex = -1;
+}
+
 function showAutocompleteSuggestions() {
     clearAutocompleteSuggestions();
     const value = input.value.toLowerCase();
     if (!value) return;
-    
-    console.log('Input:', input.value);
-    console.log('languageList sample:', languageList.slice(0, 5));
 
-    console.log('Filtering matches for:', value);
     const matches = languageList
-        .filter(lang =>
-            !guessedLanguages.has(lang) &&
-            lang.toLowerCase().includes(value)
-        )
+        .filter(lang => !guessedLanguages.has(lang))
+        .map(lang => ({
+            name: lang,
+            score: getSimilarityScore(value, lang)
+        }))
+        .filter(item => item.score > 0.2) // adjust threshold for strictness
+        .sort((a, b) => b.score - a.score)
         .slice(0, 10);
 
     matches.forEach((match, index) => {
         const item = document.createElement('div');
-        item.textContent = match;
+        item.textContent = match.name;
         item.classList.add('autocomplete-item');
         item.dataset.index = index;
         item.addEventListener('click', () => {
-            input.value = match;
+            input.value = match.name;
             clearAutocompleteSuggestions();
             input.focus();
         });
@@ -136,12 +154,7 @@ function showAutocompleteSuggestions() {
     });
     highlightIndex = -1;
 }
-
-function clearAutocompleteSuggestions() {
-    autocompleteList.innerHTML = '';
-    highlightIndex = -1;
-}
-
+    
 function handleKeyNavigation(e) {
     const items = autocompleteList.querySelectorAll('.autocomplete-item');
     if (!items.length) {
