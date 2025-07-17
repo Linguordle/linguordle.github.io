@@ -19,6 +19,10 @@ button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
 
+function removeFromAutocomplete(guessed) {
+    languageList.splice(languageList.indexOf(guessed), 1);
+}
+    
 function getDailyLanguage() {
     const today = new Date();
     const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
@@ -136,10 +140,6 @@ function showAutocompleteSuggestions() {
 function clearAutocompleteSuggestions() {
     autocompleteList.innerHTML = '';
     highlightIndex = -1;
-}
-
-unction removeFromAutocomplete(guessed) {
-    languageList.splice(languageList.indexOf(guessed), 1);
 }
 
 let highlightIndex = -1;
