@@ -1,3 +1,5 @@
+window.addEventListener('DOMContentLoaded', () => {
+
 const languageList = Object.keys(LANGUAGE_DATA);
 const MAX_GUESSES = 15;
 let guessesLeft = MAX_GUESSES;
@@ -167,3 +169,5 @@ function updateHighlight(items) {
         items[highlightIndex].classList.add('highlighted');
     }
 }
+
+});
