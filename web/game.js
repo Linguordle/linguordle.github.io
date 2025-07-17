@@ -4,14 +4,6 @@ const fuse = new Fuse(languageList, {
     keys: []
 });
 
-function getDailyLanguage() {
-    const today = new Date();
-    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-    const languageList = Object.keys(LANGUAGE_DATA);
-    const index = seed % languageList.length;
-    return languageList[index];
-}
-
 function startNewGame() {
     const targetLanguage = getDailyLanguage();
     const targetFamily = LANGUAGE_DATA[targetLanguage][0];
@@ -22,6 +14,14 @@ function startNewGame() {
     updateGuessesDisplay();
     
     window.currentTargetLanguage = targetLanguage; // store for later guesses
+}
+
+function getDailyLanguage() {
+    const today = new Date();
+    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+    const languageList = Object.keys(LANGUAGE_DATA);
+    const index = seed % languageList.length;
+    return languageList[index];
 }
 
 const input = document.getElementById('guess-input');
