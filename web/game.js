@@ -19,10 +19,6 @@ startNewGame();
 button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
-
-function removeFromAutocomplete(guessed) {
-    languageList.splice(languageList.indexOf(guessed), 1);
-}
     
 function getDailyLanguage() {
     const today = new Date();
@@ -63,7 +59,6 @@ function handleGuess() {
     guessedLanguages.add(guess);
     guessesLeft--;
     updateGuessesDisplay();
-    removeFromAutocomplete(guess);
 
     if (guess === targetLanguage) {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
@@ -115,7 +110,11 @@ function showAutocompleteSuggestions() {
     clearAutocompleteSuggestions();
     const value = input.value.toLowerCase();
     if (!value) return;
+    
+    console.log('Input:', input.value);
+    console.log('languageList sample:', languageList.slice(0, 5));
 
+    console.log('Filtering matches for:', value);
     const matches = languageList
         .filter(lang =>
             !guessedLanguages.has(lang) &&
