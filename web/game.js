@@ -1,5 +1,5 @@
 const languageList = Object.keys(LANGUAGE_DATA);
-const MAX_GUESSES = 6;
+const MAX_GUESSES = 15;
 let guessesLeft = MAX_GUESSES;
 let targetLanguage = '';
 let targetFamily = '';
@@ -9,6 +9,7 @@ const button = document.getElementById('guessButton');
 const output = document.getElementById('output');
 const guessesLeftDisplay = document.getElementById('guessesLeft');
 const familyHint = document.getElementById('familyHint');
+const autocompleteList = document.getElementById('autocomplete-list');
 
 startNewGame();
 button.addEventListener('click', handleGuess);
@@ -17,6 +18,8 @@ input.addEventListener('keydown', (e) => {
         handleGuess();
     }
 });
+
+input.addEventListener('input', showAutocompleteSuggestions);
 
 function getDailyLanguage() {
     const today = new Date();
@@ -62,6 +65,7 @@ function handleGuess() {
     const commonAncestor = findCommonAncestor(guess, targetLanguage);
     output.textContent = `Common ancestor: ${commonAncestor}`;
     input.value = '';
+    clearAutocompleteSuggestions();
 }
 
 function findCommonAncestor(guess, target) {
@@ -83,4 +87,30 @@ function updateGuessesDisplay() {
 function disableInput() {
     input.disabled = true;
     button.disabled = true;
+}
+
+function showAutocompleteSuggestions() {
+    clearAutocompleteSuggestions();
+    const value = input.value.toLowerCase();
+    if (!value) return;
+
+    const matches = languageList.filter(lang =>
+        lang.toLowerCase().startsWith(value)
+    ).slice(0, 10); // limit suggestions to 10
+
+    matches.forEach(match => {
+        const item = document.createElement('div');
+        item.textContent = match;
+        item.classList.add('autocomplete-item');
+        item.addEventListener('click', () => {
+            input.value = match;
+            clearAutocompleteSuggestions();
+            input.focus();
+        });
+        autocompleteList.appendChild(item);
+    });
+}
+
+function clearAutocompleteSuggestions() {
+    autocompleteList.innerHTML = '';
 }
