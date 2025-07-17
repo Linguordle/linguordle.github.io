@@ -39,6 +39,29 @@
             z-index: 99;
         }
 
+        .autocomplete-items {
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background-color: white;
+            width: 100%;
+            z-index: 99;
+        }
+
+        .autocomplete-item {
+            padding: 4px;
+            cursor: pointer;
+        }
+
+        .autocomplete-item.highlighted {
+            background-color: #eee;
+        }
+
+        #output div {
+            margin-bottom: 4px;
+        }
+
     </style>
 </head>
 <body>
