@@ -15,31 +15,17 @@ const guessesLeftDisplay = document.getElementById('guessesLeft');
 const familyHint = document.getElementById('familyHint');
 const autocompleteList = document.getElementById('autocomplete-list');
 
+const fuse = new Fuse(languageList, {
+    threshold: 0.4,    // lower = stricter, higher = fuzzier
+    distance: 100,     // how far apart characters can be
+    keys: []           // we're just searching strings, not objects
+});
+
 startNewGame();
 button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
 
-function levenshteinDistance(a, b) {
-    const matrix = Array.from({ length: b.length + 1 }, (_, i) => [i]);
-    for (let i = 0; i <= a.length; i++) matrix[0][i] = i;
-
-    for (let i = 1; i <= b.length; i++) {
-        for (let j = 1; j <= a.length; j++) {
-            if (b[i - 1] === a[j - 1]) {
-                matrix[i][j] = matrix[i - 1][j - 1];
-            } else {
-                matrix[i][j] = Math.min(
-                    matrix[i - 1][j - 1] + 1,
-                    matrix[i][j - 1] + 1,
-                    matrix[i - 1][j] + 1
-                );
-            }
-        }
-    }
-    return matrix[b.length][a.length];
-}
-    
 function getDailyLanguage() {
     const today = new Date();
     const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
@@ -133,25 +119,21 @@ function clearAutocompleteSuggestions() {
 
 function showAutocompleteSuggestions() {
     clearAutocompleteSuggestions();
-    const value = input.value.toLowerCase();
+    const value = input.value.trim();
     if (!value) return;
 
-    const matches = languageList
-        .filter(lang => !guessedLanguages.has(lang))
-        .map(lang => ({
-            name: lang,
-            score: levenshteinDistance(value, lang.toLowerCase())
-        }))
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 10);
+    const results = fuse.search(value, { limit: 10 });
 
-    matches.forEach((match, index) => {
+    results.forEach((result, index) => {
+        const match = result.item;
+        if (guessedLanguages.has(match)) return;
+
         const item = document.createElement('div');
-        item.textContent = match.name;
+        item.textContent = match;
         item.classList.add('autocomplete-item');
         item.dataset.index = index;
         item.addEventListener('click', () => {
-            input.value = match.name;
+            input.value = match;
             clearAutocompleteSuggestions();
             input.focus();
         });
