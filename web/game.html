@@ -20,6 +20,7 @@
             width: 300px;
         }
         #suggestions li {
+            
             padding: 5px;
             cursor: pointer;
         }
@@ -35,11 +36,12 @@
 
     <h1>Guess the Language!</h1>
     <p id="familyHint"></p> <!-- This shows the hint -->
+    <form id="guess-form">
+        <input type="text" id="guess-input" placeholder="Type a language..." autocomplete="off">
+        <ul id="suggestions"></ul>
+        <button type="submit" id="submit-button">Guess</button>
+    </form>
 
-    <input type="text" id="guessInput" placeholder="Type your guess..." autocomplete="off">
-    <button id="guessButton">Guess</button>
-    <p id="output"></p>
-    <p id="guessesLeft"></p>
-
+    <div id="output"></div>
 </body>
 </html>
