@@ -29,8 +29,9 @@ function startNewGame() {
     targetFamily = LANGUAGE_DATA[targetLanguage][0];
 
     familyHint.textContent = `Family: ${targetFamily}`;
-    output.textContent = '';
+    output.innerHTML = '';
     guessesLeft = MAX_GUESSES;
+    guessedLanguages.clear();
     updateGuessesDisplay();
     clearAutocompleteSuggestions();
     input.disabled = false;
