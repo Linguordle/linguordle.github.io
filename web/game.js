@@ -6,6 +6,7 @@ let guessesLeft = MAX_GUESSES;
 let targetLanguage = '';
 let targetFamily = '';
 let guessedLanguages = new Set();
+let highlightIndex = -1;
 
 const input = document.getElementById('guessInput');
 const button = document.getElementById('guessButton');
@@ -141,8 +142,6 @@ function clearAutocompleteSuggestions() {
     autocompleteList.innerHTML = '';
     highlightIndex = -1;
 }
-
-let highlightIndex = -1;
 
 function handleKeyNavigation(e) {
     const items = autocompleteList.querySelectorAll('.autocomplete-item');
