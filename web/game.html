@@ -8,40 +8,45 @@
     <script src="data.js" defer></script>
     <script src="game.js" defer></script>
     <style>
-        #suggestions {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        #autocomplete-list {
+            border: 1px solid #ccc;
             max-height: 150px;
             overflow-y: auto;
-            border: 1px solid #ccc;
             position: absolute;
             background-color: white;
-            width: 300px;
+            width: 100%;
+            z-index: 99;
         }
-        #suggestions li {
-            
-            padding: 5px;
+        .autocomplete-item {
+            padding: 4px;
             cursor: pointer;
         }
-        #suggestions li:hover {
+        .autocomplete-item.highlighted {
             background-color: #eee;
         }
-        #guess-form {
-            position: relative;
+        #output div {
+            margin-bottom: 4px;
+        }
+        #guessInput {
+            width: 100%;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
+        #guessButton {
+            margin-top: 0.5rem;
         }
     </style>
 </head>
 <body>
 
-    <h1>Guess the Language!</h1>
+    <h1>Linguordle</h1>
     <p id="familyHint"></p> <!-- This shows the hint -->
-    <form id="guess-form">
-        <input type="text" id="guessInput" placeholder="Type a language..." autocomplete="off">
-        <ul id="autocomplete-list" class="autocomplete-items"></ul>
-        <button id="guessButton">Guess</button>
-    </form>
+    <input type="text" id="guessInput" placeholder="Type your guess..." autocomplete="off">
+    <div id="autocomplete-list" class="autocomplete-items"></div>
 
+    <button id="guessButton">Guess</button>
+
+    <p id="guessesLeft"></p>
     <div id="output"></div>
     <p id="guessesLeft"></p>
 </body>
