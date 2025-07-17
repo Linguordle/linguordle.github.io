@@ -118,7 +118,7 @@ function showAutocompleteSuggestions() {
     const matches = languageList
         .filter(lang =>
             !guessedLanguages.has(lang) &&
-            lang.toLowerCase().startsWith(value)
+            lang.toLowerCase().includes(value)
         )
         .slice(0, 10);
 
@@ -144,8 +144,12 @@ function clearAutocompleteSuggestions() {
 
 function handleKeyNavigation(e) {
     const items = autocompleteList.querySelectorAll('.autocomplete-item');
-    if (!items.length) return;
-
+    if (!items.length) {
+        if (e.key === 'Enter') {
+            handleGuess();
+        }
+        return;
+    }
     if (e.key === 'ArrowDown') {
         highlightIndex = (highlightIndex + 1) % items.length;
         updateHighlight(items);
