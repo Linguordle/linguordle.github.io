@@ -20,18 +20,24 @@ button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
 
-function getSimilarityScore(a, b) {
-    a = a.toLowerCase();
-    b = b.toLowerCase();
-    if (a === b) return 1;
-    if (b.length === 0 || a.length === 0) return 0;
+function levenshteinDistance(a, b) {
+    const matrix = Array.from({ length: b.length + 1 }, (_, i) => [i]);
+    for (let i = 0; i <= a.length; i++) matrix[0][i] = i;
 
-    let matches = 0;
-    let len = Math.min(a.length, b.length);
-    for (let i = 0; i < len; i++) {
-        if (a[i] === b[i]) matches++;
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b[i - 1] === a[j - 1]) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1,
+                    matrix[i][j - 1] + 1,
+                    matrix[i - 1][j] + 1
+                );
+            }
+        }
     }
-    return matches / b.length;
+    return matrix[b.length][a.length];
 }
     
 function getDailyLanguage() {
@@ -134,9 +140,8 @@ function showAutocompleteSuggestions() {
         .filter(lang => !guessedLanguages.has(lang))
         .map(lang => ({
             name: lang,
-            score: getSimilarityScore(value, lang)
+            score: levenshteinDistance(value, lang.toLowerCase())
         }))
-        .filter(item => item.score > 0.2) // adjust threshold for strictness
         .sort((a, b) => b.score - a.score)
         .slice(0, 10);
 
