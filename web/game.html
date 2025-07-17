@@ -6,55 +6,51 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.js"></script>
     <style>
+        .input-row {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        #guessInput {
+            flex-grow: 1;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
+
+        #guessButton {
+            margin-left: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
+
         .autocomplete-container {
             position: relative;
             width: 100%;
         }
 
         #autocomplete-list {
+            position: absolute;
+            background-color: white;
             border: 1px solid #ccc;
             max-height: 150px;
             overflow-y: auto;
-            position: absolute;
-            background-color: white;
             width: 100%;
+            top: 100%;
             z-index: 99;
         }
 
-        .autocomplete-item {
-            padding: 4px;
-            cursor: pointer;
-        }
-
-        .autocomplete-item.highlighted {
-            background-color: #eee;
-        }
-
-        #output div {
-            margin-bottom: 4px;
-        }
-
-        #guessInput {
-            width: 100%;
-            padding: 0.5rem;
-            box-sizing: border-box;
-        }
-
-        #guessButton {
-            margin-top: 0.5rem;
-        }
     </style>
 </head>
 <body>
 
     <h1>Linguordle</h1>
     <p id="familyHint"></p> <!-- This shows the hint -->
-    <div class="autocomplete-container">
+    <div class="input-row autocomplete-container">
         <input type="text" id="guessInput" placeholder="Type your guess..." autocomplete="off">
+        <button id="guessButton">Guess</button>
         <div id="autocomplete-list" class="autocomplete-items"></div>
     </div>
 
-    <button id="guessButton">Guess</button>
     <p id="guessesLeft"></p>
     <div id="output"></div>
     <script src="data.js"></script>
