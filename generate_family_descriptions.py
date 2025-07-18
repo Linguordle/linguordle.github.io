@@ -3,7 +3,7 @@ import json
 import requests
 
 # --- Step 1: Extract unique families from data.js ---
-with open('data.js', 'r', encoding='utf-8') as f:
+with open('web/data.js', 'r', encoding='utf-8') as f:
     js_content = f.read()
 
 # Match 'family': 'Some Family Name'
@@ -35,7 +35,7 @@ for family in families:
         family_descriptions[family] = result
 
 # --- Step 4: Write JS file ---
-with open('familyDescriptions.js', 'w', encoding='utf-8') as out:
+with open('web/familyDescriptions.js', 'w', encoding='utf-8') as out:
     out.write("const familyDescriptions = ")
     json.dump(family_descriptions, out, ensure_ascii=False, indent=4)
     out.write(";")
