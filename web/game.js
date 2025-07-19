@@ -48,6 +48,21 @@ function startNewGame() {
     input.value = '';
 }
 
+function updateFamilyHint(familyName) {
+    const familyInfo = familyDescriptions[familyName];
+    const familyHintElement = document.getElementById('familyHint');
+    if (!familyInfo) {
+        familyHintElement.innerHTML = `Family: ${familyName}`;
+        return;
+    }
+
+    familyHintElement.innerHTML = `
+        <strong>Family:</strong> ${familyName}<br>
+        ${familyInfo.description}
+        <a href="${familyInfo.link}" target="_blank"> (Wikipedia)</a>
+    `;
+}
+    
 function handleGuess() {
     const guess = input.value.trim();
     if (!guess) return;
