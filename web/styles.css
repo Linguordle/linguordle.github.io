@@ -9,6 +9,10 @@ body {
   line-height: 1.6;
 }
 
+h1 {
+  font-family: "Outfit", sans-serif;
+}
+
 /* Style inputs and buttons uniformly */
 input, button {
   font-size: 1rem;
