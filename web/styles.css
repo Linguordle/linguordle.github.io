@@ -11,6 +11,8 @@ body {
 
 h1 {
   font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
 }
 
 /* Style inputs and buttons uniformly */
