@@ -16,6 +16,10 @@ jobs:
       with:
         python-version: '3.x'
 
+    - name: Install Python dependencies
+      run: |
+        pip install requests js2py
+
     - name: Install Requests
       run: pip install requests
 
