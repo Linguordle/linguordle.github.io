@@ -26,13 +26,6 @@ button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
 
-function getDailyLanguage() {
-    const today = new Date();
-    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-    const index = seed % languageList.length;
-    return languageList[index];
-}
-
 function updateFamilyHint(familyName) {
     const familyInfo = familyDescriptions[familyName];
     const familyHintElement = document.getElementById('familyHint');
@@ -47,7 +40,16 @@ function updateFamilyHint(familyName) {
         <a href="${familyInfo.link}" target="_blank"> (Wikipedia)</a>
     `;
 }
-    
+
+updateFamilyHint(familyName);
+
+function getDailyLanguage() {
+    const today = new Date();
+    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+    const index = seed % languageList.length;
+    return languageList[index];
+}
+
 function startNewGame() {
     targetLanguage = getDailyLanguage();
     targetFamily = LANGUAGE_DATA[targetLanguage][0];
@@ -61,8 +63,6 @@ function startNewGame() {
     input.disabled = false;
     button.disabled = false;
     input.value = '';
-
-    updateFamilyHint(familyName);
 }
     
 function handleGuess() {
