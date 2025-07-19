@@ -16,7 +16,8 @@ h1 {
 }
 
 .disclaimer {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+  font-style: italic;
 }
 
 /* Style inputs and buttons uniformly */
