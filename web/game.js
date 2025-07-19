@@ -33,21 +33,6 @@ function getDailyLanguage() {
     return languageList[index];
 }
 
-function startNewGame() {
-    targetLanguage = getDailyLanguage();
-    targetFamily = LANGUAGE_DATA[targetLanguage][0];
-
-    familyHint.textContent = `Family: ${targetFamily}`;
-    output.innerHTML = '';
-    guessesLeft = MAX_GUESSES;
-    guessedLanguages.clear();
-    updateGuessesDisplay();
-    clearAutocompleteSuggestions();
-    input.disabled = false;
-    button.disabled = false;
-    input.value = '';
-}
-
 function updateFamilyHint(familyName) {
     const familyInfo = familyDescriptions[familyName];
     const familyHintElement = document.getElementById('familyHint');
@@ -61,6 +46,23 @@ function updateFamilyHint(familyName) {
         ${familyInfo.description}
         <a href="${familyInfo.link}" target="_blank"> (Wikipedia)</a>
     `;
+}
+    
+function startNewGame() {
+    targetLanguage = getDailyLanguage();
+    targetFamily = LANGUAGE_DATA[targetLanguage][0];
+
+    familyHint.textContent = `Family: ${targetFamily}`;
+    output.innerHTML = '';
+    guessesLeft = MAX_GUESSES;
+    guessedLanguages.clear();
+    updateGuessesDisplay();
+    clearAutocompleteSuggestions();
+    input.disabled = false;
+    button.disabled = false;
+    input.value = '';
+
+    updateFamilyHint(familyName);
 }
     
 function handleGuess() {
