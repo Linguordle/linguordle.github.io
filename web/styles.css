@@ -34,7 +34,6 @@ input, button {
 /* Improve button appearance */
 button {
   color: white;
-  text-decoration: none; /* Removes the underline */
   background-color: #ffcc66;
   border: none;
   cursor: pointer;
