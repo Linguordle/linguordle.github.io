@@ -1,29 +1,21 @@
-import json
-import re
+import js2py
 import requests
+import json
 
-# --- Step 1: Read and Parse data.js ---
+# --- Step 1: Execute the JS to extract LANGUAGE_DATA ---
 with open('web/data.js', 'r', encoding='utf-8') as f:
-    js_content = f.read()
+    js_code = f.read()
 
-# Extract the object inside LANGUAGE_DATA
-match = re.search(r'const LANGUAGE_DATA\s*=\s*({.*});', js_content, re.DOTALL)
-if not match:
-    raise ValueError("Couldn't extract LANGUAGE_DATA object from data.js")
+# Evaluate the JS in a JS context
+context = js2py.EvalJs()
+context.execute(js_code)
+language_data = context.LANGUAGE_DATA.to_dict()
 
-# Convert JS-like object into valid JSON
-data_str = match.group(1)
-data_str = re.sub(r'(\w+):', r'"\1":', data_str)  # Ensure keys are quoted
-data_str = data_str.replace("'", '"')  # Convert single quotes to double quotes if needed
-
-language_data = json.loads(data_str)
-
-# --- Step 2: Extract Unique Family Names ---
+# --- Step 2: Extract unique families from the JS object ---
 families = sorted(set(info[0] for info in language_data.values()))
-
 print(f"Extracted families: {families}")
 
-# --- Step 3: Query Wikipedia API for Each Family ---
+# --- Step 3: Query Wikipedia API ---
 def get_wikipedia_summary(family):
     page_title = family.replace(" ", "_") + "_languages"
     url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{page_title}"
@@ -38,7 +30,7 @@ def get_wikipedia_summary(family):
         return {"description": description, "link": link}
     return None
 
-# --- Step 4: Build the Final Dictionary ---
+# --- Step 4: Build familyDescriptions.js ---
 family_descriptions = {}
 
 for family in families:
@@ -46,10 +38,10 @@ for family in families:
     if result:
         family_descriptions[family] = result
 
-# --- Step 5: Write to familyDescriptions.js ---
+# --- Step 5: Write to JS file ---
 with open('web/familyDescriptions.js', 'w', encoding='utf-8') as out:
     out.write("const familyDescriptions = ")
     json.dump(family_descriptions, out, ensure_ascii=False, indent=4)
     out.write(";")
 
-print("\nfamilyDescriptions.js has been generated successfully.")
+print("\n✅ familyDescriptions.js has been generated successfully.")
