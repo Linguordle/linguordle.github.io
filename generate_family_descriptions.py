@@ -47,3 +47,18 @@ with open('web/familyDescriptions.js', 'w', encoding='utf-8') as out:
     out.write(";")
 
 print("\n✅ familyDescriptions.js has been generated successfully.")
+
+# --- Step 6: Filter LANGUAGE_DATA to only families we kept ---
+cleaned_language_data = {
+    lang: info
+    for lang, info in language_data.items()
+    if info[0] in kept_families
+}
+
+# --- Step 7: Overwrite data.js with the cleaned data ---
+with open('web/data.js', 'w', encoding='utf-8') as out:
+    out.write("const LANGUAGE_DATA = ")
+    json.dump(cleaned_language_data, out, ensure_ascii=False, indent=4)
+    out.write(";")
+
+print("\n✅ data.js has been cleaned and updated to remove skipped families.")
