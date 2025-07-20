@@ -13,7 +13,10 @@ context.execute(js_code)
 language_data = context.LANGUAGE_DATA.to_dict()
 
 # --- Step 2: Extract unique families from the JS object ---
-families = sorted(set(info[0] for info in language_data.values()))
+all_classifications = set()
+for classifications in language_data.values():
+    all_classifications.update(classifications)
+all_classifications = sorted(all_classifications)
 print(f"Extracted families: {families}")
 
 # --- Step 3: Query Wikipedia API ---
@@ -35,10 +38,10 @@ def get_wikipedia_summary(family):
 # --- Step 4: Build familyDescriptions.js ---
 family_descriptions = {}
 
-for family in families:
-    result = get_wikipedia_summary(family)
+for classification in all_classifications:
+    result = get_wikipedia_summary(classification)
     if result:
-        family_descriptions[family] = result
+        family_descriptions[classification] = result
 
 kept_families = set(family_descriptions.keys())
 # --- Step 5: Write to JS file ---
