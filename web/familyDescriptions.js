@@ -1,15 +1,11 @@
 const familyDescriptions = {
-    "Abkhaz-Adyge": {
-        "description": "The Northwest Caucasian languages, also called West Caucasian, Abkhazo-Adyghean, Abkhazo-Circassian, Circassic, or sometimes Pontic languages, is a family of languages spoken in the northwestern Caucasus region, chiefly in three Russian republics, the disputed territory of Abkhazia, Georgia, and Turkey, with smaller communities scattered throughout the Middle East.",
-        "link": "https://en.wikipedia.org/wiki/Northwest_Caucasian_languages"
-    },
     "Afro-Asiatic": {
         "description": "The Afroasiatic languages are a language family of about 400 languages spoken predominantly in West Asia, North Africa, the Horn of Africa, and parts of the Sahara and Sahel. Over 500 million people are native speakers of an Afroasiatic language, constituting the fourth-largest language family after Indo-European, Sino-Tibetan, and Niger–Congo. Most linguists divide the family into six branches: Berber (Amazigh), Chadic, Cushitic, Egyptian, Omotic, and Semitic. The vast majority of Afroasiatic languages are considered indigenous to the African continent, including all those not belonging to the Semitic branch.",
         "link": "https://en.wikipedia.org/wiki/Afroasiatic_languages"
     },
     "Ainu": {
-        "description": "The Ainu languages, sometimes known as Ainuic, are a small language family, often regarded as a language isolate, historically spoken by the Ainu people of northern Japan and neighboring islands, and formerly in parts of the Asian mainland, including the southern part of the Kamchatka Peninsula.",
-        "link": "https://en.wikipedia.org/wiki/Ainu_languages"
+        "description": "Ainu or Aynu may refer to:Ainu people, an East Asian ethnic group of Japan and the Russian Far East\nAinu languages, a family of languages\nAinu language of Hokkaido\nKuril Ainu language, extinct language of the Kuril Islands\nSakhalin Ainu language, extinct language from the island of Sakhalin\nAinu music\nAinu cuisine\nAinu (Middle-earth), spirit in J. R. R. Tolkien's legendarium\nAinu (insect), a beetle in the family Tenebrionidae\nÄynu people, of Western China\nÄynu language",
+        "link": "https://en.wikipedia.org/wiki/Ainu"
     },
     "Algic": {
         "description": "The Algic languages are an indigenous language family of North America. Most Algic languages belong to the Algonquian subfamily, dispersed over a broad area from the Rocky Mountains to Atlantic Canada. The other Algic languages are the Yurok and Wiyot of northwestern California, which, despite their geographic proximity, are not closely related to each other. All these languages descend from Proto-Algic, a second-order proto-language estimated to have been spoken about 5,000 years ago and reconstructed using the reconstructed Proto-Algonquian language and the Wiyot and Yurok languages.",
@@ -20,31 +16,35 @@ const familyDescriptions = {
         "link": "https://en.wikipedia.org/wiki/Amto%E2%80%93Musan_languages"
     },
     "Angan": {
-        "description": "The Angan or Kratke Range languages are a family of the Trans–New Guinea languages in the classification of Malcolm Ross. The Angan languages are clearly valid as a family. They were first identified as such by J. Lloyd and A. Healey in 1968; Wurm (1975) classified them as Trans–New Guinea. Glottolog treats Angan as a separate or unclassified family, ignoring further evidence.",
-        "link": "https://en.wikipedia.org/wiki/Angan_languages"
+        "description": "Angan is a surname. Notable people with the surname include:Davy Claude Angan, Ivorian footballer\nDidié Angan, Ivorian footballer\nPascal Angan is an Ivorian-Beninese footballer",
+        "link": "https://en.wikipedia.org/wiki/Angan"
     },
     "Anim": {
-        "description": "The Anim or Fly River languages are a language family in south-central New Guinea established by Usher & Suter (2015). The names of the family derive from the Fly River and from the Proto-Anim word *anim 'people'.",
-        "link": "https://en.wikipedia.org/wiki/Anim_languages"
+        "description": "Anim or ANIM may refer to:",
+        "link": "https://en.wikipedia.org/wiki/Anim"
     },
     "Arafundi": {
-        "description": "The Arafundi languages are a small family of clearly related languages in East Sepik Province, Papua New Guinea. They are conjectured to be related to the Piawi and Madang languages. They are named after the Arafundi River.",
-        "link": "https://en.wikipedia.org/wiki/Arafundi_languages"
+        "description": "Arafundi may refer to:Arafundi languages\nArafundi River",
+        "link": "https://en.wikipedia.org/wiki/Arafundi"
     },
     "Araucanian": {
-        "description": "The Araucanian languages are a small language family of indigenous languages of the Americas spoken in central Chile and neighboring areas of Argentina. The living representatives of this family are Mapudungun and Huilliche, spoken respectively by the Mapuche and Huilliche people. These are usually considered divergent dialects of a single language isolate.",
-        "link": "https://en.wikipedia.org/wiki/Araucanian_languages"
+        "description": "The Mapuche, also known as Araucanians, are a group of Indigenous inhabitants of south-central Chile and southwestern Argentina, including parts of Patagonia. The collective term refers to a wide-ranging ethnicity composed of various groups who share a common social, religious, and economic structure, as well as a common linguistic heritage as Mapudungun speakers. Their homelands once extended from Choapa Valley to the Chiloé Archipelago and later spread eastward to Puelmapu, a land comprising part of the Argentine pampa and Patagonia. Today the collective group makes up over 80% of the Indigenous peoples in Chile and about 9% of the total Chilean population .The Mapuche are concentrated in the Araucanía region. Many have migrated from rural areas to the cities of Santiago and Buenos Aires for economic opportunities, more than 92% of the Mapuches are from Chile.",
+        "link": "https://en.wikipedia.org/wiki/Mapuche"
     },
     "Arawakan": {
         "description": "Arawakan, also known as Maipurean, is a language family that developed among ancient Indigenous peoples in South America. Branches migrated to Central America and the Greater Antilles and Lesser Antilles in the Caribbean and the Atlantic, including what is now the Bahamas. Most present-day South American countries are known to have been home to speakers of Arawakan languages, with the exceptions of Ecuador, Uruguay, and Chile. Maipurean may be related to other language families in a hypothetical Macro-Arawakan stock.",
         "link": "https://en.wikipedia.org/wiki/Arawakan_languages"
     },
     "Arawan": {
-        "description": "Arawan is a family of languages spoken in western Brazil and Peru (Ucayali).",
-        "link": "https://en.wikipedia.org/wiki/Arawan_languages"
+        "description": "Arawan can refer to:Araouane, a city in Mali\nArauan languages, spoken in Brazil\nUSS Arawan II (SP-1), a United States Navy patrol vessel in commission from 1917 to 1918",
+        "link": "https://en.wikipedia.org/wiki/Arawan"
     },
-    "Yeniseian": {
-        "description": "The Yeniseian languages are a family of languages that are spoken by the Yeniseian people in the Yenisei River region of central Siberia. As part of the proposed Dene–Yeniseian language family, the Yeniseian languages have been argued to be part of \"the first demonstration of a genealogical link between Old World and New World language families that meets the standards of traditional comparative-historical linguistics\". The only surviving language of the group today is Ket.",
-        "link": "https://en.wikipedia.org/wiki/Yeniseian_languages"
+    "Border": {
+        "description": "Borders are generally defined as geographical boundaries, imposed either by features such as oceans and terrain, or by political entities such as governments, sovereign states, federated states, and other subnational entities. Political borders can be established through warfare, colonization, or mutual agreements between the political entities that reside in those areas.",
+        "link": "https://en.wikipedia.org/wiki/Border"
+    },
+    "Furan": {
+        "description": "Furan is a heterocyclic organic compound, consisting of a five-membered aromatic ring with four carbon atoms and one oxygen atom. Chemical compounds containing such rings are also referred to as furans.",
+        "link": "https://en.wikipedia.org/wiki/Furan"
     }
 };
