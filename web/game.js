@@ -26,23 +26,6 @@ button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
 
-function updateFamilyHint(familyName) {
-    const familyInfo = familyDescriptions[familyName];
-    const familyHintElement = document.getElementById('familyHint');
-    if (!familyInfo) {
-        familyHintElement.innerHTML = `Family: ${familyName}`;
-        return;
-    }
-
-    familyHintElement.innerHTML = `
-        <strong>Family:</strong> ${familyName}<br>
-        ${familyInfo.description}
-        <a href="${familyInfo.link}" target="_blank"> (Wikipedia)</a>
-    `;
-}
-
-updateFamilyHint(familyName);
-
 function getDailyLanguage() {
     const today = new Date();
     const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
@@ -64,6 +47,23 @@ function startNewGame() {
     button.disabled = false;
     input.value = '';
 }
+
+function updateFamilyHint(familyName) {
+    const familyInfo = familyDescriptions[familyName];
+    const familyHintElement = document.getElementById('familyHint');
+    if (!familyInfo) {
+        familyHintElement.innerHTML = `Family: ${familyName}`;
+        return;
+    }
+
+    familyHintElement.innerHTML = `
+        <strong>Family:</strong> ${familyName}<br>
+        ${familyInfo.description}
+        <a href="${familyInfo.link}" target="_blank"> (Wikipedia)</a>
+    `;
+}
+
+updateFamilyHint(familyName);
     
 function handleGuess() {
     const guess = input.value.trim();
