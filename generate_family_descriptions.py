@@ -18,10 +18,10 @@ print(f"Extracted families: {families}")
 
 # --- Step 3: Query Wikipedia API ---
 def get_wikipedia_summary(family):
-    page_title = family.replace(" ", "_")
+    page_title = family.replace(" ", "_") + "_languages"
     url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{page_title}"
     response = requests.get(url)
-    time.sleep(10)
+    time.sleep(1)
     if response.status_code != 200:
         print(f"Skipping {family} (HTTP {response.status_code})")
         return None
