@@ -43,18 +43,6 @@ const familyDescriptions = {
         "description": "Arawan is a family of languages spoken in western Brazil and Peru (Ucayali).",
         "link": "https://en.wikipedia.org/wiki/Arawan_languages"
     },
-    "Athabaskan-Eyak-Tlingit": {
-        "description": "Na-Dene is a family of Native American languages that includes at least the Athabaskan languages, Eyak, and Tlingit languages. Haida was formerly included but is now generally considered a language isolate. By far the most widely spoken Na-Dene language today is Navajo, also the most spoken indigenous language north of Mexico.",
-        "link": "https://en.wikipedia.org/wiki/Na-Dene_languages"
-    },
-    "Mirndi": {
-        "description": "The Mirndi or Mindi languages are an Australian language family spoken in the Northern Territory of Australia. The family consists of two sub-groups and an isolate branch: the Yirram languages, and the Ngurlun languages and Jingulu language some 200 km farther to the southeast, separated by the Ngumpin languages. The primary difference between the two sub-groups is that while the Yirram languages are all prefixing like other non-Pama–Nyungan languages, the Ngurlun languages are all suffixing like most Pama–Nyungan languages.",
-        "link": "https://en.wikipedia.org/wiki/Mirndi_languages"
-    },
-    "Siouan": {
-        "description": "Siouan, also known as Siouan–Catawban, is a language family of North America located primarily in the Great Plains, Ohio and Mississippi valleys and southeastern North America with a few other languages in the east.",
-        "link": "https://en.wikipedia.org/wiki/Siouan_languages"
-    },
     "Yeniseian": {
         "description": "The Yeniseian languages are a family of languages that are spoken by the Yeniseian people in the Yenisei River region of central Siberia. As part of the proposed Dene–Yeniseian language family, the Yeniseian languages have been argued to be part of \"the first demonstration of a genealogical link between Old World and New World language families that meets the standards of traditional comparative-historical linguistics\". The only surviving language of the group today is Ket.",
         "link": "https://en.wikipedia.org/wiki/Yeniseian_languages"
