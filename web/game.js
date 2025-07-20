@@ -36,8 +36,7 @@ function getDailyLanguage() {
 function startNewGame() {
     targetLanguage = getDailyLanguage();
     targetFamily = LANGUAGE_DATA[targetLanguage][0];
-
-    familyHint.textContent = `Family: ${targetFamily}`;
+    updateFamilyHint(targetFamily);
     output.innerHTML = '';
     guessesLeft = MAX_GUESSES;
     guessedLanguages.clear();
@@ -62,8 +61,6 @@ function updateFamilyHint(familyName) {
         <a href="${familyInfo.link}" target="_blank"> (Wikipedia)</a>
     `;
 }
-
-updateFamilyHint(familyName);
     
 function handleGuess() {
     const guess = input.value.trim();
