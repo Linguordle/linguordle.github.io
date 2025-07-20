@@ -40,6 +40,7 @@ for family in families:
     if result:
         family_descriptions[family] = result
 
+kept_families = set(family_descriptions.keys())
 # --- Step 5: Write to JS file ---
 with open('web/familyDescriptions.js', 'w', encoding='utf-8') as out:
     out.write("const familyDescriptions = ")
