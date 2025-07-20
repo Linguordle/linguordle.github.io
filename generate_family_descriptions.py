@@ -17,7 +17,6 @@ all_classifications = set()
 for classifications in language_data.values():
     all_classifications.update(classifications)
 all_classifications = sorted(all_classifications)
-print(f"Extracted families: {families}")
 
 # --- Step 3: Query Wikipedia API ---
 def get_wikipedia_summary(family):
