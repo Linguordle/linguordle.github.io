@@ -1,6 +1,7 @@
 import js2py
 import requests
 import json
+import time
 
 # --- Step 1: Execute the JS to extract LANGUAGE_DATA ---
 with open('web/data.js', 'r', encoding='utf-8') as f:
