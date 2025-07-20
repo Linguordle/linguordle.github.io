@@ -38,7 +38,7 @@ input, button {
 /* Improve button appearance */
 button {
   color: white;
-  font-style: bold;
+  font-weight: 500;
   background-color: #ffcc66;
   border: none;
   cursor: pointer;
