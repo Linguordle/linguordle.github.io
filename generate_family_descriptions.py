@@ -20,6 +20,7 @@ def get_wikipedia_summary(family):
     page_title = family.replace(" ", "_")
     url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{page_title}"
     response = requests.get(url)
+    time.sleep(10)
     if response.status_code != 200:
         print(f"Skipping {family} (HTTP {response.status_code})")
         return None
