@@ -63,3 +63,9 @@ with open('web/data.js', 'w', encoding='utf-8') as out:
     out.write(";")
 
 print("\n✅ data.js has been cleaned and updated to remove skipped families.")
+
+print(f"Original number of languages: {len(language_data)}")
+print(f"Filtered number of languages: {len(cleaned_language_data)}")
+print("Original families:", sorted(set(info[0] for info in language_data.values())))
+print("Kept families:", sorted(kept_families))
+
