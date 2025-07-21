@@ -57,13 +57,16 @@ function startNewGame() {
 function updateFamilyHint(familyName) {
     const familyInfo = familyDescriptions[familyName];
     const familyHintElement = document.getElementById('familyHint');
+    const isFamily = familyName === targetFamily[0];
+    const label = isFamily ? "Family" : "Shared Classification";
+    
     if (!familyInfo) {
-        familyHintElement.innerHTML = `Shared Classification: ${familyName}`;
+        familyHintElement.innerHTML = `${label}: ${familyName}`;
         return;
     }
 
     familyHintElement.innerHTML = `
-        <strong>Shared Classification:</strong> ${familyName}<br>
+        <strong>${label}: ${familyName}</strong><br>
         ${familyInfo.description}
         <a href="${familyInfo.link}" target="_blank" rel="noopener noreferrer"> (Wikipedia)</a>
     `;
