@@ -87,7 +87,7 @@ function updateFamilyHint(familyName) {
 
     familyHintElement.innerHTML = `
         <strong>${label}: ${familyName}</strong><br>
-        ${familyInfo.description}
+        <i style="font-size: 0.8rem;">${familyInfo.description}</i>
         <a href="${familyInfo.link}" target="_blank" rel="noopener noreferrer"> (Wikipedia)</a>
     `;
 }
