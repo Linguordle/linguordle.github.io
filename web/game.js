@@ -103,8 +103,12 @@ function handleGuess() {
     }
 
     const commonAncestor = findCommonAncestor(guess, targetLanguage);
-    appendOutputLine(`Guess: ${guess} → Common ancestor: ${commonAncestor}`);
-    updateFamilyHint(commonAncestor);
+    if (!commonAncestor) {
+        appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
+    } else {
+        appendOutputLine(`Guess: ${guess} → Common ancestor: ${commonAncestor}`);
+        updateFamilyHint(commonAncestor);
+    }
     input.value = '';
     clearAutocompleteSuggestions();
 }
@@ -117,7 +121,7 @@ function findCommonAncestor(guess, target) {
     while (i < guessTree.length && i < targetTree.length && guessTree[i] === targetTree[i]) {
         i++;
     }
-    if (i === 0) return targetFamily[0];
+    if (i === 0) return null;
     return guessTree[i - 1];
 }
 
