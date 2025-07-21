@@ -1,4 +1,4 @@
-const LANGUAGE_DATA = {
+const LANGUAGE_DATA_FULL = {
   "Amto": [
     "Amto-Musan",
     "Amto"
