@@ -40,6 +40,24 @@ function getDailyLanguage() {
     return languageList[index];
 }
 
+function checkIfAlreadyPlayed() {
+    const today = new Date();
+    const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    const savedDate = localStorage.getItem('lastGameDate');
+    const result = localStorage.getItem('lastGameResult');
+
+    if (savedDate === dateKey) {
+        if (result === 'win') {
+            appendOutputLine(`🎉 You already solved today's language: "${targetLanguage}".`);
+        } else if (result === 'loss') {
+            appendOutputLine(`❌ You already ran out of guesses today. The answer was "${targetLanguage}".`);
+        }
+        disableInput();
+        return true;
+    }
+    return false;
+}
+
 function startNewGame() {
     targetLanguage = getDailyLanguage();
     targetFamily = LANGUAGE_DATA[targetLanguage];
@@ -52,6 +70,8 @@ function startNewGame() {
     input.disabled = false;
     button.disabled = false;
     input.value = '';
+
+    if (checkIfAlreadyPlayed()) return;
 }
 
 function updateFamilyHint(familyName) {
@@ -71,7 +91,21 @@ function updateFamilyHint(familyName) {
         <a href="${familyInfo.link}" target="_blank" rel="noopener noreferrer"> (Wikipedia)</a>
     `;
 }
-    
+
+function saveWinState() {
+    const today = new Date();
+    const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    localStorage.setItem('lastGameDate', dateKey);
+    localStorage.setItem('lastGameResult', 'win');
+}
+
+function saveLossState() {
+    const today = new Date();
+    const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    localStorage.setItem('lastGameDate', dateKey);
+    localStorage.setItem('lastGameResult', 'loss');
+}
+
 function handleGuess() {
     const guess = input.value.trim();
     if (!guess) return;
@@ -92,12 +126,14 @@ function handleGuess() {
 
     if (guess === targetLanguage) {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
+        saveWinState();
         disableInput();
         return;
     }
 
     if (guessesLeft <= 0) {
         appendOutputLine(`❌ Out of guesses! The answer was "${targetLanguage}".`);
+        saveLossState();
         disableInput();
         return;
     }
