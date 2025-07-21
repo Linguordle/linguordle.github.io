@@ -1,7 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
 
 const useEasyMode = localStorage.getItem('easyMode') === 'true';
-const LANGUAGE_DATA = useEasyMode ? LANGUAGE_DATA_EASY : LANGUAGE_DATA_FULL;
+const fullData = typeof LANGUAGE_DATA_FULL !== 'undefined' ? LANGUAGE_DATA_FULL : {};
+const easyData = typeof LANGUAGE_DATA_EASY !== 'undefined' ? LANGUAGE_DATA_EASY : {};
+const LANGUAGE_DATA = useEasyMode ? easyData : fullData;
 const languageList = Object.keys(LANGUAGE_DATA);
 const MAX_GUESSES = 15;
 let guessesLeft = MAX_GUESSES;
