@@ -20,26 +20,17 @@ def get_speaker_count(lang_name):
     time.sleep(1)
     if response.status_code != 200:
         print(f"Skipping {lang_name} (HTTP {response.status_code})")
-        return 0
+        return False
     data = response.json()
-    extract = data.get('extract', '')
-
-    # Simple regex to find 'million speakers' or 'billion speakers'
-    match = re.search(r'([\d.]+)\s*(million|billion)\s+speakers', extract, re.IGNORECASE)
-    if match:
-        number = float(match.group(1))
-        scale = match.group(2).lower()
-        return int(number * 1_000_000) if scale == 'million' else int(number * 1_000_000_000)
-
-    return 0
+    extract = data.get('extract', '').lower()
+    return 'million' in extract or 'billion' in extract
 
 # Build the EASY dataset
 easy_data = {}
 for lang, classification in language_data.items():
-    speakers = get_speaker_count(lang)
-    if speakers >= 1_000_000:
+    if get_speaker_count(lang):
         easy_data[lang] = classification
-        print(f"{lang}: {speakers} speakers")
+        print(f"Included {lang}")
 
 # Output to data_easy.js
 with open('web/data_easy.js', 'w', encoding='utf-8') as out:
