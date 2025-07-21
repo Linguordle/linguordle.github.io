@@ -238,5 +238,12 @@ function updateHighlight(items) {
         items[highlightIndex].classList.add('highlighted');
     }
 }
+    
+if (useEasyMode) {
+    const notice = document.createElement('div');
+    notice.textContent = 'Easy Mode is ON';
+    notice.style.color = 'green';
+    output.appendChild(notice);
+}
 
 });
