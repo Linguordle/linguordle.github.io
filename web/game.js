@@ -101,7 +101,7 @@ function handleGuess() {
 
     const commonAncestor = findCommonAncestor(guess, targetLanguage);
     appendOutputLine(`Guess: ${guess} → Common ancestor: ${commonAncestor}`);
-    updateClassificationHint(commonAncestor);
+    updateFamilyHint(commonAncestor);
     input.value = '';
     clearAutocompleteSuggestions();
 }
