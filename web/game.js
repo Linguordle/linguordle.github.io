@@ -28,8 +28,15 @@ input.addEventListener('input', showAutocompleteSuggestions);
 
 function getDailyLanguage() {
     const today = new Date();
-    const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-    const index = seed % languageList.length;
+    const dateString = today.toISOString().slice(0, 10); // YYYY-MM-DD
+
+    // Simple hash function (djb2)
+    let hash = 5381;
+    for (let i = 0; i < dateString.length; i++) {
+        hash = ((hash << 5) + hash) + dateString.charCodeAt(i); // hash * 33 + char
+    }
+
+    const index = Math.abs(hash) % languageList.length;
     return languageList[index];
 }
 
