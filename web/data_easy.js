@@ -1,0 +1,1 @@
+const LANGUAGE_DATA_EASY = {};
