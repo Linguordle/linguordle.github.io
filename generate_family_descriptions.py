@@ -10,7 +10,7 @@ with open('web/data.js', 'r', encoding='utf-8') as f:
 # Evaluate the JS in a JS context
 context = js2py.EvalJs()
 context.execute(js_code)
-language_data = context.LANGUAGE_DATA.to_dict()
+language_data = context.LANGUAGE_DATA_FULL.to_dict()
 
 # --- Step 2: Extract unique families from the JS object ---
 families = set(info[0] for info in language_data.values())
@@ -77,7 +77,7 @@ cleaned_language_data = {
 
 # --- Step 7: Overwrite data.js with the cleaned data ---
 with open('web/data.js', 'w', encoding='utf-8') as out:
-    out.write("const LANGUAGE_DATA = ")
+    out.write("const LANGUAGE_DATA_FULL = ")
     json.dump(cleaned_language_data, out, ensure_ascii=False, indent=4)
     out.write(";")
 
