@@ -20,7 +20,7 @@ jobs:
           python -m pip install --upgrade pip requests js2py
 
       - name: Generate data_easy.js
-        run: python scripts/generate_data_easy.py
+        run: python generate_data_easy.py
 
       - name: Commit and Push changes
         run: |
