@@ -4,7 +4,7 @@ const languageList = Object.keys(LANGUAGE_DATA);
 const MAX_GUESSES = 15;
 let guessesLeft = MAX_GUESSES;
 let targetLanguage = '';
-let targetFamily = '';
+let targetFamily = [];
 let guessedLanguages = new Set();
 let highlightIndex = -1;
 
@@ -42,8 +42,8 @@ function getDailyLanguage() {
 
 function startNewGame() {
     targetLanguage = getDailyLanguage();
-    targetFamily = LANGUAGE_DATA[targetLanguage][0];
-    updateFamilyHint(targetFamily);
+    targetFamily = LANGUAGE_DATA[targetLanguage];
+    updateFamilyHint(targetFamily[0]);
     output.innerHTML = '';
     guessesLeft = MAX_GUESSES;
     guessedLanguages.clear();
@@ -58,14 +58,14 @@ function updateFamilyHint(familyName) {
     const familyInfo = familyDescriptions[familyName];
     const familyHintElement = document.getElementById('familyHint');
     if (!familyInfo) {
-        familyHintElement.innerHTML = `Family: ${familyName}`;
+        familyHintElement.innerHTML = `Shared Classification: ${familyName}`;
         return;
     }
 
     familyHintElement.innerHTML = `
-        <strong>Family:</strong> ${familyName}<br>
+        <strong>Shared Classification:</strong> ${familyName}<br>
         ${familyInfo.description}
-        <a href="${familyInfo.link}" target="_blank"> (Wikipedia)</a>
+        <a href="${familyInfo.link}" target="_blank" rel="noopener noreferrer"> (Wikipedia)</a>
     `;
 }
     
@@ -101,6 +101,7 @@ function handleGuess() {
 
     const commonAncestor = findCommonAncestor(guess, targetLanguage);
     appendOutputLine(`Guess: ${guess} → Common ancestor: ${commonAncestor}`);
+    updateClassificationHint(commonAncestor);
     input.value = '';
     clearAutocompleteSuggestions();
 }
@@ -113,8 +114,8 @@ function findCommonAncestor(guess, target) {
     while (i < guessTree.length && i < targetTree.length && guessTree[i] === targetTree[i]) {
         i++;
     }
-    if (i === 0) return '(none)';
-    return guessTree.slice(0, i).join(' → ');
+    if (i === 0) return targetFamily[0];
+    return guessTree[i - 1];
 }
 
 function updateGuessesDisplay() {
