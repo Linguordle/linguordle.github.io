@@ -24,8 +24,23 @@
         Languages include only living, non-isolate, non-artificial languages from Glottolog.
         Some aspects of the game take inspiration from <a href="https://metazooa.com/" target="_blank" rel="noopener noreferrer">Metazooa by Trainwreck Labs.</a>
     </p>
+    <label>
+        <input type="checkbox" id="easyModeToggle">
+        Easy Mode (smaller language list)
+    </label>
     <div style="text-align: center;">
         <button><a href="game.html" style="text-decoration: none;">Start the Game</a></button>
     </div>
+    <script>
+    // Restore saved toggle state on page load
+    window.addEventListener('DOMContentLoaded', () => {
+        const easyToggle = document.getElementById('easyModeToggle');
+        const isEasy = localStorage.getItem('easyMode') === 'true';
+        easyToggle.checked = isEasy;
+        easyToggle.addEventListener('change', () => {
+            localStorage.setItem('easyMode', easyToggle.checked);
+        });
+    });
+    </script>
 </body>
 </html>
