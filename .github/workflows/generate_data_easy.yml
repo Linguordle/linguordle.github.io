@@ -17,7 +17,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          python -m pip install --upgrade pip requests js2py
+          python -m pip install --upgrade pip requests js2py beautifulsoup4
 
       - name: Generate data_easy.js
         run: python generate_data_easy.py
