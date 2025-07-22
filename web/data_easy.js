@@ -1,225 +1,23 @@
 const LANGUAGE_DATA_EASY = {
-    "Adilabad Gondi": [
-        "Dravidian",
-        "South Dravidian",
-        "South Dravidian II",
-        "Gondi",
-        "Northwest Gondi",
-        "Southwest Gondi",
-        "Southern Gondi",
-        "Adilabad Gondi"
-    ],
-    "Aheri Gondi": [
-        "Dravidian",
-        "South Dravidian",
-        "South Dravidian II",
-        "Gondi",
-        "Northwest Gondi",
-        "Southwest Gondi",
-        "Southern Gondi",
-        "Eastern Gondi",
-        "Aheri Gondi"
-    ],
-    "Anyin": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Kwa Volta-Congo",
-        "Nyo",
-        "Potou-Tano",
-        "Tano",
-        "Central Tano",
-        "Bia",
-        "Northern Bia",
-        "Anyinic",
-        "Anyin"
-    ],
-    "Anyin Morofo": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Kwa Volta-Congo",
-        "Nyo",
-        "Potou-Tano",
-        "Tano",
-        "Central Tano",
-        "Bia",
-        "Northern Bia",
-        "Anyinic",
-        "Anyin Morofo"
-    ],
-    "Arequipa-La Unión Quechua": [
-        "Quechuan",
-        "Southern Quechua",
-        "Ayacuchan Quechua",
-        "Arequipa-La Unión Quechua"
-    ],
-    "Attié": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Kwa Volta-Congo",
-        "Nyo",
-        "Attié"
-    ],
-    "Ayacucho Quechua": [
-        "Quechuan",
-        "Southern Quechua",
-        "Ayacuchan Quechua",
-        "Ayacucho Quechua"
-    ],
-    "Banda-Bambari": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ubangi Ka",
-        "Bandaic",
-        "Nuclear Bandaic",
-        "Central Bandaic",
-        "Core Central Bandaic",
-        "Lindaic",
-        "Banda-Bambari"
-    ],
-    "Banda-Banda": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ubangi Ka",
-        "Bandaic",
-        "Nuclear Bandaic",
-        "Central Bandaic",
-        "Core Central Bandaic",
-        "Lindaic",
-        "Banda-Banda"
-    ],
-    "Banda-Mbrès": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ubangi Ka",
-        "Bandaic",
-        "Nuclear Bandaic",
-        "Central Bandaic",
-        "Core Central Bandaic",
-        "Banda-Mbrès"
-    ],
-    "Banda-Ndélé": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ubangi Ka",
-        "Bandaic",
-        "Nuclear Bandaic",
-        "Central Bandaic",
-        "Core Central Bandaic",
-        "Banda-Ndélé"
-    ],
-    "Bari": [
-        "Nilotic",
-        "Eastern Nilotic",
-        "Barian",
-        "Nuclear Barian",
-        "Bari"
-    ],
-    "Bauria": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Indo-Aryan",
-        "Middle-Modern Indo-Aryan",
-        "Continental Indo-Aryan",
-        "Midlands Indo-Aryan",
-        "Bhil",
-        "Bauria"
-    ],
-    "Calderón Highland Quichua": [
-        "Quechuan",
-        "Colombia-Ecuador Quechua",
-        "Ecuadorian Quechua A",
-        "Calderón Highland Quichua"
-    ],
-    "Caribbean Javanese": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Javanesic",
-        "Modern Javanese",
-        "Global Javanese",
-        "Caribbean Javanese"
-    ],
-    "Central Aymara": [
-        "Aymaran",
-        "Central-Southern Aymara",
-        "Central Aymara"
-    ],
-    "Central Bai": [
-        "Sino-Tibetan",
-        "Macro-Bai",
-        "Baic",
-        "South-Central Bai",
-        "Central Bai"
-    ],
-    "Central Dagaare": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Gur",
-        "Central Gur",
-        "Northern Central Gur",
-        "Bwamu-Oti-Volta",
-        "Oti-Volta",
-        "Nuclear Oti-Volta",
-        "Gurma-Yom-Oti-Volta Occidental",
-        "Oti-Volta Occidental",
-        "Nuclear Oti-Volta Occidental",
-        "Northwest Oti-Volta",
-        "Safaliba-Dagaare",
-        "Dagaaric",
-        "Central-South Dagaric",
-        "Central Dagaare"
-    ],
-    "Central Huasteca Nahuatl": [
-        "Uto-Aztecan",
-        "Southern Uto-Aztecan",
-        "Corachol-Aztecan",
-        "Aztec",
-        "Eastern Nahuatl",
-        "Huasteca Nahuatl",
-        "Central Huasteca Nahuatl"
-    ],
-    "Central Malay": [
+    "Acehnese": [
         "Austronesian",
         "Malayo-Polynesian",
         "Malayo-Chamic",
-        "Malayic",
-        "Nuclear Malayic",
-        "Greater Riau-Johoric",
-        "Central Malay"
+        "Aceh-Chamic",
+        "Acehnese"
     ],
-    "Central Moroccan Berber": [
-        "Afro-Asiatic",
-        "Berber",
-        "Kabyle-Atlas Berber",
-        "Atlas Berber",
-        "Central Moroccan Berber"
+    "Akan": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Kwa Volta-Congo",
+        "Nyo",
+        "Potou-Tano",
+        "Tano",
+        "Central Tano",
+        "Akanic",
+        "Akan"
     ],
-    "Chadian Arabic": [
-        "Afro-Asiatic",
-        "Semitic",
-        "West Semitic",
-        "Central Semitic",
-        "Arabian",
-        "Arabic",
-        "Egyptic Arabic",
-        "Egypto-Sudanic Arabic",
-        "Sudanese-Chadian Arabic",
-        "Chadian Arabic"
-    ],
-    "Chhattisgarhi": [
+    "Awadhi": [
         "Indo-European",
         "Classical Indo-European",
         "Indo-Iranian",
@@ -229,9 +27,132 @@ const LANGUAGE_DATA_EASY = {
         "Midlands Indo-Aryan",
         "Shaurasenic",
         "Eastern Hindi",
-        "Chhattisgarhi"
+        "Awadhic",
+        "Awadhi"
     ],
-    "Chonyi-Dzihana-Kauma": [
+    "Baoulé": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Kwa Volta-Congo",
+        "Nyo",
+        "Potou-Tano",
+        "Tano",
+        "Central Tano",
+        "Bia",
+        "Northern Bia",
+        "Baoulé"
+    ],
+    "Bashkir": [
+        "Turkic",
+        "Common Turkic",
+        "Kipchak-Turkestan",
+        "Kipchak",
+        "Northwest Kipchak",
+        "North Kipchak",
+        "Bashkiric",
+        "Bashkir"
+    ],
+    "Bavarian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Germanic",
+        "Northwest Germanic",
+        "West Germanic",
+        "High German",
+        "Upper German",
+        "Middle-Modern High German",
+        "Modern High German",
+        "Bairisch",
+        "Bavarian"
+    ],
+    "Beja": [
+        "Afro-Asiatic",
+        "Cushitic",
+        "Beja"
+    ],
+    "Belarusian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Balto-Slavic",
+        "Slavic",
+        "East Slavic",
+        "Belarusian"
+    ],
+    "Bouyei": [
+        "Tai-Kadai",
+        "Kam-Tai",
+        "Daic-Beic",
+        "Daic",
+        "Northern Daic-Sek",
+        "Northern Daic",
+        "Northern Tai",
+        "Bouyei"
+    ],
+    "Bulgarian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Balto-Slavic",
+        "Slavic",
+        "South Slavic",
+        "Eastern South Slavic",
+        "Macedo-Bulgarian",
+        "Bulgarian"
+    ],
+    "Cameroon Pidgin": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Germanic",
+        "Northwest Germanic",
+        "West Germanic",
+        "North Sea Germanic",
+        "Anglo-Frisian",
+        "Anglic",
+        "Later Anglic",
+        "Middle-Modern English",
+        "Macro-English",
+        "Guinea Coast Creole English",
+        "West African Creole English",
+        "Coastal Nigerian Krio",
+        "Nigeria-Cameroon Creole English",
+        "Cameroon Pidgin"
+    ],
+    "Catalan": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Italic",
+        "Latino-Faliscan",
+        "Latinic",
+        "Imperial Latin",
+        "Romance",
+        "Italo-Western Romance",
+        "Western Romance",
+        "Shifted Western Romance",
+        "Southwestern Shifted Romance",
+        "Catalan"
+    ],
+    "Cebuano": [
+        "Austronesian",
+        "Malayo-Polynesian",
+        "Greater Central Philippine",
+        "Central Philippine",
+        "Bisayan",
+        "Cebuano"
+    ],
+    "Chittagonian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Indo-Iranian",
+        "Indo-Aryan",
+        "Middle-Modern Indo-Aryan",
+        "Continental Indo-Aryan",
+        "Indo-Aryan Eastern zone",
+        "Oriya-Gauda-Kamrupa",
+        "Gauda-Kamrupa",
+        "Gauda-Banga",
+        "Southeastern Bengali",
+        "Chittagonian"
+    ],
+    "Congo Swahili": [
         "Atlantic-Congo",
         "Volta-Congo",
         "Benue-Congo",
@@ -242,43 +163,12 @@ const LANGUAGE_DATA_EASY = {
         "Northeast Savanna Bantu",
         "Northeast Coastal Bantu",
         "Coastal NEC Bantu",
-        "Mijikenda-Pokomo-Comorian",
-        "Mijikenda",
-        "Northern Mijikenda",
-        "Chonyi-Dzihana-Kauma"
+        "Sabaki-Swahili",
+        "Swahili (G.40)",
+        "Mombasa-Lamu-Inland Swahili",
+        "Congo Swahili"
     ],
-    "Chuanqiandian Cluster Miao": [
-        "Hmong-Mien",
-        "Hmongic",
-        "Nuclear Hmongic-Ho Ne",
-        "Nuclear Hmongic",
-        "West Hmongic",
-        "Greater Chuanqiandian",
-        "Chuanqiandian",
-        "First Vernacular Hmong",
-        "Far Western Miao",
-        "Chuanqiandian Cluster Miao"
-    ],
-    "Ci Gbe": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Kwa Volta-Congo",
-        "Gbe",
-        "Eastern Gbe",
-        "Fongbeic",
-        "Ci Gbe"
-    ],
-    "Cuba": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Kainji",
-        "Kainji Lake",
-        "Upper Niger Kainji",
-        "Oleran",
-        "Cuba"
-    ],
-    "Dagaari Dioula": [
+    "Dagbani": [
         "Atlantic-Congo",
         "Volta-Congo",
         "North Volta-Congo",
@@ -291,944 +181,56 @@ const LANGUAGE_DATA_EASY = {
         "Gurma-Yom-Oti-Volta Occidental",
         "Oti-Volta Occidental",
         "Nuclear Oti-Volta Occidental",
-        "Northwest Oti-Volta",
-        "Safaliba-Dagaare",
-        "Dagaaric",
-        "Central-South Dagaric",
-        "South Dagaric",
-        "Dagaari Dioula"
+        "Southeast Western Oti-Volta",
+        "Mampruli-Dagbani",
+        "Dagbani"
     ],
-    "Dari": [
+    "Eastern Tamang": [
+        "Sino-Tibetan",
+        "Bodic",
+        "Kaike-Ghale-Tamangic",
+        "Ghale-Tamangic",
+        "Tamangic",
+        "Nuclear Tamang",
+        "Eastern Tamang"
+    ],
+    "Efik": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Benue-Congo",
+        "Delta Cross",
+        "Lower Cross",
+        "Nuclear Lower Cross",
+        "Central Lower Cross",
+        "Efikic",
+        "Okop Usem",
+        "Efik-Ibibio",
+        "Efik"
+    ],
+    "English": [
         "Indo-European",
         "Classical Indo-European",
-        "Indo-Iranian",
-        "Iranian",
-        "Southwestern Iranian",
-        "Middle-Modern Persian",
-        "Modern Southwestern Iranian",
-        "Farsic-Caucasian Tat",
-        "Farsic",
-        "Eastern Farsic",
-        "Dari"
+        "Germanic",
+        "Northwest Germanic",
+        "West Germanic",
+        "North Sea Germanic",
+        "Anglo-Frisian",
+        "Anglic",
+        "Later Anglic",
+        "Middle-Modern English",
+        "Macro-English",
+        "English"
     ],
-    "Defi Gbe": [
+    "Fon": [
         "Atlantic-Congo",
         "Volta-Congo",
         "Kwa Volta-Congo",
         "Gbe",
         "Eastern Gbe",
         "Fongbeic",
-        "Defi Gbe"
+        "Fon"
     ],
-    "Dendi (Central African Republic)": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ngbandi-Mongoba-Kazibati",
-        "Ngbandic",
-        "Nuclear Ngbandic",
-        "Dendi (Central African Republic)"
-    ],
-    "Dimli": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Iranian",
-        "Central Iranian PBS",
-        "Central Iranian PB",
-        "Northwestern Iranian",
-        "Adharic",
-        "Zaza",
-        "Dimli"
-    ],
-    "Eastern Balochi": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Iranian",
-        "Central Iranian PBS",
-        "Central Iranian PB",
-        "Northwestern Iranian",
-        "Balochic",
-        "Eastern Balochi"
-    ],
-    "Eastern Huasteca Nahuatl": [
-        "Uto-Aztecan",
-        "Southern Uto-Aztecan",
-        "Corachol-Aztecan",
-        "Aztec",
-        "Eastern Nahuatl",
-        "Huasteca Nahuatl",
-        "Eastern Huasteca Nahuatl"
-    ],
-    "Eastern Kayah": [
-        "Sino-Tibetan",
-        "Karenic",
-        "Central Karen",
-        "Kayah-Yintale",
-        "Kayah",
-        "Eastern Kayah"
-    ],
-    "Eastern Kikongo": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "Central-Western Bantu",
-        "West-Coastal Bantu",
-        "Nzadic",
-        "Lweric",
-        "Dingic",
-        "Loange-Atlantic",
-        "KLC Extended",
-        "Kikongo Language Cluster",
-        "Nuclear KLC",
-        "Kikongoic",
-        "Kambakunyic Kikongo",
-        "Kilaadic Kikongo",
-        "Central-Southern Kikongo",
-        "Southeastern Kikongo",
-        "Eastern Kikongo"
-    ],
-    "Eastern Maninkakan": [
-        "Mande",
-        "Western Mande",
-        "Manding-Kpelle",
-        "Central Mande",
-        "Manding-Jogo",
-        "Manding-Vai",
-        "Manding-Mokole",
-        "Manding",
-        "East Manding",
-        "Manenkan",
-        "Eastern Maninkakan"
-    ],
-    "Eastern Xiangxi Miao": [
-        "Hmong-Mien",
-        "Hmongic",
-        "Nuclear Hmongic-Ho Ne",
-        "Nuclear Hmongic",
-        "North Hmongic",
-        "Eastern Xiangxi Miao"
-    ],
-    "Egyptian Arabic": [
-        "Afro-Asiatic",
-        "Semitic",
-        "West Semitic",
-        "Central Semitic",
-        "Arabian",
-        "Arabic",
-        "Egyptic Arabic",
-        "Egypto-Sudanic Arabic",
-        "Egyptian Arabic"
-    ],
-    "Fang (Equatorial Guinea)": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "Bantu A-B10-B20-B30",
-        "Basaa-Yaunde (A40-70)",
-        "Yaunde-Fang (A.70)",
-        "Fang (Equatorial Guinea)"
-    ],
-    "Far Northwestern Nisu": [
-        "Sino-Tibetan",
-        "Burmo-Qiangic",
-        "Lolo-Burmese",
-        "Loloish",
-        "Ni-Li-Kazhouish",
-        "Southeastern Ngwi",
-        "Nisoid",
-        "Nisu-Nyisu",
-        "Nisu",
-        "Far Northwestern Nisu"
-    ],
-    "Gbagyi": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Ebira-Nupoid",
-        "Macro-Nupoid",
-        "Gbagyi-Gbari",
-        "Gbagyi"
-    ],
-    "Gbari": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Ebira-Nupoid",
-        "Macro-Nupoid",
-        "Gbagyi-Gbari",
-        "Gbari"
-    ],
-    "Gbayi": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ngbandi-Mongoba-Kazibati",
-        "Ngbandic",
-        "Gbayi"
-    ],
-    "Guinea Kpelle": [
-        "Mande",
-        "Western Mande",
-        "Manding-Kpelle",
-        "Southwest Mande",
-        "Kpelle",
-        "Guinea Kpelle"
-    ],
-    "Hadiyya": [
-        "Afro-Asiatic",
-        "Cushitic",
-        "East Cushitic",
-        "Highland East Cushitic",
-        "Sidaama-Hadiyya-Kambaata",
-        "Hadiyya-Kambaata",
-        "Hadiyyaic",
-        "Hadiyya"
-    ],
-    "Hadothi": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Indo-Aryan",
-        "Middle-Modern Indo-Aryan",
-        "Continental Indo-Aryan",
-        "Midlands Indo-Aryan",
-        "Apabhramsic",
-        "Gujarati-Rajasthani",
-        "Rajasthani",
-        "Eastern Rajasthani",
-        "Hadothi"
-    ],
-    "Hausa States Fulfulde": [
-        "Atlantic-Congo",
-        "North-Central Atlantic",
-        "Fula-Sereer",
-        "Fula",
-        "Eastern Fula",
-        "Hausa States Fulfulde"
-    ],
-    "Hmong Daw": [
-        "Hmong-Mien",
-        "Hmongic",
-        "Nuclear Hmongic-Ho Ne",
-        "Nuclear Hmongic",
-        "West Hmongic",
-        "Greater Chuanqiandian",
-        "Chuanqiandian",
-        "First Vernacular Hmong",
-        "Far Western Miao",
-        "Hmong Daw"
-    ],
-    "Hmong Don": [
-        "Hmong-Mien",
-        "Hmongic",
-        "Nuclear Hmongic-Ho Ne",
-        "Nuclear Hmongic",
-        "West Hmongic",
-        "Greater Chuanqiandian",
-        "Chuanqiandian",
-        "First Vernacular Hmong",
-        "Far Western Miao",
-        "Unclassified First Vernacular Hmong",
-        "Hmong Don"
-    ],
-    "Hmong Dô": [
-        "Hmong-Mien",
-        "Hmongic",
-        "Nuclear Hmongic-Ho Ne",
-        "Nuclear Hmongic",
-        "West Hmongic",
-        "Greater Chuanqiandian",
-        "Chuanqiandian",
-        "First Vernacular Hmong",
-        "Far Western Miao",
-        "Unclassified First Vernacular Hmong",
-        "Hmong Dô"
-    ],
-    "Hmong Njua": [
-        "Hmong-Mien",
-        "Hmongic",
-        "Nuclear Hmongic-Ho Ne",
-        "Nuclear Hmongic",
-        "West Hmongic",
-        "Greater Chuanqiandian",
-        "Chuanqiandian",
-        "First Vernacular Hmong",
-        "Far Western Miao",
-        "Hmong Njua"
-    ],
-    "Horned Miao": [
-        "Hmong-Mien",
-        "Hmongic",
-        "Nuclear Hmongic-Ho Ne",
-        "Nuclear Hmongic",
-        "West Hmongic",
-        "Greater Chuanqiandian",
-        "Chuanqiandian",
-        "First Vernacular Hmong",
-        "Horned Miao"
-    ],
-    "Hui Chinese": [
-        "Sino-Tibetan",
-        "Sinitic",
-        "Classical-Middle-Modern Sinitic",
-        "Middle-Modern Sinitic",
-        "Wu-Hui Chinese",
-        "Hui Chinese"
-    ],
-    "I-Wak": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Northern Luzon",
-        "Meso-Cordilleran",
-        "South-Central Cordilleran",
-        "Southern Cordilleran",
-        "West Southern Cordilleran",
-        "Nuclear Southern Cordilleran",
-        "I-Wak"
-    ],
-    "Iloko": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Northern Luzon",
-        "Iloko"
-    ],
-    "Imbabura Highland Quichua": [
-        "Quechuan",
-        "Colombia-Ecuador Quechua",
-        "Ecuadorian Quechua B",
-        "Imbabura-Colombia-Oriente Quechua",
-        "Imbabura Highland Quichua"
-    ],
-    "Isekiri": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Defoid",
-        "Yoruboid",
-        "Edekiri",
-        "Isekiri"
-    ],
-    "Jinyu Chinese": [
-        "Sino-Tibetan",
-        "Sinitic",
-        "Classical-Middle-Modern Sinitic",
-        "Middle-Modern Sinitic",
-        "Northern Chinese",
-        "Jinyu Chinese"
-    ],
-    "Kamba (Kenya)": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "Northeast Savanna Bantu",
-        "Central Kenya Bantu",
-        "Kamba-Dhaisu",
-        "Kamba (Kenya)"
-    ],
-    "Kanauji": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Indo-Aryan",
-        "Middle-Modern Indo-Aryan",
-        "Continental Indo-Aryan",
-        "Midlands Indo-Aryan",
-        "Shaurasenic",
-        "Indo-Aryan Central zone",
-        "Western Hindi",
-        "Haryanvic",
-        "Kanauji"
-    ],
-    "Kannada": [
-        "Dravidian",
-        "South Dravidian",
-        "South Dravidian I",
-        "Tamil-Kannada",
-        "Badaga-Kannada",
-        "Kannadoid",
-        "Nuclear Kannaoid",
-        "Kannada"
-    ],
-    "Kirmanjki": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Iranian",
-        "Central Iranian PBS",
-        "Central Iranian PB",
-        "Northwestern Iranian",
-        "Adharic",
-        "Zaza",
-        "Kirmanjki"
-    ],
-    "Kistane": [
-        "Afro-Asiatic",
-        "Semitic",
-        "West Semitic",
-        "Ethiosemitic",
-        "South Ethiopic",
-        "Outer South Ethiopic",
-        "N-Group",
-        "Kistane"
-    ],
-    "Kita Maninkakan": [
-        "Mande",
-        "Western Mande",
-        "Manding-Kpelle",
-        "Central Mande",
-        "Manding-Jogo",
-        "Manding-Vai",
-        "Manding-Mokole",
-        "Manding",
-        "West Manding",
-        "Kita-Kagoro",
-        "Kita Maninkakan"
-    ],
-    "Kokola": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "North Mozambique Bantu",
-        "Chuwaboic",
-        "Lolo-Kokola",
-        "Kokola"
-    ],
-    "Komo (Democratic Republic of Congo)": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "Central-Western Bantu",
-        "North Zaire River",
-        "Rivers Bantu",
-        "Ngiri",
-        "Ngiri Terrien",
-        "Ngombe-Ababuan",
-        "Ababuan",
-        "Old Bomokandian",
-        "Komoic",
-        "Bilaic",
-        "Komo (Democratic Republic of Congo)"
-    ],
-    "Kono (Guinea)": [
-        "Mande",
-        "Western Mande",
-        "Manding-Kpelle",
-        "Southwest Mande",
-        "Kpelle",
-        "Kono (Guinea)"
-    ],
-    "Konyanka Maninka": [
-        "Mande",
-        "Western Mande",
-        "Manding-Kpelle",
-        "Central Mande",
-        "Manding-Jogo",
-        "Manding-Vai",
-        "Manding-Mokole",
-        "Manding",
-        "East Manding",
-        "Manenkan",
-        "Konya-Manya",
-        "Konyanka Maninka"
-    ],
-    "Kota (India)": [
-        "Dravidian",
-        "South Dravidian",
-        "South Dravidian I",
-        "Tamil-Kannada",
-        "Tamil-Kota",
-        "Kota (India)"
-    ],
-    "Kpagua": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ubangi Ka",
-        "Bandaic",
-        "Nuclear Bandaic",
-        "Central Bandaic",
-        "Core Central Bandaic",
-        "Ngundu-Kpagua",
-        "Kpagua"
-    ],
-    "Kpessi": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Kwa Volta-Congo",
-        "Gbe",
-        "Western Gbe",
-        "Kpesi-Waci",
-        "Kpessi"
-    ],
-    "Lampung Api": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Lampungic",
-        "Pesisir",
-        "Lampung Api"
-    ],
-    "Lampung Nyo": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Lampungic",
-        "Lampung Nyo"
-    ],
-    "Lendu": [
-        "Central Sudanic",
-        "Lenduic",
-        "Bale",
-        "Lendu"
-    ],
-    "Levantine Arabic": [
-        "Afro-Asiatic",
-        "Semitic",
-        "West Semitic",
-        "Central Semitic",
-        "Arabian",
-        "Arabic",
-        "Levantine-Cypriot Arabic",
-        "Levantine Arabic"
-    ],
-    "Liberia Kpelle": [
-        "Mande",
-        "Western Mande",
-        "Manding-Kpelle",
-        "Southwest Mande",
-        "Kpelle",
-        "Liberia Kpelle"
-    ],
-    "Libyan Arabic": [
-        "Afro-Asiatic",
-        "Semitic",
-        "West Semitic",
-        "Central Semitic",
-        "Arabian",
-        "Arabic",
-        "North African Arabic",
-        "Libyan Arabic"
-    ],
-    "Loja Highland Quichua": [
-        "Quechuan",
-        "Colombia-Ecuador Quechua",
-        "Ecuadorian Quechua B",
-        "Loja Highland Quichua"
-    ],
-    "Lolopo": [
-        "Sino-Tibetan",
-        "Burmo-Qiangic",
-        "Lolo-Burmese",
-        "Loloish",
-        "Ni-Li-Kazhouish",
-        "Lisoid",
-        "Lipo-Lolopo",
-        "Lolopo"
-    ],
-    "Luo (Kenya and Tanzania)": [
-        "Nilotic",
-        "Western Nilotic",
-        "Lwoo",
-        "Southern Lwoo",
-        "Adhola-Alur-Luo",
-        "Adhola-Luo",
-        "Luo (Kenya and Tanzania)"
-    ],
-    "Maasina Fulfulde": [
-        "Atlantic-Congo",
-        "North-Central Atlantic",
-        "Fula-Sereer",
-        "Fula",
-        "Maasina Fulfulde"
-    ],
-    "Makhuwa-Marrevone": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "North Mozambique Bantu",
-        "Makua-Lomwe",
-        "Makhuwa-Marrevone"
-    ],
-    "Makhuwa-Meetto": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "North Mozambique Bantu",
-        "Makua-Lomwe",
-        "Makhuwa-Meetto"
-    ],
-    "Makhuwa-Moniga": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "North Mozambique Bantu",
-        "Makua-Lomwe",
-        "Makhuwa-Moniga"
-    ],
-    "Makhuwa-Saka": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "North Mozambique Bantu",
-        "Makua-Lomwe",
-        "Makhuwa-Saka"
-    ],
-    "Makhuwa-Shirima": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "North Mozambique Bantu",
-        "Makua-Lomwe",
-        "Makhuwa-Shirima"
-    ],
-    "Malawi Sena": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "Tumbuka-Sena-Nyanja",
-        "Sena-Nyanja",
-        "Senaic",
-        "Malawi Sena"
-    ],
-    "Malayalam": [
-        "Dravidian",
-        "South Dravidian",
-        "South Dravidian I",
-        "Tamil-Kannada",
-        "Tamil-Kota",
-        "Tamil-Toda",
-        "Tamil-Irula",
-        "Tamil-Kodagu",
-        "Tamil-Malayalam",
-        "Malayalamoid",
-        "Malayalam"
-    ],
-    "Mali": [
-        "Baining",
-        "Southern Baining",
-        "Mali-Simbali",
-        "Mali"
-    ],
-    "Manumanaw Karen": [
-        "Sino-Tibetan",
-        "Karenic",
-        "Central Karen",
-        "Kayaw-Manu",
-        "Manumanaw Karen"
-    ],
-    "Manyawa": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "North Mozambique Bantu",
-        "Manyawa"
-    ],
-    "Marenje": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "North Mozambique Bantu",
-        "Chuwaboic",
-        "Marenje"
-    ],
-    "Maxi Gbe": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Kwa Volta-Congo",
-        "Gbe",
-        "Eastern Gbe",
-        "Fongbeic",
-        "Maxi Gbe"
-    ],
-    "Mbangi": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ngbandi-Mongoba-Kazibati",
-        "Ngbandic",
-        "Nuclear Ngbandic",
-        "Mbangi"
-    ],
-    "Menominee": [
-        "Algic",
-        "Algonquian-Blackfoot",
-        "Algonquian",
-        "Menominee"
-    ],
-    "Mewari": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Indo-Aryan",
-        "Middle-Modern Indo-Aryan",
-        "Continental Indo-Aryan",
-        "Midlands Indo-Aryan",
-        "Apabhramsic",
-        "Gujarati-Rajasthani",
-        "Rajasthani",
-        "Mewaric",
-        "Mewari"
-    ],
-    "Mewati": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Indo-Aryan",
-        "Middle-Modern Indo-Aryan",
-        "Continental Indo-Aryan",
-        "Midlands Indo-Aryan",
-        "Apabhramsic",
-        "Gujarati-Rajasthani",
-        "Rajasthani",
-        "Mewati-Gojri",
-        "Mewati"
-    ],
-    "Mid-Southern Banda": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ubangi Ka",
-        "Bandaic",
-        "Nuclear Bandaic",
-        "Central Bandaic",
-        "Core Central Bandaic",
-        "Lindaic",
-        "Mid-Southern Banda"
-    ],
-    "Min Nan Chinese": [
-        "Sino-Tibetan",
-        "Sinitic",
-        "Min",
-        "Coastal Min",
-        "Southern Min-Pu-Xian",
-        "Southern Min",
-        "Min Nan Chinese"
-    ],
-    "Mobwa Karen": [
-        "Sino-Tibetan",
-        "Karenic",
-        "Central Karen",
-        "Mobwa Karen"
-    ],
-    "Modern Hebrew": [
-        "Afro-Asiatic",
-        "Semitic",
-        "West Semitic",
-        "Central Semitic",
-        "Northwest Semitic",
-        "Canaanite",
-        "Hebrewic",
-        "Modern Hebrew"
-    ],
-    "Mongoba-Kazibati": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ngbandi-Mongoba-Kazibati",
-        "Mongoba-Kazibati"
-    ],
-    "Napo Lowland Quechua": [
-        "Quechuan",
-        "Colombia-Ecuador Quechua",
-        "Ecuadorian Quechua B",
-        "Imbabura-Colombia-Oriente Quechua",
-        "Colombia-Oriente Quechua",
-        "Oriente Quechua",
-        "Napo Lowland Quechua"
-    ],
-    "New Caledonian Javanese": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Javanesic",
-        "Modern Javanese",
-        "Global Javanese",
-        "New Caledonian Javanese"
-    ],
-    "Ngambay": [
-        "Central Sudanic",
-        "Sara-Bongo-Bagirmi",
-        "SBB Occidental",
-        "Nuclear SBB Occidental",
-        "Saraic",
-        "Sara Central",
-        "Sara Central Logone",
-        "Ngambay"
-    ],
-    "Ngbaka Minagende": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Gbaya-Manza-Ngbaka",
-        "Gbaya Oriental",
-        "Gbanu-Manza-Ngbaka",
-        "Manza-Ngbaka",
-        "Ngbaka Minagende"
-    ],
-    "Northern Bai": [
-        "Sino-Tibetan",
-        "Macro-Bai",
-        "Baic",
-        "Northern Bai"
-    ],
-    "Northern Dagara": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Gur",
-        "Central Gur",
-        "Northern Central Gur",
-        "Bwamu-Oti-Volta",
-        "Oti-Volta",
-        "Nuclear Oti-Volta",
-        "Gurma-Yom-Oti-Volta Occidental",
-        "Oti-Volta Occidental",
-        "Nuclear Oti-Volta Occidental",
-        "Northwest Oti-Volta",
-        "Safaliba-Dagaare",
-        "Dagaaric",
-        "North-West Dagaric",
-        "Northern Dagara"
-    ],
-    "Northern Gondi": [
-        "Dravidian",
-        "South Dravidian",
-        "South Dravidian II",
-        "Gondi",
-        "Northwest Gondi",
-        "Northern Gondi"
-    ],
-    "Northern Hindko": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Indo-Aryan",
-        "Middle-Modern Indo-Aryan",
-        "Continental Indo-Aryan",
-        "Indo-Aryan Northwestern zone",
-        "Sindhi-Lahnda",
-        "Greater Panjabic",
-        "Hindko-Siraiki",
-        "Hindko",
-        "Northern Hindko"
-    ],
-    "Northern Ngbandi": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ngbandi-Mongoba-Kazibati",
-        "Ngbandic",
-        "Nuclear Ngbandic",
-        "Northern Ngbandi"
-    ],
-    "Northern Pastaza Quichua": [
-        "Quechuan",
-        "Colombia-Ecuador Quechua",
-        "Ecuadorian Quechua B",
-        "Imbabura-Colombia-Oriente Quechua",
-        "Colombia-Oriente Quechua",
-        "Oriente Quechua",
-        "Pastaza Quechua",
-        "Northern Pastaza Quichua"
-    ],
-    "Northern Thai": [
-        "Tai-Kadai",
-        "Kam-Tai",
-        "Daic-Beic",
-        "Daic",
-        "Central-Southwestern Tai",
-        "Wenma-Southwestern Tai",
-        "Sapa-Southwestern Tai",
-        "Southwestern Tai",
-        "Southwestern Tai P",
-        "Shanic",
-        "Southern Shanic",
-        "Yuanic",
-        "Northern Thai"
-    ],
-    "Northern Tujia": [
-        "Sino-Tibetan",
-        "Burmo-Qiangic",
-        "Tujia",
-        "Northern Tujia"
-    ],
-    "Northwestern Nisu": [
-        "Sino-Tibetan",
-        "Burmo-Qiangic",
-        "Lolo-Burmese",
-        "Loloish",
-        "Ni-Li-Kazhouish",
-        "Southeastern Ngwi",
-        "Nisoid",
-        "Nisu-Nyisu",
-        "Nisu",
-        "Nuclear Nisu",
-        "Northern Nisu",
-        "Northwestern Nisu"
-    ],
-    "Nouchi": [
+    "French": [
         "Indo-European",
         "Classical Indo-European",
         "Italic",
@@ -1245,109 +247,258 @@ const LANGUAGE_DATA_EASY = {
         "Central Oil",
         "Macro-French",
         "Global French",
-        "Nouchi"
+        "French"
     ],
-    "Paku Karen": [
-        "Sino-Tibetan",
-        "Karenic",
-        "Southern Karen",
-        "Paku Karen"
+    "Galician": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Italic",
+        "Latino-Faliscan",
+        "Latinic",
+        "Imperial Latin",
+        "Romance",
+        "Italo-Western Romance",
+        "Western Romance",
+        "Shifted Western Romance",
+        "Southwestern Shifted Romance",
+        "West Ibero-Romance",
+        "Galician Romance",
+        "Galician"
     ],
-    "Peripheral Mongolian": [
-        "Mongolic-Khitan",
-        "Mongolic",
-        "Eastern Mongolic",
-        "Khalkha-Buriat",
-        "Mongolian",
-        "Peripheral Mongolian"
+    "German": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Germanic",
+        "Northwest Germanic",
+        "West Germanic",
+        "High German",
+        "Upper German",
+        "Middle-Modern High German",
+        "Modern High German",
+        "Upper Franconian",
+        "Global German",
+        "German"
     ],
-    "Pwo Eastern Karen": [
-        "Sino-Tibetan",
-        "Karenic",
-        "Peripheral Karen",
-        "Pwo",
-        "Eastern-Western Pwo Karen",
-        "Pwo Eastern Karen"
+    "Ghanaian Pidgin English": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Germanic",
+        "Northwest Germanic",
+        "West Germanic",
+        "North Sea Germanic",
+        "Anglo-Frisian",
+        "Anglic",
+        "Later Anglic",
+        "Middle-Modern English",
+        "Macro-English",
+        "Guinea Coast Creole English",
+        "West African Creole English",
+        "Coastal Nigerian Krio",
+        "Ghanaian Pidgin English"
     ],
-    "Rohingya": [
+    "Gilaki": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Indo-Iranian",
+        "Iranian",
+        "Central Iranian PBS",
+        "Central Iranian PB",
+        "Northwestern Iranian",
+        "Caspian",
+        "Gilaki-Rudbari",
+        "Gilaki"
+    ],
+    "Goan Konkani": [
         "Indo-European",
         "Classical Indo-European",
         "Indo-Iranian",
         "Indo-Aryan",
         "Middle-Modern Indo-Aryan",
         "Continental Indo-Aryan",
-        "Indo-Aryan Eastern zone",
-        "Oriya-Gauda-Kamrupa",
-        "Gauda-Kamrupa",
-        "Gauda-Banga",
-        "Rohingya"
+        "Indo-Aryan Southern zone",
+        "Marathic",
+        "Marathi-Konkani",
+        "Goan Konkani"
     ],
-    "Ruching Palaung": [
-        "Austroasiatic",
-        "Khasi-Palaung",
-        "Palaungic",
-        "West Palaungic",
-        "Palaung",
-        "Ruching Palaung"
-    ],
-    "Rumai Palaung": [
-        "Austroasiatic",
-        "Khasi-Palaung",
-        "Palaungic",
-        "West Palaungic",
-        "Rumai Palaung"
-    ],
-    "S'gaw Karen": [
+    "Hainanese": [
         "Sino-Tibetan",
-        "Karenic",
-        "Southern Karen",
-        "Sgaw",
-        "S'gaw Karen"
+        "Sinitic",
+        "Min",
+        "Coastal Min",
+        "Southern Min-Pu-Xian",
+        "Southern Min",
+        "Leiqiong",
+        "Hainanese"
     ],
-    "San Salvador Kongo": [
+    "Ho": [
+        "Austroasiatic",
+        "Mundaic",
+        "North Munda",
+        "Kherwarian",
+        "Mundaric",
+        "Ho-Mundari",
+        "Ho"
+    ],
+    "Hungarian": [
+        "Uralic",
+        "Hungaric",
+        "Hungarian"
+    ],
+    "Iban": [
+        "Austronesian",
+        "Malayo-Polynesian",
+        "Malayo-Chamic",
+        "Malayic",
+        "Ibanic",
+        "Iban-Mualang-Seberuang",
+        "Iban-Seberuang",
+        "Northern Iban",
+        "Iban"
+    ],
+    "Igbo": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Benue-Congo",
+        "Igboid",
+        "Nuclear Igboid",
+        "Central-Northern Igbo",
+        "Igbo"
+    ],
+    "Javanese": [
+        "Austronesian",
+        "Malayo-Polynesian",
+        "Javanesic",
+        "Modern Javanese",
+        "Global Javanese",
+        "Javanese"
+    ],
+    "Kafa": [
+        "Ta-Ne-Omotic",
+        "Kefoid",
+        "South Gonga",
+        "Kafa"
+    ],
+    "Kam": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "North Volta-Congo",
+        "Kam"
+    ],
+    "Kelantan-Pattani Malay": [
+        "Austronesian",
+        "Malayo-Polynesian",
+        "Malayo-Chamic",
+        "Malayic",
+        "Nuclear Malayic",
+        "Greater Riau-Johoric",
+        "Northeastern Peninsular Malay",
+        "Kelantan-Pattani Malay"
+    ],
+    "Khams Tibetan": [
+        "Sino-Tibetan",
+        "Bodic",
+        "Bodish",
+        "Early Old Tibetan",
+        "Middle Old Tibetan",
+        "Late Old Tibetan",
+        "Kham-Hor",
+        "Khams Tibetan"
+    ],
+    "Kurukh": [
+        "Dravidian",
+        "North Dravidian",
+        "Kurux-Malto",
+        "Kurukh"
+    ],
+    "Laki": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Indo-Iranian",
+        "Iranian",
+        "Central Iranian PBS",
+        "Central Iranian PB",
+        "Northwestern Iranian",
+        "Laki-Kurdish",
+        "Laki"
+    ],
+    "Lao": [
+        "Tai-Kadai",
+        "Kam-Tai",
+        "Daic-Beic",
+        "Daic",
+        "Central-Southwestern Tai",
+        "Wenma-Southwestern Tai",
+        "Sapa-Southwestern Tai",
+        "Southwestern Tai",
+        "Southwestern Thai PH",
+        "Lao-Thai",
+        "Lao"
+    ],
+    "Latvian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Balto-Slavic",
+        "Eastern Baltic",
+        "Latvian"
+    ],
+    "Levantine Arabic": [
+        "Afro-Asiatic",
+        "Semitic",
+        "West Semitic",
+        "Central Semitic",
+        "Arabian",
+        "Arabic",
+        "Levantine-Cypriot Arabic",
+        "Levantine Arabic"
+    ],
+    "Libyan Arabic": [
+        "Afro-Asiatic",
+        "Semitic",
+        "West Semitic",
+        "Central Semitic",
+        "Arabian",
+        "Arabic",
+        "North African Arabic",
+        "Libyan Arabic"
+    ],
+    "Lithuanian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Balto-Slavic",
+        "Eastern Baltic",
+        "Lithuanian"
+    ],
+    "Macedonian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Balto-Slavic",
+        "Slavic",
+        "South Slavic",
+        "Eastern South Slavic",
+        "Macedo-Bulgarian",
+        "Macedonian"
+    ],
+    "Maguindanao": [
+        "Austronesian",
+        "Malayo-Polynesian",
+        "Greater Central Philippine",
+        "Danaw",
+        "Maguindanao"
+    ],
+    "Makonde": [
         "Atlantic-Congo",
         "Volta-Congo",
         "Benue-Congo",
         "Bantoid",
         "Southern Bantoid",
         "Narrow Bantu",
-        "Central-Western Bantu",
-        "West-Coastal Bantu",
-        "Nzadic",
-        "Lweric",
-        "Dingic",
-        "Loange-Atlantic",
-        "KLC Extended",
-        "Kikongo Language Cluster",
-        "Nuclear KLC",
-        "Kikongoic",
-        "Kambakunyic Kikongo",
-        "Kilaadic Kikongo",
-        "Central-Southern Kikongo",
-        "West Kikongo",
-        "San Salvador Kongo"
+        "East Bantu",
+        "Rufiji-Ruvuma",
+        "Ruvuma",
+        "Makonde-Makwe",
+        "Makonde"
     ],
-    "Sankaran Maninka": [
-        "Mande",
-        "Western Mande",
-        "Manding-Kpelle",
-        "Central Mande",
-        "Manding-Jogo",
-        "Manding-Vai",
-        "Manding-Mokole",
-        "Manding",
-        "East Manding",
-        "Manenkan",
-        "Sankaran Maninka"
-    ],
-    "Sasak": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Bali-Sasak-Sumbawa",
-        "Sasak-Sumbawa",
-        "Sasak"
-    ],
-    "Shahmirzadi": [
+    "Mazanderani": [
         "Indo-European",
         "Classical Indo-European",
         "Indo-Iranian",
@@ -1357,156 +508,131 @@ const LANGUAGE_DATA_EASY = {
         "Northwestern Iranian",
         "Caspian",
         "Mazanderani-Shahmirzadi",
-        "Shahmirzadi"
+        "Mazanderani"
     ],
-    "Shwe Palaung": [
-        "Austroasiatic",
-        "Khasi-Palaung",
-        "Palaungic",
-        "West Palaungic",
-        "Palaung",
-        "Shwe Palaung"
-    ],
-    "Sichuan Yi": [
-        "Sino-Tibetan",
-        "Burmo-Qiangic",
-        "Lolo-Burmese",
-        "Loloish",
-        "Ni-Li-Kazhouish",
-        "Southeastern Ngwi",
-        "Nisoid",
-        "Nuclear Nisoid",
-        "Nasu-Nosu",
-        "Sichuan Yi"
-    ],
-    "Sinicized Miao": [
-        "Hmong-Mien",
-        "Hmongic",
-        "Nuclear Hmongic-Ho Ne",
-        "Nuclear Hmongic",
-        "West Hmongic",
-        "Greater Chuanqiandian",
-        "Chuanqiandian",
-        "First Vernacular Hmong",
-        "Sinicized Miao"
-    ],
-    "South Barisan Malay": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Malayo-Chamic",
-        "Malayic",
-        "Nuclear Malayic",
-        "South Sumatra Malay",
-        "South Barisan Malay"
-    ],
-    "South Bolivian Quechua": [
-        "Quechuan",
-        "Southern Quechua",
-        "Bolivian-Argentinian Quechua",
-        "South Bolivian-Argentinian Quechua",
-        "South Bolivian Quechua"
-    ],
-    "Southern Aymara": [
-        "Aymaran",
-        "Central-Southern Aymara",
-        "Southern Aymara"
-    ],
-    "Southern Bai": [
-        "Sino-Tibetan",
-        "Macro-Bai",
-        "Baic",
-        "South-Central Bai",
-        "Southern Bai"
-    ],
-    "Southern Balochi": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Iranian",
-        "Central Iranian PBS",
-        "Central Iranian PB",
-        "Northwestern Iranian",
-        "Balochic",
-        "Southern-Western Balochi",
-        "Southern Balochi-Koroshi",
-        "Southern Balochi"
-    ],
-    "Southern Hindko": [
+    "Merwari": [
         "Indo-European",
         "Classical Indo-European",
         "Indo-Iranian",
         "Indo-Aryan",
         "Middle-Modern Indo-Aryan",
         "Continental Indo-Aryan",
-        "Indo-Aryan Northwestern zone",
-        "Sindhi-Lahnda",
-        "Greater Panjabic",
-        "Hindko-Siraiki",
-        "Hindko",
-        "Southern Hindko"
+        "Midlands Indo-Aryan",
+        "Apabhramsic",
+        "Gujarati-Rajasthani",
+        "Rajasthani",
+        "Merwari"
     ],
-    "Southern Lolopo": [
-        "Sino-Tibetan",
-        "Burmo-Qiangic",
-        "Lolo-Burmese",
-        "Loloish",
-        "Ni-Li-Kazhouish",
-        "Lisoid",
-        "Lipo-Lolopo",
-        "Unclassified Lipo-Lolopo",
-        "Southwestern Lolo",
-        "Southern Lolopo"
+    "Mewati": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Indo-Iranian",
+        "Indo-Aryan",
+        "Middle-Modern Indo-Aryan",
+        "Continental Indo-Aryan",
+        "Midlands Indo-Aryan",
+        "Apabhramsic",
+        "Gujarati-Rajasthani",
+        "Rajasthani",
+        "Mewati-Gojri",
+        "Mewati"
     ],
-    "Southern Ngbandi": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "North Volta-Congo",
-        "Cameroun-Ubangian",
-        "Ubangi",
-        "Ngbandi-Mongoba-Kazibati",
-        "Ngbandic",
-        "Nuclear Ngbandic",
-        "Southern Ngbandi"
+    "Minangkabau": [
+        "Austronesian",
+        "Malayo-Polynesian",
+        "Malayo-Chamic",
+        "Malayic",
+        "Nuclear Malayic",
+        "Northern Sumatra Malay",
+        "Kerinci-Minangkabau",
+        "Minangkabauic",
+        "Minangkabau"
     ],
-    "Southern Nisu": [
-        "Sino-Tibetan",
-        "Burmo-Qiangic",
-        "Lolo-Burmese",
-        "Loloish",
-        "Ni-Li-Kazhouish",
-        "Southeastern Ngwi",
-        "Nisoid",
-        "Nisu-Nyisu",
-        "Nisu",
-        "Nuclear Nisu",
-        "Southern Nisu"
+    "Modern Greek": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Graeco-Phrygian",
+        "Greek",
+        "South Greek",
+        "Central Greek",
+        "Koineic Greek",
+        "Modern Koineic Greek",
+        "Nuclear Modern Greek",
+        "Modern Greek"
     ],
-    "Southern Pastaza Quechua": [
-        "Quechuan",
-        "Colombia-Ecuador Quechua",
-        "Ecuadorian Quechua B",
-        "Imbabura-Colombia-Oriente Quechua",
-        "Colombia-Oriente Quechua",
-        "Oriente Quechua",
-        "Pastaza Quechua",
-        "Southern Pastaza Quechua"
+    "Moroccan Arabic": [
+        "Afro-Asiatic",
+        "Semitic",
+        "West Semitic",
+        "Central Semitic",
+        "Arabian",
+        "Arabic",
+        "North African Arabic",
+        "Moroccan-Andalusian Arabic",
+        "Moroccan Arabic"
     ],
-    "Southern Tujia": [
-        "Sino-Tibetan",
-        "Burmo-Qiangic",
-        "Tujia",
-        "Southern Tujia"
+    "Muong": [
+        "Austroasiatic",
+        "Vietic",
+        "Viet-Muong",
+        "Muongic",
+        "Muong"
     ],
-    "Southern Uzbek": [
-        "Turkic",
-        "Common Turkic",
-        "Kipchak-Turkestan",
-        "Turkestan",
-        "Modern Turkestan",
-        "Uzbek",
-        "Southern Uzbek"
+    "Negeri Sembilan Malay": [
+        "Austronesian",
+        "Malayo-Polynesian",
+        "Malayo-Chamic",
+        "Malayic",
+        "Nuclear Malayic",
+        "Northern Sumatra Malay",
+        "Kerinci-Minangkabau",
+        "Minangkabauic",
+        "Negeri Sembilan Malay"
     ],
-    "Sylheti": [
+    "Nigerian Pidgin": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Germanic",
+        "Northwest Germanic",
+        "West Germanic",
+        "North Sea Germanic",
+        "Anglo-Frisian",
+        "Anglic",
+        "Later Anglic",
+        "Middle-Modern English",
+        "Macro-English",
+        "Guinea Coast Creole English",
+        "West African Creole English",
+        "Coastal Nigerian Krio",
+        "Nigeria-Cameroon Creole English",
+        "Nigerian Pidgin"
+    ],
+    "Nimadi": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Indo-Iranian",
+        "Indo-Aryan",
+        "Middle-Modern Indo-Aryan",
+        "Continental Indo-Aryan",
+        "Midlands Indo-Aryan",
+        "Bhil",
+        "Nimadi"
+    ],
+    "Northern Khmer": [
+        "Austroasiatic",
+        "Khmeric",
+        "Northern Khmer"
+    ],
+    "Norwegian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Germanic",
+        "Northwest Germanic",
+        "North Germanic",
+        "West Scandinavian",
+        "Norwegian"
+    ],
+    "Odia": [
         "Indo-European",
         "Classical Indo-European",
         "Indo-Iranian",
@@ -1515,97 +641,274 @@ const LANGUAGE_DATA_EASY = {
         "Continental Indo-Aryan",
         "Indo-Aryan Eastern zone",
         "Oriya-Gauda-Kamrupa",
-        "Gauda-Kamrupa",
-        "Gauda-Banga",
-        "Eastern Bengali",
-        "Sylheti"
+        "Macro-Oriya",
+        "Odia"
     ],
-    "Taabwa": [
+    "Pulaar": [
         "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "Sabi",
-        "Malungu-Central Sabi",
-        "Taabwa"
+        "North-Central Atlantic",
+        "Fula-Sereer",
+        "Fula",
+        "Pulaar"
     ],
-    "Takwane": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Benue-Congo",
-        "Bantoid",
-        "Southern Bantoid",
-        "Narrow Bantu",
-        "East Bantu",
-        "North Mozambique Bantu",
-        "Chuwaboic",
-        "Takwane"
+    "Romagnol": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Italic",
+        "Latino-Faliscan",
+        "Latinic",
+        "Imperial Latin",
+        "Romance",
+        "Italo-Western Romance",
+        "Western Romance",
+        "Shifted Western Romance",
+        "Northwestern Shifted Romance",
+        "Gallo-Italian",
+        "Emiliano-Romagnolo",
+        "Romagnol"
     ],
-    "Tawallammat Tamajaq": [
-        "Afro-Asiatic",
-        "Berber",
-        "Tuareg",
-        "Southern Tuareg",
-        "Tawallammat Tamajaq"
+    "Russian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Balto-Slavic",
+        "Slavic",
+        "East Slavic",
+        "Russian"
     ],
-    "Tena Lowland Quichua": [
-        "Quechuan",
-        "Colombia-Ecuador Quechua",
-        "Ecuadorian Quechua B",
-        "Imbabura-Colombia-Oriente Quechua",
-        "Colombia-Oriente Quechua",
-        "Oriente Quechua",
-        "Tena Lowland Quichua"
+    "S'gaw Karen": [
+        "Sino-Tibetan",
+        "Karenic",
+        "Southern Karen",
+        "Sgaw",
+        "S'gaw Karen"
     ],
-    "Togbo-Vara Banda": [
+    "Sambalpuri": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Indo-Iranian",
+        "Indo-Aryan",
+        "Middle-Modern Indo-Aryan",
+        "Continental Indo-Aryan",
+        "Indo-Aryan Eastern zone",
+        "Oriya-Gauda-Kamrupa",
+        "Macro-Oriya",
+        "Sambalpuri"
+    ],
+    "Sango": [
         "Atlantic-Congo",
         "Volta-Congo",
         "North Volta-Congo",
         "Cameroun-Ubangian",
         "Ubangi",
-        "Ubangi Ka",
-        "Bandaic",
-        "Nuclear Bandaic",
-        "Central Bandaic",
-        "Core Central Bandaic",
-        "Togbo-Vara Banda"
+        "Ngbandi-Mongoba-Kazibati",
+        "Ngbandic",
+        "Nuclear Ngbandic",
+        "Sangoic",
+        "Sango"
     ],
-    "Tukang Besi North": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Celebic",
-        "Greater Eastern Celebic",
-        "Eastern Celebic",
-        "Southeastern Celebic",
-        "Muna-Buton",
-        "Tukangbesi-Bonerate",
-        "Tukang Besi",
-        "Tukang Besi North"
-    ],
-    "Tukang Besi South": [
-        "Austronesian",
-        "Malayo-Polynesian",
-        "Celebic",
-        "Greater Eastern Celebic",
-        "Eastern Celebic",
-        "Southeastern Celebic",
-        "Muna-Buton",
-        "Tukangbesi-Bonerate",
-        "Tukang Besi",
-        "Tukang Besi South"
-    ],
-    "Tumak": [
+    "Sebat Bet Gurage": [
         "Afro-Asiatic",
-        "Chadic",
-        "East Chadic",
-        "East Chadic A",
-        "East Chadic A.1",
-        "Sumrayic",
-        "Ndam-Tumak",
-        "Tumak"
+        "Semitic",
+        "West Semitic",
+        "Ethiosemitic",
+        "South Ethiopic",
+        "Outer South Ethiopic",
+        "TT-Group",
+        "Sebat Bet Gurage"
+    ],
+    "Shilluk": [
+        "Nilotic",
+        "Western Nilotic",
+        "Lwoo",
+        "Northern Lwoo",
+        "Shilluk"
+    ],
+    "Slovak": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Balto-Slavic",
+        "Slavic",
+        "West Slavic",
+        "Czech-Slovak",
+        "Slovak"
+    ],
+    "South Azerbaijani": [
+        "Turkic",
+        "Common Turkic",
+        "Oghuz",
+        "Nuclear Oghuz",
+        "Central Oghuz",
+        "South Azerbaijani"
+    ],
+    "South Bolivian Quechua": [
+        "Quechuan",
+        "Southern Quechua",
+        "Bolivian-Argentinian Quechua",
+        "South Bolivian-Argentinian Quechua",
+        "South Bolivian Quechua"
+    ],
+    "Southern Kurdish": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Indo-Iranian",
+        "Iranian",
+        "Central Iranian PBS",
+        "Central Iranian PB",
+        "Northwestern Iranian",
+        "Laki-Kurdish",
+        "Kurdish",
+        "Southern Kurdish"
+    ],
+    "Southern Thai": [
+        "Tai-Kadai",
+        "Kam-Tai",
+        "Daic-Beic",
+        "Daic",
+        "Central-Southwestern Tai",
+        "Wenma-Southwestern Tai",
+        "Sapa-Southwestern Tai",
+        "Southwestern Tai",
+        "Southwestern Thai PH",
+        "Lao-Thai",
+        "Southern Thai"
+    ],
+    "Spanish": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Italic",
+        "Latino-Faliscan",
+        "Latinic",
+        "Imperial Latin",
+        "Romance",
+        "Italo-Western Romance",
+        "Western Romance",
+        "Shifted Western Romance",
+        "Southwestern Shifted Romance",
+        "West Ibero-Romance",
+        "Castilic",
+        "Spanish"
+    ],
+    "Sukuma": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Benue-Congo",
+        "Bantoid",
+        "Southern Bantoid",
+        "Narrow Bantu",
+        "East Bantu",
+        "Northeast Savanna Bantu",
+        "Sukuma-Nyamwezi (F.20)",
+        "Nyamwezic",
+        "Sukuma"
+    ],
+    "Sundanese": [
+        "Austronesian",
+        "Malayo-Polynesian",
+        "Sundanese"
+    ],
+    "Susu": [
+        "Mande",
+        "Western Mande",
+        "Manding-Kpelle",
+        "Central Mande",
+        "Susu-Yalunka",
+        "Susu"
+    ],
+    "Swahili": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Benue-Congo",
+        "Bantoid",
+        "Southern Bantoid",
+        "Narrow Bantu",
+        "East Bantu",
+        "Northeast Savanna Bantu",
+        "Northeast Coastal Bantu",
+        "Coastal NEC Bantu",
+        "Sabaki-Swahili",
+        "Swahili (G.40)",
+        "Mombasa-Lamu-Inland Swahili",
+        "Swahili"
+    ],
+    "Swedish": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Germanic",
+        "Northwest Germanic",
+        "North Germanic",
+        "North Scandinavian",
+        "East-Central Swedic",
+        "East Swedic",
+        "Swedish"
+    ],
+    "Thai": [
+        "Tai-Kadai",
+        "Kam-Tai",
+        "Daic-Beic",
+        "Daic",
+        "Central-Southwestern Tai",
+        "Wenma-Southwestern Tai",
+        "Sapa-Southwestern Tai",
+        "Southwestern Tai",
+        "Southwestern Thai PH",
+        "Lao-Thai",
+        "Thai"
+    ],
+    "Tigrinya": [
+        "Afro-Asiatic",
+        "Semitic",
+        "West Semitic",
+        "Ethiosemitic",
+        "Tigrinya"
+    ],
+    "Tsonga": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Benue-Congo",
+        "Bantoid",
+        "Southern Bantoid",
+        "Narrow Bantu",
+        "East Bantu",
+        "Southern Bantu",
+        "Nuclear Southern Bantu",
+        "Dimsuffix Southern Bantu",
+        "Nguni-Tsonga-Copi",
+        "Tsonga-Copi",
+        "Tswa-Ronga (S.50)",
+        "Tsongan",
+        "Tsonga"
+    ],
+    "Tswa": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Benue-Congo",
+        "Bantoid",
+        "Southern Bantoid",
+        "Narrow Bantu",
+        "East Bantu",
+        "Southern Bantu",
+        "Nuclear Southern Bantu",
+        "Dimsuffix Southern Bantu",
+        "Nguni-Tsonga-Copi",
+        "Tsonga-Copi",
+        "Tswa-Ronga (S.50)",
+        "Tswa"
+    ],
+    "Tswana": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Benue-Congo",
+        "Bantoid",
+        "Southern Bantoid",
+        "Narrow Bantu",
+        "East Bantu",
+        "Southern Bantu",
+        "Nuclear Southern Bantu",
+        "Dimsuffix Southern Bantu",
+        "Sotho-Tswana (S.30)",
+        "Western Sotho-Tswana",
+        "Central Sotho-Tswana",
+        "Tswana"
     ],
     "Tunisian Arabic": [
         "Afro-Asiatic",
@@ -1618,101 +921,41 @@ const LANGUAGE_DATA_EASY = {
         "Malta-Tunisian Arabic",
         "Tunisian Arabic"
     ],
-    "Tày": [
+    "Urhobo": [
+        "Atlantic-Congo",
+        "Volta-Congo",
+        "Benue-Congo",
+        "Akpes-Edoid",
+        "Edoid",
+        "Southwestern Edoid",
+        "Urhobo"
+    ],
+    "Western Armenian": [
+        "Indo-European",
+        "Classical Indo-European",
+        "Armenic",
+        "Eastern-Western Armenian",
+        "Western Armenian"
+    ],
+    "Yongbei Zhuang": [
         "Tai-Kadai",
         "Kam-Tai",
         "Daic-Beic",
         "Daic",
-        "Central-Southwestern Tai",
-        "Wenma-Southwestern Tai",
-        "Tày"
+        "Northern Daic-Sek",
+        "Northern Daic",
+        "Yongnan-Yongbei",
+        "Yongbei Zhuang"
     ],
-    "Weme Gbe": [
-        "Atlantic-Congo",
-        "Volta-Congo",
-        "Kwa Volta-Congo",
-        "Gbe",
-        "Eastern Gbe",
-        "Fongbeic",
-        "Weme Gbe"
-    ],
-    "Western Balochi": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Iranian",
-        "Central Iranian PBS",
-        "Central Iranian PB",
-        "Northwestern Iranian",
-        "Balochic",
-        "Southern-Western Balochi",
-        "Western Balochi"
-    ],
-    "Western Farsi": [
-        "Indo-European",
-        "Classical Indo-European",
-        "Indo-Iranian",
-        "Iranian",
-        "Southwestern Iranian",
-        "Middle-Modern Persian",
-        "Modern Southwestern Iranian",
-        "Farsic-Caucasian Tat",
-        "Farsic",
-        "Western Farsi"
-    ],
-    "Western Huasteca Nahuatl": [
-        "Uto-Aztecan",
-        "Southern Uto-Aztecan",
-        "Corachol-Aztecan",
-        "Aztec",
-        "Eastern Nahuatl",
-        "Huasteca Nahuatl",
-        "Western Huasteca Nahuatl"
-    ],
-    "Western Kayah": [
+    "Yue Chinese": [
         "Sino-Tibetan",
-        "Karenic",
-        "Central Karen",
-        "Kayah-Yintale",
-        "Kayah",
-        "Western Kayah"
+        "Sinitic",
+        "Classical-Middle-Modern Sinitic",
+        "Middle-Modern Sinitic",
+        "Yue-Pinghua",
+        "Yue Chinese"
     ],
-    "Western Niger Fulfulde": [
-        "Atlantic-Congo",
-        "North-Central Atlantic",
-        "Fula-Sereer",
-        "Fula",
-        "Western Niger Fulfulde"
-    ],
-    "Western Xiangxi Miao": [
-        "Hmong-Mien",
-        "Hmongic",
-        "Nuclear Hmongic-Ho Ne",
-        "Nuclear Hmongic",
-        "North Hmongic",
-        "Western Xiangxi Miao"
-    ],
-    "Wojenaka": [
-        "Mande",
-        "Western Mande",
-        "Manding-Kpelle",
-        "Central Mande",
-        "Manding-Jogo",
-        "Manding-Vai",
-        "Manding-Mokole",
-        "Manding",
-        "East Manding",
-        "Maninka-Mori",
-        "Wojenaka"
-    ],
-    "Yintale Karen": [
-        "Sino-Tibetan",
-        "Karenic",
-        "Central Karen",
-        "Kayah-Yintale",
-        "Yintale Karen"
-    ],
-    "Zaramo": [
+    "Zulu": [
         "Atlantic-Congo",
         "Volta-Congo",
         "Benue-Congo",
@@ -1720,18 +963,13 @@ const LANGUAGE_DATA_EASY = {
         "Southern Bantoid",
         "Narrow Bantu",
         "East Bantu",
-        "Northeast Savanna Bantu",
-        "Northeast Coastal Bantu",
-        "Ruvu",
-        "East Ruvu",
-        "Central East Ruvu",
-        "Kutu-Zaramo",
-        "Zaramo"
-    ],
-    "Zarma-Kaado": [
-        "Songhay",
-        "Eastern Songhay",
-        "Zarma-Kaado-Dendi",
-        "Zarma-Kaado"
+        "Southern Bantu",
+        "Nuclear Southern Bantu",
+        "Dimsuffix Southern Bantu",
+        "Nguni-Tsonga-Copi",
+        "Nguni (S.40)",
+        "Nuclear Nguni",
+        "Southern Ndebele-Lowland",
+        "Zulu"
     ]
 };
