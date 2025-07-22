@@ -1,42 +1,51 @@
 import js2py
 import requests
-import re
 import json
-import time
+from pathlib import Path
+
+DATA_JS_PATH = Path('web/data.js')
+OUTPUT_JS_PATH = Path('web/data_easy.js')
 
 # Load LANGUAGE_DATA from your existing data.js
-with open('web/data.js', 'r', encoding='utf-8') as f:
+with open(DATA_JS_PATH, 'r', encoding='utf-8') as f:
     js_code = f.read()
 
 context = js2py.EvalJs()
 context.execute(js_code)
-language_data = context.LANGUAGE_DATA_FULL.to_dict()
+language_data = context.LANGUAGE_DATA.to_dict()
 
-# Function to extract number of speakers from Wikipedia summary
-def get_speaker_count(lang_name):
-    page_title = lang_name.replace(' ', '_')
-    url = f"https://en.wikipedia.org/api/rest_v1/page/summary/{page_title}"
-    response = requests.get(url)
-    time.sleep(1)
-    if response.status_code != 200:
-        print(f"Skipping {lang_name} (HTTP {response.status_code})")
-        return False
-    data = response.json()
-    extract = data.get('extract', '').lower()
-    return 'million' in extract or 'billion' in extract
+# List of your languages
+language_names_in_data = set(language_data.keys())
 
-# Build the EASY dataset
-easy_data = {}
-for lang, classification in language_data.items():
-    if get_speaker_count(lang):
-        easy_data[lang] = classification
-        print(f"Included {lang}")
+# Query Wikidata for languages > 1 million speakers
+query = """
+SELECT ?languageLabel ?speakers WHERE {
+  ?language wdt:P31 wd:Q34770;
+            wdt:P1098 ?speakers.
+  FILTER(?speakers > 1000000)
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
+"""
 
-# Output to data_easy.js
-with open('web/data_easy.js', 'w', encoding='utf-8') as out:
+url = 'https://query.wikidata.org/sparql'
+headers = {'Accept': 'application/sparql-results+json'}
+response = requests.get(url, params={'query': query}, headers=headers)
+results = response.json()['results']['bindings']
+
+# Collect languages with > 1M speakers (exact names only)
+wikidata_names = {entry['languageLabel']['value'] for entry in results}
+
+# Filter your existing data to only languages with exact match in Wikidata's list
+easy_data = {
+    lang: classification
+    for lang, classification in language_data.items()
+    if lang in wikidata_names
+}
+
+# Write data_easy.js
+with open(OUTPUT_JS_PATH, 'w', encoding='utf-8') as out:
     out.write("const LANGUAGE_DATA_EASY = ")
     json.dump(easy_data, out, ensure_ascii=False, indent=4)
     out.write(";")
 
-print("\n✅ data_easy.js has been generated successfully.")
-print(f"Total languages in Easy Mode: {len(easy_data)}")
+print(f"\n✅ data_easy.js written with {len(easy_data)} languages.")
