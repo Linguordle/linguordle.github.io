@@ -40,9 +40,13 @@ function getDailyLanguage() {
         hash = ((hash << 5) + hash) + dateString.charCodeAt(i); // hash * 33 + char
     }
 
-    const index = Math.abs(hash) % languageList.length;
+    // Introduce more "chaos" to the hash result
+    const chaotic = Math.abs(Math.sin(hash) * 10000);
+    const index = Math.floor(chaotic) % languageList.length;
+
     return languageList[index];
 }
+
 
 function checkIfAlreadyPlayed() {
     const today = new Date();
