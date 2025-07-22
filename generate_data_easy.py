@@ -49,7 +49,7 @@ def extract_speakers_from_infobox(html):
 
 
 def get_speaker_count(lang_name):
-    page_title = lang_name.replace(' ', '_') + '_languages'
+    page_title = lang_name.replace(' ', '_') + '_language'
     url = f"https://en.wikipedia.org/wiki/{page_title}"
     response = requests.get(url)
     time.sleep(1)
