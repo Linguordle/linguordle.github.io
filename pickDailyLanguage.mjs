@@ -11,8 +11,8 @@ const outputPath = path.resolve(__dirname, 'web/daily-language.json');
 // Import the data.js indirectly by evaluating it
 const dataContent = fs.readFileSync(dataPath, 'utf8');
 const sandbox = {};
-const moduleWrapper = `(function() { ${dataContent}; return { full: LANGUAGE_DATA_FULL, easy: LANGUAGE_DATA_EASY }; })()`;
-const { full, easy } = eval(moduleWrapper);
+const moduleWrapper = `(function() { ${dataContent}; return { full: LANGUAGE_DATA_FULL }; })()`;
+const { full } = eval(moduleWrapper);
 
 // Use full dataset
 const languageList = Object.keys(full);
