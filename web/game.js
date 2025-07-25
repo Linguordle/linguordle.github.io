@@ -105,45 +105,83 @@ function saveLossState() {
     localStorage.setItem('lastGameResult', 'loss');
 }
 
+let relatedGuesses = [];   // [{ name, lineage, sharedPath }]
+let unrelatedGuesses = []; // [ "Basque", ... ]
+    
 function handleGuess() {
     const guess = input.value.trim();
     if (!guess) return;
 
+    // Validate
     if (!LANGUAGE_DATA[guess]) {
         appendOutputLine(`"${guess}" is not a valid language in this game.`);
         return;
     }
-
     if (guessedLanguages.has(guess)) {
         appendOutputLine(`"${guess}" has already been guessed.`);
         return;
     }
 
+    // Record the guess
     guessedLanguages.add(guess);
+
+    // Compute shared path (array) with target; [] means unrelated
+    const sharedPath = getSharedPath(guess, targetLanguage);
+
+    if (sharedPath.length === 0) {
+        // Unrelated: show message & park it aside
+        unrelatedGuesses.push(guess);
+        appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
+        updateUnrelatedGuessesDisplay(unrelatedGuesses);
+    } else {
+        // Related: append to relatedGuesses (we’ll feed it to the tree)
+        relatedGuesses.push({
+            name: guess,
+            lineage: LANGUAGE_DATA[guess],
+            sharedPath
+        });
+
+        const deepest = sharedPath[sharedPath.length - 1];
+        appendOutputLine(`Guess: ${guess} → Common ancestor: ${deepest}`);
+        updateClassificationHint(deepest);
+    }
+
+    // Spend a guess (after recording / messaging so 0 guesses still shows the line above)
     guessesLeft--;
     updateGuessesDisplay();
 
+    // Win?
     if (guess === targetLanguage) {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
-        saveWinState();
+        if (typeof saveWinState === 'function') saveWinState();
+        // Still render the final tree & unrelated list
+        const treeData = buildClassificationTree(targetClassifications, relatedGuesses);
+        renderTree(treeData);
+        updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
+        clearAutocompleteSuggestions();
         return;
     }
 
+    // Lose?
     if (guessesLeft <= 0) {
         appendOutputLine(`❌ Out of guesses! The answer was "${targetLanguage}".`);
-        saveLossState();
+        if (typeof saveLossState === 'function') saveLossState();
+        // Render what we have
+        const treeData = buildClassificationTree(targetClassifications, relatedGuesses);
+        renderTree(treeData);
+        updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
+        clearAutocompleteSuggestions();
         return;
     }
 
-    const commonAncestor = findCommonAncestor(guess, targetLanguage);
-    if (!commonAncestor) {
-        appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
-    } else {
-        appendOutputLine(`Guess: ${guess} → Common ancestor: ${commonAncestor}`);
-        updateFamilyHint(commonAncestor);
-    }
+    // Re-render tree & unrelated after every valid guess
+    const treeData = buildClassificationTree(targetClassifications, relatedGuesses);
+    renderTree(treeData);
+    updateUnrelatedGuessesDisplay(unrelatedGuesses);
+
+    // Cleanup UI
     input.value = '';
     clearAutocompleteSuggestions();
 }
@@ -243,4 +281,98 @@ if (useEasyMode) {
     output.appendChild(notice);
 }
 
+function buildClassificationTree(targetLineage, guesses) {
+    const root = { name: targetLineage[0], children: [] };
+    let current = root;
+
+    for (let i = 1; i < targetLineage.length; i++) {
+        const node = { name: targetLineage[i], children: [] };
+        current.children.push(node);
+        current = node;
+    }
+
+    // Add guessed languages under the deepest shared classification
+    guesses.forEach(guess => {
+        const lineage = LANGUAGE_DATA[guess];
+        if (!lineage) return;
+
+        let i = 0;
+        while (i < correctLineage.length && lineage[i] === correctLineage[i]) {
+            i++;
+        }
+
+        if (i === 0) return; // not related
+
+        let targetNode = root;
+        for (let j = 1; j < i; j++) {
+            targetNode = targetNode.children.find(child => child.name === lineage[j]);
+        }
+
+        targetNode.children.push({ name: guess });
+    });
+
+    return root;
+}
+
+function renderTree(data) {
+    const svg = d3.select("#classification-tree");
+    svg.selectAll("*").remove(); // clear previous tree
+    const width = +svg.attr("width");
+    const height = +svg.attr("height");
+
+    const root = d3.hierarchy(data);
+    const treeLayout = d3.tree().size([width - 40, height - 40]);
+    treeLayout(root);
+
+    // Links
+    svg.selectAll('line')
+        .data(root.links())
+        .enter()
+        .append('line')
+        .attr('x1', d => d.source.x + 20)
+        .attr('y1', d => d.source.y + 20)
+        .attr('x2', d => d.target.x + 20)
+        .attr('y2', d => d.target.y + 20)
+        .attr('stroke', 'black');
+
+    // Nodes
+    svg.selectAll('circle')
+        .data(root.descendants())
+        .enter()
+        .append('circle')
+        .attr('cx', d => d.x + 20)
+        .attr('cy', d => d.y + 20)
+        .attr('r', 5)
+        .attr('fill', d => d.children ? 'steelblue' : 'green');
+
+    // Labels
+    svg.selectAll('text')
+        .data(root.descendants())
+        .enter()
+        .append('text')
+        .attr('x', d => d.x + 25)
+        .attr('y', d => d.y + 25)
+        .text(d => d.data.name);
+}   
+
+function getSharedPath(guess, target) {
+    const guessTree  = LANGUAGE_DATA[guess];
+    const targetTree = LANGUAGE_DATA[target];
+
+    let i = 0;
+    while (i < guessTree.length && i < targetTree.length && guessTree[i] === targetTree[i]) {
+        i++;
+    }
+    return guessTree.slice(0, i); // [] when none shared
+}
+
+function updateUnrelatedGuessesDisplay(list) {
+    const div = document.getElementById('unrelated-guesses');
+    if (!div) return;
+    div.innerHTML = `
+        <strong>Unrelated guesses:</strong>
+        <ul>${list.map(g => `<li>${g}</li>`).join('')}</ul>
+    `;
+}    
+    
 });
