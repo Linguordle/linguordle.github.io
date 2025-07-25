@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', async () => {
 
 await startNewGame();
     
@@ -58,7 +58,7 @@ function checkIfAlreadyPlayed() {
 }
 
 async function startNewGame() {
-    targetLanguage = async getDailyLanguage();
+    targetLanguage = await getDailyLanguage();
     targetFamily = LANGUAGE_DATA[targetLanguage];
     updateFamilyHint(targetFamily[0]);
     output.innerHTML = '';
