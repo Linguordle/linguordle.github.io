@@ -1,5 +1,8 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+const fs = require('fs');
+const path = require('path');
+const filePath = path.join(__dirname, 'dailyLanguage.json');
 const useEasyMode = localStorage.getItem('easyMode') === 'true';
 const fullData = typeof LANGUAGE_DATA_FULL !== 'undefined' ? LANGUAGE_DATA_FULL : {};
 const easyData = typeof LANGUAGE_DATA_EASY !== 'undefined' ? LANGUAGE_DATA_EASY : {};
@@ -30,23 +33,37 @@ button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
 
+function getTodayDateString() {
+    return new Date().toISOString().slice(0, 10);
+}
+    
 function getDailyLanguage() {
-    const today = new Date();
-    const dateString = today.toISOString().slice(0, 10); // YYYY-MM-DD
-
-    // Simple hash function (djb2)
-    let hash = 5381;
-    for (let i = 0; i < dateString.length; i++) {
-        hash = ((hash << 5) + hash) + dateString.charCodeAt(i); // hash * 33 + char
+    let storedLanguages = {};
+    
+    if (fs.existsSync(filePath)) {
+        const data = fs.readFileSync(filePath, 'utf-8');
+        storedLanguages = JSON.parse(data);
     }
+    
+    const today = getTodayDateString();
 
-    // Introduce more "chaos" to the hash result
-    const chaotic = Math.abs(Math.sin(hash) * 10000);
-    const index = Math.floor(chaotic) % languageList.length;
+    if (storedLanguages[today]) {
+        return storedLanguages[today];
+    } else {
+        // Pick a random language for today
+        const randomIndex = Math.floor(Math.random() * languageList.length);
+        const language = languageList[randomIndex];
 
-    return languageList[index];
+        storedLanguages[today] = language;
+
+        // Save updated object back to file
+        fs.writeFileSync(filePath, JSON.stringify(storedLanguages, null, 2));
+
+        return language;
+    }
 }
 
+module.exports = getDailyLanguage;
 
 function checkIfAlreadyPlayed() {
     const today = new Date();
