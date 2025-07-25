@@ -142,7 +142,7 @@ function handleGuess() {
 
         const deepest = sharedPath[sharedPath.length - 1];
         appendOutputLine(`Guess: ${guess} → Common ancestor: ${deepest}`);
-        updateClassificationHint(deepest);
+        updateFamilyHint(deepest);
     }
 
     // Spend a guess (after recording / messaging so 0 guesses still shows the line above)
