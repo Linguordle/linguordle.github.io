@@ -1,5 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+await startNewGame();
+    
 const useEasyMode = localStorage.getItem('easyMode') === 'true';
 const fullData = typeof LANGUAGE_DATA_FULL !== 'undefined' ? LANGUAGE_DATA_FULL : {};
 const easyData = typeof LANGUAGE_DATA_EASY !== 'undefined' ? LANGUAGE_DATA_EASY : {};
@@ -30,23 +32,12 @@ button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
 
-function getDailyLanguage() {
-    const today = new Date();
-    const dateString = today.toISOString().slice(0, 10); // YYYY-MM-DD
-
-    // Simple hash function (djb2)
-    let hash = 5381;
-    for (let i = 0; i < dateString.length; i++) {
-        hash = ((hash << 5) + hash) + dateString.charCodeAt(i); // hash * 33 + char
-    }
-
-    // Introduce more "chaos" to the hash result
-    const chaotic = Math.abs(Math.sin(hash) * 10000);
-    const index = Math.floor(chaotic) % languageList.length;
-
-    return languageList[index];
+async function getDailyLanguage() {
+    const res = await fetch('daily-language.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('Could not load daily language.');
+    const data = await res.json();
+    return data.language;
 }
-
 
 function checkIfAlreadyPlayed() {
     const today = new Date();
@@ -66,8 +57,8 @@ function checkIfAlreadyPlayed() {
     return false;
 }
 
-function startNewGame() {
-    targetLanguage = getDailyLanguage();
+async function startNewGame() {
+    targetLanguage = async getDailyLanguage();
     targetFamily = LANGUAGE_DATA[targetLanguage];
     updateFamilyHint(targetFamily[0]);
     output.innerHTML = '';
