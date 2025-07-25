@@ -1,12 +1,10 @@
 window.addEventListener('DOMContentLoaded', () => {
-(async function init() {
-    
+
 const useEasyMode = localStorage.getItem('easyMode') === 'true';
 const fullData = typeof LANGUAGE_DATA_FULL !== 'undefined' ? LANGUAGE_DATA_FULL : {};
 const easyData = typeof LANGUAGE_DATA_EASY !== 'undefined' ? LANGUAGE_DATA_EASY : {};
 const LANGUAGE_DATA = useEasyMode ? easyData : fullData;
 const languageList = Object.keys(LANGUAGE_DATA);
-    
 const MAX_GUESSES = 15;
 let guessesLeft = MAX_GUESSES;
 let targetLanguage = '';
@@ -27,41 +25,26 @@ const fuse = new Fuse(languageList, {
     keys: []           // we're just searching strings, not objects
 });
 
-const TZ = 'America';
-function todayISO() {
-  return new Intl.DateTimeFormat('en-CA', {
-    timeZone: TZ,
-    year: 'numeric', month: '2-digit', day: '2-digit'
-  }).format(new Date()); // YYYY-MM-DD
-}
+startNewGame();
+button.addEventListener('click', handleGuess);
+input.addEventListener('keydown', handleKeyNavigation);
+input.addEventListener('input', showAutocompleteSuggestions);
 
-// Try to fetch the repo-committed daily pick. If it fails, fall back to a per-user localStorage pick.
-async function getDailyLanguage() {
-  const today = todayISO();
-  const mode  = useEasyMode ? 'easy' : 'full';
-  const url   = `daily-language-${mode}.json?ts=${Date.now()}`; // committed by the GH Action below
+function getDailyLanguage() {
+    const today = new Date();
+    const dateString = today.toISOString().slice(0, 10); // YYYY-MM-DD
 
-  try {
-    const res = await fetch(url, { cache: 'no-store' });
-    if (res.ok) {
-      const { date, language } = await res.json();
-      if (date === today && LANGUAGE_DATA[language]) {
-        return language;
-      }
+    // Simple hash function (djb2)
+    let hash = 5381;
+    for (let i = 0; i < dateString.length; i++) {
+        hash = ((hash << 5) + hash) + dateString.charCodeAt(i); // hash * 33 + char
     }
-  } catch (e) {
-    // ignore – we'll fall back to localStorage
-  }
 
-  // ---- Fallback: per-user local RNG, persisted locally so it stays fixed for that user that day ----
-  const lsKey = `fallbackDailyPick:${mode}:${today}`;
-  const cached = localStorage.getItem(lsKey);
-  if (cached && LANGUAGE_DATA[cached]) {
-    return cached;
-  }
-  const randomPick = languageList[Math.floor(Math.random() * languageList.length)];
-  localStorage.setItem(lsKey, randomPick);
-  return randomPick;
+    // Introduce more "chaos" to the hash result
+    const chaotic = Math.abs(Math.sin(hash) * 10000);
+    const index = Math.floor(chaotic) % languageList.length;
+
+    return languageList[index];
 }
 
 
@@ -83,10 +66,9 @@ function checkIfAlreadyPlayed() {
     return false;
 }
 
-async function startNewGame() {
-    targetLanguage = await getDailyLanguage();
+function startNewGame() {
+    targetLanguage = getDailyLanguage();
     targetFamily = LANGUAGE_DATA[targetLanguage];
-    
     updateFamilyHint(targetFamily[0]);
     output.innerHTML = '';
     guessesLeft = MAX_GUESSES;
@@ -100,11 +82,6 @@ async function startNewGame() {
     if (checkIfAlreadyPlayed()) return;
 }
 
-button.addEventListener('click', handleGuess);
-input.addEventListener('keydown', handleKeyNavigation);
-input.addEventListener('input', showAutocompleteSuggestions);
-await startNewGame();
-    
 function updateFamilyHint(familyName) {
     const familyInfo = familyDescriptions[familyName];
     const familyHintElement = document.getElementById('familyHint');
@@ -275,5 +252,4 @@ if (useEasyMode) {
     output.appendChild(notice);
 }
 
-}
 });
