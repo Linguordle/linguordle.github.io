@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
-    
+
 const useEasyMode = localStorage.getItem('easyMode') === 'true';
 const fullData = typeof LANGUAGE_DATA_FULL !== 'undefined' ? LANGUAGE_DATA_FULL : {};
 const easyData = typeof LANGUAGE_DATA_EASY !== 'undefined' ? LANGUAGE_DATA_EASY : {};
@@ -12,6 +12,9 @@ let targetFamily = [];
 let guessedLanguages = new Set();
 let highlightIndex = -1;
 
+let relatedGuesses = [];   // [{ name, lineage, sharedPath }]
+let unrelatedGuesses = []; // [ "Basque", ... ]
+
 const input = document.getElementById('guessInput');
 const button = document.getElementById('guessButton');
 const output = document.getElementById('output');
@@ -20,9 +23,9 @@ const familyHint = document.getElementById('familyHint');
 const autocompleteList = document.getElementById('autocomplete-list');
 
 const fuse = new Fuse(languageList, {
-    threshold: 0.4,    // lower = stricter, higher = fuzzier
-    distance: 100,     // how far apart characters can be
-    keys: []           // we're just searching strings, not objects
+    threshold: 0.4,
+    distance: 100,
+    keys: []
 });
 
 button.addEventListener('click', handleGuess);
@@ -63,30 +66,31 @@ async function startNewGame() {
     output.innerHTML = '';
     guessesLeft = MAX_GUESSES;
     guessedLanguages.clear();
+    relatedGuesses = [];
+    unrelatedGuesses = [];
     updateGuessesDisplay();
     clearAutocompleteSuggestions();
     input.disabled = false;
     button.disabled = false;
     input.value = '';
+    renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+    updateUnrelatedGuessesDisplay(unrelatedGuesses);
 
     if (checkIfAlreadyPlayed()) return;
 }
 
-function updateFamilyHint(familyName) {
-    const familyInfo = familyDescriptions[familyName];
-    const familyHintElement = document.getElementById('familyHint');
-    const isFamily = familyName === targetFamily[0];
-    const label = isFamily ? "Family" : "Shared Classification";
+function updateFamilyHint(classificationName) {
+    const info = familyDescriptions[classificationName];
+    const label = (classificationName === targetFamily[0]) ? "Family" : "Shared Classification";
     
-    if (!familyInfo) {
-        familyHintElement.innerHTML = `${label}: ${familyName}`;
+    if (!info) {
+        familyHint.innerHTML = `${label}: ${classificationName}`;
         return;
     }
-
-    familyHintElement.innerHTML = `
-        <strong>${label}: ${familyName}</strong><br>
-        <p style="font-size: 0.9rem;" style="line-height: 1;">${familyInfo.description}</p>
-        <a href="${familyInfo.link}" target="_blank" rel="noopener noreferrer"> (Wikipedia)</a>
+    familyHint.innerHTML = `
+        <strong>${label}: ${classificationName}</strong><br>
+        <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
+        <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
     `;
 }
 
@@ -104,14 +108,10 @@ function saveLossState() {
     localStorage.setItem('lastGameResult', 'loss');
 }
 
-let relatedGuesses = [];   // [{ name, lineage, sharedPath }]
-let unrelatedGuesses = []; // [ "Basque", ... ]
-    
 function handleGuess() {
     const guess = input.value.trim();
     if (!guess) return;
 
-    // Validate
     if (!LANGUAGE_DATA[guess]) {
         appendOutputLine(`"${guess}" is not a valid language in this game.`);
         return;
@@ -121,80 +121,55 @@ function handleGuess() {
         return;
     }
 
-    // Record the guess
     guessedLanguages.add(guess);
-
-    // Compute shared path (array) with target; [] means unrelated
     const sharedPath = getSharedPath(guess, targetLanguage);
 
     if (sharedPath.length === 0) {
-        // Unrelated: show message & park it aside
         unrelatedGuesses.push(guess);
         appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
     } else {
-        // Related: append to relatedGuesses (we’ll feed it to the tree)
-        relatedGuesses.push({
-            name: guess,
-            lineage: LANGUAGE_DATA[guess],
-            sharedPath
-        });
-
+        relatedGuesses.push({ name: guess, lineage: LANGUAGE_DATA[guess], sharedPath });
         const deepest = sharedPath[sharedPath.length - 1];
         appendOutputLine(`Guess: ${guess} → Common ancestor: ${deepest}`);
         updateFamilyHint(deepest);
     }
 
-    // Spend a guess (after recording / messaging so 0 guesses still shows the line above)
     guessesLeft--;
     updateGuessesDisplay();
 
-    // Win?
     if (guess === targetLanguage) {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
-        if (typeof saveWinState === 'function') saveWinState();
-        // Still render the final tree & unrelated list
-        const treeData = buildClassificationTree(targetFamily, relatedGuesses);
-        renderTree(treeData);
+        saveWinState();
+        renderTree(buildClassificationTree(targetFamily, relatedGuesses));
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
         return;
     }
 
-    // Lose?
     if (guessesLeft <= 0) {
         appendOutputLine(`❌ Out of guesses! The answer was "${targetLanguage}".`);
-        if (typeof saveLossState === 'function') saveLossState();
-        // Render what we have
-        const treeData = buildClassificationTree(targetFamily, relatedGuesses);
-        renderTree(treeData);
+        saveLossState();
+        renderTree(buildClassificationTree(targetFamily, relatedGuesses));
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
         return;
     }
 
-    // Re-render tree & unrelated after every valid guess
-    const treeData = buildClassificationTree(targetFamily, relatedGuesses);
-    renderTree(treeData);
+    renderTree(buildClassificationTree(targetFamily, relatedGuesses));
     updateUnrelatedGuessesDisplay(unrelatedGuesses);
-
-    // Cleanup UI
     input.value = '';
     clearAutocompleteSuggestions();
 }
 
-function findCommonAncestor(guess, target) {
+function getSharedPath(guess, target) {
     const guessTree = LANGUAGE_DATA[guess];
     const targetTree = LANGUAGE_DATA[target];
-
     let i = 0;
-    while (i < guessTree.length && i < targetTree.length && guessTree[i] === targetTree[i]) {
-        i++;
-    }
-    if (i === 0) return null;
-    return guessTree[i - 1];
+    while (i < guessTree.length && i < targetTree.length && guessTree[i] === targetTree[i]) i++;
+    return guessTree.slice(0, i);
 }
 
 function updateGuessesDisplay() {
@@ -224,7 +199,6 @@ function showAutocompleteSuggestions() {
     if (!value) return;
 
     const results = fuse.search(value, { limit: 10 });
-
     results.forEach((result, index) => {
         const match = result.item;
         if (guessedLanguages.has(match)) return;
@@ -242,13 +216,11 @@ function showAutocompleteSuggestions() {
     });
     highlightIndex = -1;
 }
-    
+
 function handleKeyNavigation(e) {
     const items = autocompleteList.querySelectorAll('.autocomplete-item');
     if (!items.length) {
-        if (e.key === 'Enter') {
-            handleGuess();
-        }
+        if (e.key === 'Enter') handleGuess();
         return;
     }
     if (e.key === 'ArrowDown') {
@@ -268,16 +240,7 @@ function handleKeyNavigation(e) {
 
 function updateHighlight(items) {
     items.forEach(item => item.classList.remove('highlighted'));
-    if (highlightIndex >= 0) {
-        items[highlightIndex].classList.add('highlighted');
-    }
-}
-    
-if (useEasyMode) {
-    const notice = document.createElement('div');
-    notice.textContent = 'Easy Mode is ON';
-    notice.style.color = 'green';
-    output.appendChild(notice);
+    if (highlightIndex >= 0) items[highlightIndex].classList.add('highlighted');
 }
 
 function buildClassificationTree(targetLineage, guesses) {
@@ -290,24 +253,17 @@ function buildClassificationTree(targetLineage, guesses) {
         current = node;
     }
 
-    // Add guessed languages under the deepest shared classification
     guesses.forEach(guess => {
-        const lineage = LANGUAGE_DATA[guess];
-        if (!lineage) return;
-
+        const lineage = LANGUAGE_DATA[guess.name];
         let i = 0;
-        while (i < correctLineage.length && lineage[i] === correctLineage[i]) {
-            i++;
-        }
-
-        if (i === 0) return; // not related
+        while (i < targetLineage.length && lineage[i] === targetLineage[i]) i++;
+        if (i === 0) return;
 
         let targetNode = root;
         for (let j = 1; j < i; j++) {
             targetNode = targetNode.children.find(child => child.name === lineage[j]);
         }
-
-        targetNode.children.push({ name: guess });
+        targetNode.children.push({ name: guess.name });
     });
 
     return root;
@@ -315,7 +271,7 @@ function buildClassificationTree(targetLineage, guesses) {
 
 function renderTree(data) {
     const svg = d3.select("#classification-tree");
-    svg.selectAll("*").remove(); // clear previous tree
+    svg.selectAll("*").remove();
     const width = +svg.attr("width");
     const height = +svg.attr("height");
 
@@ -323,7 +279,6 @@ function renderTree(data) {
     const treeLayout = d3.tree().size([width - 40, height - 40]);
     treeLayout(root);
 
-    // Links
     svg.selectAll('line')
         .data(root.links())
         .enter()
@@ -334,7 +289,6 @@ function renderTree(data) {
         .attr('y2', d => d.target.y + 20)
         .attr('stroke', 'black');
 
-    // Nodes
     svg.selectAll('circle')
         .data(root.descendants())
         .enter()
@@ -344,7 +298,6 @@ function renderTree(data) {
         .attr('r', 5)
         .attr('fill', d => d.children ? 'steelblue' : 'green');
 
-    // Labels
     svg.selectAll('text')
         .data(root.descendants())
         .enter()
@@ -352,17 +305,6 @@ function renderTree(data) {
         .attr('x', d => d.x + 25)
         .attr('y', d => d.y + 25)
         .text(d => d.data.name);
-}   
-
-function getSharedPath(guess, target) {
-    const guessTree  = LANGUAGE_DATA[guess];
-    const targetTree = LANGUAGE_DATA[target];
-
-    let i = 0;
-    while (i < guessTree.length && i < targetTree.length && guessTree[i] === targetTree[i]) {
-        i++;
-    }
-    return guessTree.slice(0, i); // [] when none shared
 }
 
 function updateUnrelatedGuessesDisplay(list) {
@@ -372,6 +314,13 @@ function updateUnrelatedGuessesDisplay(list) {
         <strong>Unrelated guesses:</strong>
         <ul>${list.map(g => `<li>${g}</li>`).join('')}</ul>
     `;
-}    
-    
+}
+
+if (useEasyMode) {
+    const notice = document.createElement('div');
+    notice.textContent = 'Easy Mode is ON';
+    notice.style.color = 'green';
+    output.appendChild(notice);
+}
+
 });
