@@ -16,7 +16,7 @@ jobs:
           node-version: 20
 
       - name: Pick and update daily language
-        run: node scripts/pickDailyLanguage.mjs
+        run: node pickDailyLanguage.mjs
 
       - name: Commit and push
         run: |
