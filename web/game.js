@@ -154,7 +154,7 @@ function handleGuess() {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
         if (typeof saveWinState === 'function') saveWinState();
         // Still render the final tree & unrelated list
-        const treeData = buildClassificationTree(targetClassifications, relatedGuesses);
+        const treeData = buildClassificationTree(targetFamily, relatedGuesses);
         renderTree(treeData);
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
@@ -167,7 +167,7 @@ function handleGuess() {
         appendOutputLine(`❌ Out of guesses! The answer was "${targetLanguage}".`);
         if (typeof saveLossState === 'function') saveLossState();
         // Render what we have
-        const treeData = buildClassificationTree(targetClassifications, relatedGuesses);
+        const treeData = buildClassificationTree(targetFamily, relatedGuesses);
         renderTree(treeData);
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
@@ -176,7 +176,7 @@ function handleGuess() {
     }
 
     // Re-render tree & unrelated after every valid guess
-    const treeData = buildClassificationTree(targetClassifications, relatedGuesses);
+    const treeData = buildClassificationTree(targetFamily, relatedGuesses);
     renderTree(treeData);
     updateUnrelatedGuessesDisplay(unrelatedGuesses);
 
