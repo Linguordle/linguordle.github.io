@@ -1,6 +1,4 @@
 window.addEventListener('DOMContentLoaded', async () => {
-
-await startNewGame();
     
 const useEasyMode = localStorage.getItem('easyMode') === 'true';
 const fullData = typeof LANGUAGE_DATA_FULL !== 'undefined' ? LANGUAGE_DATA_FULL : {};
@@ -27,10 +25,11 @@ const fuse = new Fuse(languageList, {
     keys: []           // we're just searching strings, not objects
 });
 
-startNewGame();
 button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
+
+await startNewGame();
 
 async function getDailyLanguage() {
     const res = await fetch('daily-language.json', { cache: 'no-store' });
