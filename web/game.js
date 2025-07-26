@@ -125,7 +125,6 @@ function handleGuess() {
     if (sharedPath.length === 0) {
         unrelatedGuesses.push(guess);
         appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
-        updateUnrelatedGuessesDisplay(unrelatedGuesses);
     } else {
         relatedGuesses.push({ name: guess, lineage: LANGUAGE_DATA[guess], sharedPath });
         const deepest = sharedPath[sharedPath.length - 1];
@@ -141,11 +140,10 @@ function handleGuess() {
         saveWinState();
         const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
         if (treeData) {
-            renderTree(treeData);
+            renderTree(treeData, unrelatedGuesses);
         } else {
             clearTree();
         }
-        updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
         return;
@@ -156,11 +154,10 @@ function handleGuess() {
         saveLossState();
         const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
         if (treeData) {
-            renderTree(treeData);
+            renderTree(treeData, unrelatedGuesses);
         } else {
             clearTree();
         }
-        updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
         return;
@@ -168,12 +165,11 @@ function handleGuess() {
 
     const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
     if (treeData) {
-        renderTree(treeData);
+        renderTree(treeData, unrelatedGuesses);
     } else {
         // Clear tree if you want when nothing related yet
         clearTree();
     }
-    updateUnrelatedGuessesDisplay(unrelatedGuesses);
     input.value = '';
     clearAutocompleteSuggestions();
 }
@@ -278,17 +274,19 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
     };
 }
 
-function renderTree(data) {
+function renderTree(data, unrelated = []) {
     const svg = d3.select("#classification-tree");
-    svg.selectAll("*").remove();
+    svg.selectAll("*").remove(); // clear previous tree
     const width = +svg.attr("width");
     const height = +svg.attr("height");
 
     const root = d3.hierarchy(data);
-    const treeLayout = d3.tree().size([width - 40, height - 40]);
+    const treeLayout = d3.tree().size([width / 2 - 50, height - 40]);
     treeLayout(root);
 
-    svg.selectAll('line')
+    // Draw links
+    svg.append("g")
+        .selectAll('line')
         .data(root.links())
         .enter()
         .append('line')
@@ -298,7 +296,9 @@ function renderTree(data) {
         .attr('y2', d => d.target.y + 20)
         .attr('stroke', 'black');
 
-    svg.selectAll('circle')
+    // Draw nodes
+    svg.append("g")
+        .selectAll('circle')
         .data(root.descendants())
         .enter()
         .append('circle')
@@ -307,22 +307,34 @@ function renderTree(data) {
         .attr('r', 5)
         .attr('fill', d => d.children ? 'steelblue' : 'green');
 
-    svg.selectAll('text')
+    // Draw labels for tree nodes
+    svg.append("g")
+        .selectAll('text')
         .data(root.descendants())
         .enter()
         .append('text')
         .attr('x', d => d.x + 25)
         .attr('y', d => d.y + 25)
-        .text(d => d.data.name);
-}
+        .text(d => d.data.name)
+        .attr('font-size', '12px');
 
-function updateUnrelatedGuessesDisplay(list) {
-    const div = document.getElementById('unrelated-guesses');
-    if (!div) return;
-    div.innerHTML = `
-        <strong>Unrelated guesses:</strong>
-        <ul>${list.map(g => `<li>${g}</li>`).join('')}</ul>
-    `;
+    // Unrelated guesses on the right side
+    const unrelatedGroup = svg.append("g")
+        .attr("transform", `translate(${width / 2 + 100}, 40)`);
+
+    unrelatedGroup.append("text")
+        .text("Unrelated guesses:")
+        .attr("font-weight", "bold")
+        .attr("y", -20);
+
+    unrelatedGroup.selectAll(".unrelated-text")
+        .data(unrelated)
+        .enter()
+        .append("text")
+        .attr("class", "unrelated-text")
+        .attr("x", 0)
+        .attr("y", (d, i) => i * 20)
+        .text(d => `- ${d}`);
 }
 
 if (useEasyMode) {
