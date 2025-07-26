@@ -73,9 +73,7 @@ async function startNewGame() {
     input.disabled = false;
     button.disabled = false;
     input.value = '';
-    renderTree(buildClassificationTree(targetFamily, relatedGuesses));
-    updateUnrelatedGuessesDisplay(unrelatedGuesses);
-
+    
     if (checkIfAlreadyPlayed()) return;
 }
 
@@ -141,7 +139,12 @@ function handleGuess() {
     if (guess === targetLanguage) {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
         saveWinState();
-        renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+        const treeData = buildLowestSharedTree(relatedGuesses);
+        if (treeData) {
+            renderTree(treeData);
+        } else {
+            clearTree();
+        }
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
@@ -151,14 +154,25 @@ function handleGuess() {
     if (guessesLeft <= 0) {
         appendOutputLine(`❌ Out of guesses! The answer was "${targetLanguage}".`);
         saveLossState();
-        renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+        const treeData = buildLowestSharedTree(relatedGuesses);
+        if (treeData) {
+            renderTree(treeData);
+        } else {
+            clearTree();
+        }
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
         return;
     }
 
-    renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+    const treeData = buildLowestSharedTree(relatedGuesses);
+    if (treeData) {
+        renderTree(treeData);
+    } else {
+        // Clear tree if you want when nothing related yet
+        clearTree();
+    }
     updateUnrelatedGuessesDisplay(unrelatedGuesses);
     input.value = '';
     clearAutocompleteSuggestions();
@@ -243,30 +257,25 @@ function updateHighlight(items) {
     if (highlightIndex >= 0) items[highlightIndex].classList.add('highlighted');
 }
 
-function buildClassificationTree(targetLineage, guesses) {
-    const root = { name: targetLineage[0], children: [] };
-    let current = root;
+function buildLowestSharedTree(relatedGuesses) {
+    if (!relatedGuesses.length) return null;
 
-    for (let i = 1; i < targetLineage.length; i++) {
-        const node = { name: targetLineage[i], children: [] };
-        current.children.push(node);
-        current = node;
-    }
+    // group by deepest (last) element of each guess's sharedPath
+    const groups = new Map(); // key: deepestSharedName -> { name, children: [...] }
 
-    guesses.forEach(guess => {
-        const lineage = LANGUAGE_DATA[guess.name];
-        let i = 0;
-        while (i < targetLineage.length && lineage[i] === targetLineage[i]) i++;
-        if (i === 0) return;
-
-        let targetNode = root;
-        for (let j = 1; j < i; j++) {
-            targetNode = targetNode.children.find(child => child.name === lineage[j]);
+    relatedGuesses.forEach(g => {
+        if (!g.sharedPath || !g.sharedPath.length) return;
+        const deepest = g.sharedPath[g.sharedPath.length - 1];
+        if (!groups.has(deepest)) {
+            groups.set(deepest, { name: deepest, children: [] });
         }
-        targetNode.children.push({ name: guess.name });
+        groups.get(deepest).children.push({ name: g.name, isGuess: true });
     });
 
-    return root;
+    return {
+        name: 'root',
+        children: Array.from(groups.values())
+    };
 }
 
 function renderTree(data) {
