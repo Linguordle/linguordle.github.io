@@ -276,15 +276,17 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
 
 function renderTree(data, unrelated = []) {
     const svg = d3.select("#classification-tree");
-    svg.selectAll("*").remove(); // clear previous tree
-    const width = +svg.attr("width");
-    const height = +svg.attr("height");
+    svg.selectAll("*").remove();
+
+    const width = 800;  // internal width for layout
+    const height = 400; // internal height for layout
+    svg.attr("viewBox", `0 0 ${width} ${height}`);
 
     const root = d3.hierarchy(data);
     const treeLayout = d3.tree().size([width / 2 - 50, height - 40]);
     treeLayout(root);
 
-    // Draw links
+    // Links
     svg.append("g")
         .selectAll('line')
         .data(root.links())
@@ -296,7 +298,7 @@ function renderTree(data, unrelated = []) {
         .attr('y2', d => d.target.y + 20)
         .attr('stroke', 'black');
 
-    // Draw nodes
+    // Nodes
     svg.append("g")
         .selectAll('circle')
         .data(root.descendants())
@@ -307,7 +309,7 @@ function renderTree(data, unrelated = []) {
         .attr('r', 5)
         .attr('fill', d => d.children ? 'steelblue' : 'green');
 
-    // Draw labels for tree nodes
+    // Labels
     svg.append("g")
         .selectAll('text')
         .data(root.descendants())
@@ -318,7 +320,7 @@ function renderTree(data, unrelated = []) {
         .text(d => d.data.name)
         .attr('font-size', '12px');
 
-    // Unrelated guesses on the right side
+    // Unrelated guesses
     const unrelatedGroup = svg.append("g")
         .attr("transform", `translate(${width / 2 + 100}, 40)`);
 
@@ -337,6 +339,11 @@ function renderTree(data, unrelated = []) {
         .text(d => `- ${d}`);
 }
 
+window.addEventListener('resize', () => {
+    const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
+    renderTree(treeData, unrelatedGuesses);
+});
+    
 if (useEasyMode) {
     const notice = document.createElement('div');
     notice.textContent = 'Easy Mode is ON';
