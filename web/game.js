@@ -278,13 +278,26 @@ function renderTree(data, unrelated = []) {
     const svg = d3.select("#classification-tree");
     svg.selectAll("*").remove();
 
-    const width = 800;  // internal width for layout
-    const height = 400; // internal height for layout
-    svg.attr("viewBox", `0 0 ${width} ${height}`);
+    // Base layout size
+    const baseWidth = 600;
+    const baseHeight = 400;
 
     const root = d3.hierarchy(data);
-    const treeLayout = d3.tree().size([width / 2 - 50, height - 40]);
+    const treeLayout = d3.tree().nodeSize([80, 60]); // Compact spacing
     treeLayout(root);
+
+    // Find bounds of all nodes to set viewBox dynamically
+    const xExtent = d3.extent(root.descendants(), d => d.x);
+    const yExtent = d3.extent(root.descendants(), d => d.y);
+
+    const treeWidth = xExtent[1] - xExtent[0] + 100;
+    const treeHeight = yExtent[1] - yExtent[0] + 100;
+
+    svg.attr("viewBox", `${xExtent[0] - 50} ${yExtent[0] - 50} ${treeWidth} ${treeHeight}`);
+    svg.attr("preserveAspectRatio", "xMidYMid meet");
+
+    // Determine text size relative to width
+    const fontSize = Math.max(12, Math.min(20, treeWidth / 30));
 
     // Links
     svg.append("g")
@@ -292,10 +305,10 @@ function renderTree(data, unrelated = []) {
         .data(root.links())
         .enter()
         .append('line')
-        .attr('x1', d => d.source.x + 20)
-        .attr('y1', d => d.source.y + 20)
-        .attr('x2', d => d.target.x + 20)
-        .attr('y2', d => d.target.y + 20)
+        .attr('x1', d => d.source.x)
+        .attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x)
+        .attr('y2', d => d.target.y)
         .attr('stroke', 'black');
 
     // Nodes
@@ -304,9 +317,9 @@ function renderTree(data, unrelated = []) {
         .data(root.descendants())
         .enter()
         .append('circle')
-        .attr('cx', d => d.x + 20)
-        .attr('cy', d => d.y + 20)
-        .attr('r', 5)
+        .attr('cx', d => d.x)
+        .attr('cy', d => d.y)
+        .attr('r', 6)
         .attr('fill', d => d.children ? 'steelblue' : 'green');
 
     // Labels
@@ -315,19 +328,20 @@ function renderTree(data, unrelated = []) {
         .data(root.descendants())
         .enter()
         .append('text')
-        .attr('x', d => d.x + 25)
-        .attr('y', d => d.y + 25)
+        .attr('x', d => d.x + 8)
+        .attr('y', d => d.y + 4)
         .text(d => d.data.name)
-        .attr('font-size', '12px');
+        .attr('font-size', `${fontSize}px`)
+        .attr('font-family', 'IBM Plex Sans, sans-serif');
 
-    // Unrelated guesses
+    // Unrelated guesses on the right side
     const unrelatedGroup = svg.append("g")
-        .attr("transform", `translate(${width / 2 + 100}, 40)`);
+        .attr("transform", `translate(${xExtent[1] + 60}, ${yExtent[0] + 20})`);
 
     unrelatedGroup.append("text")
         .text("Unrelated guesses:")
         .attr("font-weight", "bold")
-        .attr("y", -20);
+        .attr("font-size", `${fontSize}px`);
 
     unrelatedGroup.selectAll(".unrelated-text")
         .data(unrelated)
@@ -335,10 +349,11 @@ function renderTree(data, unrelated = []) {
         .append("text")
         .attr("class", "unrelated-text")
         .attr("x", 0)
-        .attr("y", (d, i) => i * 20)
-        .text(d => `- ${d}`);
+        .attr("y", (d, i) => (i + 1) * (fontSize + 5))
+        .text(d => `- ${d}`)
+        .attr("font-size", `${fontSize * 0.9}px`);
 }
-
+    
 window.addEventListener('resize', () => {
     const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
     renderTree(treeData, unrelatedGuesses);
