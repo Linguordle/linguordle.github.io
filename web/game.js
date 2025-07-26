@@ -139,7 +139,7 @@ function handleGuess() {
     if (guess === targetLanguage) {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
         saveWinState();
-        const treeData = buildLowestSharedTree(relatedGuesses);
+        const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
         if (treeData) {
             renderTree(treeData);
         } else {
@@ -154,7 +154,7 @@ function handleGuess() {
     if (guessesLeft <= 0) {
         appendOutputLine(`❌ Out of guesses! The answer was "${targetLanguage}".`);
         saveLossState();
-        const treeData = buildLowestSharedTree(relatedGuesses);
+        const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
         if (treeData) {
             renderTree(treeData);
         } else {
@@ -166,7 +166,7 @@ function handleGuess() {
         return;
     }
 
-    const treeData = buildLowestSharedTree(relatedGuesses);
+    const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
     if (treeData) {
         renderTree(treeData);
     } else {
@@ -257,11 +257,11 @@ function updateHighlight(items) {
     if (highlightIndex >= 0) items[highlightIndex].classList.add('highlighted');
 }
 
-function buildLowestSharedTree(relatedGuesses) {
+function buildLowestSharedTree(relatedGuesses, targetFamily) {
     if (!relatedGuesses.length) return null;
 
-    // group by deepest (last) element of each guess's sharedPath
-    const groups = new Map(); // key: deepestSharedName -> { name, children: [...] }
+    const familyName = targetFamily[0]; // Top-level family
+    const groups = new Map();
 
     relatedGuesses.forEach(g => {
         if (!g.sharedPath || !g.sharedPath.length) return;
@@ -273,7 +273,7 @@ function buildLowestSharedTree(relatedGuesses) {
     });
 
     return {
-        name: 'root',
+        name: familyName,
         children: Array.from(groups.values())
     };
 }
