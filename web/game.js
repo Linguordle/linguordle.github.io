@@ -280,73 +280,40 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
 
 function renderTree(data) {
     const svg = d3.select("#classification-tree");
+    svg.selectAll("*").remove();
     const width = +svg.attr("width");
     const height = +svg.attr("height");
 
-    // Clear only the previous elements that are no longer needed
-    // but keep the svg for smooth updates
-    svg.selectAll("*").remove();
-
-    const g = svg.append("g").attr("transform", "translate(20,20)");
-
-    // Create a hierarchical layout
     const root = d3.hierarchy(data);
     const treeLayout = d3.tree().size([width - 40, height - 40]);
     treeLayout(root);
 
-    // Add links with transitions
-    const link = g.selectAll(".link")
-        .data(root.links(), d => d.target.data.name);
+    svg.selectAll('line')
+        .data(root.links())
+        .enter()
+        .append('line')
+        .attr('x1', d => d.source.x + 20)
+        .attr('y1', d => d.source.y + 20)
+        .attr('x2', d => d.target.x + 20)
+        .attr('y2', d => d.target.y + 20)
+        .attr('stroke', 'black');
 
-    link.enter()
-        .append("path")
-        .attr("class", "link")
-        .attr("fill", "none")
-        .attr("stroke", "#555")
-        .attr("stroke-opacity", 0.4)
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.linkVertical()
-            .x(d => d.source.x)
-            .y(d => d.source.y))
-        .transition()
-        .duration(600)
-        .attr("d", d3.linkVertical()
-            .x(d => d.target.x)
-            .y(d => d.target.y));
+    svg.selectAll('circle')
+        .data(root.descendants())
+        .enter()
+        .append('circle')
+        .attr('cx', d => d.x + 20)
+        .attr('cy', d => d.y + 20)
+        .attr('r', 5)
+        .attr('fill', d => d.children ? 'steelblue' : 'green');
 
-    // Add nodes
-    const node = g.selectAll(".node")
-        .data(root.descendants(), d => d.data.name);
-
-    const nodeEnter = node.enter()
-        .append("g")
-        .attr("class", "node")
-        .attr("transform", d => `translate(${d.parent ? d.parent.x : d.x},${d.parent ? d.parent.y : d.y})`)
-        .style("opacity", 0);
-
-    // Add circles
-    nodeEnter.append("circle")
-        .attr("r", 0)
-        .attr("fill", d => d.children ? "steelblue" : "green")
-        .transition()
-        .duration(600)
-        .attr("r", 5);
-
-    // Add labels
-    nodeEnter.append("text")
-        .attr("dy", "0.31em")
-        .attr("x", 10)
-        .text(d => d.data.name)
-        .style("fill-opacity", 0)
-        .transition()
-        .duration(600)
-        .style("fill-opacity", 1);
-
-    // Animate the position & fade-in of nodes
-    nodeEnter.transition()
-        .duration(600)
-        .attr("transform", d => `translate(${d.x},${d.y})`)
-        .style("opacity", 1);
+    svg.selectAll('text')
+        .data(root.descendants())
+        .enter()
+        .append('text')
+        .attr('x', d => d.x + 25)
+        .attr('y', d => d.y + 25)
+        .text(d => d.data.name);
 }
 
 function updateUnrelatedGuessesDisplay(list) {
