@@ -16,6 +16,7 @@ let highlightIndex = -1;
 let relatedGuesses = [];    // [{ name, lineage, sharedPath }]
 let unrelatedGuesses = [];  // [ "Basque", ... ]
 let lastTreeData = null;    // keep last rendered related tree for resizing
+let isRevealed = false;     // Show target language name after win/loss
 
 const input = document.getElementById('guessInput');
 const button = document.getElementById('guessButton');
@@ -55,6 +56,7 @@ function checkIfAlreadyPlayed() {
     const result = localStorage.getItem('lastGameResult');
 
     if (savedDate === dateKey) {
+        isRevealed = true; // Show target if returning to game after finishing
         if (result === 'win') {
             appendOutputLine(`🎉 You already solved today's language: "${targetLanguage}".`);
         } else if (result === 'loss') {
@@ -83,6 +85,7 @@ async function startNewGame() {
     relatedGuesses = [];
     unrelatedGuesses = [];
     lastTreeData = null;
+    isRevealed = false;
     updateGuessesDisplay();
     clearAutocompleteSuggestions();
     input.disabled = false;
@@ -155,6 +158,7 @@ function handleGuess() {
     if (guess === targetLanguage) {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
         saveWinState();
+        isRevealed = true;
         const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
         if (treeData) renderTree(treeData, unrelatedGuesses);
         else clearTree();
@@ -166,6 +170,7 @@ function handleGuess() {
     if (guessesLeft <= 0) {
         appendOutputLine(`❌ Out of guesses! The answer was "${targetLanguage}".`);
         saveLossState();
+        isRevealed = true;
         const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
         if (treeData) renderTree(treeData, unrelatedGuesses);
         else clearTree();
@@ -253,8 +258,6 @@ function handleKeyNavigation(e) {
         input.value = items[highlightIndex].textContent;
         clearAutocompleteSuggestions();
         e.preventDefault();
-        // If you want Enter to auto-submit:
-        // handleGuess();
     }
 }
 
@@ -266,10 +269,10 @@ function updateHighlight(items) {
 function buildLowestSharedTree(relatedGuesses, targetFamily) {
     if (!relatedGuesses.length) return {
         name: targetFamily[0],
-        children: [{ name: targetLanguage }]
+        children: [{ name: targetLanguage, isTarget: true }]
     };
 
-    const familyName = targetFamily[0]; // Top-level family
+    const familyName = targetFamily[0];
     const groups = new Map();
 
     relatedGuesses.forEach(g => {
@@ -281,13 +284,11 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
         groups.get(deepest).children.push({ name: g.name, isGuess: true });
     });
 
-    // Always show the targetLanguage as a child under its own deepest node
-    // If no related guesses, just put it under the family
     if (groups.size === 0) {
         return {
             name: familyName,
             children: [
-                { name: targetLanguage }
+                { name: targetLanguage, isTarget: true }
             ]
         };
     }
@@ -296,7 +297,7 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
         name: familyName,
         children: [
             ...Array.from(groups.values()),
-            { name: targetLanguage } // show target as a terminal node for clarity
+            { name: targetLanguage, isTarget: true }
         ]
     };
 }
@@ -362,12 +363,15 @@ function renderTree(data, unrelatedList = []) {
 
     nodes.append("circle")
         .attr("r", 5)
-        .attr("fill", d => d.children ? 'steelblue' : 'green');
+        .attr("fill", d => {
+            if (d.data.isTarget && !isRevealed) return '#999';
+            return d.children ? 'steelblue' : 'green';
+        });
 
     nodes.append("text")
         .attr("x", 8)
         .attr("dy", "0.32em")
-        .text(d => d.data.name);
+        .text(d => (d.data.isTarget && !isRevealed) ? '???' : d.data.name);
 
     // RIGHT: unrelated guesses as disconnected nodes
     if (unrelatedList.length) {
