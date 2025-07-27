@@ -279,29 +279,27 @@ function renderTree(data, unrelated = []) {
     svg.selectAll("*").remove();
 
     const root = d3.hierarchy(data);
-    const treeLayout = d3.tree().nodeSize([100, 70]); // Adjust spacing between nodes
+    const treeLayout = d3.tree().nodeSize([100, 70]); 
     treeLayout(root);
 
-    // Calculate max label width to ensure text fits in viewBox
-    const temp = svg.append("text")
-        .attr("font-size", "16px")
-        .attr("font-family", "IBM Plex Sans, sans-serif")
-        .text("Sample");
-    const charWidth = temp.node().getBBox().width / temp.text().length;
-    temp.remove();
+    // Find bounds of nodes
+    const nodes = root.descendants();
+    const xExtent = d3.extent(nodes, d => d.x);
+    const yExtent = d3.extent(nodes, d => d.y);
 
-    const maxLabelLength = d3.max(root.descendants(), d => d.data.name.length);
-    const labelPadding = maxLabelLength * charWidth + 50;
+    // Shift nodes so that x starts at 0 (removes extra left space)
+    const xShift = -xExtent[0] + 20; // small left padding
+    nodes.forEach(d => {
+        d.x += xShift;
+    });
 
-    // Determine x and y extents of nodes
-    const xExtent = d3.extent(root.descendants(), d => d.x);
-    const yExtent = d3.extent(root.descendants(), d => d.y);
+    const maxLabelLength = d3.max(nodes, d => d.data.name.length);
+    const labelPadding = maxLabelLength * 6 + 30;
 
-    // Set viewBox with padding to avoid cutting off labels
-    const treeWidth = (xExtent[1] - xExtent[0]) + labelPadding * 2;
+    const treeWidth = (xExtent[1] - xExtent[0]) + labelPadding + 40;
     const treeHeight = (yExtent[1] - yExtent[0]) + 100;
 
-    svg.attr("viewBox", `${xExtent[0] - labelPadding} ${yExtent[0] - 50} ${treeWidth} ${treeHeight}`);
+    svg.attr("viewBox", `0 ${yExtent[0] - 50} ${treeWidth} ${treeHeight}`);
     svg.attr("preserveAspectRatio", "xMidYMid meet");
 
     const fontSize = Math.max(12, Math.min(20, treeWidth / 40));
@@ -321,7 +319,7 @@ function renderTree(data, unrelated = []) {
     // Nodes
     svg.append("g")
         .selectAll('circle')
-        .data(root.descendants())
+        .data(nodes)
         .enter()
         .append('circle')
         .attr('cx', d => d.x)
@@ -332,7 +330,7 @@ function renderTree(data, unrelated = []) {
     // Labels
     svg.append("g")
         .selectAll('text')
-        .data(root.descendants())
+        .data(nodes)
         .enter()
         .append('text')
         .attr('x', d => d.x + 10)
@@ -344,7 +342,7 @@ function renderTree(data, unrelated = []) {
 
     // Unrelated guesses on the right
     const unrelatedGroup = svg.append("g")
-        .attr("transform", `translate(${xExtent[1] + labelPadding / 2}, ${yExtent[0] + 20})`);
+        .attr("transform", `translate(${treeWidth - labelPadding}, ${yExtent[0] + 20})`);
 
     unrelatedGroup.append("text")
         .text("Unrelated guesses:")
