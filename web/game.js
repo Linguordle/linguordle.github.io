@@ -15,6 +15,9 @@ let highlightIndex = -1;
 let relatedGuesses = [];   // [{ name, lineage, sharedPath }]
 let unrelatedGuesses = []; // [ "Basque", ... ]
 
+// NEW: keep the last rendered tree so we can re-render on resize
+let lastTreeData = null; // NEW
+
 const input = document.getElementById('guessInput');
 const button = document.getElementById('guessButton');
 const output = document.getElementById('output');
@@ -31,6 +34,11 @@ const fuse = new Fuse(languageList, {
 button.addEventListener('click', handleGuess);
 input.addEventListener('keydown', handleKeyNavigation);
 input.addEventListener('input', showAutocompleteSuggestions);
+
+// NEW: re-render on window resize
+window.addEventListener('resize', () => { // NEW
+    if (lastTreeData) renderTree(lastTreeData);
+}); // NEW
 
 await startNewGame();
 
@@ -249,6 +257,7 @@ function handleKeyNavigation(e) {
         input.value = items[highlightIndex].textContent;
         clearAutocompleteSuggestions();
         e.preventDefault();
+        // (Optional) call handleGuess() here if you want Enter to submit immediately
     }
 }
 
@@ -279,11 +288,20 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
 }
 
 function renderTree(data) {
-    const svg = d3.select("#classification-tree");
-    svg.selectAll("*").remove();
-    const width = +svg.attr("width");
-    const height = +svg.attr("height");
+    // NEW: store the last data we rendered, for resize re-rendering
+    lastTreeData = data; // NEW
 
+    const container = document.getElementById('tree-container'); // NEW
+    const width = container.clientWidth;                          // NEW (dynamic)
+    const height = 400;                                           // NEW (you can compute this)
+
+    const svg = d3.select("#classification-tree")
+        .attr("width", width)                                     // NEW
+        .attr("height", height)                                   // NEW
+        .attr("viewBox", [0, 0, width, height])                   // NEW (helps responsiveness)
+        .attr("preserveAspectRatio", "xMidYMid meet");            // NEW
+
+    svg.selectAll("*").remove();
     const root = d3.hierarchy(data);
     const treeLayout = d3.tree().size([width - 40, height - 40]);
     treeLayout(root);
@@ -314,6 +332,11 @@ function renderTree(data) {
         .attr('x', d => d.x + 25)
         .attr('y', d => d.y + 25)
         .text(d => d.data.name);
+}
+
+function clearTree() {
+    const svg = d3.select("#classification-tree");
+    svg.selectAll("*").remove();
 }
 
 function updateUnrelatedGuessesDisplay(list) {
