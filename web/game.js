@@ -267,12 +267,23 @@ function updateHighlight(items) {
 }
 
 function buildLowestSharedTree(relatedGuesses, targetFamily) {
-    if (!relatedGuesses.length) return {
-        name: targetFamily[0],
-        children: [{ name: targetLanguage, isTarget: true }]
-    };
-
     const familyName = targetFamily[0];
+
+    // If there are no related guesses yet, just show the family without the target (hidden)
+    if (!relatedGuesses.length) {
+        return {
+            name: familyName,
+            children: [
+                { name: targetLanguage, isTarget: true }
+            ]
+        };
+    }
+
+    // Build the tree hierarchy step by step
+    let root = { name: familyName, children: [] };
+
+    // Find the deepest shared classification among guesses
+    let deepestSharedNode = null;
     const groups = new Map();
 
     relatedGuesses.forEach(g => {
@@ -282,24 +293,26 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
             groups.set(deepest, { name: deepest, children: [] });
         }
         groups.get(deepest).children.push({ name: g.name, isGuess: true });
+        deepestSharedNode = deepest;
     });
 
-    if (groups.size === 0) {
-        return {
-            name: familyName,
-            children: [
-                { name: targetLanguage, isTarget: true }
-            ]
-        };
+    // Convert groups to children
+    root.children = Array.from(groups.values());
+
+    // Find the node where we should attach the target language
+    if (deepestSharedNode) {
+        const targetNode = root.children.find(child => child.name === deepestSharedNode);
+        if (targetNode) {
+            targetNode.children.push({ name: targetLanguage, isTarget: true });
+        } else {
+            // If we didn't find it (edge case), attach directly under root
+            root.children.push({ name: targetLanguage, isTarget: true });
+        }
+    } else {
+        root.children.push({ name: targetLanguage, isTarget: true });
     }
 
-    return {
-        name: familyName,
-        children: [
-            ...Array.from(groups.values()),
-            { name: targetLanguage, isTarget: true }
-        ]
-    };
+    return root;
 }
 
 function renderTree(data, unrelatedList = []) {
