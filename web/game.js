@@ -274,77 +274,86 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
     };
 }
 
-  function renderTree(data) {
+function renderTree(data, unrelated = []) {
     const svg = d3.select("#classification-tree");
     svg.selectAll("*").remove();
 
+    // Base layout size
+    const baseWidth = 600;
+    const baseHeight = 400;
+
     const root = d3.hierarchy(data);
-    const treeLayout = d3.tree().nodeSize([100, 70]); // compact spacing
+    const treeLayout = d3.tree().nodeSize([80, 60]); // Compact spacing
     treeLayout(root);
 
-    // Shift so leftmost node is near 0 to reduce empty space
-    const nodes = root.descendants();
-    const xExtent = d3.extent(nodes, d => d.x);
-    const yExtent = d3.extent(nodes, d => d.y);
-    const xShift = -xExtent[0] + 20; // small left padding
-    nodes.forEach(d => { d.x += xShift; });
+    // Find bounds of all nodes to set viewBox dynamically
+    const xExtent = d3.extent(root.descendants(), d => d.x);
+    const yExtent = d3.extent(root.descendants(), d => d.y);
 
-    // Compute padding for text so labels aren't cut
-    const maxLabelLength = d3.max(nodes, d => d.data.name.length);
-    const labelPadding = maxLabelLength * 6 + 30;
+    const treeWidth = xExtent[1] - xExtent[0] + 100;
+    const treeHeight = yExtent[1] - yExtent[0] + 100;
 
-    const newXExtent = d3.extent(nodes, d => d.x);
-    const newYExtent = d3.extent(nodes, d => d.y);
-    const treeWidth = (newXExtent[1] - newXExtent[0]) + labelPadding + 40;
-    const treeHeight = (newYExtent[1] - newYExtent[0]) + 100;
-
-    svg.attr("viewBox", `0 ${newYExtent[0] - 50} ${treeWidth} ${treeHeight}`);
+    svg.attr("viewBox", `${xExtent[0] - 50} ${yExtent[0] - 50} ${treeWidth} ${treeHeight}`);
     svg.attr("preserveAspectRatio", "xMidYMid meet");
 
-    const fontSize = Math.max(12, Math.min(20, treeWidth / 40));
+    // Determine text size relative to width
+    const fontSize = Math.max(12, Math.min(20, treeWidth / 30));
 
     // Links
     svg.append("g")
-      .selectAll('line')
-      .data(root.links())
-      .enter()
-      .append('line')
-      .attr('x1', d => d.source.x)
-      .attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x)
-      .attr('y2', d => d.target.y)
-      .attr('stroke', 'black');
+        .selectAll('line')
+        .data(root.links())
+        .enter()
+        .append('line')
+        .attr('x1', d => d.source.x)
+        .attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x)
+        .attr('y2', d => d.target.y)
+        .attr('stroke', 'black');
 
     // Nodes
     svg.append("g")
-      .selectAll('circle')
-      .data(nodes)
-      .enter()
-      .append('circle')
-      .attr('cx', d => d.x)
-      .attr('cy', d => d.y)
-      .attr('r', 6)
-      .attr('fill', d => d.children ? 'steelblue' : 'green');
+        .selectAll('circle')
+        .data(root.descendants())
+        .enter()
+        .append('circle')
+        .attr('cx', d => d.x)
+        .attr('cy', d => d.y)
+        .attr('r', 6)
+        .attr('fill', d => d.children ? 'steelblue' : 'green');
 
     // Labels
     svg.append("g")
-      .selectAll('text')
-      .data(nodes)
-      .enter()
-      .append('text')
-      .attr('x', d => d.x + 10)
-      .attr('y', d => d.y + 4)
-      .text(d => d.data.name)
-      .attr('font-size', `${fontSize}px`)
-      .attr('font-family', 'IBM Plex Sans, sans-serif')
-      .attr('dominant-baseline', 'middle');
-  }
-  function updateUnrelatedGuessesDisplay(list) {
-    const ul = document.getElementById('unrelated-list');
-    if (!ul) return;
-    ul.innerHTML = list.map(g => `<li>${g}</li>`).join('');
-  }
+        .selectAll('text')
+        .data(root.descendants())
+        .enter()
+        .append('text')
+        .attr('x', d => d.x + 8)
+        .attr('y', d => d.y + 4)
+        .text(d => d.data.name)
+        .attr('font-size', `${fontSize}px`)
+        .attr('font-family', 'IBM Plex Sans, sans-serif');
 
+    // Unrelated guesses on the right side
+    const unrelatedGroup = svg.append("g")
+        .attr("transform", `translate(${xExtent[1] + 60}, ${yExtent[0] + 20})`);
+
+    unrelatedGroup.append("text")
+        .text("Unrelated guesses:")
+        .attr("font-weight", "bold")
+        .attr("font-size", `${fontSize}px`);
+
+    unrelatedGroup.selectAll(".unrelated-text")
+        .data(unrelated)
+        .enter()
+        .append("text")
+        .attr("class", "unrelated-text")
+        .attr("x", 0)
+        .attr("y", (d, i) => (i + 1) * (fontSize + 5))
+        .text(d => `- ${d}`)
+        .attr("font-size", `${fontSize * 0.9}px`);
+}
+    
 window.addEventListener('resize', () => {
     const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
     renderTree(treeData, unrelatedGuesses);
