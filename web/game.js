@@ -73,7 +73,9 @@ async function startNewGame() {
     input.disabled = false;
     button.disabled = false;
     input.value = '';
-    
+    renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+    updateUnrelatedGuessesDisplay(unrelatedGuesses);
+
     if (checkIfAlreadyPlayed()) return;
 }
 
@@ -125,6 +127,7 @@ function handleGuess() {
     if (sharedPath.length === 0) {
         unrelatedGuesses.push(guess);
         appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
+        updateUnrelatedGuessesDisplay(unrelatedGuesses);
     } else {
         relatedGuesses.push({ name: guess, lineage: LANGUAGE_DATA[guess], sharedPath });
         const deepest = sharedPath[sharedPath.length - 1];
@@ -138,12 +141,8 @@ function handleGuess() {
     if (guess === targetLanguage) {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
         saveWinState();
-        const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
-        if (treeData) {
-            renderTree(treeData, unrelatedGuesses);
-        } else {
-            clearTree();
-        }
+        renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+        updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
         return;
@@ -152,24 +151,15 @@ function handleGuess() {
     if (guessesLeft <= 0) {
         appendOutputLine(`❌ Out of guesses! The answer was "${targetLanguage}".`);
         saveLossState();
-        const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
-        if (treeData) {
-            renderTree(treeData, unrelatedGuesses);
-        } else {
-            clearTree();
-        }
+        renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+        updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
         return;
     }
 
-    const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
-    if (treeData) {
-        renderTree(treeData, unrelatedGuesses);
-    } else {
-        // Clear tree if you want when nothing related yet
-        clearTree();
-    }
+    renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+    updateUnrelatedGuessesDisplay(unrelatedGuesses);
     input.value = '';
     clearAutocompleteSuggestions();
 }
@@ -253,112 +243,79 @@ function updateHighlight(items) {
     if (highlightIndex >= 0) items[highlightIndex].classList.add('highlighted');
 }
 
-function buildLowestSharedTree(relatedGuesses, targetFamily) {
-    if (!relatedGuesses.length) return null;
+function buildClassificationTree(targetLineage, guesses) {
+    const root = { name: targetLineage[0], children: [] };
+    let current = root;
 
-    const familyName = targetFamily[0]; // Top-level family
-    const groups = new Map();
+    for (let i = 1; i < targetLineage.length; i++) {
+        const node = { name: targetLineage[i], children: [] };
+        current.children.push(node);
+        current = node;
+    }
 
-    relatedGuesses.forEach(g => {
-        if (!g.sharedPath || !g.sharedPath.length) return;
-        const deepest = g.sharedPath[g.sharedPath.length - 1];
-        if (!groups.has(deepest)) {
-            groups.set(deepest, { name: deepest, children: [] });
+    guesses.forEach(guess => {
+        const lineage = LANGUAGE_DATA[guess.name];
+        let i = 0;
+        while (i < targetLineage.length && lineage[i] === targetLineage[i]) i++;
+        if (i === 0) return;
+
+        let targetNode = root;
+        for (let j = 1; j < i; j++) {
+            targetNode = targetNode.children.find(child => child.name === lineage[j]);
         }
-        groups.get(deepest).children.push({ name: g.name, isGuess: true });
+        targetNode.children.push({ name: guess.name });
     });
 
-    return {
-        name: familyName,
-        children: Array.from(groups.values())
-    };
+    return root;
 }
 
-function renderTree(data, unrelated = []) {
+function renderTree(data) {
     const svg = d3.select("#classification-tree");
     svg.selectAll("*").remove();
-
-    // Base layout size
-    const baseWidth = 600;
-    const baseHeight = 400;
+    const width = +svg.attr("width");
+    const height = +svg.attr("height");
 
     const root = d3.hierarchy(data);
-    const treeLayout = d3.tree().nodeSize([80, 60]); // Compact spacing
+    const treeLayout = d3.tree().size([width - 40, height - 40]);
     treeLayout(root);
 
-    // Find bounds of all nodes to set viewBox dynamically
-    const xExtent = d3.extent(root.descendants(), d => d.x);
-    const yExtent = d3.extent(root.descendants(), d => d.y);
-
-    const treeWidth = xExtent[1] - xExtent[0] + 100;
-    const treeHeight = yExtent[1] - yExtent[0] + 100;
-
-    svg.attr("viewBox", `${xExtent[0] - 50} ${yExtent[0] - 50} ${treeWidth} ${treeHeight}`);
-    svg.attr("preserveAspectRatio", "xMidYMid meet");
-
-    // Determine text size relative to width
-    const fontSize = Math.max(12, Math.min(20, treeWidth / 30));
-
-    // Links
-    svg.append("g")
-        .selectAll('line')
+    svg.selectAll('line')
         .data(root.links())
         .enter()
         .append('line')
-        .attr('x1', d => d.source.x)
-        .attr('y1', d => d.source.y)
-        .attr('x2', d => d.target.x)
-        .attr('y2', d => d.target.y)
+        .attr('x1', d => d.source.x + 20)
+        .attr('y1', d => d.source.y + 20)
+        .attr('x2', d => d.target.x + 20)
+        .attr('y2', d => d.target.y + 20)
         .attr('stroke', 'black');
 
-    // Nodes
-    svg.append("g")
-        .selectAll('circle')
+    svg.selectAll('circle')
         .data(root.descendants())
         .enter()
         .append('circle')
-        .attr('cx', d => d.x)
-        .attr('cy', d => d.y)
-        .attr('r', 6)
+        .attr('cx', d => d.x + 20)
+        .attr('cy', d => d.y + 20)
+        .attr('r', 5)
         .attr('fill', d => d.children ? 'steelblue' : 'green');
 
-    // Labels
-    svg.append("g")
-        .selectAll('text')
+    svg.selectAll('text')
         .data(root.descendants())
         .enter()
         .append('text')
-        .attr('x', d => d.x + 8)
-        .attr('y', d => d.y + 4)
-        .text(d => d.data.name)
-        .attr('font-size', `${fontSize}px`)
-        .attr('font-family', 'IBM Plex Sans, sans-serif');
-
-    // Unrelated guesses on the right side
-    const unrelatedGroup = svg.append("g")
-        .attr("transform", `translate(${xExtent[1] + 60}, ${yExtent[0] + 20})`);
-
-    unrelatedGroup.append("text")
-        .text("Unrelated guesses:")
-        .attr("font-weight", "bold")
-        .attr("font-size", `${fontSize}px`);
-
-    unrelatedGroup.selectAll(".unrelated-text")
-        .data(unrelated)
-        .enter()
-        .append("text")
-        .attr("class", "unrelated-text")
-        .attr("x", 0)
-        .attr("y", (d, i) => (i + 1) * (fontSize + 5))
-        .text(d => `- ${d}`)
-        .attr("font-size", `${fontSize * 0.9}px`);
+        .attr('x', d => d.x + 25)
+        .attr('y', d => d.y + 25)
+        .text(d => d.data.name);
 }
-    
-window.addEventListener('resize', () => {
-    const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
-    renderTree(treeData, unrelatedGuesses);
-});
-    
+
+function updateUnrelatedGuessesDisplay(list) {
+    const div = document.getElementById('unrelated-guesses');
+    if (!div) return;
+    div.innerHTML = `
+        <strong>Unrelated guesses:</strong>
+        <ul>${list.map(g => `<li>${g}</li>`).join('')}</ul>
+    `;
+}
+
 if (useEasyMode) {
     const notice = document.createElement('div');
     notice.textContent = 'Easy Mode is ON';
