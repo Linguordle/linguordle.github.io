@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
-
+    
 const useEasyMode = localStorage.getItem('easyMode') === 'true';
 const fullData = typeof LANGUAGE_DATA_FULL !== 'undefined' ? LANGUAGE_DATA_FULL : {};
 const easyData = typeof LANGUAGE_DATA_EASY !== 'undefined' ? LANGUAGE_DATA_EASY : {};
@@ -11,9 +11,6 @@ let targetLanguage = '';
 let targetFamily = [];
 let guessedLanguages = new Set();
 let highlightIndex = -1;
-
-let relatedGuesses = [];   // [{ name, lineage, sharedPath }]
-let unrelatedGuesses = []; // [ "Basque", ... ]
 
 const input = document.getElementById('guessInput');
 const button = document.getElementById('guessButton');
@@ -70,27 +67,28 @@ async function startNewGame() {
     unrelatedGuesses = [];
     updateGuessesDisplay();
     clearAutocompleteSuggestions();
+    clearTree();
     input.disabled = false;
     button.disabled = false;
     input.value = '';
-    renderTree(buildClassificationTree(targetFamily, relatedGuesses));
-    updateUnrelatedGuessesDisplay(unrelatedGuesses);
 
     if (checkIfAlreadyPlayed()) return;
 }
 
-function updateFamilyHint(classificationName) {
-    const info = familyDescriptions[classificationName];
-    const label = (classificationName === targetFamily[0]) ? "Family" : "Shared Classification";
-    
-    if (!info) {
-        familyHint.innerHTML = `${label}: ${classificationName}`;
+function updateFamilyHint(familyName) {
+    const familyInfo = familyDescriptions[familyName];
+    const familyHintElement = document.getElementById('familyHint');
+    const label = "Family";
+
+    if (!familyInfo) {
+        familyHintElement.innerHTML = `${label}: ${familyName}`;
         return;
     }
-    familyHint.innerHTML = `
-        <strong>${label}: ${classificationName}</strong><br>
-        <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
-        <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+
+    familyHintElement.innerHTML = `
+        <strong>${label}: ${familyName}</strong><br>
+        <p style="font-size: 0.9rem; line-height: 1.2;">${familyInfo.description}</p>
+        <a href="${familyInfo.link}" target="_blank" rel="noopener noreferrer"> (Wikipedia)</a>
     `;
 }
 
@@ -107,6 +105,9 @@ function saveLossState() {
     localStorage.setItem('lastGameDate', dateKey);
     localStorage.setItem('lastGameResult', 'loss');
 }
+
+let relatedGuesses = [];   
+let unrelatedGuesses = []; 
 
 function handleGuess() {
     const guess = input.value.trim();
@@ -129,7 +130,12 @@ function handleGuess() {
         appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
     } else {
-        relatedGuesses.push({ name: guess, lineage: LANGUAGE_DATA[guess], sharedPath });
+        relatedGuesses.push({
+            name: guess,
+            lineage: LANGUAGE_DATA[guess],
+            sharedPath
+        });
+
         const deepest = sharedPath[sharedPath.length - 1];
         appendOutputLine(`Guess: ${guess} → Common ancestor: ${deepest}`);
         updateFamilyHint(deepest);
@@ -141,7 +147,7 @@ function handleGuess() {
     if (guess === targetLanguage) {
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
         saveWinState();
-        renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+        renderTree(buildLowestSharedTree(relatedGuesses, targetFamily));
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
@@ -151,127 +157,58 @@ function handleGuess() {
     if (guessesLeft <= 0) {
         appendOutputLine(`❌ Out of guesses! The answer was "${targetLanguage}".`);
         saveLossState();
-        renderTree(buildClassificationTree(targetFamily, relatedGuesses));
+        renderTree(buildLowestSharedTree(relatedGuesses, targetFamily));
         updateUnrelatedGuessesDisplay(unrelatedGuesses);
         disableInput();
         clearAutocompleteSuggestions();
         return;
     }
 
-    renderTree(buildClassificationTree(targetFamily, relatedGuesses));
-    updateUnrelatedGuessesDisplay(unrelatedGuesses);
+    if (relatedGuesses.length > 0) {
+        renderTree(buildLowestSharedTree(relatedGuesses, targetFamily));
+    }
+
     input.value = '';
     clearAutocompleteSuggestions();
 }
 
 function getSharedPath(guess, target) {
-    const guessTree = LANGUAGE_DATA[guess];
+    const guessTree  = LANGUAGE_DATA[guess];
     const targetTree = LANGUAGE_DATA[target];
+
     let i = 0;
-    while (i < guessTree.length && i < targetTree.length && guessTree[i] === targetTree[i]) i++;
-    return guessTree.slice(0, i);
-}
-
-function updateGuessesDisplay() {
-    guessesLeftDisplay.textContent = `Guesses Left: ${guessesLeft}`;
-}
-
-function disableInput() {
-    input.disabled = true;
-    button.disabled = true;
-    clearAutocompleteSuggestions();
-}
-
-function appendOutputLine(text) {
-    const line = document.createElement('div');
-    line.textContent = text;
-    output.appendChild(line);
-}
-
-function clearAutocompleteSuggestions() {
-    autocompleteList.innerHTML = '';
-    highlightIndex = -1;
-}
-
-function showAutocompleteSuggestions() {
-    clearAutocompleteSuggestions();
-    const value = input.value.trim();
-    if (!value) return;
-
-    const results = fuse.search(value, { limit: 10 });
-    results.forEach((result, index) => {
-        const match = result.item;
-        if (guessedLanguages.has(match)) return;
-
-        const item = document.createElement('div');
-        item.textContent = match;
-        item.classList.add('autocomplete-item');
-        item.dataset.index = index;
-        item.addEventListener('click', () => {
-            input.value = match;
-            clearAutocompleteSuggestions();
-            input.focus();
-        });
-        autocompleteList.appendChild(item);
-    });
-    highlightIndex = -1;
-}
-
-function handleKeyNavigation(e) {
-    const items = autocompleteList.querySelectorAll('.autocomplete-item');
-    if (!items.length) {
-        if (e.key === 'Enter') handleGuess();
-        return;
+    while (i < guessTree.length && i < targetTree.length && guessTree[i] === targetTree[i]) {
+        i++;
     }
-    if (e.key === 'ArrowDown') {
-        highlightIndex = (highlightIndex + 1) % items.length;
-        updateHighlight(items);
-        e.preventDefault();
-    } else if (e.key === 'ArrowUp') {
-        highlightIndex = (highlightIndex - 1 + items.length) % items.length;
-        updateHighlight(items);
-        e.preventDefault();
-    } else if (e.key === 'Enter' && highlightIndex >= 0) {
-        input.value = items[highlightIndex].textContent;
-        clearAutocompleteSuggestions();
-        e.preventDefault();
-    }
+    return guessTree.slice(0, i); 
 }
 
-function updateHighlight(items) {
-    items.forEach(item => item.classList.remove('highlighted'));
-    if (highlightIndex >= 0) items[highlightIndex].classList.add('highlighted');
-}
+function buildLowestSharedTree(relatedGuesses, targetFamily) {
+    if (!relatedGuesses.length) return null;
 
-function buildClassificationTree(targetLineage, guesses) {
-    const root = { name: targetLineage[0], children: [] };
-    let current = root;
+    const familyName = targetFamily[0];
+    const groups = new Map();
 
-    for (let i = 1; i < targetLineage.length; i++) {
-        const node = { name: targetLineage[i], children: [] };
-        current.children.push(node);
-        current = node;
-    }
-
-    guesses.forEach(guess => {
-        const lineage = LANGUAGE_DATA[guess.name];
-        let i = 0;
-        while (i < targetLineage.length && lineage[i] === targetLineage[i]) i++;
-        if (i === 0) return;
-
-        let targetNode = root;
-        for (let j = 1; j < i; j++) {
-            targetNode = targetNode.children.find(child => child.name === lineage[j]);
+    relatedGuesses.forEach(g => {
+        if (!g.sharedPath || !g.sharedPath.length) return;
+        const deepest = g.sharedPath[g.sharedPath.length - 1];
+        if (!groups.has(deepest)) {
+            groups.set(deepest, { name: deepest, children: [] });
         }
-        targetNode.children.push({ name: guess.name });
+        groups.get(deepest).children.push({ name: g.name, isGuess: true });
     });
 
-    return root;
+    return {
+        name: familyName,
+        children: Array.from(groups.values())
+    };
 }
 
 function renderTree(data) {
     const svg = d3.select("#classification-tree");
     svg.selectAll("*").remove();
+    if (!data) return;
+
     const width = +svg.attr("width");
     const height = +svg.attr("height");
 
@@ -307,6 +244,11 @@ function renderTree(data) {
         .text(d => d.data.name);
 }
 
+function clearTree() {
+    const svg = d3.select("#classification-tree");
+    svg.selectAll("*").remove();
+}
+
 function updateUnrelatedGuessesDisplay(list) {
     const div = document.getElementById('unrelated-guesses');
     if (!div) return;
@@ -314,6 +256,83 @@ function updateUnrelatedGuessesDisplay(list) {
         <strong>Unrelated guesses:</strong>
         <ul>${list.map(g => `<li>${g}</li>`).join('')}</ul>
     `;
+}
+
+function updateGuessesDisplay() {
+    guessesLeftDisplay.textContent = `Guesses Left: ${guessesLeft}`;
+}
+
+function disableInput() {
+    input.disabled = true;
+    button.disabled = true;
+    clearAutocompleteSuggestions();
+}
+
+function appendOutputLine(text) {
+    const line = document.createElement('div');
+    line.textContent = text;
+    output.appendChild(line);
+}
+
+function clearAutocompleteSuggestions() {
+    autocompleteList.innerHTML = '';
+    highlightIndex = -1;
+}
+
+function showAutocompleteSuggestions() {
+    clearAutocompleteSuggestions();
+    const value = input.value.trim();
+    if (!value) return;
+
+    const results = fuse.search(value, { limit: 10 });
+
+    results.forEach((result, index) => {
+        const match = result.item;
+        if (guessedLanguages.has(match)) return;
+
+        const item = document.createElement('div');
+        item.textContent = match;
+        item.classList.add('autocomplete-item');
+        item.dataset.index = index;
+        item.addEventListener('click', () => {
+            input.value = match;
+            clearAutocompleteSuggestions();
+            input.focus();
+        });
+        autocompleteList.appendChild(item);
+    });
+    highlightIndex = -1;
+}
+    
+function handleKeyNavigation(e) {
+    const items = autocompleteList.querySelectorAll('.autocomplete-item');
+    if (!items.length) {
+        if (e.key === 'Enter') {
+            handleGuess();
+        }
+        return;
+    }
+    if (e.key === 'ArrowDown') {
+        highlightIndex = (highlightIndex + 1) % items.length;
+        updateHighlight(items);
+        e.preventDefault();
+    } else if (e.key === 'ArrowUp') {
+        highlightIndex = (highlightIndex - 1 + items.length) % items.length;
+        updateHighlight(items);
+        e.preventDefault();
+    } else if (e.key === 'Enter' && highlightIndex >= 0) {
+        input.value = items[highlightIndex].textContent;
+        clearAutocompleteSuggestions();
+        e.preventDefault();
+        handleGuess();
+    }
+}
+
+function updateHighlight(items) {
+    items.forEach(item => item.classList.remove('highlighted'));
+    if (highlightIndex >= 0) {
+        items[highlightIndex].classList.add('highlighted');
+    }
 }
 
 if (useEasyMode) {
