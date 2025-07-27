@@ -114,8 +114,8 @@ function updateFamilyHint(classificationName) {
 
 function saveWinState() {
     const today = new Date();
-    const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-    localStorage.setItem('lastGameDate', dateKey);
+    theDateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    localStorage.setItem('lastGameDate', theDateKey);
     localStorage.setItem('lastGameResult', 'win');
 }
 
@@ -330,12 +330,25 @@ function renderTree(data, unrelatedList = []) {
     const treeLayout = d3.tree()
         .size([innerWidth * 0.75, innerHeight])
         .separation((a, b) => {
-            const aName = a.data.name.length;
-            const bName = b.data.name.length;
-            return (a.parent === b.parent ? 1 : 2) + (aName + bName) / 10;
+            // Increase spacing for longer labels to reduce collisions
+            const base = (a.parent === b.parent ? 1 : 2);
+            const extra = (a.data.name.length + b.data.name.length) / 6;
+            return base + extra;
         });
 
     treeLayout(root);
+
+    // --- NEW: spread nodes that share the same depth vertically so labels don't overlap ---
+    const minVerticalGap = 18; // px between nodes on the same depth (same "height")
+    const depthGroups = d3.group(root.descendants(), d => d.depth);
+    for (const [, nodesAtDepth] of depthGroups) {
+        // Sort by current x (horizontal) to keep order stable
+        nodesAtDepth.sort((a, b) => a.x - b.x);
+        nodesAtDepth.forEach((node, idx) => {
+            node.y += idx * minVerticalGap; // push each node down a bit more than the previous
+        });
+    }
+    // -----------------------------------------------------------------------
 
     const tx = d => d.x;
     const ty = d => d.y;
