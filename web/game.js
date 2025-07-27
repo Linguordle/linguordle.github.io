@@ -278,26 +278,33 @@ function renderTree(data, unrelated = []) {
     const svg = d3.select("#classification-tree");
     svg.selectAll("*").remove();
 
-    // Base layout size
-    const baseWidth = 600;
-    const baseHeight = 400;
-
     const root = d3.hierarchy(data);
-    const treeLayout = d3.tree().nodeSize([80, 60]); // Compact spacing
+    const treeLayout = d3.tree().nodeSize([100, 70]); // Adjust spacing between nodes
     treeLayout(root);
 
-    // Find bounds of all nodes to set viewBox dynamically
+    // Calculate max label width to ensure text fits in viewBox
+    const temp = svg.append("text")
+        .attr("font-size", "16px")
+        .attr("font-family", "IBM Plex Sans, sans-serif")
+        .text("Sample");
+    const charWidth = temp.node().getBBox().width / temp.text().length;
+    temp.remove();
+
+    const maxLabelLength = d3.max(root.descendants(), d => d.data.name.length);
+    const labelPadding = maxLabelLength * charWidth + 50;
+
+    // Determine x and y extents of nodes
     const xExtent = d3.extent(root.descendants(), d => d.x);
     const yExtent = d3.extent(root.descendants(), d => d.y);
 
-    const treeWidth = xExtent[1] - xExtent[0] + 100;
-    const treeHeight = yExtent[1] - yExtent[0] + 100;
+    // Set viewBox with padding to avoid cutting off labels
+    const treeWidth = (xExtent[1] - xExtent[0]) + labelPadding * 2;
+    const treeHeight = (yExtent[1] - yExtent[0]) + 100;
 
-    svg.attr("viewBox", `${xExtent[0] - 50} ${yExtent[0] - 50} ${treeWidth} ${treeHeight}`);
+    svg.attr("viewBox", `${xExtent[0] - labelPadding} ${yExtent[0] - 50} ${treeWidth} ${treeHeight}`);
     svg.attr("preserveAspectRatio", "xMidYMid meet");
 
-    // Determine text size relative to width
-    const fontSize = Math.max(12, Math.min(20, treeWidth / 30));
+    const fontSize = Math.max(12, Math.min(20, treeWidth / 40));
 
     // Links
     svg.append("g")
@@ -328,15 +335,16 @@ function renderTree(data, unrelated = []) {
         .data(root.descendants())
         .enter()
         .append('text')
-        .attr('x', d => d.x + 8)
+        .attr('x', d => d.x + 10)
         .attr('y', d => d.y + 4)
         .text(d => d.data.name)
         .attr('font-size', `${fontSize}px`)
-        .attr('font-family', 'IBM Plex Sans, sans-serif');
+        .attr('font-family', 'IBM Plex Sans, sans-serif')
+        .attr('dominant-baseline', 'middle');
 
-    // Unrelated guesses on the right side
+    // Unrelated guesses on the right
     const unrelatedGroup = svg.append("g")
-        .attr("transform", `translate(${xExtent[1] + 60}, ${yExtent[0] + 20})`);
+        .attr("transform", `translate(${xExtent[1] + labelPadding / 2}, ${yExtent[0] + 20})`);
 
     unrelatedGroup.append("text")
         .text("Unrelated guesses:")
@@ -353,7 +361,7 @@ function renderTree(data, unrelated = []) {
         .text(d => `- ${d}`)
         .attr("font-size", `${fontSize * 0.9}px`);
 }
-    
+
 window.addEventListener('resize', () => {
     const treeData = buildLowestSharedTree(relatedGuesses, targetFamily);
     renderTree(treeData, unrelatedGuesses);
