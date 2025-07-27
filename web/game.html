@@ -71,18 +71,27 @@
         }
 
         #tree-container {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: auto;
+            margin-top: 1rem;
             text-align: center;
         }
 
         #classification-tree {
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-            display: block;
-            margin: 0 auto;
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #unrelated-guesses {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        #unrelated-guesses ul {
+            list-style-type: disc;
+            padding-left: 20px;
         }
 
     </style>
@@ -100,8 +109,9 @@
     <p id="guessesLeft"></p>
     <div id="output"></div>
     <div id="tree-container">
-        <svg id="classification-tree" preserveAspectRatio="xMidYMid meet"></svg>
+      <svg id="classification-tree" width="600" height="400"></svg>
     </div>
+    <div id="unrelated-guesses"></div>
     <script src="familyDescriptions.js"></script>
     <script src="data.js"></script>
     <script src="game.js"></script>
