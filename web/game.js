@@ -288,49 +288,64 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
 }
 
 function renderTree(data) {
-    // NEW: store the last data we rendered, for resize re-rendering
-    lastTreeData = data; // NEW
+    lastTreeData = data;
 
-    const container = document.getElementById('tree-container'); // NEW
-    const width = container.clientWidth;                          // NEW (dynamic)
-    const height = 400;                                           // NEW (you can compute this)
+    const container = document.getElementById('tree-container');
+    const width = container.clientWidth;
+    const height = 400;
 
     const svg = d3.select("#classification-tree")
-        .attr("width", width)                                     // NEW
-        .attr("height", height)                                   // NEW
-        .attr("viewBox", [0, 0, width, height])                   // NEW (helps responsiveness)
-        .attr("preserveAspectRatio", "xMidYMid meet");            // NEW
+        .attr("width", width)
+        .attr("height", height)
+        .attr("viewBox", [0, 0, width, height])
+        .attr("preserveAspectRatio", "xMidYMid meet");
 
     svg.selectAll("*").remove();
+
     const root = d3.hierarchy(data);
-    const treeLayout = d3.tree().size([width - 40, height - 40]);
+
+    // --- KEY CHANGE: use separation based on text length and depth ---
+    const treeLayout = d3.tree()
+        .size([width - 100, height - 100])
+        .separation((a, b) => {
+            const aName = a.data.name.length;
+            const bName = b.data.name.length;
+            // Separate by 1 unit + extra for text length
+            return (a.parent == b.parent ? 1 : 2) + (aName + bName) / 10;
+        });
+
     treeLayout(root);
 
+    // Draw links
     svg.selectAll('line')
         .data(root.links())
         .enter()
         .append('line')
-        .attr('x1', d => d.source.x + 20)
-        .attr('y1', d => d.source.y + 20)
-        .attr('x2', d => d.target.x + 20)
-        .attr('y2', d => d.target.y + 20)
+        .attr('x1', d => d.source.x + 50)
+        .attr('y1', d => d.source.y + 50)
+        .attr('x2', d => d.target.x + 50)
+        .attr('y2', d => d.target.y + 50)
         .attr('stroke', 'black');
 
+    // Draw nodes
     svg.selectAll('circle')
         .data(root.descendants())
         .enter()
         .append('circle')
-        .attr('cx', d => d.x + 20)
-        .attr('cy', d => d.y + 20)
+        .attr('cx', d => d.x + 50)
+        .attr('cy', d => d.y + 50)
         .attr('r', 5)
         .attr('fill', d => d.children ? 'steelblue' : 'green');
 
+    // Draw labels
     svg.selectAll('text')
         .data(root.descendants())
         .enter()
         .append('text')
-        .attr('x', d => d.x + 25)
-        .attr('y', d => d.y + 25)
+        .attr('x', d => d.x + 55)
+        .attr('y', d => d.y + 55)
+        .attr('font-size', '12px')
+        .attr('dominant-baseline', 'middle')
         .text(d => d.data.name);
 }
 
