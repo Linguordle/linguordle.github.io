@@ -323,7 +323,7 @@ function renderTree(data, unrelatedList = []) {
 
     const root = d3.hierarchy(data);
     const estimatedNodes = root.descendants().length + unrelatedList.length + 3;
-    const height = Math.max(400, 24 * estimatedNodes);
+    let height = Math.max(400, 24 * estimatedNodes);
 
     const margin = { top: 20, right: 160, bottom: 20, left: 20 };
     const innerWidth = width - margin.left - margin.right;
@@ -339,11 +339,10 @@ function renderTree(data, unrelatedList = []) {
 
     const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
-    // LEFT: related tree (75% width)
+    // --- Tree layout ---
     const treeLayout = d3.tree()
         .size([innerWidth * 0.75, innerHeight])
         .separation((a, b) => {
-            // Increase spacing for longer labels to reduce collisions
             const base = (a.parent === b.parent ? 1 : 2);
             const extra = (a.data.name.length + b.data.name.length) / 6;
             return base + extra;
@@ -351,22 +350,32 @@ function renderTree(data, unrelatedList = []) {
 
     treeLayout(root);
 
-    // --- NEW: spread nodes that share the same depth vertically so labels don't overlap ---
-    const minVerticalGap = 18; // px between nodes on the same depth (same "height")
+    // --- Spread nodes with same depth ---
+    const minVerticalGap = 18;
     const depthGroups = d3.group(root.descendants(), d => d.depth);
     for (const [, nodesAtDepth] of depthGroups) {
-        // Sort by current x (horizontal) to keep order stable
         nodesAtDepth.sort((a, b) => a.x - b.x);
         nodesAtDepth.forEach((node, idx) => {
-            node.y += idx * minVerticalGap; // push each node down a bit more than the previous
+            node.y += idx * minVerticalGap;
         });
     }
-    // -----------------------------------------------------------------------
+
+    // --- Rescale Y positions to fit in container ---
+    const yPositions = root.descendants().map(d => d.y);
+    const minY = Math.min(...yPositions);
+    const maxY = Math.max(...yPositions);
+
+    const actualHeight = maxY - minY + margin.top + margin.bottom + 40;
+    if (actualHeight > height) {
+        height = actualHeight;
+        svg.attr("height", height)
+           .attr("viewBox", [0, 0, width, height]);
+    }
 
     const tx = d => d.x;
-    const ty = d => d.y;
+    const ty = d => d.y - minY + 20; // shift upward so everything fits
 
-    // Links
+    // --- Links ---
     g.append("g")
         .selectAll("line")
         .data(root.links())
@@ -378,7 +387,7 @@ function renderTree(data, unrelatedList = []) {
         .attr("y2", d => ty(d.target))
         .attr("stroke", "#333");
 
-    // Nodes
+    // --- Nodes ---
     const nodes = g.append("g")
         .selectAll("g.node")
         .data(root.descendants())
@@ -399,7 +408,7 @@ function renderTree(data, unrelatedList = []) {
         .attr("dy", "0.32em")
         .text(d => (d.data.isTarget && !isRevealed) ? '???' : d.data.name);
 
-    // RIGHT: unrelated guesses as disconnected nodes
+    // --- Unrelated guesses on right side ---
     if (unrelatedList.length) {
         const xRight = innerWidth * 0.85;
         const startY = 0;
@@ -413,21 +422,22 @@ function renderTree(data, unrelatedList = []) {
             .attr("font-weight", "bold")
             .text("Unrelated guesses");
 
-        const unrelatedNodes = unrelatedGroup.selectAll("g.u-node")
+        unrelatedGroup.selectAll("g.u-node")
             .data(unrelatedList)
             .enter()
             .append("g")
             .attr("class", "u-node")
-            .attr("transform", (_, i) => `translate(${xRight}, ${startY + i * stepY})`);
-
-        unrelatedNodes.append("circle")
-            .attr("r", 5)
-            .attr("fill", "crimson");
-
-        unrelatedNodes.append("text")
-            .attr("x", 8)
-            .attr("dy", "0.32em")
-            .text(d => d);
+            .attr("transform", (_, i) => `translate(${xRight}, ${startY + i * stepY})`)
+            .each(function(d) {
+                const group = d3.select(this);
+                group.append("circle")
+                    .attr("r", 5)
+                    .attr("fill", "crimson");
+                group.append("text")
+                    .attr("x", 8)
+                    .attr("dy", "0.32em")
+                    .text(d);
+            });
     }
 }
 
