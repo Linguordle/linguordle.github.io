@@ -272,53 +272,40 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
         return {
             name: targetFamily[0],
             children: [
-                { name: targetLanguage, isTarget: true }
+                { name: '[Hidden Target]', isTarget: true }
             ]
         };
     }
 
-    // Find shared path among all related guesses and target
-    const allLineages = relatedGuesses.map(g => g.lineage).concat([targetFamily]);
+    const allPaths = relatedGuesses.map(g => g.lineage).concat([targetFamily]);
     let sharedDepth = 0;
+
     while (
-        allLineages.every(path => sharedDepth < path.length && path[sharedDepth] === allLineages[0][sharedDepth])
+        allPaths.every(path => sharedDepth < path.length && path[sharedDepth] === allPaths[0][sharedDepth])
     ) {
         sharedDepth++;
     }
 
-    const sharedPath = targetFamily.slice(0, sharedDepth);
-    let root = { name: sharedPath[0], children: [] };
-    let current = root;
+    const sharedClassification = allPaths[0][sharedDepth - 1] || 'root';
 
-    for (let i = 1; i < sharedPath.length; i++) {
-        const child = { name: sharedPath[i], children: [] };
-        current.children.push(child);
-        current = child;
-    }
-
-    // Create subtrees under the shared node
-    function insertPath(rootNode, lineage, leafNode) {
-        let node = rootNode;
-        for (let i = sharedDepth; i < lineage.length; i++) {
-            const name = lineage[i];
-            let child = node.children.find(c => c.name === name);
-            if (!child) {
-                child = { name, children: [] };
-                node.children.push(child);
-            }
-            node = child;
-        }
-        node.children.push(leafNode);
-    }
+    const root = { name: sharedClassification, children: [] };
 
     for (const guess of relatedGuesses) {
-        insertPath(current, guess.lineage, { name: guess.name, isGuess: true });
+        const guessNode = {
+            name: guess.name,
+            isGuess: true
+        };
+        root.children.push(guessNode);
     }
 
-    insertPath(current, targetFamily, { name: targetLanguage, isTarget: true });
+    root.children.push({
+        name: '[Hidden Target]',
+        isTarget: true
+    });
 
     return root;
 }
+
 
 function renderTree(data, unrelatedList = []) {
     lastTreeData = data;
