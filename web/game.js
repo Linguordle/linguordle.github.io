@@ -6,6 +6,7 @@ const easyData = typeof LANGUAGE_DATA_EASY !== 'undefined' ? LANGUAGE_DATA_EASY 
 const LANGUAGE_DATA = useEasyMode ? easyData : fullData;
 const languageList = Object.keys(LANGUAGE_DATA);
 const MAX_GUESSES = 15;
+const unrelatedNodePositions = {};
 
 let guessesLeft = MAX_GUESSES;
 let targetLanguage = '';
@@ -413,13 +414,19 @@ function renderTree(data, unrelatedList = []) {
         const unrelatedGroup = g.append("g").attr("class", "unrelated");
 
         unrelatedList.forEach((name, i) => {
-            const angle = Math.random() * 2 * Math.PI;
-            const radius = 80 + Math.random() * 60;
-            const centerX = innerWidth * 0.88;
-            const centerY = innerHeight / 2;
+            if (!unrelatedNodePositions[name]) {
+                const angle = Math.random() * 2 * Math.PI;
+                const radius = 80 + Math.random() * 60;
+                const centerX = innerWidth * 0.88;
+                const centerY = innerHeight / 2;
 
-            const x = centerX + radius * Math.cos(angle);
-            const y = centerY + radius * Math.sin(angle);
+                unrelatedNodePositions[name] = {
+                    x: centerX + radius * Math.cos(angle),
+                    y: centerY + radius * Math.sin(angle)
+                };
+            }
+
+            const { x, y } = unrelatedNodePositions[name];
 
             const nodeGroup = unrelatedGroup.append("g")
                 .attr("transform", `translate(${x}, ${y})`);
