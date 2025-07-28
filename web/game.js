@@ -277,6 +277,7 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
         };
     }
 
+    // Find shared depth
     const allLineages = relatedGuesses.map(g => g.lineage).concat([targetFamily]);
     let sharedDepth = 0;
     while (
@@ -289,26 +290,55 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
     let root = { name: sharedPath[0], children: [] };
     let current = root;
 
+    // Build the shared classification path
     for (let i = 1; i < sharedPath.length; i++) {
         const child = { name: sharedPath[i], children: [] };
         current.children.push(child);
         current = child;
     }
 
-    // Attach guesses directly to shared node (no intermediate lineage)
+    // Add guess nodes (excluding last element of lineage to avoid duplication)
     for (const guess of relatedGuesses) {
-        current.children.push({ name: guess.name, isGuess: true });
+        const trimmedLineage = guess.lineage.slice(sharedDepth, guess.lineage.length - 1);
+        let guessNode = current;
+        for (const level of trimmedLineage) {
+            let existing = guessNode.children.find(c => c.name === level);
+            if (!existing) {
+                existing = { name: level, children: [] };
+                guessNode.children.push(existing);
+            }
+            guessNode = existing;
+        }
+        guessNode.children.push({ name: guess.name, isGuess: true });
     }
 
-    // Add full hierarchy from shared classification to answer
-    let answerNode = current;
-    for (let i = sharedDepth; i < targetFamily.length - 1; i++) {
-        const intermediate = { name: targetFamily[i], children: [] };
-        answerNode.children.push(intermediate);
-        answerNode = intermediate;
+    // Determine how deep targetFamily can go based on shared prefixes with guesses
+    let maxDepth = sharedDepth;
+    for (const guess of relatedGuesses) {
+        let i = sharedDepth;
+        while (
+            i < guess.lineage.length &&
+            i < targetFamily.length &&
+            guess.lineage[i] === targetFamily[i]
+        ) {
+            i++;
+        }
+        if (i > maxDepth) maxDepth = i;
     }
 
-    answerNode.children.push({ name: '[Hidden Target]', isTarget: true });
+    // Add target language path, limited to max shared depth with guesses
+    const trimmedTargetPath = targetFamily.slice(sharedDepth, maxDepth);
+    let targetNode = current;
+    for (const level of trimmedTargetPath) {
+        let existing = targetNode.children.find(c => c.name === level);
+        if (!existing) {
+            existing = { name: level, children: [] };
+            targetNode.children.push(existing);
+        }
+        targetNode = existing;
+    }
+
+    targetNode.children.push({ name: '[Hidden Target]', isTarget: true });
 
     return root;
 }
