@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '0 5 * * *'  # 5 AM UTC daily
 
 permissions:
   contents: write
