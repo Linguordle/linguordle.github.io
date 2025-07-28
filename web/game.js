@@ -270,35 +270,71 @@ function updateHighlight(items) {
 function buildLowestSharedTree(relatedGuesses, targetFamily) {
     if (!relatedGuesses.length) {
         return {
-            name: targetFamily[0],
-            children: [
-                { name: '[Hidden Target]', isTarget: true }
-            ]
+            name: '[Hidden Root]',
+            children: [{ name: '[Hidden Target]', isTarget: true }]
         };
     }
 
-    // Determine the shared depth between all guesses and the target
     const allLineages = relatedGuesses.map(g => g.lineage).concat([targetFamily]);
+
+    // Count occurrences of each classification path
+    const pathCount = {};
+    for (const lineage of allLineages) {
+        for (let i = 0; i < lineage.length; i++) {
+            const key = lineage.slice(0, i + 1).join(' > ');
+            pathCount[key] = (pathCount[key] || 0) + 1;
+        }
+    }
+
+    // Determine shared root (first classification node that's shared)
     let sharedDepth = 0;
     while (
-        allLineages.every(path => sharedDepth < path.length && path[sharedDepth] === allLineages[0][sharedDepth])
+        sharedDepth < targetFamily.length &&
+        pathCount[targetFamily.slice(0, sharedDepth + 1).join(' > ')] >= 2
     ) {
         sharedDepth++;
     }
 
     const sharedPath = targetFamily.slice(0, sharedDepth);
-    let root = { name: sharedPath[0], children: [] };
+    let root = { name: sharedPath[0] || '[Hidden Root]', children: [] };
     let current = root;
 
-    // Build shared classification path
+    // Build shared path that is actually shared
     for (let i = 1; i < sharedPath.length; i++) {
         const child = { name: sharedPath[i], children: [] };
         current.children.push(child);
         current = child;
     }
 
-    // Determine how far the target lineage should be revealed
-    let maxTargetDepth = sharedDepth;
+    // Function to conditionally add a lineage
+    function addLineage(lineage, isGuess = false, displayName = null) {
+        let node = current;
+        for (let i = sharedDepth; i < lineage.length - 1; i++) {
+            const pathKey = lineage.slice(0, i + 1).join(' > ');
+            if (pathCount[pathKey] < 2) break;
+
+            let existing = node.children.find(c => c.name === lineage[i]);
+            if (!existing) {
+                existing = { name: lineage[i], children: [] };
+                node.children.push(existing);
+            }
+            node = existing;
+        }
+
+        node.children.push({
+            name: displayName || lineage[lineage.length - 1],
+            isGuess,
+            isTarget: !isGuess
+        });
+    }
+
+    // Add guesses
+    for (const guess of relatedGuesses) {
+        addLineage(guess.lineage, true, guess.name);
+    }
+
+    // Add target path if it's partially shared with any guess
+    let targetOverlapDepth = sharedDepth;
     for (const guess of relatedGuesses) {
         let i = sharedDepth;
         while (
@@ -306,15 +342,17 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
             i < targetFamily.length &&
             guess.lineage[i] === targetFamily[i]
         ) {
-            i++;
+            const key = targetFamily.slice(0, i + 1).join(' > ');
+            if (pathCount[key] >= 2) i++;
+            else break;
         }
-        if (i > maxTargetDepth) maxTargetDepth = i;
+        if (i > targetOverlapDepth) targetOverlapDepth = i;
     }
 
-    // Build target branch from sharedDepth up to maxTargetDepth
-    const trimmedTargetPath = targetFamily.slice(sharedDepth, maxTargetDepth);
+    // Add target path only up to the overlap depth
     let targetNode = current;
-    for (const level of trimmedTargetPath) {
+    for (let i = sharedDepth; i < targetOverlapDepth; i++) {
+        const level = targetFamily[i];
         let existing = targetNode.children.find(c => c.name === level);
         if (!existing) {
             existing = { name: level, children: [] };
@@ -324,38 +362,6 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
     }
 
     targetNode.children.push({ name: '[Hidden Target]', isTarget: true });
-
-    // Determine shared paths between guesses or with target
-    const guessCountAtLevel = {};
-    for (const guess of relatedGuesses) {
-        for (let i = sharedDepth; i < guess.lineage.length; i++) {
-            const key = guess.lineage.slice(0, i + 1).join(' > ');
-            guessCountAtLevel[key] = (guessCountAtLevel[key] || 0) + 1;
-        }
-    }
-    for (let i = sharedDepth; i < targetFamily.length; i++) {
-        const key = targetFamily.slice(0, i + 1).join(' > ');
-        guessCountAtLevel[key] = (guessCountAtLevel[key] || 0) + 1;
-    }
-
-    // Add each guess, revealing only shared lineage segments
-    for (const guess of relatedGuesses) {
-        let guessNode = current;
-        for (let i = sharedDepth; i < guess.lineage.length - 1; i++) {
-            const level = guess.lineage[i];
-            const fullPath = guess.lineage.slice(0, i + 1).join(' > ');
-
-            if (guessCountAtLevel[fullPath] < 2) break; // only include if shared
-
-            let existing = guessNode.children.find(c => c.name === level);
-            if (!existing) {
-                existing = { name: level, children: [] };
-                guessNode.children.push(existing);
-            }
-            guessNode = existing;
-        }
-        guessNode.children.push({ name: guess.name, isGuess: true });
-    }
 
     return root;
 }
