@@ -270,71 +270,50 @@ function updateHighlight(items) {
 function buildLowestSharedTree(relatedGuesses, targetFamily) {
     if (!relatedGuesses.length) {
         return {
-            name: '[Hidden Root]',
-            children: [{ name: '[Hidden Target]', isTarget: true }]
+            name: targetFamily[0],
+            children: [
+                { name: '[Hidden Target]', isTarget: true }
+            ]
         };
     }
 
+    // Step 1: Determine shared depth
     const allLineages = relatedGuesses.map(g => g.lineage).concat([targetFamily]);
-
-    // Count occurrences of each classification path
-    const pathCount = {};
-    for (const lineage of allLineages) {
-        for (let i = 0; i < lineage.length; i++) {
-            const key = lineage.slice(0, i + 1).join(' > ');
-            pathCount[key] = (pathCount[key] || 0) + 1;
-        }
-    }
-
-    // Determine shared root (first classification node that's shared)
     let sharedDepth = 0;
     while (
-        sharedDepth < targetFamily.length &&
-        pathCount[targetFamily.slice(0, sharedDepth + 1).join(' > ')] >= 2
+        allLineages.every(path => sharedDepth < path.length && path[sharedDepth] === allLineages[0][sharedDepth])
     ) {
         sharedDepth++;
     }
 
     const sharedPath = targetFamily.slice(0, sharedDepth);
-    let root = { name: sharedPath[0] || '[Hidden Root]', children: [] };
+    let root = { name: sharedPath[0], children: [] };
     let current = root;
 
-    // Build shared path that is actually shared
+    // Build the rest of the shared path (for now)
+    const sharedNodes = [root];
     for (let i = 1; i < sharedPath.length; i++) {
-        const child = { name: sharedPath[i], children: [] };
-        current.children.push(child);
-        current = child;
+        const node = { name: sharedPath[i], children: [] };
+        current.children.push(node);
+        current = node;
+        sharedNodes.push(current);
     }
 
-    // Function to conditionally add a lineage
-    function addLineage(lineage, isGuess = false, displayName = null) {
-        let node = current;
-        for (let i = sharedDepth; i < lineage.length - 1; i++) {
-            const pathKey = lineage.slice(0, i + 1).join(' > ');
-            if (pathCount[pathKey] < 2) break;
-
-            let existing = node.children.find(c => c.name === lineage[i]);
-            if (!existing) {
-                existing = { name: lineage[i], children: [] };
-                node.children.push(existing);
-            }
-            node = existing;
-        }
-
-        node.children.push({
-            name: displayName || lineage[lineage.length - 1],
-            isGuess,
-            isTarget: !isGuess
-        });
-    }
-
-    // Add guesses
+    // Determine shared lineage segments across guesses/target
+    const lineageUsage = {};
     for (const guess of relatedGuesses) {
-        addLineage(guess.lineage, true, guess.name);
+        for (let i = sharedDepth; i < guess.lineage.length; i++) {
+            const key = guess.lineage.slice(0, i + 1).join(' > ');
+            lineageUsage[key] = (lineageUsage[key] || 0) + 1;
+        }
+    }
+    for (let i = sharedDepth; i < targetFamily.length; i++) {
+        const key = targetFamily.slice(0, i + 1).join(' > ');
+        lineageUsage[key] = (lineageUsage[key] || 0) + 1;
     }
 
-    // Add target path if it's partially shared with any guess
-    let targetOverlapDepth = sharedDepth;
+    // Determine how far to reveal the target
+    let maxTargetDepth = sharedDepth;
     for (const guess of relatedGuesses) {
         let i = sharedDepth;
         while (
@@ -342,17 +321,18 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
             i < targetFamily.length &&
             guess.lineage[i] === targetFamily[i]
         ) {
-            const key = targetFamily.slice(0, i + 1).join(' > ');
-            if (pathCount[key] >= 2) i++;
-            else break;
+            i++;
         }
-        if (i > targetOverlapDepth) targetOverlapDepth = i;
+        if (i > maxTargetDepth) maxTargetDepth = i;
     }
 
-    // Add target path only up to the overlap depth
+    // Build target branch
     let targetNode = current;
-    for (let i = sharedDepth; i < targetOverlapDepth; i++) {
+    for (let i = sharedDepth; i < maxTargetDepth; i++) {
         const level = targetFamily[i];
+        const fullPath = targetFamily.slice(0, i + 1).join(' > ');
+        if (lineageUsage[fullPath] < 2) break;
+
         let existing = targetNode.children.find(c => c.name === level);
         if (!existing) {
             existing = { name: level, children: [] };
@@ -363,7 +343,43 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
 
     targetNode.children.push({ name: '[Hidden Target]', isTarget: true });
 
-    return root;
+    // Add guesses
+    for (const guess of relatedGuesses) {
+        let guessNode = current;
+        for (let i = sharedDepth; i < guess.lineage.length - 1; i++) {
+            const level = guess.lineage[i];
+            const fullPath = guess.lineage.slice(0, i + 1).join(' > ');
+            if (lineageUsage[fullPath] < 2) break;
+
+            let existing = guessNode.children.find(c => c.name === level);
+            if (!existing) {
+                existing = { name: level, children: [] };
+                guessNode.children.push(existing);
+            }
+            guessNode = existing;
+        }
+        guessNode.children.push({ name: guess.name, isGuess: true });
+    }
+
+    // Step 4: Prune non-root classification nodes with only one child (unless that child is a guess/target)
+    function pruneTree(node, isRoot = false) {
+        if (!node.children || node.children.length === 0) return node;
+
+        node.children = node.children.map(child => pruneTree(child)).filter(Boolean);
+
+        // Don't prune root, guesses, or targets
+        const isLeaf = node.children.length === 0;
+        const isSpecial = isRoot || node.isGuess || node.isTarget;
+
+        if (!isSpecial && node.children.length === 1 && !node.children[0].isGuess && !node.children[0].isTarget) {
+            // Collapse node by replacing it with its child
+            return node.children[0];
+        }
+
+        return node;
+    }
+
+    return pruneTree(root, true);
 }
 
 function renderTree(data, unrelatedList = []) {
