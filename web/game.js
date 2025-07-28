@@ -267,45 +267,53 @@ function updateHighlight(items) {
     if (highlightIndex >= 0) items[highlightIndex].classList.add('highlighted');
 }
 
-function buildLowestSharedTree(relatedGuesses, targetFamily) {
-    if (!relatedGuesses.length) {
-        return {
-            name: targetFamily[0],
-            children: [
-                { name: '[Hidden Target]', isTarget: true }
-            ]
-        };
+function buildLowestSharedTree(relatedGuesses, targetLineage) {
+    const topFamily = targetLineage[0];
+    const root = { name: topFamily, children: [] };
+
+    function findOrCreateChild(node, name) {
+        let child = node.children.find(c => c.name === name);
+        if (!child) {
+            child = { name, children: [] };
+            node.children.push(child);
+        }
+        return child;
     }
 
-    const allPaths = relatedGuesses.map(g => g.lineage).concat([targetFamily]);
-    let sharedDepth = 0;
-
-    while (
-        allPaths.every(path => sharedDepth < path.length && path[sharedDepth] === allPaths[0][sharedDepth])
-    ) {
-        sharedDepth++;
+    function getSharedDepth(pathA, pathB) {
+        let depth = 0;
+        while (depth < pathA.length && depth < pathB.length && pathA[depth] === pathB[depth]) {
+            depth++;
+        }
+        return depth;
     }
 
-    const sharedClassification = allPaths[0][sharedDepth - 1] || 'root';
+    function insertAtPath(baseNode, lineage, fromDepth, leafNode) {
+        let current = baseNode;
+        for (let i = fromDepth; i < lineage.length; i++) {
+            const name = lineage[i];
+            current = findOrCreateChild(current, name);
+        }
+        current.children.push(leafNode);
+    }
 
-    const root = { name: sharedClassification, children: [] };
+    // Add target language node, hidden if game is ongoing
+    let targetNode = { name: targetLanguageRevealed ? targetLanguage : '[Hidden Target]', isTarget: true };
+
+    // Start inserting from family level
+    insertAtPath(root, targetLineage, 1, targetNode);
 
     for (const guess of relatedGuesses) {
-        const guessNode = {
-            name: guess.name,
-            isGuess: true
-        };
-        root.children.push(guessNode);
-    }
+        const sharedDepth = getSharedDepth(guess.lineage, targetLineage);
 
-    root.children.push({
-        name: '[Hidden Target]',
-        isTarget: true
-    });
+        const guessNode = { name: guess.name, isGuess: true };
+
+        // Start insertion from the shared node
+        insertAtPath(root, guess.lineage, sharedDepth, guessNode);
+    }
 
     return root;
 }
-
 
 function renderTree(data, unrelatedList = []) {
     lastTreeData = data;
