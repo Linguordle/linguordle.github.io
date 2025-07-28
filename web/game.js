@@ -115,8 +115,8 @@ function updateFamilyHint(classificationName) {
 
 function saveWinState() {
     const today = new Date();
-    theDateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-    localStorage.setItem('lastGameDate', theDateKey);
+    const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    localStorage.setItem('lastGameDate', dateKey);
     localStorage.setItem('lastGameResult', 'win');
 }
 
@@ -298,7 +298,7 @@ function buildLowestSharedTree(relatedGuesses, targetLineage) {
     }
 
     // Add target language node, hidden if game is ongoing
-    let targetNode = { name: targetLanguageRevealed ? targetLanguage : '[Hidden Target]', isTarget: true };
+    let targetNode = { name: isRevealed ? targetLanguage : '[Hidden Target]', isTarget: true };
 
     // Start inserting from family level
     insertAtPath(root, targetLineage, 1, targetNode);
@@ -453,9 +453,6 @@ function clearTree() {
     const svg = d3.select("#classification-tree");
     svg.selectAll("*").remove();
 }
-
-// No-op now; unrelated guesses are rendered in the SVG
-function updateUnrelatedGuessesDisplay() {}
 
 if (useEasyMode) {
     const notice = document.createElement('div');
