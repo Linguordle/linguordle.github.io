@@ -408,36 +408,38 @@ function renderTree(data, unrelatedList = []) {
         .attr("dy", "0.32em")
         .text(d => (d.data.isTarget && !isRevealed) ? '???' : d.data.name);
 
-    // --- Unrelated guesses on right side ---
+        // --- Scattered unrelated guesses to the right ---
     if (unrelatedList.length) {
-        const xRight = innerWidth * 0.85;
-        const startY = 0;
-        const stepY = 22;
-
         const unrelatedGroup = g.append("g").attr("class", "unrelated");
 
+        unrelatedList.forEach((name, i) => {
+            const angle = Math.random() * 2 * Math.PI;
+            const radius = 80 + Math.random() * 60;
+            const centerX = innerWidth * 0.88;
+            const centerY = innerHeight / 2;
+
+            const x = centerX + radius * Math.cos(angle);
+            const y = centerY + radius * Math.sin(angle);
+
+            const nodeGroup = unrelatedGroup.append("g")
+                .attr("transform", `translate(${x}, ${y})`);
+
+            nodeGroup.append("circle")
+                .attr("r", 6)
+                .attr("fill", "crimson");
+
+            nodeGroup.append("text")
+                .attr("x", 8)
+                .attr("dy", "0.32em")
+                .text(name);
+        });
+
         unrelatedGroup.append("text")
-            .attr("x", xRight)
-            .attr("y", startY - 10)
+            .attr("x", innerWidth * 0.88)
+            .attr("y", 20)
+            .attr("text-anchor", "middle")
             .attr("font-weight", "bold")
             .text("Unrelated guesses");
-
-        unrelatedGroup.selectAll("g.u-node")
-            .data(unrelatedList)
-            .enter()
-            .append("g")
-            .attr("class", "u-node")
-            .attr("transform", (_, i) => `translate(${xRight}, ${startY + i * stepY})`)
-            .each(function(d) {
-                const group = d3.select(this);
-                group.append("circle")
-                    .attr("r", 5)
-                    .attr("fill", "crimson");
-                group.append("text")
-                    .attr("x", 8)
-                    .attr("dy", "0.32em")
-                    .text(d);
-            });
     }
 }
 
