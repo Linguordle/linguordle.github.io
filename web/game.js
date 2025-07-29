@@ -526,7 +526,6 @@ function renderTree(data, unrelatedList = []) {
                         x: baseX + (Math.random() - 0.5) * jitterX,
                         y: 40 + i * spacingY
                     };
-
                 }
                 const pos = unrelatedNodePositions[d];
                 return `translate(${pos.x},${pos.y})`;
@@ -545,13 +544,6 @@ function renderTree(data, unrelatedList = []) {
         nodeEnter.transition()
             .duration(600)
             .style("opacity", 1);
-
-        nodeSelection.exit()
-            .transition().duration(300)
-            .style("opacity", 0)
-            .remove();
-
-            .text("Unrelated guesses");
     }
 }
 
