@@ -383,8 +383,6 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
 }
 
 function renderTree(data, unrelatedList = []) {
-    lastTreeData = data;
-
     const container = document.getElementById('tree-container');
     const width = container.clientWidth;
 
@@ -402,9 +400,10 @@ function renderTree(data, unrelatedList = []) {
         .attr("viewBox", [0, 0, width, height])
         .attr("preserveAspectRatio", "xMidYMid meet");
 
-    svg.selectAll("g.main").remove();
-
-    const g = svg.append("g").attr("class", "main").attr("transform", `translate(${margin.left},${margin.top})`);
+    let g = svg.select("g");
+    if (g.empty()) {
+        g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    }
 
     // --- Tree layout ---
     const treeLayout = d3.tree()
@@ -427,12 +426,11 @@ function renderTree(data, unrelatedList = []) {
         });
     }
 
-    // --- Rescale Y positions to fit in container ---
     const yPositions = root.descendants().map(d => d.y);
     const minY = Math.min(...yPositions);
     const maxY = Math.max(...yPositions);
-
     const actualHeight = maxY - minY + margin.top + margin.bottom + 40;
+
     if (actualHeight > height) {
         height = actualHeight;
         svg.attr("height", height)
@@ -440,97 +438,128 @@ function renderTree(data, unrelatedList = []) {
     }
 
     const tx = d => d.x;
-    const ty = d => d.y - minY + 20; // shift upward so everything fits
+    const ty = d => d.y - minY + 20;
 
-    // --- Links ---
-    const link = g.append("g").selectAll("line")
-        .data(root.links(), d => `${d.source.data.name}->${d.target.data.name}`);
+    // --- Links with transitions ---
+    const linkGroup = g.selectAll("g.links").data([null]);
+    linkGroup.enter().append("g").attr("class", "links");
+    const links = g.select("g.links").selectAll("line").data(root.links(), d => d.target.data.name);
 
-    link.enter()
+    links.enter()
         .append("line")
         .attr("x1", d => tx(d.source))
         .attr("y1", d => ty(d.source))
         .attr("x2", d => tx(d.source))
         .attr("y2", d => ty(d.source))
         .attr("stroke", "#333")
-        .transition().duration(500)
+        .transition()
+        .duration(600)
         .attr("x2", d => tx(d.target))
         .attr("y2", d => ty(d.target));
 
-    // --- Nodes ---
-    const node = g.append("g")
-        .selectAll("g.node")
-        .data(root.descendants(), d => d.data.name);
+    links.transition()
+        .duration(600)
+        .attr("x1", d => tx(d.source))
+        .attr("y1", d => ty(d.source))
+        .attr("x2", d => tx(d.target))
+        .attr("y2", d => ty(d.target));
 
-    const nodeEnter = node.enter()
+    links.exit().remove();
+
+    // --- Nodes with transitions ---
+    const nodeGroup = g.selectAll("g.nodes").data([null]);
+    nodeGroup.enter().append("g").attr("class", "nodes");
+    const nodes = g.select("g.nodes").selectAll("g.node").data(root.descendants(), d => d.data.name);
+
+    const nodeEnter = nodes.enter()
         .append("g")
         .attr("class", "node")
         .attr("transform", d => `translate(${tx(d)},${ty(d)})`)
         .style("opacity", 0);
 
-    nodeEnter.transition().duration(500).style("opacity", 1);
-
     nodeEnter.append("circle")
-        .attr("r", 0)
+        .attr("r", 5)
         .attr("fill", d => {
             if (d.data.isTarget && !isRevealed) return '#999';
             return d.children ? 'steelblue' : 'green';
-        })
-        .transition().duration(500)
-        .attr("r", 5);
+        });
 
     nodeEnter.append("text")
         .attr("x", 8)
         .attr("dy", "0.32em")
-        .text(d => (d.data.isTarget && !isRevealed) ? '???' : d.data.name)
-        .style("opacity", 0)
-        .transition().delay(300).duration(500)
+        .text(d => (d.data.isTarget && !isRevealed) ? '???' : d.data.name);
+
+    nodeEnter.transition()
+        .duration(600)
         .style("opacity", 1);
+
+    nodes.transition()
+        .duration(600)
+        .attr("transform", d => `translate(${tx(d)},${ty(d)})`);
+
+    nodes.exit().transition()
+        .duration(300)
+        .style("opacity", 0)
+        .remove();
 
     // --- Scattered unrelated guesses to the right ---
     if (unrelatedList.length) {
-        const unrelatedGroup = g.append("g").attr("class", "unrelated");
+        let unrelatedGroup = g.select("g.unrelated");
+        if (unrelatedGroup.empty()) {
+            unrelatedGroup = g.append("g").attr("class", "unrelated");
+        }
 
-        unrelatedList.forEach((name, i) => {
-            if (!unrelatedNodePositions[name]) {
-                const baseX = innerWidth * 0.95;
-                const spacingY = 26; // vertical spacing between nodes
-                const jitterX = 10;   // small horizontal jitter to keep the "floating" feel
+        unrelatedGroup.selectAll("g").data([null]).enter();
 
-                unrelatedNodePositions[name] = {
-                    x: baseX + (Math.random() - 0.5) * jitterX,
-                    y: 40 + i * spacingY
-                };
-            }
+        const nodeSelection = unrelatedGroup.selectAll("g.node")
+            .data(unrelatedList, d => d);
 
-            const { x, y } = unrelatedNodePositions[name];
+        const nodeEnter = nodeSelection.enter().append("g")
+            .attr("class", "node")
+            .attr("transform", (d, i) => {
+                if (!unrelatedNodePositions[d]) {
+                    const angle = ((i + Math.random()) / unrelatedList.length) * 2 * Math.PI;
+                    const radius = 80 + Math.random() * 60;
+                    const centerX = innerWidth * 0.88;
+                    const centerY = innerHeight / 2 + i * 26;
+                    unrelatedNodePositions[d] = {
+                        x: centerX + radius * Math.cos(angle),
+                        y: centerY + radius * Math.sin(angle)
+                    };
+                }
+                const pos = unrelatedNodePositions[d];
+                return `translate(${pos.x},${pos.y})`;
+            })
+            .style("opacity", 0);
 
-            const nodeGroup = unrelatedGroup.append("g")
-                .attr("transform", `translate(${x}, ${y})`)
-                .style("opacity", 0)
-                .transition().duration(500)
-                .style("opacity", 1);
+        nodeEnter.append("circle")
+            .attr("r", 6)
+            .attr("fill", "crimson");
 
-            unrelatedGroup.append("circle")
-                .attr("cx", x)
-                .attr("cy", y)
-                .attr("r", 0)
-                .attr("fill", "crimson")
-                .transition().duration(500)
-                .attr("r", 6);
+        nodeEnter.append("text")
+            .attr("x", 8)
+            .attr("dy", "0.32em")
+            .text(d => d);
 
-            unrelatedGroup.append("text")
-                .attr("x", x + 8)
-                .attr("y", y + 2)
-                .attr("opacity", 0)
-                .text(name)
-                .transition().duration(500)
-                .attr("opacity", 1);
-        });
+        nodeEnter.transition()
+            .duration(600)
+            .style("opacity", 1);
 
+        nodeSelection.exit()
+            .transition().duration(300)
+            .style("opacity", 0)
+            .remove();
+
+        unrelatedGroup.selectAll("text.unrelated-label").data([null])
+            .join("text")
+            .attr("class", "unrelated-label")
+            .attr("x", innerWidth * 0.88)
+            .attr("y", 20)
+            .attr("text-anchor", "middle")
+            .attr("font-weight", "bold")
+            .text("Unrelated guesses");
     }
 }
-
 
 function clearTree() {
     const svg = d3.select("#classification-tree");
