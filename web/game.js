@@ -518,14 +518,15 @@ function renderTree(data, unrelatedList = []) {
             .attr("class", "node")
             .attr("transform", (d, i) => {
                 if (!unrelatedNodePositions[d]) {
-                    const angle = ((i + Math.random()) / unrelatedList.length) * 2 * Math.PI;
-                    const radius = 80 + Math.random() * 60;
-                    const centerX = innerWidth * 0.88;
-                    const centerY = innerHeight / 2 + i * 26;
-                    unrelatedNodePositions[d] = {
-                        x: centerX + radius * Math.cos(angle),
-                        y: centerY + radius * Math.sin(angle)
+                    const baseX = innerWidth * 0.88;
+                    const spacingY = 26; // vertical spacing between nodes
+                    const jitterX = 10;   // small horizontal jitter to keep the "floating" feel
+
+                    unrelatedNodePositions[name] = {
+                        x: baseX + (Math.random() - 0.5) * jitterX,
+                        y: 40 + i * spacingY
                     };
+
                 }
                 const pos = unrelatedNodePositions[d];
                 return `translate(${pos.x},${pos.y})`;
@@ -550,13 +551,6 @@ function renderTree(data, unrelatedList = []) {
             .style("opacity", 0)
             .remove();
 
-        unrelatedGroup.selectAll("text.unrelated-label").data([null])
-            .join("text")
-            .attr("class", "unrelated-label")
-            .attr("x", innerWidth * 0.88)
-            .attr("y", 20)
-            .attr("text-anchor", "middle")
-            .attr("font-weight", "bold")
             .text("Unrelated guesses");
     }
 }
