@@ -493,7 +493,7 @@ function renderTree(data, unrelatedList = []) {
 
         unrelatedList.forEach((name, i) => {
             if (!unrelatedNodePositions[name]) {
-                const baseX = innerWidth * 0.88;
+                const baseX = innerWidth * 0.95;
                 const spacingY = 26; // vertical spacing between nodes
                 const jitterX = 10;   // small horizontal jitter to keep the "floating" feel
 
@@ -501,8 +501,6 @@ function renderTree(data, unrelatedList = []) {
                     x: baseX + (Math.random() - 0.5) * jitterX,
                     y: 40 + i * spacingY
                 };
-
-
             }
 
             const { x, y } = unrelatedNodePositions[name];
