@@ -502,48 +502,45 @@ function renderTree(data, unrelatedList = []) {
         .style("opacity", 0)
         .remove();
 
-    // --- Scattered unrelated guesses to the right ---
-    if (unrelatedList.length) {
-        let unrelatedGroup = g.select("g.unrelated");
-        if (unrelatedGroup.empty()) {
-            unrelatedGroup = g.append("g").attr("class", "unrelated");
-        }
+    // --- Scattered unrelated guesses to the     if (unrelatedList.length) {
+        const unrelatedGroup = g.append("g").attr("class", "unrelated");
 
-        unrelatedGroup.selectAll("g").data([null]).enter();
+        unrelatedList.forEach((name, i) => {
+            if (!unrelatedNodePositions[name]) {
+                const baseX = innerWidth * 0.95;
+                const spacingY = 26; // vertical spacing between nodes
+                const jitterX = 10;   // small horizontal jitter to keep the "floating" feel
 
-        const nodeSelection = unrelatedGroup.selectAll("g.node")
-            .data(unrelatedList, d => d);
+                unrelatedNodePositions[name] = {
+                    x: baseX + (Math.random() - 0.5) * jitterX,
+                    y: 40 + i * spacingY
+                };
+            }
 
-        const nodeEnter = nodeSelection.enter().append("g")
-            .attr("class", "node")
-            .attr("transform", (d, i) => {
-                if (!unrelatedNodePositions[d]) {
-                    const baseX = innerWidth * 0.88;
-                    const spacingY = 26; // vertical spacing between nodes
-                    const jitterX = 10;   // small horizontal jitter to keep the "floating" feel
+            const { x, y } = unrelatedNodePositions[name];
 
-                    unrelatedNodePositions[name] = {
-                        x: baseX + (Math.random() - 0.5) * jitterX,
-                        y: 40 + i * spacingY
-                    };
-                }
-                const pos = unrelatedNodePositions[d];
-                return `translate(${pos.x},${pos.y})`;
-            })
-            .style("opacity", 0);
+            const nodeGroup = unrelatedGroup.append("g")
+                .attr("transform", `translate(${x}, ${y})`)
+                .style("opacity", 0)
+                .transition().duration(500)
+                .style("opacity", 1);
 
-        nodeEnter.append("circle")
-            .attr("r", 6)
-            .attr("fill", "crimson");
+            unrelatedGroup.append("circle")
+                .attr("cx", x)
+                .attr("cy", y)
+                .attr("r", 0)
+                .attr("fill", "crimson")
+                .transition().duration(500)
+                .attr("r", 6);
 
-        nodeEnter.append("text")
-            .attr("x", 8)
-            .attr("dy", "0.32em")
-            .text(d => d);
-
-        nodeEnter.transition()
-            .duration(600)
-            .style("opacity", 1);
+            unrelatedGroup.append("text")
+                .attr("x", x + 8)
+                .attr("y", y + 2)
+                .attr("opacity", 0)
+                .text(name)
+                .transition().duration(500)
+                .attr("opacity", 1);
+        });
     }
 }
 
