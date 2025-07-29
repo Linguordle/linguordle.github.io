@@ -494,7 +494,7 @@ function renderTree(data, unrelatedList = []) {
         unrelatedList.forEach((name, i) => {
             if (!unrelatedNodePositions[name]) {
                 const angle = ((i + Math.random()) / unrelatedList.length) * 2 * Math.PI;
-                const radius = 80 + Math.random() * 60;
+                const radius = 5 + Math.random() * 5;
                 const centerX = innerWidth * 0.88;
                 const centerY = innerHeight / 2;
 
@@ -529,12 +529,6 @@ function renderTree(data, unrelatedList = []) {
                 .attr("opacity", 1);
         });
 
-        unrelatedGroup.append("text")
-            .attr("x", innerWidth * 0.88)
-            .attr("y", 20)
-            .attr("text-anchor", "middle")
-            .attr("font-weight", "bold")
-            .text("Unrelated guesses");
     }
 }
 
