@@ -453,7 +453,7 @@ function renderTree(data, unrelatedList = []) {
 
     const linkSelection = g.select("g.links")
         .selectAll("line")
-        .data(root.links(), d => d.target.data.name);
+        .data(root.links(), d => d.target.data.id || d.target.data.name);
 
     linkSelection.join(
         enter => enter.append("line")
@@ -478,6 +478,7 @@ function renderTree(data, unrelatedList = []) {
     const nodeSelection = g.select("g.nodes")
         .selectAll("g.node")
         .data(root.descendants(), d => d.data.id || d.data.name);
+
 
     const nodeEnter = nodeSelection.enter().append("g")
         .attr("class", "node")
