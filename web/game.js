@@ -402,12 +402,11 @@ function renderTree(data, unrelatedList = []) {
         .attr("viewBox", [0, 0, width, height])
         .attr("preserveAspectRatio", "xMidYMid meet");
 
-    let g = svg.select("g");
+    let g = svg.select("g.main");
     if (g.empty()) {
-        g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+        g = svg.append("g").attr("class", "main").attr("transform", `translate(${margin.left},${margin.top})`);
     }
 
-    // --- Tree layout ---
     const treeLayout = d3.tree()
         .size([innerWidth * 0.75, innerHeight])
         .separation((a, b) => {
@@ -418,7 +417,6 @@ function renderTree(data, unrelatedList = []) {
 
     treeLayout(root);
 
-    // --- Spread nodes with same depth ---
     const minVerticalGap = 18;
     const depthGroups = d3.group(root.descendants(), d => d.depth);
     for (const [, nodesAtDepth] of depthGroups) {
@@ -428,7 +426,6 @@ function renderTree(data, unrelatedList = []) {
         });
     }
 
-    // --- Rescale Y positions to fit in container ---
     const yPositions = root.descendants().map(d => d.y);
     const minY = Math.min(...yPositions);
     const maxY = Math.max(...yPositions);
@@ -436,43 +433,47 @@ function renderTree(data, unrelatedList = []) {
     const actualHeight = maxY - minY + margin.top + margin.bottom + 40;
     if (actualHeight > height) {
         height = actualHeight;
-        svg.attr("height", height)
-           .attr("viewBox", [0, 0, width, height]);
+        svg.attr("height", height).attr("viewBox", [0, 0, width, height]);
     }
 
     const tx = d => d.x;
     const ty = d => d.y - minY + 20;
 
-    // --- Links ---
-    const link = g.selectAll("line.link")
+    const linkGroup = g.select("g.links");
+    if (linkGroup.empty()) g.append("g").attr("class", "links");
+
+    const nodeGroup = g.select("g.nodes");
+    if (nodeGroup.empty()) g.append("g").attr("class", "nodes");
+
+    const linkSelection = g.select("g.links")
+        .selectAll("line")
         .data(root.links(), d => d.target.data.name);
 
-    link.enter()
-        .append("line")
-        .attr("class", "link")
-        .attr("x1", d => tx(d.source))
-        .attr("y1", d => ty(d.source))
-        .attr("x2", d => tx(d.source))
-        .attr("y2", d => ty(d.source))
-        .attr("stroke", "#333")
-        .transition().duration(600)
-        .attr("x2", d => tx(d.target))
-        .attr("y2", d => ty(d.target));
+    linkSelection.join(
+        enter => enter.append("line")
+            .attr("x1", d => tx(d.source))
+            .attr("y1", d => ty(d.source))
+            .attr("x2", d => tx(d.source))
+            .attr("y2", d => ty(d.source))
+            .attr("stroke", "#333")
+            .transition().duration(600)
+            .attr("x2", d => tx(d.target))
+            .attr("y2", d => ty(d.target)),
 
-    link.transition().duration(600)
-        .attr("x1", d => tx(d.source))
-        .attr("y1", d => ty(d.source))
-        .attr("x2", d => tx(d.target))
-        .attr("y2", d => ty(d.target));
+        update => update.transition().duration(600)
+            .attr("x1", d => tx(d.source))
+            .attr("y1", d => ty(d.source))
+            .attr("x2", d => tx(d.target))
+            .attr("y2", d => ty(d.target)),
 
-    link.exit().remove();
+        exit => exit.transition().duration(400).style("opacity", 0).remove()
+    );
 
-    // --- Nodes ---
-    const node = g.selectAll("g.node")
+    const nodeSelection = g.select("g.nodes")
+        .selectAll("g.node")
         .data(root.descendants(), d => d.data.name);
 
-    const nodeEnter = node.enter()
-        .append("g")
+    const nodeEnter = nodeSelection.enter().append("g")
         .attr("class", "node")
         .attr("transform", d => `translate(${tx(d)},${ty(d)})`)
         .style("opacity", 0);
@@ -489,84 +490,69 @@ function renderTree(data, unrelatedList = []) {
         .attr("dy", "0.32em")
         .text(d => (d.data.isTarget && !isRevealed) ? '???' : d.data.name);
 
-    nodeEnter.transition().duration(600)
-        .style("opacity", 1);
-
-    node.transition().duration(600)
+    nodeEnter.transition().duration(600).style("opacity", 1)
         .attr("transform", d => `translate(${tx(d)},${ty(d)})`);
 
-    node.exit().remove();
+    nodeSelection.transition().duration(600)
+        .attr("transform", d => `translate(${tx(d)},${ty(d)})`);
+
+    nodeSelection.exit().transition().duration(400).style("opacity", 0).remove();
 
     // --- Scattered unrelated guesses to the right ---
-    // Ensure unrelated node group exists
-let unrelatedGroup = g.select("g.unrelated");
-if (unrelatedGroup.empty()) {
-    unrelatedGroup = g.append("g").attr("class", "unrelated");
-}
+    let unrelatedGroup = g.select("g.unrelated");
+    if (unrelatedGroup.empty()) unrelatedGroup = g.append("g").attr("class", "unrelated");
 
-// Label once
-let label = unrelatedGroup.select("text.unrelated-label");
-if (label.empty()) {
-    unrelatedGroup.append("text")
-        .attr("class", "unrelated-label")
-        .attr("x", innerWidth * 0.88)
-        .attr("y", 20)
-        .attr("text-anchor", "middle")
-        .attr("font-weight", "bold")
-        .text("Unrelated guesses");
-}
+    const baseX = innerWidth * 0.88;
+    const baseY = innerHeight / 2;
 
-// Maintain positions
-unrelatedList.forEach((name, i) => {
-    if (!unrelatedNodePositions[name]) {
-        const spacingY = 30;
-        const jitter = Math.random() * 20 - 10;
-        const baseY = 60 + i * spacingY + jitter;
-        const baseX = innerWidth * 0.88 + Math.random() * 30 - 15;
-        unrelatedNodePositions[name] = { x: baseX, y: baseY };
+    const verticalSpacing = 28;
+    const unrelatedData = unrelatedList.map((name, i) => {
+        if (!unrelatedNodePositions[name]) {
+            const angle = ((i + Math.random()) / unrelatedList.length) * 2 * Math.PI;
+            const radius = 80 + Math.random() * 60;
+            unrelatedNodePositions[name] = {
+                x: baseX + radius * Math.cos(angle),
+                y: baseY + i * verticalSpacing
+            };
+        }
+        return { name, ...unrelatedNodePositions[name] };
+    });
+
+    const unrelatedNodes = unrelatedGroup.selectAll("g.unrelated-node")
+        .data(unrelatedData, d => d.name);
+
+    const unrelatedEnter = unrelatedNodes.enter()
+        .append("g")
+        .attr("class", "unrelated-node")
+        .attr("transform", d => `translate(${d.x}, ${d.y})`)
+        .style("opacity", 0);
+
+    unrelatedEnter.append("circle")
+        .attr("r", 6)
+        .attr("fill", "crimson");
+
+    unrelatedEnter.append("text")
+        .attr("x", 8)
+        .attr("dy", "0.32em")
+        .text(d => d.name);
+
+    unrelatedEnter.transition().duration(600).style("opacity", 1);
+
+    unrelatedNodes.transition().duration(600)
+        .attr("transform", d => `translate(${d.x}, ${d.y})`);
+
+    unrelatedNodes.exit().transition().duration(400).style("opacity", 0).remove();
+
+    let unrelatedLabel = unrelatedGroup.select("text.unrelated-label");
+    if (unrelatedLabel.empty()) {
+        unrelatedGroup.append("text")
+            .attr("class", "unrelated-label")
+            .attr("x", baseX)
+            .attr("y", 20)
+            .attr("text-anchor", "middle")
+            .attr("font-weight", "bold")
+            .text("Unrelated guesses");
     }
-});
-
-const unrelatedData = unrelatedList.map(name => ({
-    name,
-    ...unrelatedNodePositions[name]
-}));
-
-// Join
-const unrelatedNodes = unrelatedGroup.selectAll("g.node")
-    .data(unrelatedData, d => d.name);
-
-// EXIT
-unrelatedNodes.exit()
-    .transition().duration(300)
-    .style("opacity", 0)
-    .remove();
-
-// UPDATE
-unrelatedNodes.transition().duration(500)
-    .attr("transform", d => `translate(${d.x},${d.y})`);
-
-// ENTER
-const newUnrelated = unrelatedNodes.enter()
-    .append("g")
-    .attr("class", "node")
-    .attr("transform", d => `translate(${d.x},${d.y - 20})`)
-    .style("opacity", 0);
-
-newUnrelated.transition()
-    .duration(500)
-    .attr("transform", d => `translate(${d.x},${d.y})`)
-    .style("opacity", 1);
-
-newUnrelated.append("circle")
-    .attr("r", 6)
-    .attr("fill", "crimson");
-
-newUnrelated.append("text")
-    .attr("x", 8)
-    .attr("dy", "0.32em")
-    .text(d => d.name);
-
 }
 
 function clearTree() {
