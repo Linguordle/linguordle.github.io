@@ -477,7 +477,7 @@ function renderTree(data, unrelatedList = []) {
 
     const nodeSelection = g.select("g.nodes")
         .selectAll("g.node")
-        .data(root.descendants(), d => d.data.isTarget ? '__TARGET__' : d.data.name);
+        .data(root.descendants(), d => d.data.id || d.data.name);
 
     const nodeEnter = nodeSelection.enter().append("g")
         .attr("class", "node")
