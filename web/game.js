@@ -344,7 +344,10 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
         targetNode = existing;
     }
 
-    targetNode.children.push({ name: '[Hidden Target]', isTarget: true });
+    if (!relatedGuesses.some(g => g.name === targetLanguage)) {
+        targetNode.children.push({ name: '[Hidden Target]', isTarget: true });
+    }
+
 
     // Add guesses
     for (const guess of relatedGuesses) {
