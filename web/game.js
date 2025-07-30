@@ -508,18 +508,18 @@ function renderTree(data, unrelatedList = []) {
     let unrelatedGroup = g.select("g.unrelated");
     if (unrelatedGroup.empty()) unrelatedGroup = g.append("g").attr("class", "unrelated");
 
-    const baseX = innerWidth * 0.88;
-    const baseY = innerHeight / 2;
-
     const verticalSpacing = 28;
     const unrelatedData = unrelatedList.map((name, i) => {
         if (!unrelatedNodePositions[name]) {
-            const angle = ((i + Math.random()) / unrelatedList.length) * 2 * Math.PI;
-            const radius = 80 + Math.random() * 60;
+            const baseX = innerWidth * 0.88;
+            const spacingY = 26; // vertical spacing between nodes
+            const jitterX = 10;   // small horizontal jitter to keep the "floating" feel
+
             unrelatedNodePositions[name] = {
-                x: baseX + radius * Math.cos(angle),
-                y: baseY + i * verticalSpacing
+                x: baseX + (Math.random() - 0.5) * jitterX,
+                y: 40 + i * spacingY
             };
+
         }
         return { name, ...unrelatedNodePositions[name] };
     });
