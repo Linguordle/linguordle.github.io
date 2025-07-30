@@ -272,18 +272,12 @@ function updateHighlight(items) {
 
 function buildLowestSharedTree(relatedGuesses, targetFamily) {
     if (!relatedGuesses.length) {
-        const root = { name: targetFamily[0], children: [] };
-        let current = root;
-
-        for (let i = 1; i < targetFamily.length; i++) {
-            const child = { name: targetFamily[i], children: [] };
-            current.children.push(child);
-            current = child;
-        }
-
-        current.children.push({ name: '[Hidden Target]', isTarget: true });
-
-        return root;
+        return {
+            name: targetFamily[0],
+            children: [
+                { name: '[Hidden Target]', isTarget: true }
+            ]
+        };
     }
 
     // Step 1: Determine shared depth
