@@ -542,17 +542,6 @@ function renderTree(data, unrelatedList = []) {
         .attr("transform", d => `translate(${d.x}, ${d.y})`);
 
     unrelatedNodes.exit().transition().duration(400).style("opacity", 0).remove();
-
-    let unrelatedLabel = unrelatedGroup.select("text.unrelated-label");
-    if (unrelatedLabel.empty()) {
-        unrelatedGroup.append("text")
-            .attr("class", "unrelated-label")
-            .attr("x", baseX)
-            .attr("y", 20)
-            .attr("text-anchor", "middle")
-            .attr("font-weight", "bold")
-            .text("Unrelated guesses");
-    }
 }
 
 function clearTree() {
