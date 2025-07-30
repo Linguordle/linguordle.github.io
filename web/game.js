@@ -511,7 +511,7 @@ function renderTree(data, unrelatedList = []) {
     const verticalSpacing = 28;
     const unrelatedData = unrelatedList.map((name, i) => {
         if (!unrelatedNodePositions[name]) {
-            const baseX = innerWidth * 1.2;
+            const baseX = innerWidth * 1.08;
             const spacingY = 26; // vertical spacing between nodes
             const jitterX = 60;   // small horizontal jitter to keep the "floating" feel
 
