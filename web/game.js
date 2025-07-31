@@ -344,15 +344,10 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
         targetNode = existing;
     }
 
-    // always remove any leftover hidden-placeholder
-    targetNode.children = targetNode.children.filter(c => !c.isTarget);
-
-    // then add exactly one leaf, hidden or revealed
-    if (!isRevealed) {
-        targetNode.children.push({ name: '[Hidden Target]', isTarget: true, id: 'TARGET_NODE' });
-    } else {
-        targetNode.children.push({ name: targetLanguage, isTarget: true, id: 'TARGET_NODE' });
+    if (!relatedGuesses.some(g => g.name === targetLanguage)) {
+        targetNode.children.push({ name: '[Hidden Target]', isTarget: true });
     }
+
 
     // Add guesses
     for (const guess of relatedGuesses) {
@@ -458,7 +453,7 @@ function renderTree(data, unrelatedList = []) {
 
     const linkSelection = g.select("g.links")
         .selectAll("line")
-        .data(root.links(), d => d.target.data.id || d.target.data.name);
+        .data(root.links(), d => d.target.data.name);
 
     linkSelection.join(
         enter => enter.append("line")
@@ -482,8 +477,7 @@ function renderTree(data, unrelatedList = []) {
 
     const nodeSelection = g.select("g.nodes")
         .selectAll("g.node")
-        .data(root.descendants(), d => d.data.id || d.data.name);
-
+        .data(root.descendants(), d => d.data.name);
 
     const nodeEnter = nodeSelection.enter().append("g")
         .attr("class", "node")
