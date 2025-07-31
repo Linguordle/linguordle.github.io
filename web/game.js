@@ -166,27 +166,32 @@ function handleGuess() {
     guessedLanguages.add(guess);
     const sharedPath = getSharedPath(guess, targetLanguage);
 
-    // in handleGuess(), replace your existing related/unrelated branch with this:
-
 if (sharedPath.length === 0) {
-    // Unrelated guess: just record it and leave the UI alone
+    // Unrelated guess: record it but leave highlighting & description alone
     unrelatedGuesses.push(guess);
     appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
-    // no call to updateFamilyHint or selection changes
 } else {
-    // Related guess: record it, then highlight that shared classification node
+    // Related guess: record it and highlight the lowest shared classification
     relatedGuesses.push({ name: guess, lineage: LANGUAGE_DATA[guess], sharedPath });
     const deepest = sharedPath[sharedPath.length - 1];
     appendOutputLine(`Guess: ${guess} → Common ancestor: ${deepest}`);
 
-    // Programmatically “click” the matching node’s circle
-    // so its click‐handler will bold its text and fade in its description
-    d3.selectAll('g.node').each(function(datum) {
-        if (datum.data.name === deepest) {
-            // find the <circle> inside this <g> and dispatch a click
-            d3.select(this).select('circle').dispatch('click');
-        }
-    });
+    // 1) Remove bold from previously selected node text
+    if (selectedNode) {
+        d3.select(selectedNode.parentNode).select("text")
+            .style("font-weight", "normal");
+    }
+
+    // 2) Find the <g.node> whose datum matches deepest, bold its text, store its circle
+    const match = d3.selectAll("g.node")
+        .filter(d => d.data.name === deepest);
+    match.select("text")
+        .style("font-weight", "bold");
+    selectedNode = match.select("circle").node();
+
+    // 3) Fade in the new description
+    const info = familyDescriptions[deepest];
+    updateFamilyHintHTML(deepest, info);
 }
 
     guessesLeft--;
