@@ -402,6 +402,8 @@ function pruneTree(node, isRoot = false) {
     return pruneTree(root, true);
 }
 
+let selectedNode = null;
+    
 function renderTree(data, unrelatedList = []) {
     lastTreeData = data;
 
@@ -498,26 +500,52 @@ function renderTree(data, unrelatedList = []) {
         .attr("transform", d => `translate(${tx(d)},${ty(d)})`)
         .style("opacity", 0);
 
-    nodeEnter.append("circle")
-        .attr("r", 5)
-        .attr("fill", d => {
-            if (d.data.isTarget && !isRevealed) return '#999';
-            return d.children ? 'steelblue' : 'green';
-        })
-        .style("cursor", "pointer")
-        .on("click", (event, d) => {
-            const name = d.data.name;
-            const info = familyDescriptions[name];
-            if (!info) {
-                familyHint.innerHTML = `<strong>${name}</strong>`;
-            } else {
-                familyHint.innerHTML = `
-                    <strong>${name}</strong><br>
-                    <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
-                    <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
-                `;
-            }
-        });
+nodeEnter.append("circle")
+    .attr("r", 5)
+    .attr("fill", d => {
+        if (d.data.isTarget && !isRevealed) return '#999';
+        return d.children ? 'steelblue' : 'green';
+    })
+    .attr("stroke-width", 2)
+    .attr("stroke", "none")
+    .style("cursor", "pointer")
+    .on("mouseover", function () {
+        d3.select(this)
+            .transition().duration(150)
+            .attr("r", 9);
+    })
+    .on("mouseout", function () {
+        d3.select(this)
+            .transition().duration(150)
+            .attr("r", 5);
+    })
+    .on("click", function (event, d) {
+        // Remove highlight from previously selected
+        if (selectedNode && selectedNode !== this) {
+            d3.select(selectedNode)
+                .attr("stroke", "none");
+        }
+
+        // Highlight current
+        d3.select(this)
+            .attr("stroke", "white");
+
+        selectedNode = this;
+
+        // Update hint/info
+        const name = d.data.name;
+        const info = familyDescriptions[name];
+        if (!info) {
+            familyHint.innerHTML = `<strong>${name}</strong>`;
+        } else {
+            familyHint.innerHTML = `
+                <strong>${name}</strong><br>
+                <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
+                <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+            `;
+        }
+    });
+
 
 
     nodeEnter.append("text")
@@ -563,8 +591,45 @@ function renderTree(data, unrelatedList = []) {
         .style("opacity", 0);
 
     unrelatedEnter.append("circle")
-        .attr("r", 6)
-        .attr("fill", "crimson");
+    .attr("r", 6)
+    .attr("fill", "crimson")
+    .attr("stroke-width", 2)
+    .attr("stroke", "none")
+    .style("cursor", "pointer")
+    .on("mouseover", function () {
+        d3.select(this)
+            .transition().duration(150)
+            .attr("r", 10);
+    })
+    .on("mouseout", function () {
+        d3.select(this)
+            .transition().duration(150)
+            .attr("r", 6);
+    })
+    .on("click", function (event, d) {
+        if (selectedNode && selectedNode !== this) {
+            d3.select(selectedNode)
+                .attr("stroke", "none");
+        }
+
+        d3.select(this)
+            .attr("stroke", "white");
+
+        selectedNode = this;
+
+        const name = d.name;
+        const info = familyDescriptions[name];
+        if (!info) {
+            familyHint.innerHTML = `<strong>${name}</strong>`;
+        } else {
+            familyHint.innerHTML = `
+                <strong>${name}</strong><br>
+                <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
+                <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+            `;
+        }
+    });
+
 
     unrelatedEnter.append("text")
         .attr("x", 8)
