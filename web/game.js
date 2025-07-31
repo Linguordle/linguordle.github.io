@@ -478,17 +478,17 @@ function renderTree(data, unrelatedList = []) {
             .attr("x2", d => tx(d.source))
             .attr("y2", d => ty(d.source))
             .attr("stroke", "#333")
-            .transition().duration(600)
+            .transition().duration(300)
             .attr("x2", d => tx(d.target))
             .attr("y2", d => ty(d.target)),
 
-        update => update.transition().duration(600)
+        update => update.transition().duration(300)
             .attr("x1", d => tx(d.source))
             .attr("y1", d => ty(d.source))
             .attr("x2", d => tx(d.target))
             .attr("y2", d => ty(d.target)),
 
-        exit => exit.transition().duration(400).style("opacity", 0).remove()
+        exit => exit.transition().duration(300).style("opacity", 0).remove()
     );
 
     const nodeSelection = g.select("g.nodes")
@@ -511,42 +511,37 @@ nodeEnter.append("circle")
     .style("cursor", "pointer")
     .on("mouseover", function () {
         d3.select(this)
-            .transition().duration(600)
+            .transition().duration(300)
             .attr("r", 7);
     })
     .on("mouseout", function () {
         d3.select(this)
-            .transition().duration(600)
+            .transition().duration(300)
             .attr("r", 5);
     })
     .on("click", function (event, d) {
-        // Remove highlight from previously selected
-        if (selectedNode && selectedNode !== this) {
-            d3.select(selectedNode)
-                .attr("stroke", "none");
-        }
+    if (selectedNode && selectedNode !== this) {
+        d3.select(selectedNode.parentNode).select("text")
+            .style("font-weight", "normal");
+    }
 
-        // Highlight current
-        d3.select(this)
-            .attr("stroke", "white");
+    d3.select(this.parentNode).select("text")
+        .style("font-weight", "bold");
 
-        selectedNode = this;
+    selectedNode = this;
 
-        // Update hint/info
-        const name = d.data.name;
-        const info = familyDescriptions[name];
-        if (!info) {
-            familyHint.innerHTML = `<strong>${name}</strong>`;
-        } else {
-            familyHint.innerHTML = `
-                <strong>${name}</strong><br>
-                <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
-                <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
-            `;
-        }
-    });
-
-
+    const name = d.data.name;
+    const info = familyDescriptions[name];
+    if (!info) {
+        familyHint.innerHTML = `<strong>${name}</strong>`;
+    } else {
+        familyHint.innerHTML = `
+            <strong>${name}</strong><br>
+            <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
+            <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+        `;
+    }
+});
 
     nodeEnter.append("text")
         .attr("x", 8)
@@ -607,28 +602,28 @@ nodeEnter.append("circle")
             .attr("r", 5);
     })
     .on("click", function (event, d) {
-        if (selectedNode && selectedNode !== this) {
-            d3.select(selectedNode)
-                .attr("stroke", "none");
-        }
+    if (selectedNode && selectedNode !== this) {
+        d3.select(selectedNode.parentNode).select("text")
+            .style("font-weight", "normal");
+    }
 
-        d3.select(this)
-            .attr("stroke", "white");
+    d3.select(this.parentNode).select("text")
+        .style("font-weight", "bold");
 
-        selectedNode = this;
+    selectedNode = this;
 
-        const name = d.name;
-        const info = familyDescriptions[name];
-        if (!info) {
-            familyHint.innerHTML = `<strong>${name}</strong>`;
-        } else {
-            familyHint.innerHTML = `
-                <strong>${name}</strong><br>
-                <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
-                <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
-            `;
-        }
-    });
+    const name = d.name;
+    const info = familyDescriptions[name];
+    if (!info) {
+        familyHint.innerHTML = `<strong>${name}</strong>`;
+    } else {
+        familyHint.innerHTML = `
+            <strong>${name}</strong><br>
+            <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
+            <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+        `;
+    }
+});
 
 
     unrelatedEnter.append("text")
