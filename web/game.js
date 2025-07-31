@@ -42,19 +42,32 @@ window.addEventListener('resize', () => {
 });
 
 function updateFamilyHintHTML(name, info) {
-    familyHint.classList.add("fade-in");
-    setTimeout(() => {
-        if (!info) {
-            familyHint.innerHTML = `<strong>${name}</strong>`;
-        } else {
-            familyHint.innerHTML = `
-                <strong>${name}</strong><br>
-                <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
-                <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
-            `;
-        }
-        familyHint.classList.remove("fade-in");
-    }, 150);
+  // 1️⃣ start fade-out
+  familyHint.classList.add('fading');
+
+  // 2️⃣ after fade-out ends...
+  const onEnd = (e) => {
+    if (e.propertyName !== 'opacity') return; 
+    familyHint.removeEventListener('transitionend', onEnd);
+
+    // 3️⃣ swap in new content
+    if (!info) {
+      familyHint.innerHTML = `<strong>${name}</strong>`;
+    } else {
+      familyHint.innerHTML = `
+        <strong>${name}</strong><br>
+        <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
+        <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+      `;
+    }
+
+    // 4️⃣ trigger fade-in
+    // force a reflow so the browser notices the class removal
+    void familyHint.offsetWidth;
+    familyHint.classList.remove('fading');
+  };
+
+  familyHint.addEventListener('transitionend', onEnd);
 }
 
 await startNewGame();
@@ -153,15 +166,28 @@ function handleGuess() {
     guessedLanguages.add(guess);
     const sharedPath = getSharedPath(guess, targetLanguage);
 
-    if (sharedPath.length === 0) {
-        unrelatedGuesses.push(guess);
-        appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
-    } else {
-        relatedGuesses.push({ name: guess, lineage: LANGUAGE_DATA[guess], sharedPath });
-        const deepest = sharedPath[sharedPath.length - 1];
-        appendOutputLine(`Guess: ${guess} → Common ancestor: ${deepest}`);
-        updateFamilyHint(deepest);
-    }
+    // in handleGuess(), replace your existing related/unrelated branch with this:
+
+if (sharedPath.length === 0) {
+    // Unrelated guess: just record it and leave the UI alone
+    unrelatedGuesses.push(guess);
+    appendOutputLine(`Guess: ${guess} → No common ancestry found.`);
+    // no call to updateFamilyHint or selection changes
+} else {
+    // Related guess: record it, then highlight that shared classification node
+    relatedGuesses.push({ name: guess, lineage: LANGUAGE_DATA[guess], sharedPath });
+    const deepest = sharedPath[sharedPath.length - 1];
+    appendOutputLine(`Guess: ${guess} → Common ancestor: ${deepest}`);
+
+    // Programmatically “click” the matching node’s circle
+    // so its click‐handler will bold its text and fade in its description
+    d3.selectAll('g.node').each(function(datum) {
+        if (datum.data.name === deepest) {
+            // find the <circle> inside this <g> and dispatch a click
+            d3.select(this).select('circle').dispatch('click');
+        }
+    });
+}
 
     guessesLeft--;
     updateGuessesDisplay();
