@@ -160,6 +160,12 @@ function handleGuess() {
     updateGuessesDisplay();
 
     if (guess === targetLanguage) {
+        relatedGuesses.push({
+            name: targetLanguage,
+            lineage: targetFamily,
+            sharedPath: [...targetFamily], // full path, since it's the same as itself
+        });
+        
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
         saveWinState();
         isRevealed = true;
