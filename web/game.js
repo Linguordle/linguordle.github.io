@@ -104,16 +104,7 @@ async function startNewGame() {
 function updateFamilyHint(classificationName) {
     const info = familyDescriptions[classificationName];
     const label = (classificationName === targetFamily[0]) ? "Family" : "Shared Classification";
-
-    if (!info) {
-        familyHint.innerHTML = `${label}: ${classificationName}`;
-        return;
-    }
-    familyHint.innerHTML = `
-        <strong>${label}: ${classificationName}</strong><br>
-        <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
-        <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
-    `;
+    updateFamilyHintHTML(name, info);
 }
 
 function saveWinState() {
@@ -532,15 +523,7 @@ nodeEnter.append("circle")
 
     const name = d.data.name;
     const info = familyDescriptions[name];
-    if (!info) {
-        familyHint.innerHTML = `<strong>${name}</strong>`;
-    } else {
-        familyHint.innerHTML = `
-            <strong>${name}</strong><br>
-            <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
-            <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
-        `;
-    }
+    updateFamilyHintHTML(name, info);
 });
 
     nodeEnter.append("text")
@@ -614,15 +597,7 @@ nodeEnter.append("circle")
 
     const name = d.name;
     const info = familyDescriptions[name];
-    if (!info) {
-        familyHint.innerHTML = `<strong>${name}</strong>`;
-    } else {
-        familyHint.innerHTML = `
-            <strong>${name}</strong><br>
-            <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
-            <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
-        `;
-    }
+    updateFamilyHintHTML(name, info);
 });
 
 
@@ -639,6 +614,22 @@ nodeEnter.append("circle")
     unrelatedNodes.exit().transition().duration(400).style("opacity", 0).remove();
 }
 
+function updateFamilyHintHTML(name, info) {
+    familyHint.classList.add("fade-in");
+    setTimeout(() => {
+        if (!info) {
+            familyHint.innerHTML = `<strong>${name}</strong>`;
+        } else {
+            familyHint.innerHTML = `
+                <strong>${name}</strong><br>
+                <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
+                <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+            `;
+        }
+        familyHint.classList.remove("fade-in");
+    }, 150);
+}
+    
 function clearTree() {
     const svg = d3.select("#classification-tree");
     svg.selectAll("*").remove();
