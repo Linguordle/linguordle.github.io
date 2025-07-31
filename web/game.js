@@ -503,7 +503,22 @@ function renderTree(data, unrelatedList = []) {
         .attr("fill", d => {
             if (d.data.isTarget && !isRevealed) return '#999';
             return d.children ? 'steelblue' : 'green';
+        })
+        .style("cursor", "pointer")
+        .on("click", d => {
+            const name = d.data.name;
+            const info = familyDescriptions[name];
+            if (!info) {
+                familyHint.innerHTML = `<strong>${name}</strong>`;
+            } else {
+                familyHint.innerHTML = `
+                    <strong>${name}</strong><br>
+                    <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
+                    <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+                `;
+            }
         });
+
 
     nodeEnter.append("text")
         .attr("x", 8)
