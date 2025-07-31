@@ -41,6 +41,22 @@ window.addEventListener('resize', () => {
     if (lastTreeData) renderTree(lastTreeData, unrelatedGuesses);
 });
 
+function updateFamilyHintHTML(name, info) {
+    familyHint.classList.add("fade-in");
+    setTimeout(() => {
+        if (!info) {
+            familyHint.innerHTML = `<strong>${name}</strong>`;
+        } else {
+            familyHint.innerHTML = `
+                <strong>${name}</strong><br>
+                <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
+                <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
+            `;
+        }
+        familyHint.classList.remove("fade-in");
+    }, 150);
+}
+
 await startNewGame();
 
 async function getDailyLanguage() {
@@ -612,22 +628,6 @@ nodeEnter.append("circle")
         .attr("transform", d => `translate(${d.x}, ${d.y})`);
 
     unrelatedNodes.exit().transition().duration(400).style("opacity", 0).remove();
-}
-
-function updateFamilyHintHTML(name, info) {
-    familyHint.classList.add("fade-in");
-    setTimeout(() => {
-        if (!info) {
-            familyHint.innerHTML = `<strong>${name}</strong>`;
-        } else {
-            familyHint.innerHTML = `
-                <strong>${name}</strong><br>
-                <p style="font-size: 0.9rem; line-height: 1.3;">${info.description}</p>
-                <a href="${info.link}" target="_blank" rel="noopener noreferrer">(Wikipedia)</a>
-            `;
-        }
-        familyHint.classList.remove("fade-in");
-    }, 150);
 }
     
 function clearTree() {
