@@ -511,12 +511,12 @@ nodeEnter.append("circle")
     .style("cursor", "pointer")
     .on("mouseover", function () {
         d3.select(this)
-            .transition().duration(150)
-            .attr("r", 9);
+            .transition().duration(600)
+            .attr("r", 7);
     })
     .on("mouseout", function () {
         d3.select(this)
-            .transition().duration(150)
+            .transition().duration(600)
             .attr("r", 5);
     })
     .on("click", function (event, d) {
@@ -591,20 +591,20 @@ nodeEnter.append("circle")
         .style("opacity", 0);
 
     unrelatedEnter.append("circle")
-    .attr("r", 6)
+    .attr("r", 5)
     .attr("fill", "crimson")
     .attr("stroke-width", 2)
     .attr("stroke", "none")
     .style("cursor", "pointer")
     .on("mouseover", function () {
         d3.select(this)
-            .transition().duration(150)
-            .attr("r", 10);
+            .transition().duration(600)
+            .attr("r", 7);
     })
     .on("mouseout", function () {
         d3.select(this)
-            .transition().duration(150)
-            .attr("r", 6);
+            .transition().duration(600)
+            .attr("r", 5);
     })
     .on("click", function (event, d) {
         if (selectedNode && selectedNode !== this) {
