@@ -345,13 +345,17 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
     }
 
     if (!relatedGuesses.some(g => g.name === targetLanguage)) {
+        // Not yet guessed → show hidden placeholder
         targetNode.children.push({ name: '[Hidden Target]', isTarget: true });
+    } else {
+        // Correctly guessed → show exactly one revealed target
+        targetNode.children.push({ name: targetLanguage, isTarget: true });
     }
-
 
     // Add guesses
     for (const guess of relatedGuesses) {
         let guessNode = current;
+        if (guess.name === targetLanguage) continue;
         for (let i = sharedDepth; i < guess.lineage.length - 1; i++) {
             const level = guess.lineage[i];
             const fullPath = guess.lineage.slice(0, i + 1).join(' > ');
