@@ -371,27 +371,35 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
         guessNode.children.push({ name: guess.name, isGuess: true });
     }
 
-    // Step 4: Prune non-root classification nodes with only one child (unless that child is a guess/target)
-    function pruneTree(node, isRoot = false) {
-        if (!node.children || node.children.length === 0) return node;
+    // Step 4: Prune the tree
+function pruneTree(node, isRoot = false) {
+    if (!node.children || node.children.length === 0) return node;
 
-        node.children = node.children.map(child => pruneTree(child)).filter(Boolean);
+    // Recurse first
+    node.children = node.children
+        .map(child => pruneTree(child))
+        .filter(Boolean);
 
-        if (!isRoot && node.children.length === 1 && node.name === node.children[0].name) {
-            return node.children[0];
-        }
-        
-        // Don't prune root, guesses, or targets
-        const isLeaf = node.children.length === 0;
-        const isSpecial = isRoot || node.isGuess || node.isTarget;
-
-        if (!isSpecial && node.children.length === 1 && !node.children[0].isGuess && !node.children[0].isTarget) {
-            // Collapse node by replacing it with its child
-            return node.children[0];
-        }
-
-        return node;
+    // 1️⃣ First: collapse any node whose single child has the same name
+    if (!isRoot 
+        && node.children.length === 1 
+        && node.name === node.children[0].name
+    ) {
+        return node.children[0];
     }
+
+    // 2️⃣ Then: collapse other non-special single-child classification nodes
+    const isSpecial = isRoot || node.isGuess || node.isTarget;
+    if (!isSpecial 
+        && node.children.length === 1 
+        && !node.children[0].isGuess 
+        && !node.children[0].isTarget
+    ) {
+        return node.children[0];
+    }
+
+    return node;
+}
 
     return pruneTree(root, true);
 }
