@@ -388,12 +388,10 @@ function pruneTree(node, isRoot = false) {
         return node.children[0];
     }
 
-    // 2️⃣ Then: collapse other non-special single-child classification nodes
-    const isSpecial = isRoot || node.isGuess || node.isTarget;
+    // 2️⃣ Then: collapse any non-root, non-guess node with exactly one child
+    const isSpecial = isRoot || node.isGuess;
     if (!isSpecial 
-        && node.children.length === 1 
-        && !node.children[0].isGuess 
-        && !node.children[0].isTarget
+        && node.children.length === 1
     ) {
         return node.children[0];
     }
