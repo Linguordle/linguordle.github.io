@@ -377,6 +377,10 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
 
         node.children = node.children.map(child => pruneTree(child)).filter(Boolean);
 
+        if (!isRoot && node.children.length === 1 && node.name === node.children[0].name) {
+            return node.children[0];
+        }
+        
         // Don't prune root, guesses, or targets
         const isLeaf = node.children.length === 0;
         const isSpecial = isRoot || node.isGuess || node.isTarget;
