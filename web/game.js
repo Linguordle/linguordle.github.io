@@ -505,7 +505,7 @@ function renderTree(data, unrelatedList = []) {
             return d.children ? 'steelblue' : 'green';
         })
         .style("cursor", "pointer")
-        .on("click", d => {
+        .on("click", (event, d) => {
             const name = d.data.name;
             const info = familyDescriptions[name];
             if (!info) {
