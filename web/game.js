@@ -160,12 +160,6 @@ function handleGuess() {
     updateGuessesDisplay();
 
     if (guess === targetLanguage) {
-        relatedGuesses.push({
-            name: targetLanguage,
-            lineage: targetFamily,
-            sharedPath: [...targetFamily], // full path, since it's the same as itself
-        });
-        
         appendOutputLine(`🎉 Correct! The answer was "${targetLanguage}".`);
         saveWinState();
         isRevealed = true;
@@ -350,10 +344,15 @@ function buildLowestSharedTree(relatedGuesses, targetFamily) {
         targetNode = existing;
     }
 
-    if (!relatedGuesses.some(g => g.name === targetLanguage)) {
-        targetNode.children.push({ name: '[Hidden Target]', isTarget: true });
-    }
+    // always remove any leftover hidden-placeholder
+    targetNode.children = targetNode.children.filter(c => !c.isTarget);
 
+    // then add exactly one leaf, hidden or revealed
+    if (!isRevealed) {
+        targetNode.children.push({ name: '[Hidden Target]', isTarget: true, id: 'TARGET_NODE' });
+    } else {
+        targetNode.children.push({ name: targetLanguage, isTarget: true, id: 'TARGET_NODE' });
+    }
 
     // Add guesses
     for (const guess of relatedGuesses) {
