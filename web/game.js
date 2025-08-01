@@ -555,13 +555,13 @@ nodeEnter.append("circle")
     .attr("stroke-width", 2)
     .attr("stroke", "none")
     .style("cursor", "pointer")
-    .on("mouseover", function () {
+    .on("mouseover", function (event, d) {
         if (d.data.isTarget && !isRevealed) return;
         d3.select(this)
             .transition().duration(300)
             .attr("r", 7);
     })
-    .on("mouseout", function () {
+    .on("mouseout", function (event, d) {
         if (d.data.isTarget && !isRevealed) return;
         d3.select(this)
             .transition().duration(300)
@@ -632,13 +632,13 @@ nodeEnter.append("circle")
     .attr("stroke-width", 2)
     .attr("stroke", "none")
     .style("cursor", "pointer")
-    .on("mouseover", function () {
+    .on("mouseover", function (event, d) {
         if (d.data.isTarget && !isRevealed) return;
         d3.select(this)
             .transition().duration(600)
             .attr("r", 7);
     })
-    .on("mouseout", function () {
+    .on("mouseout", function (event, d) {
         if (d.data.isTarget && !isRevealed) return;
         d3.select(this)
             .transition().duration(600)
