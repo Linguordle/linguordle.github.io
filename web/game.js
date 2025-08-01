@@ -133,12 +133,16 @@ async function startNewGame() {
 
 function updateFamilyHint(classificationName) {
     const info = familyDescriptions[classificationName];
-    const label = (classificationName === targetFamily[0]) ? "Family" : "Shared Classification";
+    const label = (classificationName === targetFamily[0])
+        ? "Family"
+        : "Shared Classification";
+    // Pass “Family: X” or “Shared Classification: X” as the name into the fade helper
     updateFamilyHintHTML(
-        `${labelText}: ${classificationName}`,
+        `${label}: ${classificationName}`,
         info
     );
 }
+
 
 function saveWinState() {
     const today = new Date();
