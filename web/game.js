@@ -134,7 +134,10 @@ async function startNewGame() {
 function updateFamilyHint(classificationName) {
     const info = familyDescriptions[classificationName];
     const label = (classificationName === targetFamily[0]) ? "Family" : "Shared Classification";
-    updateFamilyHintHTML(name, info);
+    updateFamilyHintHTML(
+        `${labelText}: ${classificationName}`,
+        info
+    );
 }
 
 function saveWinState() {
