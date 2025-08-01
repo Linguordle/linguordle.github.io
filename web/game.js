@@ -567,7 +567,7 @@ nodeEnter.append("circle")
             .transition().duration(300)
             .attr("r", 5);
     })
-    .on("click", function (event, d) {
+    .on("pointerdown", function (event, d) {
         if (d.data.isTarget && !isRevealed) return;
     if (selectedNode && selectedNode !== this) {
         d3.select(selectedNode.parentNode).select("text")
@@ -634,15 +634,15 @@ nodeEnter.append("circle")
     .style("cursor", "pointer")
     .on("mouseover", function (event, d) {
         d3.select(this)
-            .transition().duration(600)
+            .transition().duration(300)
             .attr("r", 7);
     })
     .on("mouseout", function (event, d) {
         d3.select(this)
-            .transition().duration(600)
+            .transition().duration(300)
             .attr("r", 5);
     })
-    .on("click", function (event, d) {
+    .on("pointerdown", function (event, d) {
     if (selectedNode && selectedNode !== this) {
         d3.select(selectedNode.parentNode).select("text")
             .style("font-weight", "normal");
