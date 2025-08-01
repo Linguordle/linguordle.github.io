@@ -108,6 +108,7 @@ async function startNewGame() {
     }
 
     targetFamily = LANGUAGE_DATA[targetLanguage];
+    familyHint.classList.remove('fading');
     updateFamilyHint(targetFamily[0]);
     output.innerHTML = '';
     guessesLeft = MAX_GUESSES;
