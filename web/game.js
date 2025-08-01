@@ -548,16 +548,19 @@ nodeEnter.append("circle")
     .attr("stroke", "none")
     .style("cursor", "pointer")
     .on("mouseover", function () {
+        if (d.data.isTarget && !isRevealed) return;
         d3.select(this)
             .transition().duration(300)
             .attr("r", 7);
     })
     .on("mouseout", function () {
+        if (d.data.isTarget && !isRevealed) return;
         d3.select(this)
             .transition().duration(300)
             .attr("r", 5);
     })
     .on("click", function (event, d) {
+        if (d.data.isTarget && !isRevealed) return;
     if (selectedNode && selectedNode !== this) {
         d3.select(selectedNode.parentNode).select("text")
             .style("font-weight", "normal");
@@ -622,16 +625,19 @@ nodeEnter.append("circle")
     .attr("stroke", "none")
     .style("cursor", "pointer")
     .on("mouseover", function () {
+        if (d.data.isTarget && !isRevealed) return;
         d3.select(this)
             .transition().duration(600)
             .attr("r", 7);
     })
     .on("mouseout", function () {
+        if (d.data.isTarget && !isRevealed) return;
         d3.select(this)
             .transition().duration(600)
             .attr("r", 5);
     })
     .on("click", function (event, d) {
+        if (d.data.isTarget && !isRevealed) return;
     if (selectedNode && selectedNode !== this) {
         d3.select(selectedNode.parentNode).select("text")
             .style("font-weight", "normal");
