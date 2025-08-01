@@ -583,11 +583,30 @@ nodeEnter.append("circle")
     const info = familyDescriptions[name];
     updateFamilyHintHTML(name, info);
 });
-
+    
+    // Text background
+    nodeEnter.append("rect")
+        .attr("class", "text-bg")
+        .attr("fill", "#f0f0f0")
+        .attr("rx", 4).attr("ry", 4)
+        .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
+    
     nodeEnter.append("text")
+        .attr("class", "node-label")
         .attr("x", 8)
         .attr("dy", "0.32em")
         .text(d => (d.data.isTarget && !isRevealed) ? '???' : d.data.name);
+
+    nodeEnter.each(function(d) {
+        const text = d3.select(this).select("text");
+        const bg = d3.select(this).select("rect.text-bg");
+        const bbox = text.node().getBBox();
+        bg
+            .attr("x", bbox.x - 4)
+            .attr("y", bbox.y - 2)
+            .attr("width", bbox.width + 8)
+            .attr("height", bbox.height + 4);
+    });
 
     nodeEnter.transition().duration(600).style("opacity", 1)
         .attr("transform", d => `translate(${tx(d)},${ty(d)})`);
@@ -658,11 +677,28 @@ nodeEnter.append("circle")
     updateFamilyHintHTML(name, info);
 });
 
+    unrelatedEnter.append("rect")
+        .attr("class", "text-bg")
+        .attr("fill", "#f0f0f0")
+        .attr("rx", 4).attr("ry", 4)
+        .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
 
     unrelatedEnter.append("text")
+        .attr("class", "node-label")
         .attr("x", 8)
         .attr("dy", "0.32em")
         .text(d => d.name);
+
+    unrelatedEnter.each(function(d) {
+        const text = d3.select(this).select("text");
+        const bg = d3.select(this).select("rect.text-bg");
+        const bbox = text.node().getBBox();
+        bg
+            .attr("x", bbox.x - 4)
+            .attr("y", bbox.y - 2)
+            .attr("width", bbox.width + 8)
+            .attr("height", bbox.height + 4);
+    });
 
     unrelatedEnter.transition().duration(600).style("opacity", 1);
 
