@@ -485,7 +485,7 @@ function renderTree(data, unrelatedList = []) {
 
     treeLayout(root);
 
-    const minVerticalGap = 18;
+    const minVerticalGap = 28;
     const depthGroups = d3.group(root.descendants(), d => d.depth);
     for (const [, nodesAtDepth] of depthGroups) {
         nodesAtDepth.sort((a, b) => a.x - b.x);
@@ -569,14 +569,31 @@ nodeEnter.append("circle")
     })
     .on("pointerdown", function (event, d) {
         if (d.data.isTarget && !isRevealed) return;
+    // 1️⃣ un-bold previous
     if (selectedNode && selectedNode !== this) {
-        d3.select(selectedNode.parentNode).select("text")
-            .style("font-weight", "normal");
+        const prevG = d3.select(selectedNode.parentNode);
+        prevG.select("text").style("font-weight", "normal");
+        // resize its bg
+        const prevBBox = prevG.select("text").node().getBBox();
+        prevG.select("rect.text-bg")
+            .attr("x", prevBBox.x - 4)
+            .attr("y", prevBBox.y - 2)
+            .attr("width", prevBBox.width + 8)
+            .attr("height", prevBBox.height + 4);
     }
 
-    d3.select(this.parentNode).select("text")
-        .style("font-weight", "bold");
+    // 2️⃣ bold current
+    const g = d3.select(this.parentNode);
+    g.select("text").style("font-weight", "bold");
 
+    // 3️⃣ resize its bg
+    const bbox = g.select("text").node().getBBox();
+    g.select("rect.text-bg")
+        .attr("x", bbox.x - 4)
+        .attr("y", bbox.y - 2)
+        .attr("width", bbox.width + 8)
+        .attr("height", bbox.height + 4);
+        
     selectedNode = this;
 
     const name = d.data.name;
@@ -663,12 +680,27 @@ nodeEnter.append("circle")
     })
     .on("pointerdown", function (event, d) {
     if (selectedNode && selectedNode !== this) {
-        d3.select(selectedNode.parentNode).select("text")
-            .style("font-weight", "normal");
+        const prevG = d3.select(selectedNode.parentNode);
+        prevG.select("text").style("font-weight", "normal");
+        const prevBBox = prevG.select("text").node().getBBox();
+        prevG.select("rect.text-bg")
+            .attr("x", prevBBox.x - 4)
+            .attr("y", prevBBox.y - 2)
+            .attr("width", prevBBox.width + 8)
+            .attr("height", prevBBox.height + 4);
     }
 
-    d3.select(this.parentNode).select("text")
-        .style("font-weight", "bold");
+    // bold current
+    const g = d3.select(this.parentNode);
+    g.select("text").style("font-weight", "bold");
+
+    // resize its bg
+    const bbox = g.select("text").node().getBBox();
+    g.select("rect.text-bg")
+        .attr("x", bbox.x - 4)
+        .attr("y", bbox.y - 2)
+        .attr("width", bbox.width + 8)
+        .attr("height", bbox.height + 4);
 
     selectedNode = this;
 
