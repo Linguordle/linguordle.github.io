@@ -486,7 +486,7 @@ function renderTree(data, unrelatedList = []) {
 
     treeLayout(root);
 
-    const minVerticalGap = 28;
+    const minVerticalGap = 36;
     const depthGroups = d3.group(root.descendants(), d => d.depth);
     for (const [, nodesAtDepth] of depthGroups) {
         nodesAtDepth.sort((a, b) => a.x - b.x);
@@ -640,7 +640,7 @@ nodeEnter.append("circle")
     let unrelatedGroup = g.select("g.unrelated");
     if (unrelatedGroup.empty()) unrelatedGroup = g.append("g").attr("class", "unrelated");
 
-    const verticalSpacing = 28;
+    const verticalSpacing = 36;
     const unrelatedData = unrelatedList.map((name, i) => {
         if (!unrelatedNodePositions[name]) {
             const baseX = innerWidth * 1.08;
