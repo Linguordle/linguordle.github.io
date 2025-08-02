@@ -621,10 +621,10 @@ nodeEnter.append("circle")
         const bg = d3.select(this).select("rect.text-bg");
         const bbox = text.node().getBBox();
         bg
-            .attr("x", bbox.x - 4)
-            .attr("y", bbox.y - 2)
-            .attr("width", bbox.width + 8)
-            .attr("height", bbox.height + 4);
+            .attr("x", bbox.x - 8)
+            .attr("y", bbox.y - 4)
+            .attr("width", bbox.width + 16)
+            .attr("height", bbox.height + 8);
     });
 
     nodeEnter.transition().duration(600).style("opacity", 1)
@@ -699,10 +699,10 @@ nodeEnter.append("circle")
     // resize its bg
     const bbox = g.select("text").node().getBBox();
     g.select("rect.text-bg")
-        .attr("x", bbox.x - 4)
-        .attr("y", bbox.y - 2)
-        .attr("width", bbox.width + 8)
-        .attr("height", bbox.height + 4);
+        .attr("x", bbox.x - 8)
+        .attr("y", bbox.y - 4)
+        .attr("width", bbox.width + 16)
+        .attr("height", bbox.height + 8);
 
     selectedNode = this;
 
