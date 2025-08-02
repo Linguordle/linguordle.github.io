@@ -605,6 +605,8 @@ nodeEnter.append("circle")
     nodeEnter.append("rect")
         .attr("class", "text-bg")
         .attr("fill", "#fdf9e7")
+        .attr("stroke", "#333")          // outline color
+        .attr("stroke-width", 0.8)
         .attr("rx", 4).attr("ry", 4)
         .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
     
@@ -712,6 +714,8 @@ nodeEnter.append("circle")
     unrelatedEnter.append("rect")
         .attr("class", "text-bg")
         .attr("fill", "#fdf9e7")
+        .attr("stroke", "#333")          // outline color
+        .attr("stroke-width", 0.8)
         .attr("rx", 4).attr("ry", 4)
         .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
 
