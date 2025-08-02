@@ -256,17 +256,10 @@ function disableInput() {
 }
 
 function appendOutputLine(text) {
-    output.style.opacity = 0;       // Start invisible
     output.innerHTML = '';          // Clear old content
-
     const line = document.createElement('div');
     line.textContent = text;
     output.appendChild(line);
-
-    requestAnimationFrame(() => {
-        output.style.transition = 'opacity 300ms';
-        output.style.opacity = 1;   // Fade in
-    });
 }
 
 function clearAutocompleteSuggestions() {
