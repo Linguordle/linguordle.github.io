@@ -606,7 +606,7 @@ nodeEnter.append("circle")
         .attr("class", "text-bg")
         .attr("fill", "#fdf9e7")
         .attr("stroke", "#98937e")          // outline color
-        .attr("stroke-width", 0.8)
+        .attr("stroke-width", 1)
         .attr("rx", 4).attr("ry", 4)
         .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
     
@@ -715,7 +715,7 @@ nodeEnter.append("circle")
         .attr("class", "text-bg")
         .attr("fill", "#fdf9e7")
         .attr("stroke", "#98937e")          // outline color
-        .attr("stroke-width", 0.8)
+        .attr("stroke-width", 1)
         .attr("rx", 4).attr("ry", 4)
         .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
 
