@@ -576,10 +576,10 @@ nodeEnter.append("circle")
         // resize its bg
         const prevBBox = prevG.select("text").node().getBBox();
         prevG.select("rect.text-bg")
-            .attr("x", prevBBox.x - 4)
-            .attr("y", prevBBox.y - 2)
-            .attr("width", prevBBox.width + 8)
-            .attr("height", prevBBox.height + 4);
+            .attr("x", prevBBox.x - 8)
+            .attr("y", prevBBox.y - 4)
+            .attr("width", prevBBox.width + 16)
+            .attr("height", prevBBox.height + 8);
     }
 
     // 2️⃣ bold current
@@ -589,10 +589,10 @@ nodeEnter.append("circle")
     // 3️⃣ resize its bg
     const bbox = g.select("text").node().getBBox();
     g.select("rect.text-bg")
-        .attr("x", bbox.x - 4)
-        .attr("y", bbox.y - 2)
-        .attr("width", bbox.width + 8)
-        .attr("height", bbox.height + 4);
+        .attr("x", bbox.x - 8)
+        .attr("y", bbox.y - 4)
+        .attr("width", bbox.width + 16)
+        .attr("height", bbox.height + 8);
         
     selectedNode = this;
 
@@ -612,7 +612,7 @@ nodeEnter.append("circle")
     
     nodeEnter.append("text")
         .attr("class", "node-label")
-        .attr("x", 8)
+        .attr("x", 16)
         .attr("dy", "0.32em")
         .text(d => (d.data.isTarget && !isRevealed) ? '???' : d.data.name);
 
@@ -686,10 +686,10 @@ nodeEnter.append("circle")
         prevG.select("text").style("font-weight", "normal");
         const prevBBox = prevG.select("text").node().getBBox();
         prevG.select("rect.text-bg")
-            .attr("x", prevBBox.x - 4)
-            .attr("y", prevBBox.y - 2)
-            .attr("width", prevBBox.width + 8)
-            .attr("height", prevBBox.height + 4);
+            .attr("x", prevBBox.x - 8)
+            .attr("y", prevBBox.y - 4)
+            .attr("width", prevBBox.width + 16)
+            .attr("height", prevBBox.height + 8);
     }
 
     // bold current
@@ -721,7 +721,7 @@ nodeEnter.append("circle")
 
     unrelatedEnter.append("text")
         .attr("class", "node-label")
-        .attr("x", 8)
+        .attr("x", 16)
         .attr("dy", "0.32em")
         .text(d => d.name);
 
@@ -730,10 +730,10 @@ nodeEnter.append("circle")
         const bg = d3.select(this).select("rect.text-bg");
         const bbox = text.node().getBBox();
         bg
-            .attr("x", bbox.x - 4)
-            .attr("y", bbox.y - 2)
-            .attr("width", bbox.width + 8)
-            .attr("height", bbox.height + 4);
+            .attr("x", bbox.x - 8)
+            .attr("y", bbox.y - 4)
+            .attr("width", bbox.width + 16)
+            .attr("height", bbox.height + 8);
     });
 
     unrelatedEnter.transition().duration(600).style("opacity", 1);
