@@ -5,7 +5,7 @@ const fullData = typeof LANGUAGE_DATA_FULL !== 'undefined' ? LANGUAGE_DATA_FULL 
 const easyData = typeof LANGUAGE_DATA_EASY !== 'undefined' ? LANGUAGE_DATA_EASY : {};
 const LANGUAGE_DATA = useEasyMode ? easyData : fullData;
 const languageList = Object.keys(LANGUAGE_DATA);
-const MAX_GUESSES = 15;
+const MAX_GUESSES = 20;
 const unrelatedNodePositions = {};
 
 let guessesLeft = MAX_GUESSES;
@@ -605,7 +605,7 @@ nodeEnter.append("circle")
     nodeEnter.append("rect")
         .attr("class", "text-bg")
         .attr("fill", "#fdf9e7")
-        .attr("stroke", "#555247")          // outline color
+        .attr("stroke", "#98937e")          // outline color
         .attr("stroke-width", 0.8)
         .attr("rx", 4).attr("ry", 4)
         .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
@@ -714,7 +714,7 @@ nodeEnter.append("circle")
     unrelatedEnter.append("rect")
         .attr("class", "text-bg")
         .attr("fill", "#fdf9e7")
-        .attr("stroke", "#555247")          // outline color
+        .attr("stroke", "#98937e")          // outline color
         .attr("stroke-width", 0.8)
         .attr("rx", 4).attr("ry", 4)
         .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
