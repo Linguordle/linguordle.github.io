@@ -604,7 +604,7 @@ nodeEnter.append("circle")
     // Text background
     nodeEnter.append("rect")
         .attr("class", "text-bg")
-        .attr("fill", "#f0f0f0")
+        .attr("fill", "#fdf9e7")
         .attr("rx", 4).attr("ry", 4)
         .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
     
@@ -711,7 +711,7 @@ nodeEnter.append("circle")
 
     unrelatedEnter.append("rect")
         .attr("class", "text-bg")
-        .attr("fill", "#f0f0f0")
+        .attr("fill", "#fdf9e7")
         .attr("rx", 4).attr("ry", 4)
         .attr("x", 0).attr("y", 0).attr("width", 0).attr("height", 0);
 
