@@ -743,6 +743,50 @@ nodeEnter.append("circle")
         .attr("transform", d => `translate(${d.x}, ${d.y})`);
 
     unrelatedNodes.exit().transition().duration(400).style("opacity", 0).remove();
+
+    // After your nodes are laid out and have background rects/text drawn
+nodeGroups.each(function(d) {
+    d.bbox = this.getBBox(); // store SVG bounding box for collision checks
+});
+
+function resolveCollisions(nodes) {
+    const padding = 6;
+    let changed = true;
+    let loops = 0;
+    const maxLoops = 50;
+
+    while (changed && loops < maxLoops) {
+        changed = false;
+        loops++;
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                const a = nodes[i], b = nodes[j];
+                if (!a.bbox || !b.bbox) continue;
+
+                if (Math.abs(a.x - b.x) < (a.bbox.height + b.bbox.height) / 2 + padding &&
+                    Math.abs(a.y - b.y) < (a.bbox.width + b.bbox.width) / 2 + padding) {
+                    
+                    const shift = ((a.bbox.height + b.bbox.height) / 2 + padding) - Math.abs(a.x - b.x);
+                    if (a.x < b.x) {
+                        a.x -= shift / 2;
+                        b.x += shift / 2;
+                    } else {
+                        a.x += shift / 2;
+                        b.x -= shift / 2;
+                    }
+                    changed = true;
+                }
+            }
+        }
+    }
+}
+
+// Usage:
+resolveCollisions(nodesArray); // your array of node data
+nodeGroups
+    .transition().duration(300)
+    .attr("transform", d => `translate(${d.y},${d.x})`);
+
 }
     
 function clearTree() {
