@@ -41,6 +41,9 @@ window.addEventListener('resize', () => {
     if (lastTreeData) renderTree(lastTreeData, unrelatedGuesses);
 });
 
+const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+console.log(`User's time zone: ${timezone}`);
+    
 function updateFamilyHintHTML(name, info) {
   // 1️⃣ start fade-out
   familyHint.classList.add('fading');
