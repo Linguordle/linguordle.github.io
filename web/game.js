@@ -41,13 +41,6 @@ window.addEventListener('resize', () => {
     if (lastTreeData) renderTree(lastTreeData, unrelatedGuesses);
 });
 
-const now = new Date();
-const hours = now.getHours();
-const minutes = now.getMinutes();
-const seconds = now.getSeconds();
-
-console.log(`Current Time: ${hours}:${minutes}:${seconds}`);
-    
 function updateFamilyHintHTML(name, info) {
   // 1️⃣ start fade-out
   familyHint.classList.add('fading');
