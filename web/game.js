@@ -25,7 +25,7 @@ const output = document.getElementById('output');
 const guessesLeftDisplay = document.getElementById('guessesLeft');
 const familyHint = document.getElementById('familyHint');
 const autocompleteList = document.getElementById('autocomplete-list');
-
+    
 const fuse = new Fuse(languageList, {
     threshold: 0.4,
     distance: 100,
@@ -41,6 +41,13 @@ window.addEventListener('resize', () => {
     if (lastTreeData) renderTree(lastTreeData, unrelatedGuesses);
 });
 
+const now = new Date();
+const hours = now.getHours();
+const minutes = now.getMinutes();
+const seconds = now.getSeconds();
+
+console.log(`Current Time: ${hours}:${minutes}:${seconds}`);
+    
 function updateFamilyHintHTML(name, info) {
   // 1️⃣ start fade-out
   familyHint.classList.add('fading');
