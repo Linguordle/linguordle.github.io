@@ -1,0 +1,58 @@
+/* General body styles */
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fcf3cf;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: "Margarine", sans-serif;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.disclaimer {
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+a {
+  color: inherit;
+}
+
+/* Style inputs and buttons uniformly */
+input, button {
+  font-size: 1rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Improve button appearance */
+button {
+  color: white;
+  font-weight: 500;
+  background-color: #ffcc66;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #cca352;
+}
+
+/* UL spacing */
+ul {
+  margin-top: 1rem;
+}
+
+/* Status message styling */
+#stat

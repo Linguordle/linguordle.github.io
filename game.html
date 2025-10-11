@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linguordle: The Language Genealogy Guessing Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Margarine&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2416827416221193"
+     crossorigin="anonymous"></script>
+    <style>
+        .input-row {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        #guessInput {
+            flex-grow: 1;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
+
+        #guessButton {
+            margin-left: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .autocomplete-container {
+            position: relative;
+            width: 100%;
+        }
+
+        #autocomplete-list {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            width: 100%;
+            top: 100%;
+            z-index: 99;
+        }
+
+        .autocomplete-items {
+            border: 1px solid #ccc;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background-color: white;
+            width: 100%;
+            z-index: 99;
+        }
+
+        .autocomplete-item {
+            padding: 4px;
+            cursor: pointer;
+        }
+
+        .autocomplete-item.highlighted {
+            background-color: #eee;
+        }
+
+        #output div {
+            margin-bottom: 4px;
+        }
+
+        #tree-container {
+            margin-top: 1rem;
+            text-align: center;
+            max-width: 100%;       /* Prevent container from exceeding screen */
+            box-sizing: border-box;
+            padding: 0 10px;       /* Optional padding to avoid touching edges */
+        }
+
+        #classification-tree {
+            width: 100%;           /* Make SVG responsive */
+            height: auto;          /* Scale height automatically */
+            max-width: 100%;       /* Ensure it doesn't exceed container */
+        }
+
+        #unrelated-guesses {
+            margin-top: 1rem;
+            padding: 0.5rem;
+            max-width: 100%;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        #unrelated-guesses ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        #familyHint {
+          opacity: 1;
+          transition: opacity 0.4s ease-in-out;
+        }
+
+        #familyHint.fading {
+          opacity: 0;
+        }
+
+    </style>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+</head>
+<body>
+
+    <h1>Linguordle</h1>
+    <p id="familyHint"></p> <!-- This shows the hint -->
+    <div class="input-row autocomplete-container">
+        <input type="text" id="guessInput" placeholder="Type your guess..." autocomplete="off">
+        <button id="guessButton">Guess</button>
+        <div id="autocomplete-list" class="autocomplete-items"></div>
+    </div>
+
+    <p id="guessesLeft"></p>
+    <div id="output"></div>
+    <div id="tree-container">
+      <svg id="classification-tree" width="600" height="600"></svg>
+    </div>
+    <script src="familyDescriptions.js"></script>
+    <script src="data.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
